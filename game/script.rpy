@@ -40,4 +40,5 @@ define config.nvl_adv_transition = Dissolve(0.3)
 define tv_hi = Character(None, image= "pando1", kind = bubble, retain = True)
 
 label start:
+    $ save_name = _("Arc 1")    
     jump nov_1

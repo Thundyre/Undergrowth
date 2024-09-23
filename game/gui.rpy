@@ -56,14 +56,15 @@ define gui.interface_text_color = '#404040'
 
 ## Fonts and Font Sizes ########################################################
 
+
 ## The font used for in-game text.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = gui.preference("font", "fonts/JosefinSans-VariableFont_wght.ttf") 
 
 ## The font used for character names.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = gui.preference("font", "fonts/JosefinSans-VariableFont_wght.ttf")
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = gui.preference("font", "fonts/JosefinSans-VariableFont_wght.ttf")
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
@@ -180,9 +181,9 @@ define gui.button_text_xalign = 0.0
 ##
 ## These customizations are used by the default interface:
 
-define gui.radio_button_borders = Borders(27, 6, 6, 6)
+define gui.radio_button_borders = Borders(30, 6,30, 6)
 
-define gui.check_button_borders = Borders(27, 6, 6, 6)
+define gui.check_button_borders = Borders(30, 6, 30, 6)
 
 define gui.confirm_button_text_xalign = 0.5
 
@@ -223,8 +224,8 @@ define gui.choice_button_text_insensitive_color = '#7070707f'
 ## image files in gui/button, like the other kinds of buttons.
 
 ## The save slot button.
-define gui.slot_button_width = 414
-define gui.slot_button_height = 309
+define gui.slot_button_width = 366
+define gui.slot_button_height = 265
 define gui.slot_button_borders = Borders(15, 15, 15, 15)
 define gui.slot_button_text_size = 21
 define gui.slot_button_text_xalign = 0.5
@@ -233,11 +234,11 @@ define gui.slot_button_text_selected_idle_color = gui.selected_color
 define gui.slot_button_text_selected_hover_color = gui.hover_color
 
 ## The width and height of thumbnails used by the save slots.
-define config.thumbnail_width = 384
-define config.thumbnail_height = 216
+define config.thumbnail_width = 255
+define config.thumbnail_height = 150
 
 ## The number of columns and rows in the grid of save slots.
-define gui.file_slot_cols = 3
+define gui.file_slot_cols = 2
 define gui.file_slot_rows = 2
 
 
