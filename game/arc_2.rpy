@@ -1234,9 +1234,12 @@ label dec_25:
     #INT: Main tent
     mo "Merry Christmas everyone!"
     gr "Merry Christmas. You're done with the calls?"
+
     "I gave a light nod to Gregory."
+
     ky "Merry Christmas Morgan!"
     pe "Merry Christmas Morgan!"
+
     "These two I swear. They really share the same brain cells."
 
     #IF Aston not safe skip the lines below
@@ -1296,11 +1299,12 @@ label dec_26:
 label dec_27:
     #INT: Main tent
     "In the dead of the night I heard someone rummaging through their backpacks."
-    #If Aston safe
+
     if aston_safe:
         "That's not Aston I'm hearing. He's usually very quiet about it."
 
     "I sat up to see Pearl frantically packing her gear."
+
     mo "Pearl what are you doing?"
     pe "Morgan! I uh couldn't sleep at all."
     mo "... and the gear?"
@@ -1380,11 +1384,16 @@ label dec_27:
         mo "That's not what I me-"
         gr "Where's this attitude coming from?"
         ky "Pearl? What's happening?"
+
         "Gregory and Kyle have been awoken by the sound."
+
         pe "No you stay away. I'll prove you wrong."
+
         "Shit, not again."
         "With a swift movement, she knocks over the tool rack blocking the flap of the tent."
+
         gr "Pearl! Get back here this instant!"
+
         "Crap, she forgot her compass."
         "Kyle rushes to move the rack out the way while we quickly gear up."
 
@@ -1399,30 +1408,39 @@ label dec_27:
         #EXT: Forest
         #Pearl's POV
         "The wind picks up tremendously as Pearl trudges through the snow."
+
         pe "Ugh… I knew I should've checked my pockets. Now I'm out here lost and without my compass."
         pe "And here I thought circling the base of the mountain was a great idea."
 
         pe "I look left? Trees and snow. Look right? Trees and snow. Look straight ahead and oh wow! Trees and snow."
         pe "The snow is… unrelenting too. It's cold."
         pe "Come on Pearl! Focus focus!"
+
         "Pearl finds herself in front of a large forest clearing. Oddly shaped stones stick out from the ground in a disorderly manner."
         "She walks up to one and inspects it up close."
+
         pe "Oh yeah that's stone alrig-"
         pe "..."
+
         "It was in fact not stone."
         "Or at least to Pearl."
         "Disfigured and grotesque looking… humans."
         "Frozen in time, freezing the frame of their unfortunate fate."
         "Pearl collapses onto the ground, unable to make sense of what she just saw."
+
         pe "Nope! Nope nope nope-"
+
         "After successfully scrambling to her feet, she takes off in another direction."
         "The snow fall gets heavier by the second, and snow blindness makes it worse to navigate the path."
         "But fortunately she was lucky. She squints her eyes to see a large rock wall ahead."
-        pe "The mountain! Now I just have to make it back."
-        "Pearl starts sprinting towards it, but unbeknownst to her, the terrain ahead was a rather dangerous one."
-        pe "Shi-"
-        "Pearl loses her footing and slips down a ravine."
 
+        pe "The mountain! Now I just have to make it back."
+
+        "Pearl starts sprinting towards it, but unbeknownst to her, the terrain ahead was a rather dangerous one."
+
+        pe "Shi-"
+
+        "Pearl loses her footing and slips down a ravine."
 
     #@ Sharkie the way it works:
     #If is Aston is present and safe, then Pearl will be safe
@@ -1434,7 +1452,9 @@ label dec_28:
     #Gregory's POV
     "Gregory is alone at the campsite."
     "Morgan and the rest are out on a search mission again."
+
     gr "Pick up damn it."
+    
     "Gregory tries reaching HQ on his phone but the calls keep disconnecting."
     "It is frustrating."
     "Even more so when it's an urgent matter."
@@ -1450,8 +1470,10 @@ label dec_28:
         "But the quota unfortunately doesn't stop for no one."
 
     gr "Plan B it is."
+
     "Gregory gives up, he decides to call the supply crew."
     "They're more likely to pick up."
+
     ex2 "Now that's a name I haven't seen in months. What do you need?"
     gr "I need you to get our CEO lady on the phone."
     ex2 "Hey if you forgot, I'm just the supply guy."
@@ -1465,6 +1487,7 @@ label dec_28:
     ex2 "But no, she never mentioned anything about Lorenzo or whatever."
     gr "Well, let her know that Gregory's calling."
     ex2 "I'll do my best, but no promises."
+
     "Gregory exhales deeply."
     "Stuck in this predicament that nobody wants to be in."
     "Knowing the true nature of this operation, and then deceiving the ones that he's working closely with."
@@ -1476,20 +1499,25 @@ label dec_30:
     "*CRASH*"
     "I was rudely woken up by a horrendous noise."
     "What the hell was that?"
+
     ky "Wuh huh?"
+
     "Seems like Kyle was also abruptly pulled out of dream land."
     "I see Gregory running out the tent to go have a look."
     "At least it doesn't sound like an avalanche this time."
 
     #EXT: Camp 1A
     "Gregory's Walkie starts beeping the moment I step foot outside."
+
     ca "Heya Gregory, I was gonna say that we got the new maps but it seems like we have a new problem."
     ca "Any idea where that was coming from?"
     gr "My guess is that the radio tower's down."
     ca "Oh that's bad news alright, I'll relay the message to Wilbur and the rest."
     gr "Yeah thanks."
+
     "Is that why the signal has been trash lately?"
     "Gregory turns to see the confusion on my face."
+
     mo "So what I'm getting is that the radio tower crashed?"
     gr "We'd need to check it out tomorrow, best case scenario is that we can fix it ourselves."
     gr "Worst case scenario is that we have to wait for backup."
@@ -1498,6 +1526,7 @@ label dec_30:
     mo "Are we basically stranded here?"
     gr "Yeah. We've lost contact with HQ."
     ky "What if HQ forgets about us?"
+
     #If Pearl is safe
     if pearl_safe:
         pe "We could leave camp by ourselves if they don't reach us, right?"
@@ -1510,6 +1539,7 @@ label dec_30:
     "But I'm not too worried since Colin does have my location."
     "It's just that, well… It'll probably jeopardize the mission."
     "Whoever Gregory is calling at HQ, guess he won't be able to reach them anytime soon."
+
     #If Aston is safe
     if aston_safe:
         ast "We'll have to check on Lorenzo tonight."
@@ -1517,7 +1547,6 @@ label dec_30:
         "I should also go pay Lorenzo a visit."
 
     #INT: Cabin
-    if aston_safe:
         "We're paying Lorenzo a visit."
         lo "So the loud crash I heard was real then?"
         ast "Yes, we took a look at the radio tower on our way here. There's a piece missing from it."
