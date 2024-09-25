@@ -287,6 +287,7 @@ label dec_9:
                     "Is it still worth a try? Absolutely."
                     "Lorenzo is a dear friend, and to Aston?"
                     "Lorenzo is his everything."
+                    jump find_lorenzo
 
         #choice branch 2 ends
     #choice branch 1 ends 
@@ -295,22 +296,23 @@ label dec_10:
     #To Sharkie, this sequence only happens if you fail to join Aston on his adventure, then it just continues downwards 
     #(STRIKE 1 added to Gregory sus meter, whenever you see this Sharkie lmk cause I have questions to ask)
     #EXT: Camp 1A
-    "The search commences today."
-    "Gregory was right about Aston, he made it back before dawn."
-    "The dark circles under his eyes and his expressions tell me that his search was unsuccessful."
+    if not joined_aston:
+        "The search commences today."
+        "Gregory was right about Aston, he made it back before dawn."
+        "The dark circles under his eyes and his expressions tell me that his search was unsuccessful."
 
-    mo "Aston?"
-    ast "Good morning, Morgan."
-    ast "I'd like to apologize for yesterday."
-    mo "No please don't, you're good."
-    mo "Just that, if you're planning on doing that again tonight, please let me know."
-    ast "Alright, I shall."
-    ast "My search… was unsuccessful."
-    mo "It's okay, we'll keep trying. You have an ally here."
-    "Aston flashes me a weak smile, and nods."
+        mo "Aston?"
+        ast "Good morning, Morgan."
+        ast "I'd like to apologize for yesterday."
+        mo "No please don't, you're good."
+        mo "Just that, if you're planning on doing that again tonight, please let me know."
+        ast "Alright, I shall."
+        ast "My search… was unsuccessful."
+        mo "It's okay, we'll keep trying. You have an ally here."
+        "Aston flashes me a weak smile, and nods."
 
     #To Sharkie, skip to this sequence if you successfully join Aston on his adventure
-    if joined_aston:
+    label find_lorenzo:
     #EXT: Forest
         "Did I ever mention loving night walks?"
         "Well, I hate this."
@@ -337,7 +339,7 @@ label dec_10:
         #SFX knock
         ast "Lorenzo, are you in here?"
         lo "Aston?"
-
+        #CG??
         "Aston barges into the cabin to see a petrified Lorenzo."
 
         ast "Lorenzo!"
@@ -419,13 +421,13 @@ label dec_10:
 
 
     #To Sharkie, skip this sequence if you fail to join Aston on his adventure
-    #TODO double check again
-    #INT: Main tent
-    "We made it back before sunrise."
-    "Aston fell asleep immediately upon getting back."
-    "His face no longer scrunches up while he sleeps."
-    "It was something I've noticed for the past few days, heard him tossing and turning in his sleep."
-    "All is well now."
+        if joined_aston:
+        #INT: Main tent
+            "We made it back before sunrise."
+            "Aston fell asleep immediately upon getting back."
+            "His face no longer scrunches up while he sleeps."
+            "It was something I've noticed for the past few days, heard him tossing and turning in his sleep."
+            "All is well now."
 
 label dec_11:
     #EXT: Camp 1A
@@ -677,7 +679,7 @@ label dec_14:
 
     else:
         #If Aston doesn't follow you, but doesn't die
-        if aston_safe > 0:
+        if aston_safe == True:
             #INT: Cabin
             "Upon entering the cabin, I see Lorenzo waiting patiently for us to arrive."
             "Seeing me close the door without Aston behind me, Lorenzo begins to worry."
@@ -969,31 +971,32 @@ label dec_18:
         "Kyle's Walkie starts beeping."
         "It's from Koda."
         #radio starts
-        ko "Hi Kyle! Is now a good time?"
-        ky "I'm all ears!"
-        ev "It would seem that most of the animals are okay."
-        ev "But there were two strange things you've encountered?"
-        ky "Yeah, the bird stuff and a bear."
-        ev "You saw a bear? Sure it wasn't something else?"
-        ko "Wouldn't they be hibernating?"
-        ky "That's what Pearl has been saying… but I am convinced that I saw one."
-        ky "If there really was one, I'll try snagging pictures again."
-        ko "Safety's first Kyle! Don't end up on the headlines."
-        ky "I am a professional, don't you worry Koda!"
-        isa "And the bird pictures… Those were the same ones like the one that Morgan picked up, yes?"
-        ky "Oh hey Isaak! And yes."
-        isa "How many birds were there?"
-        ky "About 8 to 10? Have you guys found out why this is happening?"
-        isa "No. We haven't got an inkling."
-        ky "And its appearance? The globby slimy icky stuff?"
-        isa "Same answer."
-        ky "Do you think it has something to do with the water?"
-        isa "..."
-        ko "U-Uh, we don't know just yet, but we'll let you know when we do!"
-        ky "Sorry sorry. Just want to make sure that we're all safe while we're out there."
-        ev "Anyway, thanks Kyle. Really great shots by the way, stunning photos."
-        ky "I take pride in that! Thank you!"
+        wt_ko "Hi Kyle! Is now a good time?"
+        wt_ky "I'm all ears!"
+        wt_ev "It would seem that most of the animals are okay."
+        wt_ev "But there were two strange things you've encountered?"
+        wt_ky "Yeah, the bird stuff and a bear."
+        wt_ev "You saw a bear? Sure it wasn't something else?"
+        wt_ko "Wouldn't they be hibernating?"
+        wt_ky "That's what Pearl has been saying… but I am convinced that I saw one."
+        wt_ky "If there really was one, I'll try snagging pictures again."
+        wt_ko "Safety's first Kyle! Don't end up on the headlines."
+        wt_ky "I am a professional, don't you worry Koda!"
+        wt_is "And the bird pictures… Those were the same ones like the one that Morgan picked up, yes?"
+        wt_ky "Oh hey Isaak! And yes."
+        wt_is "How many birds were there?"
+        wt_ky "About 8 to 10? Have you guys found out why this is happening?"
+        wt_is "No. We haven't got an inkling."
+        wt_ky "And its appearance? The globby slimy icky stuff?"
+        wt_is "Same answer."
+        wt_ky "Do you think it has something to do with the water?"
+        wt_is "..."
+        wt_ko "U-Uh, we don't know just yet, but we'll let you know when we do!"
+        wt_ky "Sorry sorry. Just want to make sure that we're all safe while we're out there."
+        wt_ev "Anyway, thanks Kyle. Really great shots by the way, stunning photos."
+        wt_ky "I take pride in that! Thank you!"
         #radio ends
+        nvl clear
 
 label dec_20:
 
@@ -1002,15 +1005,16 @@ label dec_20:
     if aston_safe:
         "While enjoying a cup of cocoa by myself, I received a Walkie beep from Wilbur."
         #radio start
-        wi "Hello Morgan! Are you there?"
-        mo "What's up?"
-        ru "How is Aston?"
-        mo "He's hanging in there I think. I'm looking out for him, don't worry."
-        ru "Aston is strong, perhaps too strong. He takes on everything and bottles up his own emotions."
-        ru "Lorenzo is the only person who he confides with, and with him missing…"
-        wi "Keep an eye on him will you, son? He needs all the support he can get."
-        mo "Of course."
+        wt_wi "Hello Morgan! Are you there?"
+        wt_mo "What's up?"
+        wt_ru "How is Aston?"
+        wt_mo "He's hanging in there I think. I'm looking out for him, don't worry."
+        wt_ru "Aston is strong, perhaps too strong. He takes on everything and bottles up his own emotions."
+        wt_ru "Lorenzo is the only person who he confides with, and with him missing…"
+        wt_wi "Keep an eye on him will you, son? He needs all the support he can get."
+        wt_mo "Of course."
         #radio ends
+        nvl clear
         "I look towards Aston who's taking a quick nap in the corner of the tent."
         "He'll be okay under my watch."
 
@@ -1019,14 +1023,15 @@ label dec_20:
     else:
         "While enjoying a cup of cocoa by myself, I received a quick Walkie beep from Wilbur."
         #radio start
-        wi "Hello Morgan! Are you there?"
-        mo "What's up?"
-        ru "Any updates on Aston?"
-        mo "Aston… hasn't come back."
-        ru "So there's no sign of both of them yet…"
-        wi "Keep us updated will you, son? Let us know if you've seen them."
-        mo "Of course."
+        wt_wi "Hello Morgan! Are you there?"
+        wt_mo "What's up?"
+        wt_ru "Any updates on Aston?"
+        wt_mo "Aston… hasn't come back."
+        wt_ru "So there's no sign of both of them yet…"
+        wt_wi "Keep us updated will you, son? Let us know if you've seen them."
+        wt_mo "Of course."
         #radio ends
+        nvl clear
         "I look towards the empty corner of the tent."
         "I'm sorry, Lorenzo."
 
@@ -1144,82 +1149,127 @@ label dec_25:
     "Oh well, I shall try to make the most of it right now."
     "I should beep everyone today."
 
-    #TODO radio start
-    #choice loop until everyone is picked
-    #Beep Wilbur
-    mo "Merry Christmas, Wilbur!"
-    wi "Morgan! Thank you and Merry Christmas to you too!"
-    wi "Make sure to have a great feast today and call your family, yes?"
-    mo "You bet I will."
+    #TODO radio start n choice loop until everyone is picked
+    menu christmas:
+        "Beep Wilbur":
+            if not christmas_wi:
+                $ christmas_wi = True
+                wt_mo "Merry Christmas, Wilbur!"
+                wt_wi "Morgan! Thank you and Merry Christmas to you too!"
+                wt_wi "Make sure to have a great feast today and call your family, yes?"
+                wt_mo "You bet I will."
+                nvl clear
+            else:
+                "I've already talked to him."
 
-    #Beep Ruran
-    mo "Merry Christmas, Ruran!"
-    ru "Merry Christmas to you too Morgan!"
-    ru "I hope that your wishes come true."
-    mo "Likewise to you Ruran."
+        "Beep Ruran":
+            if not christmas_ru:
+                $ christmas_ru = True
+                wt_mo "Merry Christmas, Ruran!"
+                wt_ru "Merry Christmas to you too Morgan!"
+                wt_ru "I hope that your wishes come true."
+                wt_mo "Likewise to you Ruran."
+                nvl clear
+            else:
+                "I've already talked to her."
 
-    #Beep Davos
-    mo "Davos! Merry Christmas!"
-    da "Merry Christmas Morgan! I heard the moon's going to be bright tonight!"
-    da "You wouldn't want to miss out on that!"
-    mo "That sounds lovely, I'll be sure to look up tonight."
+        "Beep Davos":
+            if not christmas_da:
+                $ christmas_da = True
+                wt_mo "Davos! Merry Christmas!"
+                wt_da "Merry Christmas Morgan! I heard the moon's going to be bright tonight!"
+                wt_da "You wouldn't want to miss out on that!"
+                wt_mo "That sounds lovely, I'll be sure to look up tonight."
+                nvl clear
+            else:
+                "I've already talked to him."
 
-    #Beep Cassie
-    mo "Merry Christmas, Cassie!"
-    ca "Aww thank you Morgan! Merry Christmas to you too!"
-    mo "Hope your ankle has been healing well."
-    ca "Thankfully it has! Give it another week or two and I'll be up and running!"
-    mo "It's a Christmas miracle!"
-    ca "You're so right."
+        "Beep Cassie":
+            if not christmas_ca:
+                $ christmas_ca = True
+                wt_mo "Merry Christmas, Cassie!"
+                wt_ca "Aww thank you Morgan! Merry Christmas to you too!"
+                wt_mo "Hope your ankle has been healing well."
+                wt_ca "Thankfully it has! Give it another week or two and I'll be up and running!"
+                wt_mo "It's a Christmas miracle!"
+                wt_ca "You're so right."
+                nvl clear
+            else:
+                "I've already talked to her."
 
-    #Beep Jax
-    mo "Merry Christmas!"
-    ja "And Merry Christmas to you!"
-    mo "How's Christmas for you so far?"
-    ja "I slept in today, so now I'm all refreshed."
-    mo "Nothing beats those extra hours of sleep."
-    "Nice, Jax and I are like-minded in that regard."
+        "Beep Jax":
+            if not christmas_ja:
+                $ christmas_ja = True
+                wt_mo "Merry Christmas!"
+                wt_ja "And Merry Christmas to you!"
+                wt_mo "How's Christmas for you so far?"
+                wt_ja "I slept in today, so now I'm all refreshed."
+                wt_mo "Nothing beats those extra hours of sleep."
+                "Nice, Jax and I are like-minded in that regard."
+                nvl clear
+            else:
+                "I've already talked to him."
 
-    #Beep Koda
-    mo "Hey Koda! Merry Christmas!"
-    ko "Morgan! Merry Christmas! I hope your day has been great!"
-    mo "It has been, yes. Hope you're taking time off to actually relax!"
-    ko "Eva kicked me out of the lab today just for that reason!"
-    ko "Time for some well earned rest!"
+        "Beep Koda":
+            if not christmas_ko:
+                $ christmas_ko = True
+                wt_mo "Hey Koda! Merry Christmas!"
+                wt_ko "Morgan! Merry Christmas! I hope your day has been great!"
+                wt_mo "It has been, yes. Hope you're taking time off to actually relax!"
+                wt_ko "Eva kicked me out of the lab today just for that reason!"
+                wt_ko "Time for some well earned rest!"
+            else:
+                "I've already talked to them."
 
-    #Beep Eva
-    mo "Merry Christmas, Eva!"
-    ev "Thanks! Merry Christmas to you too, Morgan."
-    ev "I hope you prepared presents."
-    mo "Oh, I didn't."
-    ev "Really? That's a shame."
-    mo "Where's mine then?"
-    "Eva just doesn't respond after that."
-    "No presents then I guess."
+        "Beep Eva":
+            if not christmas_ev:
+                $ christmas_ev = True
+                wt_mo "Merry Christmas, Eva!"
+                wt_ev "Thanks! Merry Christmas to you too, Morgan."
+                wt_ev "I hope you prepared presents."
+                wt_mo "Oh, I didn't."
+                wt_ev "Really? That's a shame."
+                wt_mo "Where's mine then?"
+                "Eva just doesn't respond after that."
+                "No presents then I guess."
+                nvl clear
+            else:
+                "I've already talked to her."
 
-    #Beep Isaak
-    isa "Hello?!"
-    mo "Merry Christmas… Isaak?"
-    isa "Oh, it's you."
-    isa "Merry Christmas to you too, Morgan."
-    "I think he might've been expecting someone else."
+        "Beep Isaak":
+            if not christmas_is:
+                $ christmas_is = True
+                wt_is "Hello?!"
+                wt_mo "Merry Christmas… Isaak?"
+                wt_is "Oh, it's you."
+                wt_is "Merry Christmas to you too, Morgan."
+                "I think he might've been expecting someone else."
+                nvl clear
+            else:
+                "I've already talked to him."
 
-    #Beep Lorenzo
-    mo "Merry Christmas, Lorenzo."
-    if aston_safe:
-        "He won't respond because it's daytime, but I know that he can hear me, and that's all that matters."
+        "Beep Lorenzo":
+            if not christmas_lo:
+                $ christmas_lo = True
+                wt_mo "Merry Christmas, Lorenzo."
+                if aston_safe:
+                    "He won't respond because it's daytime, but I know that he can hear me, and that's all that matters."
+                else:
+                    wt_mo "I'll bring Aston back to you."
+                nvl clear
+            else:
+                "I've already talked to him."
+
+        #If you beep someone twice
+        #"I've already talked to them."
+
+        #Everyone has to be beeped once, and if you're done
+    if christmas_wi and christmas_ca and christmas_da and christmas_ev and christmas_is and christmas_ja and christmas_ko and christmas_lo and christmas_ru:
+        "Looks like that's everyone, might as well call Colin too!"
     else:
-        "I'll bring Aston back to you."
-
-    #If you beep someone twice
-    "I've already talked to them."
-
-    #Everyone has to be beeped once, and if you're done
-    "Looks like that's everyone, might as well call Colin too!"
+        jump christmas
 
     #radio ends
-
-
     #TODO phone starts
     mo "Merry Christmas to my lovely Pancake!"
     co "Merry Christmas Morg!"
