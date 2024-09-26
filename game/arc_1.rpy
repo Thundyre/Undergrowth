@@ -1,5 +1,5 @@
 label nov_1:
-    $ save_name = _("Prologue")
+    $ save_name = "Prologue"
     tv_hi "Glow glow glow with NuGLO, let us help you restore your skin's shiny supple glow!"
     tv_hi "So what are you waiting for? Grab your very own NuGLO samples at your local stores today!"
 
@@ -25,8 +25,8 @@ label nov_1:
 
     #With one final look at his living room, Morgan swings his backpack onto his shoulder and then leaves his apartment.
 label nov_4:
-    $ save_name = _("Arc 1")
-    scene black
+    $ save_name = "Arc 1"
+    #start scene blackout
     mo "I'm Morgan. Undercover cop and proud member of the Special Operations Division." 
     mo "Here on a mission to unravel the secrets behind an operation held by Heralign Inc. far out in the snowy mountains."
     mo "And to find out what happened to my partner in crime."
@@ -50,7 +50,7 @@ label nov_4:
     mo "Well walking in snow is definitely much more difficult than sitting in a car I think. It's nice to meet you, Gregory."
     "He gives me a firm handshake."
     gr "Let's head to camp."
-    scene forest1 with dissolve
+    #EXT: Forest
     "Along the way, Gregory fills me in on the operation and the rest of the people at camp."
     "The Mission? Collecting samples from the environment."
     "Be it sources of water, dirt, trees and maybe foliage once the snow melts." 
@@ -102,12 +102,14 @@ label nov_4:
     pe "Davos from Camp 2 and Koda from the Research Centre! They're both my best buds, I reminded them today that we have a newcomer so they should pick up instantly!"
     #choice branch start
     #radio selection stuff happens here
+    $ pancake = False
     menu:
         "Call Davos":
             wt_mo "Hello this is Morgan, is Davos here?"
             wt_da "Oh hello! Morgan, was it? It's nice to meet you!"
             wt_da "I'm in Camp 2, which is a little down south from where you're at!"
             wt_mo "Pleased to meet ya! There's also five of you there, yes?"
+            $ chibi_davos = "images/chibi/davos_happy.png"
             wt_da "Haha yes! I'm here with my pops Wilbur, Cassie, Ruran and Jax. They're kinda busy right now though."
             wt_wi "Davos? Could you lend me a hand here?"
             wt_da "Oops gotta go! Talk to you next time Morgan!"
@@ -254,7 +256,6 @@ label nov_6:
     "Alrighty, I guess it's time."
 
     #EXT: Forest / Snowy area
-    scene forest2 with dissolve
 
     "Gregory begins by going through a long checklist of items to collect for the day."
     "He hands Pearl and I some bags and tools."
@@ -322,7 +323,6 @@ label nov_6:
 label nov_7_11:
     #7th
     #EXT: Forest 
-    scene forest1 with dissolve
 
     "Another sample collection day."
     "Today we're breaking some of the ice at the lake."
@@ -403,123 +403,100 @@ label nov_7_11:
     "I suppose the Walkie shall suffice for now." 
     "Who should I beep first?"
 
-    #TODO extremely scuffed choice loop
+    #TODO radio starts
     #choice branch starts
-    menu wt_intro:
-        "beep Wilbur":
-            if not wt_intro_wi:
-                $ wt_intro_wi = True
-                wt_wi "Hello Morgan! I heard lots about you from Pearl and Davos!"
-                wt_mo "I'm surprised you already knew about me, they sure are close."
-                wt_wi "Well yes! News travels fast around here lad! Oh Ruran my friend, would you like to say hi?"
-                wt_ru "Is it Morgan? It is nice to meet you Morgan, I'm Ruran."
-                wt_mo "Oh the other camp medic? Aston told me that you're his mentor."
-                wt_ru "Yes I am. He's great, and it's always nice to have extra hands in case of emergencies."
-                wt_wi "Hope Aston will warm up to you soon, that boy has always been a man of few words. Know him long enough and you'll realize he's a big softie!"
-                wt_mo "'Aston' and 'softie' were two words I never expected in the same sentence, but thank you for telling me."
-                wt_mo "I'll let y'all go for now, tell Davos I said hi!"
-                wt_ru "Call us anytime Morgan!"
-                wt_wi "If only this darn wind would let up, I'd love to meet you in person soon!"
-                nvl clear
+    #beep Wilbur
 
-            else:
-                "I don't think I need to do that now."
+    wt_wi "Hello Morgan! I heard lots about you from Pearl and Davos!"
+    wt_mo "I'm surprised you already knew about me, they sure are close."
+    wt_wi "Well yes! News travels fast around here lad! Oh Ruran my friend, would you like to say hi?"
+    wt_ru "Is it Morgan? It is nice to meet you Morgan, I'm Ruran."
+    wt_mo "Oh the other camp medic? Aston told me that you're his mentor."
+    wt_ru "Yes I am. He's great, and it's always nice to have extra hands in case of emergencies."
+    wt_wi "Hope Aston will warm up to you soon, that boy has always been a man of few words. Know him long enough and you'll realize he's a big softie!"
+    wt_mo "'Aston' and 'softie' were two words I never expected in the same sentence, but thank you for telling me."
+    wt_mo "I'll let y'all go for now, tell Davos I said hi!"
+    wt_ru "Call us anytime Morgan!"
+    wt_wi "If only this darn wind would let up, I'd love to meet you in person soon!"
 
-        "beep Cassie":
-            if not wt_intro_ca:
-                $ wt_intro_ca = True
-                wt_ca "What a coincidence! I was just about to beep ya! I'm Cassie!"
-                wt_mo "It's nice meeting you Cassie, I'm Morgan."
-                wt_ca "Well I just want to let you know that I have a map ready for you! The next time Lorenzo or Gregory comes by, I'll have them be our courier pigeon."
-                wt_mo "Thanks! I appreciate it!"
-                wt_ca "Anytime Morgan!"
-                nvl clear
+    #beep Cassie
 
-            else:
-                "I don't think I need to do that now."
+    wt_ca "What a coincidence! I was just about to beep ya! I'm Cassie!"
+    wt_mo "It's nice meeting you Cassie, I'm Morgan."
+    wt_ca "Well I just want to let you know that I have a map ready for you! The next time Lorenzo or Gregory comes by, I'll have them be our courier pigeon."
+    wt_mo "Thanks! I appreciate it!"
+    wt_ca "Anytime Morgan!"
 
-        "beep Jax":
-            if not wt_intro_ja:
-                $ wt_intro_ja = True
-                wt_ja "Yeah, is this the new guy?"
-                wt_mo "Hi Jax, I'm Morgan just thought I'd check on everyone."
-                wt_ja "That's nice of you."
-                wt_ja "Just doing a routine cleanup on my rifles, nothing much."
-                wt_mo "Oh nice, didn't know we had rifles at camp."
-                wt_ja "You know how to handle one?"
-                wt_mo "I'm a little out of practice."
-                wt_ja "Usually people say that to sound humble."
-                wt_mo "Nah. I am actually pretty rusty."
-                wt_ja "We'll have to see about that."
-                wt_mo "Bet."
-                nvl clear
+    #beep Jax
 
-        "beep Isaak":
-            if wt_intro_isa < 2:
-                $ wt_intro_isa += 1
-                "Nothing. There doesn't seem to be any response."
+    wt_ja "Yeah, is this the new guy?"
+    wt_mo "Hi Jax, I'm Morgan just thought I'd check on everyone."
+    wt_ja "That's nice of you."
+    wt_ja "Just doing a routine cleanup on my rifles, nothing much."
+    wt_mo "Oh nice, didn't know we had rifles at camp."
+    wt_ja "You know how to handle one?"
+    wt_mo "I'm a little out of practice."
+    wt_ja "Usually people say that to sound humble."
+    wt_mo "Nah. I am actually pretty rusty."
+    wt_ja "We'll have to see about that."
+    wt_mo "Bet."
 
-            elif wt_intro_isa == 2:
-                wt_is "This better be an emergency."
-                wt_mo "Not really. I'm just calling to say hi."
-                wt_is "I'm Isaak, you're Morgan. I don't like small talk nor do I like people who try to make me engage in small talk."
-                wt_is "Goodbye."
-                nvl clear
-                $ wt_intro_isa += 1
+    #beep Isaak
+    #Isaak won't pick up the first or second time
+    "Nothing. There doesn't seem to be any response."
 
-            elif wt_intro_isa > 2:
-                "Isaak stops responding to you."
-                "Rude."
+    #beeping Isaak for the third time
 
-            else:
-                "I don't think I need to do that now."
+    wt_isa "This better be an emergency."
+    wt_mo "Not really. I'm just calling to say hi."
+    wt_isa "I'm Isaak, you're Morgan. I don't like small talk nor do I like people who try to make me engage in small talk."
+    wt_isa "Goodbye."
 
-        "beep Eva":
-            if not wt_intro_ev:
-                $ wt_intro_ev = True
-                wt_ev "Yes?"
-                wt_mo "It's Morgan, just thought I'd call to say hello!"
-                wt_ev "Ah yes, the new guy. I'm Eva, I think Koda already told you."
-                wt_ev "I can't talk for long though. Gotta run some errands."
-                wt_mo "I'll leave you to it then."
-                nvl clear
+    "Isaak stops responding to you."
+    "Rude."
 
-            else:
-                "I don't think I need to do that now."
+    #beep Eva
 
-        "beep Ruran":
-            if wt_intro_ru == 0:
-                $ wt_intro_ru += 1
-                "Oh well it looks like her Walkie may be charging right now."
+    wt_ev "Yes?"
+    wt_mo "It's Morgan, just thought I'd call to say hello!"
+    wt_ev "Ah yes, the new guy. I'm Eva, I think Koda already told you."
+    wt_ev "I can't talk for long though. Gotta run some errands."
+    wt_mo "I'll leave you to it then."
 
-            else:#beep Ruran after the first beep
-                "Probably still charging."
+    #beep Ruran
+
+    "Oh well it looks like her Walkie may be charging right now."
+
+    #beep Ruran after the first beep
+
+    "Probably still charging."
 
     #beep Isaak after the third time
-    # "I don't think I need to do that now."
+
+    "I don't think I need to do that now."
+
 
     #beep Wilbur, Cassie, Jax, Eva after the first time
-    # "I don't think I need to do that now."
+
+    "I don't think I need to do that now."
 
     #everyone has to be called once, if not the player shouldn't be able to leave the selection screen
-    if not wt_intro_wi or not wt_intro_ca or not wt_intro_ev or not wt_intro_ja or wt_intro_isa < 3 or wt_intro_ru < 1:
-        "I think I'm missing someone."
-        jump wt_intro
 
-    else:
+    "I think I'm missing someone."
+
     #exit radio to end branch
-        nvl clear
+    nvl clear
     #choice branch ends
 
-        "I think that's all of them."
-        "Wilbur, Davos' father. Like Gregory, a senior camp guide. Friendly and welcoming."
-        "Ruran. The camp medic. She seems like a nice lady."
-        "Cassie. I assume the cartographer. Also nice."
-        "Jax. Another senior camp guide I think. Sounds like he knows his stuff about weapons."
-        "Eva. Koda's senior at the RC. She seems busy."
-        "Isaak. Also at the RC. That's really all I know for now."
-        "That brings us to a total of 12 people here."
-        "I should update Colin when I have the chance."
+    "I think that's all of them." 
+    "Wilbur, Davos' father. Like Gregory, a senior camp guide. Friendly and welcoming."
+    "Ruran. The camp medic. She seems like a nice lady."
+    "Cassie. I assume the cartographer. Also nice."
+    "Jax. Another senior camp guide I think. Sounds like he knows his stuff about weapons."
+    "Eva. Koda's senior at the RC. She seems busy."
+    "Isaak. Also at the RC. That's really all I know for now."
+    "That brings us to a total of 12 people here." 
+    "I should update Colin when I have the chance."
 
 label nov_12:
     #EXT: Village
@@ -772,7 +749,7 @@ label nov_15:
 
     "I guess I could go snoop around in the main tent for a bit."
 
-    menu snoop:
+    menu:
         "Check the food shelf":
             "Meat and potatoes. Love that."
             "Canned soup. 80\% of these are tomato flavored. I think I already know why."
@@ -1114,7 +1091,7 @@ label nov_17:
     wt_ru "Oh Aston, did you also need med supplies? Kyle has a bite on his arm doesn't he?"
     wt_ast "Yes he got bitten by a cow. I think we have enough supplies though."
     wt_wi "A cow? My, you're full of surprises aren't you lad?"
-    nvl clear
+
     #beeps end
 
     "They're such a silly bunch."
@@ -1308,27 +1285,23 @@ label nov_19_23:
 
     #choice branch starts
     #TODO loop until storage box choice is picked how to do lol
-
-    menu pearl_compass:
+    menu:
         "Ask her to check her pockets":
             mo "Have you checked your pockets?"
             pe "Oh yeah good idea."
             "She thoroughly searches her pockets, but to no avail, guess it's not there."
-            jump pearl_compass
 
         "Check the food shelf":
             "Maybe at the food shelf?"
             "I reached over to the tomato soup section."
             pe "Morgan! I know everyone knows that I love tomato soup but it's not there!"
             "Whoops."
-            jump pearl_compass
 
         "Check the storage boxes":
             "Storage with all the important documents. A compass would be too clunky to fit in here."
             "Storage for extra ammo. I doubt she would be flipping through here anyway. We haven't had the need to use guns."
             "Storage with all the small tools… Oh!"
             "A compass with… a tomato sticker behind it. Classic Pearl."
-
 
     #choice branch ends
     mo "Here you go Pearl. It was with all the screwdrivers and hammers."
@@ -1337,7 +1310,7 @@ label nov_19_23:
     "If we're out in the forest, it would be pretty dangerous to leave your compass back at camp."
     "I'll need to make sure I remind her every time then."
 
-label nov_23:
+    #23rd
     #EXT: Camp 1
 
     ky "-and then splash! The otter family all jumped into the river together!"
@@ -1648,7 +1621,6 @@ label nov_27:
             mo "Sick? Nah I don't think so. Maybe he just lacks some sleep."
 
         "Tell the truth":
-            $ greg_sus += 1
             mo "Well maybe yes. Lorenzo told me that he has been having nightmares but that's about it."
 
     #choice branch ends

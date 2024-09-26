@@ -1,7 +1,47 @@
-image pando1:
-    "pando1.png"
-    xysize (128, 128)
+## Chibi Heads
+image c_ca_happy = "chibi/cassie_happy.png"
+image c_ca_neutral = "chibi/cassie_neutral.png"
+image c_ca_worried = "chibi/cassie_worried.png"
+image c_da_happy = "chibi/davos_happy.png"
+image c_da_neutral = "chibi/davos_neutral.png"
+image c_da_worried = "chibi/davos_worried.png"
+image c_ev_happy = "chibi/eva_happy.png"
+image c_ev_neutral = "chibi/eva_neutral.png"
+image c_ev_worried = "chibi/eva_worried.png"
+image c_isa_neutral = "chibi/isaak_neutral.png"
+image c_ja_happy = "chibi/jax_happy.png"
+image c_ja_neutral = "chibi/jax_neutral.png"
+image c_ja_worried = "chibi/jax_worried.png"
+image c_ko_happy = "chibi/koda_happy.png"
+image c_ko_neutral = "chibi/koda_neutral.png"
+image c_ko_worried = "chibi/Koda_worried.png"
+image c_ru_happy = "chibi/ruran_happy.png"
+image c_ru_neutral = "chibi/ruran_neutral.png"
+image c_ru_worried = "chibi/ruran_worried.png"
+image c_wi_happy = "chibi/wilbur_happy.png"
+image c_wi_neutral = "chibi/wilbur_neutral.png"
+image c_wi_worried = "chibi/wilbur_worried.png"
 
-image pando2:
-    "pando2.png"
-    xysize (128, 128)
+## Backgrounds
+image bg avalance_day = "backgrounds/avalanceday.png"
+image bg avalance_night = "backgrounds/avalancenight.png"
+image bg camp1_day = "backgrounds/camp1day.png"
+image bg camp1_night = "backgrounds/camp1night.png"
+image bg camp2_day = "backgrounds/Camp2Day.png"
+image bg camp2_night = "backgrounds/Camp2night.png"
+image bg cottage = "backgrounds/cottage.png"
+image bg forest1 = "backgrounds/forest1.png"
+image bg forest2 = "backgrounds/forest2.png"
+image bg maintent_day = "backgrounds/maintentday.png"
+image bg maintent_night = "backgrounds/maintentnight.png"
+image bg morganstent = "backgrounds/morganstent.png"
+image bg walkpath = "backgrounds/walkpath.png"
+
+## CGs
+image cg christmas = "cgs/christmasA_L.png"
+image cg findingLorenzo = "cgs/findingLorenzo.png"
+image cg frozenbody = "cgs/frozenbody.png"
+image cg meeting = "cgs/meeting.png"
+image cg pearldeath = "cgs/pearldeath.png"
+image cg rash = "cgs/rash.png"
+image cg tomatosoup = "cgs/tomatosoup.png"

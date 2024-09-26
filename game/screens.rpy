@@ -18,7 +18,7 @@ style input:
     adjust_spacing False
 
 style hyperlink_text:
-    properties gui.text_properties("hyperlink", accent=True)
+    color "#b3b3b3"
     hover_underline True
 
 style gui_text:
@@ -135,32 +135,27 @@ style window:
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
-
+    yoffset -80
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos gui.name_xpos
-    xanchor gui.name_xalign
-    xsize gui.namebox_width
-    ypos gui.name_ypos
-    ysize gui.namebox_height
-
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpos 315
+    ypos 35
     padding gui.namebox_borders.padding
 
 style say_label:
-    properties gui.text_properties("name", accent=True)
+    size 48
     xalign gui.name_xalign
     yalign 0.5
+    outlines [(absolute(1), "#000000", absolute(1), absolute(1))]
 
 style say_dialogue:
-    properties gui.text_properties("dialogue")
 
-    xpos gui.dialogue_xpos
-    xsize gui.dialogue_width
-    ypos gui.dialogue_ypos
-
-    adjust_spacing False
+    xpos 370
+    xsize 1040
+    ypos 115
+    outlines [(absolute(1), "#000000", absolute(1), absolute(1))]
+    line_spacing 15
 
 ## Input screen ################################################################
 ##
@@ -206,7 +201,7 @@ style input:
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
 screen choice(items):
-    style_prefix "choice[choice_type]"
+    style_prefix "choice"
 
     vbox:
         for i in items:
@@ -226,9 +221,13 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
+    yminimum 81
+    padding (30,20)
 
-style choice_button_text is default:
-    properties gui.text_properties("choice_button")
+style choice_button_text:
+    yalign 0.5
+    xalign 0.5
+    color "f3f3f3"
 
 # style choicebubble
 
@@ -247,18 +246,19 @@ screen quick_menu():
 
         hbox:
             style_prefix "quick"
-
+            spacing 25
             xalign 0.5
             yalign 1.0
+            yoffset -25
 
             textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('settings')
+            imagebutton auto "gui/quickmenu/auto_%s.png" action Preference("auto-forward", "toggle")
+            imagebutton auto "gui/quickmenu/skip_%s.png" action Skip() alternate Skip(fast=True, confirm=True)
+            imagebutton auto "gui/quickmenu/save_%s.png" action ShowMenu('save')
+            #textbutton _("Q.Save") action QuickSave()
+            #textbutton _("Q.Load") action QuickLoad()
+            imagebutton auto "gui/quickmenu/settings_%s.png" action ShowMenu('settings')
+            imagebutton auto "gui/quickmenu/log_%s.png" action ShowMenu('history')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -318,7 +318,7 @@ screen navigation():
 
             else:
 
-                textbutton _("History") action ShowMenu("history")
+                #textbutton _("History") action ShowMenu("history")
 
                 textbutton _("Save") action ShowMenu("save")
 
@@ -332,14 +332,14 @@ screen navigation():
 
             elif not main_menu:
 
-                textbutton _("Main Menu") action MainMenu()
-
-            textbutton _("About") action ShowMenu("about")
+                textbutton _("Title") action MainMenu()
 
             if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
                 ## Help isn't necessary or relevant to mobile devices.
-                textbutton _("Help") action ShowMenu("help")
+                textbutton _("Controls") action ShowMenu("controls")
+
+            #textbutton _("About") action ShowMenu("about")
 
             if renpy.variant("pc") and renpy.get_screen("main_menu"):
 
@@ -386,32 +386,23 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
-
-    ## This empty frame darkens the main menu.
-    frame:
-        style "main_menu_frame"
+    add gui.main_menu_background# at sepia
+    
+    add "snow"
+    
+    add "gui/navigation/logo.png":
+        xysize (900,250)
+        xalign 0.5
+        yalign 0.2
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
-
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
 style main_menu_text is gui_text
-style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
 style main_menu_frame:
@@ -429,9 +420,6 @@ style main_menu_vbox:
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
-
-style main_menu_title:
-    properties gui.text_properties("title")
 
 style main_menu_version:
     properties gui.text_properties("version")
@@ -720,6 +708,7 @@ style additional_button_text:
     xalign 0.5
     yalign 0.6
     color "#FFF"
+
 ## settings screen ##########################################################
 ##
 ## The settings screen allows the player to configure the game to better suit
@@ -797,7 +786,9 @@ screen settings_visual():
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
                     hbox:
                         spacing 20  
-                        textbutton _("Josefin Sans") action gui.SetPreference("font", "fonts/JosefinSans-VariableFont_wght.ttf")
+                        textbutton _("Josefin Sans"):
+                            action gui.SetPreference("font", "fonts/JosefinSans-VariableFont_wght.ttf")
+                            text_font "fonts/JosefinSans-VariableFont_wght.ttf"
                         textbutton _("Atkinson Hyperlegible"):
                             action gui.SetPreference("font", "fonts/AtkinsonHyperlegible-Regular.ttf")
                             text_font "fonts/AtkinsonHyperlegible-Regular.ttf"
@@ -1147,85 +1138,100 @@ style history_label_text:
 ## screens (keyboard_help, mouse_help, and gamepad_help) to display the actual
 ## help.
 
-screen help():
+screen controls():
 
     tag menu
 
     default device = "keyboard"
+    add "gui/overlay/game_menu.png"
+    use navigation
+    style_prefix "controls"
+    hbox:
+        xpos 724
+        ypos 183
+        spacing 65
+        style_prefix "submenu"
+        textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
+        textbutton _("Mouse") action SetScreenVariable("device", "mouse")
 
-    use game_menu(scroll="viewport"):
+        if GamepadExists():
+            textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
 
-        style_prefix "help"
-
-        vbox:
-            spacing 23
-
-            hbox:
-
-                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
-
-                if GamepadExists():
-                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
-
-            if device == "keyboard":
-                use keyboard_help
-            elif device == "mouse":
-                use mouse_help
-            elif device == "gamepad":
-                use gamepad_help
+    vbox:
+        xpos 678
+        ypos 347
+        spacing 15
+        if device == "keyboard":
+            use keyboard_help
+        elif device == "mouse":
+            use mouse_help
+        elif device == "gamepad":
+            use gamepad_help
 
 
 screen keyboard_help():
+    vbox:
+        ypos -20
+        ysize 530
+        spacing 4
+        add "gui/settings/arrow_up.png" xalign 1.0 xoffset -3
+        viewport:
+            xsize 870
+            ysize 490
+            draggable True
+            mousewheel True
+            scrollbars "vertical"
+            vbox:
+                spacing 15
+                hbox:
+                    label _("Enter")
+                    text _("Advances dialogue and activates the interface.")
 
-    hbox:
-        label _("Enter")
-        text _("Advances dialogue and activates the interface.")
+                hbox:
+                    label _("Space")
+                    text _("Advances dialogue without selecting choices.")
 
-    hbox:
-        label _("Space")
-        text _("Advances dialogue without selecting choices.")
+                hbox:
+                    label _("Arrow Keys")
+                    text _("Navigate the interface.")
 
-    hbox:
-        label _("Arrow Keys")
-        text _("Navigate the interface.")
+                hbox:
+                    label _("Escape")
+                    text _("Accesses the game menu.")
 
-    hbox:
-        label _("Escape")
-        text _("Accesses the game menu.")
+                hbox:
+                    label _("Ctrl")
+                    text _("Skips dialogue while held down.")
 
-    hbox:
-        label _("Ctrl")
-        text _("Skips dialogue while held down.")
+                hbox:
+                    label _("Tab")
+                    text _("Toggles dialogue skipping.")
 
-    hbox:
-        label _("Tab")
-        text _("Toggles dialogue skipping.")
+                hbox:
+                    label _("Page Up")
+                    text _("Rolls back to earlier dialogue.")
 
-    hbox:
-        label _("Page Up")
-        text _("Rolls back to earlier dialogue.")
+                hbox:
+                    label _("Page Down")
+                    text _("Rolls forward to later dialogue.")
 
-    hbox:
-        label _("Page Down")
-        text _("Rolls forward to later dialogue.")
+                hbox:
+                    label "H"
+                    text _("Hides the user interface.")
 
-    hbox:
-        label "H"
-        text _("Hides the user interface.")
+                hbox:
+                    label "S"
+                    text _("Takes a screenshot.")
 
-    hbox:
-        label "S"
-        text _("Takes a screenshot.")
+                hbox:
+                    label "V"
+                    text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
 
-    hbox:
-        label "V"
-        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
+                hbox:
+                    label "Shift+A"
+                    text _("Opens the accessibility menu.")
 
-    hbox:
-        label "Shift+A"
-        text _("Opens the accessibility menu.")
-
+        add "gui/settings/arrow_down.png" xalign 1.0 xoffset -2
 
 screen mouse_help():
 
@@ -1254,7 +1260,7 @@ screen gamepad_help():
 
     hbox:
         label _("Right Trigger\nA/Bottom Button")
-        text _("Advances dialogue and activates the interface.")
+        text _("Advances dialogue and activates\nthe interface.")
 
     hbox:
         label _("Left Trigger\nLeft Shoulder")
@@ -1276,31 +1282,27 @@ screen gamepad_help():
         label _("Y/Top Button")
         text _("Hides the user interface.")
 
-    textbutton _("Calibrate") action GamepadCalibrate()
+    textbutton _("Calibrate") action GamepadCalibrate():
+        style_prefix "additional"
+        xpos 620
+        ypos 100
 
 
-style help_button is gui_button
-style help_button_text is gui_button_text
-style help_label is gui_label
-style help_label_text is gui_label_text
-style help_text is gui_text
+style controls_vscrollbar:
+    xsize 25
 
-style help_button:
-    properties gui.button_properties("help_button")
-    xmargin 12
+style controls_vscrollbar_thumb:
+    ymaximum 125
 
-style help_button_text:
-    properties gui.text_properties("help_button")
+style controls_label_text:
+    color "#cfcfcf"
+    size 30
 
-style help_label:
-    xsize 375
-    right_padding 30
+style controls_text:
+    size 30
 
-style help_label_text:
-    size gui.text_size
-    xalign 1.0
-    textalign 1.0
-
+style controls_hbox:
+    spacing 50
 
 
 ################################################################################
@@ -1472,9 +1474,9 @@ style notify_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#nvl
 
-
 screen nvl(dialogue, items=None):
     if nvl_mode == "phone":
+
         use PhoneDialogue(dialogue, items)
     else:
         window:
