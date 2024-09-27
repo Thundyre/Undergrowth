@@ -158,4 +158,4 @@ image pearl scared:
     "sprites/pearl/pearl scared.png"
 image pearl smile:
     zoom 0.25
-    "sprites/pearl/pearl smile.png'
+    "sprites/pearl/pearl smile.png"
