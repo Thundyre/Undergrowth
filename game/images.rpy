@@ -39,9 +39,123 @@ image bg walkpath = "backgrounds/walkpath.png"
 
 ## CGs
 image cg christmas = "cgs/christmasA_L.png"
-image cg findingLorenzo = "cgs/findingLorenzo.png"
+image cg findinglorenzo = "cgs/findingLorenzo.png"
 image cg frozenbody = "cgs/frozenbody.png"
 image cg meeting = "cgs/meeting.png"
 image cg pearldeath = "cgs/pearldeath.png"
 image cg rash = "cgs/rash.png"
 image cg tomatosoup = "cgs/tomatosoup.png"
+
+## Sprites
+
+### Aston
+image ast angry:
+    zoom 0.25
+    "sprites/aston/aston angry.png"
+image ast confused:
+    zoom 0.25
+    "sprites/aston/aston confused.png"
+image ast happy:
+    zoom 0.25
+    "sprites/aston/aston happy.png"
+image ast inthought:
+    zoom 0.25
+    "sprites/aston/aston inthought.png"
+image ast neutral:
+    zoom 0.25
+    "sprites/aston/aston neutral.png"
+image ast sad:
+    zoom 0.25
+    "sprites/aston/aston sad.png"
+image ast scared:
+    zoom 0.25
+    "sprites/aston/aston scared.png"
+
+### Gregory
+image gr angry:
+    zoom 0.25
+    "sprites/gregory/gregory angry.png"
+image gr confused:
+    zoom 0.25
+    "sprites/gregory/gregory confused.png"
+image gr happy:
+    zoom 0.25
+    "sprites/gregory/gregory happy.png"
+image gr neutral:
+    zoom 0.25
+    "sprites/gregory/gregory neutral.png"
+image gr scared:
+    zoom 0.25
+    "sprites/gregory/gregory scared.png"
+image gr worried:
+    zoom 0.25
+    "sprites/gregory/gregory worried.png"
+
+### Kyle
+image ky confused:
+    zoom 0.25
+    "sprites/kyle/kyle confused.png"
+image ky flustered:
+    zoom 0.25
+    "sprites/kyle/kyle flustered.png"
+image ky happy:
+    zoom 0.25
+    "sprites/kyle/kyle happy.png"
+image ky neutral:
+    zoom 0.25
+    "sprites/kyle/kyle neutral.png"
+image ky sad:
+    zoom 0.25
+    "sprites/kyle/kyle sad.png"
+image ky shaken:
+    zoom 0.25
+    "sprites/kyle/kyle shaken.png"
+image ky smile:
+    zoom 0.25
+    "sprites/kyle/kyle smile.png"
+
+### Lorenzo
+image lorenzo happy:
+    zoom 0.25
+    "sprites/lorenzo/lorenzo happy.png"
+image lorenzo neutral:
+    zoom 0.25
+    "sprites/lorenzo/lorenzo neutral.png"
+image lorenzo pondering:
+    zoom 0.25
+    "sprites/lorenzo/lorenzo pondering.png"
+image lorenzo sad:
+    zoom 0.25
+    "sprites/lorenzo/lorenzo sad.png"
+image lorenzo scared:
+    zoom 0.25
+    "sprites/lorenzo/lorenzo scared.png"
+image lorenzo sick:
+    zoom 0.25
+    "sprites/lorenzo/lorenzo sick.png"
+image lorenzo smile:
+    zoom 0.25
+    "sprites/lorenzo/lorenzo smile.png"
+
+### Pearl
+image pearl confused:
+    zoom 0.25
+    "sprites/pearl/pearl confused.png"
+image pearl depressed:
+    zoom 0.25
+    "sprites/pearl/pearl depressed.png"
+image pearl happy:
+    zoom 0.25
+    "sprites/pearl/pearl happy.png"
+image pearl neutral:
+    zoom 0.25
+    "sprites/pearl/pearl neutral.png"
+image pearl sad:
+    zoom 0.25
+    "sprites/pearl/pearl sad.png"
+image pearl scared:
+    zoom 0.25
+    "sprites/pearl/pearl scared.png"
+image pearl smile:
+    zoom 0.25
+    "sprites/pearl/pearl smile.png'
