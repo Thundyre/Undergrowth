@@ -1,3 +1,6 @@
+## Other things
+image snow = SnowBlossom("gui/navigation/snow.png", count=150, fast=True, start= 20)
+
 ## Chibi Heads
 image c_ca_happy = "chibi/cassie_happy.png"
 image c_ca_neutral = "chibi/cassie_neutral.png"
@@ -23,8 +26,8 @@ image c_wi_neutral = "chibi/wilbur_neutral.png"
 image c_wi_worried = "chibi/wilbur_worried.png"
 
 ## Backgrounds
-image bg avalanche_day = "backgrounds/avalanceday.png"
-image bg avalanche_night = "backgrounds/avalancenight.png"
+image bg avalance_day = "backgrounds/avalanceday.png"
+image bg avalance_night = "backgrounds/avalancenight.png"
 image bg camp1_day = "backgrounds/camp1day.png"
 image bg camp1_night = "backgrounds/camp1night.png"
 image bg camp2_day = "backgrounds/Camp2Day.png"
@@ -57,7 +60,32 @@ image cg meeting = "cgs/meeting.png"
 image cg pearldeath = "cgs/pearldeath.png"
 image cg rash = "cgs/rash.png"
 image cg tomatosoup = "cgs/tomatosoup.png"
-image cg meetingkyle = "cgs/meetingkyle.png"
+
+## CGs gallery versions
+image gal cg christmas:
+    xysize (317,190)
+    "cgs/christmasA_L.png"
+image gal cg findinglorenzo:
+    xysize (317,190)
+    "cgs/findingLorenzo.png"
+image gal cg frozenbody:
+    xysize (317,190)
+    "cgs/frozenbody.png"
+image gal cg meeting:
+    xysize (317,190)
+    "cgs/meeting.png"
+image gal cg pearldeath:
+    xysize (317,190)
+    "cgs/pearldeath.png"
+image gal cg rash:
+    xysize (317,190)
+    "cgs/rash.png"
+image gal cg tomatosoup:
+    xysize (317,190)
+    "cgs/tomatosoup.png"
+
+image locked = "gui/extras/cg_locked.png"
+
 ## Sprites
 
 ### Aston

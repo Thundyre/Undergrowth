@@ -50,3 +50,12 @@ default chibi_wilbur = "c_wi_neutral"
 
 ## Pancake
 default pancake = False
+
+## Gallery variables
+default persistent.gallery_christmas = False
+default persistent.gallery_findinglorenzo = False
+default persistent.gallery_frozenbody = False
+default persistent.gallery_meeting = False
+default persistent.gallery_pearldeath = False
+default persistent.gallery_rash = False
+default persistent.gallery_tomatosoup = False

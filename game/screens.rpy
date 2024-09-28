@@ -140,7 +140,7 @@ style window:
 
 style namebox:
     xpos 315
-    ypos 20
+    ypos 35
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -253,7 +253,8 @@ screen quick_menu():
             textbutton _("Back") action Rollback()
             imagebutton auto "gui/quickmenu/auto_%s.png" action Preference("auto-forward", "toggle")
             imagebutton auto "gui/quickmenu/skip_%s.png" action Skip() alternate Skip(fast=True, confirm=True)
-            imagebutton auto "gui/quickmenu/save_%s.png" action ShowMenu('save')
+            imagebutton auto "gui/quickmenu/save_%s.png" action ShowMenu('save') 
+            imagebutton auto "gui/quickmenu/hide_%s.png" action HideInterface()
             #textbutton _("Q.Save") action QuickSave()
             #textbutton _("Q.Load") action QuickLoad()
             imagebutton auto "gui/quickmenu/settings_%s.png" action ShowMenu('settings')
@@ -300,6 +301,7 @@ screen navigation():
             textbutton _("START") action Start()
             textbutton _("CONTINUE") action ShowMenu("load")
             textbutton _("SETTINGS") action ShowMenu("settings")
+            textbutton _("EXTRAS") action ShowMenu("credits")
             textbutton _("QUIT") action Quit(confirm=not main_menu)
     else:
         vbox:
@@ -387,7 +389,7 @@ screen main_menu():
 
     add gui.main_menu_background# at sepia
     
-    add "snow"
+    #add "snow"
     
     add "gui/navigation/logo.png":
         xysize (900,250)
@@ -495,45 +497,6 @@ style game_menu_outer_frame is empty
 
 style game_menu_outer_frame:
     background "gui/overlay/game_menu.png"
-
-
-
-## About screen ################################################################
-##
-## This screen gives credit and copyright information about the game and Ren'Py.
-##
-## There's nothing special about this screen, and hence it also serves as an
-## example of how to make a custom screen.
-
-screen about():
-
-    tag menu
-
-    ## This use statement includes the game_menu screen inside this one. The
-    ## vbox child is then included inside the viewport inside the game_menu
-    ## screen.
-    use game_menu(scroll="viewport"):
-
-        style_prefix "about"
-
-        vbox:
-
-            label "[config.name!t]"
-            text _("Version [config.version!t]\n")
-
-            ## gui.about is usually set in options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
-
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
-
-
-style about_label is gui_label
-style about_label_text is gui_label_text
-style about_text is gui_text
-
-style about_label_text:
-    size gui.label_text_size
 
 
 ## Load and Save screens #######################################################
@@ -833,64 +796,65 @@ screen settings_audio():
                 spacing 42
                 label _("Music")
 
-                label _("Sound FX")
-
                 label _("Ambience")
+
+                label _("Sounds FX")
 
                 label _("UI Sounds")
                 
-                label _("Voice Volume")
+                label _("Voice")
 
-            if config.has_music or config.has_sound or config.has_voice:
+            vbox:
+                spacing 20
+                #if config.has_music or config.has_sound or config.has_voice:
                 hbox:
                     spacing 90
                     label _("Mute all")
                     imagebutton auto "gui/settings/check_%s.png" action Preference("all mute", "toggle")
-        
+                hbox:
+                    spacing 27
+                    label _("Radio Static")
+                    imagebutton auto "gui/settings/check_%s.png" action ToggleVariable("radio_static", "static", "clean")
+                    textbutton _("Test"):
+                        if radio_static == "static":
+                            action Play("radio_effect", renpy.random.choice(["audio/ui/radio static/uistatic1.ogg", "audio/ui/radio static/uistatic2.ogg", "audio/ui/radio static/uistatic3.ogg"]))
+                        else:
+                            action Play("radio_effect", renpy.random.choice(["audio/ui/radio static/uiclean1.ogg", "audio/ui/radio static/uiclean2.ogg", "audio/ui/radio static/uiclean3.ogg"]))
+                        pos (20,-20)
+    
         vbox:
-            xoffset -20
+            xoffset -220
             yoffset -10
             spacing 30
             hbox:
                 add "volminus"
                 bar value Preference("music volume")
                 add "volplus"
-
-                if config.sample_sound:
-                    textbutton _("Test") action Play("music", config.sample_sound)
+                #textbutton _("Test") action Play("music", sample_music)
                     
             hbox:
                 add "volminus"
                 bar value Preference("ambience volume")
                 add "volplus"
-
-                if config.sample_sound:
-                    textbutton _("Test") action Play("ambience", config.sample_sound)
+                #textbutton _("Test") action Play("ambience", sample_ambience)
 
             hbox:
                 add "volminus"
                 bar value Preference("sound volume")
                 add "volplus"
-
-                if config.sample_sound:
-                    textbutton _("Test") action Play("sound", config.sample_sound)
+                #textbutton _("Test") action Play("sound", sample_sound)
 
             hbox:
                 add "volminus"
                 bar value Preference("sound_ui volume")
                 add "volplus"
-
-                if config.sample_voice:
-                    textbutton _("Test") action Play("sound_ui", config.sample_voice)
+                #textbutton _("Test") action Play("sound_ui", sample_soundui)
 
             hbox:
                 add "volminus"
                 bar value Preference("voice volume")
                 add "volplus"
-
-                if config.sample_voice:
-                    textbutton _("Test") action Play("voice", config.sample_voice)
-
+                #textbutton _("Test") action Play("voice", sample_voice)
 
 screen text_test:
     frame:
@@ -926,6 +890,9 @@ style volume_label_text is pref_label_text
 
 style volume_hbox:
     spacing 15
+
+style volume_button is additional_button
+style volume_button_text is additional_button_text
 
 style preview_text:
     xalign 0.5
@@ -1056,35 +1023,56 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
+    add "gui/settings/overlay.png"
 
-        style_prefix "history"
+    style_prefix "history"
 
-        for h in _history_list:
+    vbox:
+        xalign 0.5
+        ypos 20
+        fixed:
+            add "gui/other/log_bg.png" xysize (1330, 980)
+            xysize (1330, 980)
+            vbox:
+                spacing 4
+                ypos 45
+                add "gui/settings/arrow_up.png" xalign 1.0 xoffset -3 ypos -2
+                viewport:
+                    draggable True
+                    mousewheel True
+                    scrollbars "vertical"
+                    xysize (1280, 840)
+                    vbox:
+                        xsize 950
+                        spacing 35
+                        for h in _history_list:
 
-            window:
+                            window:
+                                ## This lays things out properly if history_height is None.
+                                has fixed:
+                                    yfit True
 
-                ## This lays things out properly if history_height is None.
-                has fixed:
-                    yfit True
+                                if h.who:
 
-                if h.who:
+                                    label h.who:
+                                        style "history_name"
+                                        substitute False
 
-                    label h.who:
-                        style "history_name"
-                        substitute False
+                                        ## Take the color of the who text from the Character, if
+                                        ## set.
+                                        if "color" in h.who_args:
+                                            text_color h.who_args["color"]
 
-                        ## Take the color of the who text from the Character, if
-                        ## set.
-                        if "color" in h.who_args:
-                            text_color h.who_args["color"]
+                                $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                                text what:
+                                    substitute False
 
-                $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                text what:
-                    substitute False
+                        if not _history_list:
+                            label _("The dialogue history is empty.")
 
-        if not _history_list:
-            label _("The dialogue history is empty.")
+                add "gui/settings/arrow_down.png" xalign 1.0 xoffset -3
+
+        textbutton _("Return") action Return() xalign 0.5
 
 
 ## This determines what tags are allowed to be displayed on the history screen.
@@ -1094,35 +1082,26 @@ define gui.history_allow_tags = { "alt", "noalt", "rt", "rb", "art" }
 
 style history_window is empty
 
-style history_name is gui_label
-style history_name_text is gui_label_text
-style history_text is gui_text
+style history_name is history_text
 
 style history_label is gui_label
 style history_label_text is gui_label_text
 
-style history_window:
-    xfill True
-    ysize gui.history_height
-
 style history_name:
-    xpos gui.history_name_xpos
-    xanchor gui.history_name_xalign
+    xalign 0.0
     ypos gui.history_name_ypos
     xsize gui.history_name_width
 
 style history_name_text:
-    min_width gui.history_name_width
-    textalign gui.history_name_xalign
+    xalign 1.0
+    size 40
 
 style history_text:
-    xpos gui.history_text_xpos
-    ypos gui.history_text_ypos
-    xanchor gui.history_text_xalign
-    xsize gui.history_text_width
-    min_width gui.history_text_width
-    textalign gui.history_text_xalign
-    layout ("subtitle" if gui.history_text_xalign else "tex")
+    size 30
+    xpos 270
+    ypos 5
+    line_spacing 5
+    
 
 style history_label:
     xfill True
@@ -1130,7 +1109,18 @@ style history_label:
 style history_label_text:
     xalign 0.5
 
+style history_button:
+    background Frame("gui/button/choice_idle_background.png", 30, 10)
+    hover_background Frame("gui/button/choice_hover_background.png", 30, 10)
+    ysize 60
+    xsize 345
+    
+style history_button_text:
+    size 30
+    color "#FFF"
+    xalign 0.5
 
+style history_vscrollbar is controls_vscrollbar
 ## Help screen #################################################################
 ##
 ## A screen that gives information about key and mouse bindings. It uses other
@@ -1173,7 +1163,7 @@ screen keyboard_help():
         ypos -20
         ysize 530
         spacing 4
-        add "gui/settings/arrow_up.png" xalign 1.0 xoffset -3
+        add "gui/settings/arrow_up.png" xalign 1.0 xoffset -3 ypos -2
         viewport:
             xsize 870
             ysize 490
@@ -1230,7 +1220,7 @@ screen keyboard_help():
                     label "Shift+A"
                     text _("Opens the accessibility menu.")
 
-        add "gui/settings/arrow_down.png" xalign 1.0 xoffset -2
+        add "gui/settings/arrow_down.png" xalign 1.0 xoffset -3
 
 screen mouse_help():
 
@@ -1289,10 +1279,7 @@ screen gamepad_help():
 
 style controls_vscrollbar:
     xsize 25
-
-style controls_vscrollbar_thumb:
-    ymaximum 125
-
+    
 style controls_label_text:
     color "#cfcfcf"
     size 30
@@ -1434,7 +1421,7 @@ style skip_triangle:
 ## the game is quicksaved or a screenshot has been taken.)
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#notify-screen
-
+```
 screen notify(message):
 
     zorder 100
@@ -1465,6 +1452,7 @@ style notify_frame:
 
 style notify_text:
     properties gui.text_properties("notify")
+```
 
 
 ## NVL screen ##################################################################
