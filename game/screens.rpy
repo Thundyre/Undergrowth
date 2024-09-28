@@ -139,13 +139,8 @@ style window:
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos gui.name_xpos
-    xanchor gui.name_xalign
-    xsize gui.namebox_width
-    ypos gui.name_ypos
-    ysize gui.namebox_height
-
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    xpos 315
+    ypos 20
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -156,11 +151,11 @@ style say_label:
 style say_dialogue:
     properties gui.text_properties("dialogue")
 
-    xpos gui.dialogue_xpos
-    xsize gui.dialogue_width
-    ypos gui.dialogue_ypos
-
-    adjust_spacing False
+    xpos 400
+    xsize 1200
+    ypos 90
+    outlines [(absolute(1), "#000000", absolute(1), absolute(1))]
+    line_spacing 15
 
 ## Input screen ################################################################
 ##
