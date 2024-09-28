@@ -15,6 +15,14 @@ default wt_intro_ja = False
 default wt_intro_ru = 0
 default wt_intro_ev = False
 
+##-Variables for Nov 24---------------------------##
+default approach_lo = False
+default approach_pe = False
+
+##-Variables for Nov 27--------------------------##
+default about_ky = False
+default about_lo = False
+
 ##-Variables for Christmas Talk------------------##
 default christmas_ca = False
 default christmas_da = False

@@ -150,9 +150,9 @@ style say_label:
     outlines [(absolute(1), "#000000", absolute(1), absolute(1))]
 
 style say_dialogue:
-    xpos 370
+    xpos 400
     xsize 1040
-    ypos 115
+    ypos 85
     outlines [(absolute(1), "#000000", absolute(1), absolute(1))]
     line_spacing 15
 
@@ -750,7 +750,7 @@ screen settings_gameplay():
             style_prefix "check"
             label _("Skip")
             hbox:
-                spacing 20
+                spacing 10
                 xpos 130
                 textbutton _("Unseen Text") action Preference("skip", "toggle")
                 textbutton _("After Choices") action Preference("after choices", "toggle")
@@ -778,13 +778,13 @@ screen settings_visual():
                 vbox:
                     xsize 685
                     xalign 0.0
-                    spacing 20
+                    spacing 10
                     hbox:
                         spacing 20
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
                     hbox:
-                        spacing 20  
+                        spacing 5
                         textbutton _("Josefin Sans"):
                             action gui.SetPreference("font", "fonts/JosefinSans-VariableFont_wght.ttf")
                             text_font "fonts/JosefinSans-VariableFont_wght.ttf"

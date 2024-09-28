@@ -1,13 +1,14 @@
 label dec_6_2:
     #Arc 2 start
-    $ save_name = "Arc 2"
+    $ save_name = _("Arc 2")
     #Scene transition: Fade to black, then fade back in slowly
-    scene maintentday with fade
+    scene maintentday with longfade
     "I don't know how long it has been."
     "The pounding pain in the back of my head radiates as I try to take in my surroundings."
     "This is… the main tent?"
     "There was an avalanche and I.. I was trying to hide from the snow and.."
-
+    show ast neutral at centerleft
+    show pearl smile at centerright
     ast "Morgan!"
     pe "He's awake!"
 
@@ -16,30 +17,38 @@ label dec_6_2:
     ast "You are okay, Morgan. We're in the main tent."
     pe "Or main tent 2.0."
     ast "You have a wound at the back of your head, perhaps caused by falling debris. You were an unlucky target."
+    show ast inthought
     ast "And you've been out for about 5 hours now."
     mo "Where's Lorenzo… Kyle… and Gregory?"
 
+    show pearl sad
+    show ast sad
     "Pearl looks down.. and Aston, he's looking up?"
     "That was not the reaction I'd hope to see."
     "I never thought I'd see him emotional but it looks like Aston's on the verge of breaking down."
 
+    show pearl neutral
     pe "Gregory… He's outside the tent, he's fine."
     pe "Kyle is also fine, he's sorting through our supplies and setting up our sleeping space for tonight."
+    show pearl depressed
     pe "Lorenzo… We haven't found him."
     pe "We've tried beeping his Walkie, but we haven't received anything."
     pe "That's how we found you, yours beeped under the snow and we heard it."
 
+    hide ast with sdissolve
     "Aston turns away from us."
 
     mo "Let's go find him."
     ast "You should rest Morgan, and.. it's too dark outside to see right now."
     ast "We've already searched the area around us before sundown."
 
+    show pearl sad
     "His voice is cracking. Pearl reaches out to hold his hand."
 
     mo "First thing at dawn then, Aston."
     mo "Lorenzo is strong, and I am positive that he'll be okay."
 
+    show ast neutral at centerleft
     "Aston turns around and gives me a light nod."
     "We fall silent, looking at each other I can sense that we're all determined to find him."
     "The worry lingers, but I know we'll do the best we can."
@@ -47,7 +56,7 @@ label dec_6_2:
 
 label dec_7:
     #EXT: Forest 1
-    scene bg forest1 with dissolve
+    scene bg forest1 with longfade
     "Waking up the next day was challenging."
     "Muscles are sore, head's taken a beating, but other than that I am fine."
     "Aston and I are currently out looking for Lorenzo."
@@ -56,7 +65,7 @@ label dec_7:
     "The site with the heaviest impact just so happens to be right in the middle of both C1 and C2."
 
     #EXT: Forest 2
-    scene bg forest2 with dissolve
+    show bg forest2
     "Joining us on our search is Davos and Jax."
     "They're trying to cover the area around C2, south of the impact."
     "We doubt that Lorenzo would be around there, since he was with Aston right before the avalanche." 

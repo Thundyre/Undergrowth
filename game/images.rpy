@@ -23,19 +23,31 @@ image c_wi_neutral = "chibi/wilbur_neutral.png"
 image c_wi_worried = "chibi/wilbur_worried.png"
 
 ## Backgrounds
-image bg avalance_day = "backgrounds/avalanceday.png"
-image bg avalance_night = "backgrounds/avalancenight.png"
+image bg avalanche_day = "backgrounds/avalanceday.png"
+image bg avalanche_night = "backgrounds/avalancenight.png"
 image bg camp1_day = "backgrounds/camp1day.png"
 image bg camp1_night = "backgrounds/camp1night.png"
 image bg camp2_day = "backgrounds/Camp2Day.png"
 image bg camp2_night = "backgrounds/Camp2night.png"
 image bg cottage = "backgrounds/cottage.png"
+image bg cottage2 = "backgrounds/cottage2.png"
 image bg forest1 = "backgrounds/forest1.png"
 image bg forest2 = "backgrounds/forest2.png"
 image bg maintent_day = "backgrounds/maintentday.png"
 image bg maintent_night = "backgrounds/maintentnight.png"
 image bg morganstent = "backgrounds/morganstent.png"
 image bg walkpath = "backgrounds/walkpath.png"
+image bg forest3 = "backgrounds/forest3.png"
+image bg forest3_animals = "backgrounds/forest3animals.png"
+image bg forest3_bear = "backgrounds/forest3bear.png"
+image bg isaaklab1 = "backgrounds/isaaklab1.png"
+image bg isaaklab2 = "backgrounds/isaaklab2.png"
+image bg snowyplain = "backgrounds/snowyplain.png"
+image bg village1 = "backgrounds/village1.png"
+image bg village1_kyle = "backgrounds/village1Kyle.png"
+image bg walkpath = "backgrounds/walkpath.png"
+image bg waterbody = "backgrounds/waterbody.png"
+image bg window = "backgrounds/window.png"
 
 ## CGs
 image cg christmas = "cgs/christmasA_L.png"
@@ -45,7 +57,7 @@ image cg meeting = "cgs/meeting.png"
 image cg pearldeath = "cgs/pearldeath.png"
 image cg rash = "cgs/rash.png"
 image cg tomatosoup = "cgs/tomatosoup.png"
-
+image cg meetingkyle = "cgs/meetingkyle.png"
 ## Sprites
 
 ### Aston
@@ -159,3 +171,4 @@ image pearl scared:
 image pearl smile:
     zoom 0.25
     "sprites/pearl/pearl smile.png"
+
