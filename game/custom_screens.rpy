@@ -253,9 +253,9 @@ init python:
     mr = MusicRoom(fadeout=1.0)
 
     # Step 2. Add music files.
-    mr.add("audio/music/Undergrowth_Anxious_Loop.wav", always_unlocked=True, action=SetScreenVariable("current_track", 1))
-    mr.add("audio/music/Undergrowth_Light_Loop.wav", always_unlocked=True, action=SetScreenVariable("current_track", 2))
-    mr.add("track3")
+    #mr.add("audio/music/Undergrowth_Anxious_Loop.wav", always_unlocked=True, action=SetScreenVariable("current_track", 1))
+    #mr.add("audio/music/Undergrowth_Light_Loop.wav", always_unlocked=True, action=SetScreenVariable("current_track", 2))
+    #mr.add("track3")
 
 default current_track = 1
 
@@ -277,10 +277,10 @@ screen music_room():
                 mousewheel True
                 scrollbars "vertical"
                 xysize (800,815)
-                vbox:
-                    textbutton "Track 1" action mr.Play("audio/music/Undergrowth_Anxious_Loop.wav")
-                    textbutton "Track 2" action mr.Play("audio/music/Undergrowth_Light_Loop.wav")
-                    textbutton "Track 3" action [mr.Play("track3"), SetScreenVariable("current_track","Track 3")]
+                #vbox:
+                #    textbutton "Track 1" action mr.Play("audio/music/Undergrowth_Anxious_Loop.wav")
+                #    textbutton "Track 2" action mr.Play("audio/music/Undergrowth_Light_Loop.wav")
+                #    textbutton "Track 3" action [mr.Play("track3"), SetScreenVariable("current_track","Track 3")]
         vbox:
             spacing 40
             xsize 440
@@ -305,7 +305,7 @@ screen music_room():
                 bar value Preference("music volume")
                 add "volplus"
 
-    on "replace" action mr.Play("audio/music/Undergrowth_Anxious_Loop.wav")
+    #on "replace" action mr.Play("audio/music/Undergrowth_Anxious_Loop.wav")
     on "replaced" action mr.Stop()
 
 style music_label:

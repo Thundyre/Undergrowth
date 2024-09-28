@@ -741,6 +741,7 @@ screen settings_visual():
                 vbox:
                     xsize 685
                     xalign 0.0
+                    xoffset -50
                     spacing 10
                     hbox:
                         spacing 20
