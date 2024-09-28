@@ -140,7 +140,7 @@ style window:
 
 style namebox:
     xpos 315
-    ypos 35
+    ypos 20
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -150,7 +150,6 @@ style say_label:
     outlines [(absolute(1), "#000000", absolute(1), absolute(1))]
 
 style say_dialogue:
-
     xpos 370
     xsize 1040
     ypos 115

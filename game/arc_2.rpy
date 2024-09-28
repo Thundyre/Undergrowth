@@ -2,7 +2,7 @@ label dec_6_2:
     #Arc 2 start
     $ save_name = "Arc 2"
     #Scene transition: Fade to black, then fade back in slowly
-    #INT: Main tent
+    scene maintentday with fade
     "I don't know how long it has been."
     "The pounding pain in the back of my head radiates as I try to take in my surroundings."
     "This is… the main tent?"
@@ -47,6 +47,7 @@ label dec_6_2:
 
 label dec_7:
     #EXT: Forest 1
+    scene bg forest1 with dissolve
     "Waking up the next day was challenging."
     "Muscles are sore, head's taken a beating, but other than that I am fine."
     "Aston and I are currently out looking for Lorenzo."
@@ -55,6 +56,7 @@ label dec_7:
     "The site with the heaviest impact just so happens to be right in the middle of both C1 and C2."
 
     #EXT: Forest 2
+    scene bg forest2 with dissolve
     "Joining us on our search is Davos and Jax."
     "They're trying to cover the area around C2, south of the impact."
     "We doubt that Lorenzo would be around there, since he was with Aston right before the avalanche." 
@@ -87,6 +89,7 @@ label dec_7:
     "Lorenzo has been missing for about 24 hours now… It's not a good sign."
 
     #EXT: Camp 1A
+    scene bg camp1 night with dissolve
     ky "Morgan, Aston! You're back!"
 
     "Aston doesn't respond and heads straight into the tent."
@@ -100,6 +103,7 @@ label dec_7:
     mo "Yep. Hopefully it'll make the search much easier."
 
     #INT: Main tent
+    scene bg maintentnight with dissolve
     "The sleeping bags have all been moved to the main tent for now."
     "Some of our smaller tents were destroyed so everyone's gotta share the big tent for the time being."
     "I need to call Colin."
@@ -135,6 +139,7 @@ label dec_7:
 
 label dec_8:
     #INT: Cabin
+    scene cottage with dissolve
     #Lorenzo's POV
 
     lo "Let's see here… I've got food that will last me for a week."
@@ -197,6 +202,7 @@ label dec_8:
 
 label dec_9:
     #start scene black
+    scene black
     "The search today went on longer than the other days."
     "Still no sign of Lorenzo."
     "We've cleared the area around the lake, the surrounding area of the village."
@@ -211,6 +217,7 @@ label dec_9:
     "Sounds like I'm not the only one awake."
 
     #INT: Main tent
+    scene maintentday with dissolve
     "I cracked my eyes open slightly."
     "It's Aston."
     "He's standing up and checking his pockets."
@@ -236,7 +243,6 @@ label dec_9:
                     "Aston looks worriedly at me."
 
         #choice branch 2 ends
-
             gr "Are you guys heading out?"
             "Gregory sits up, tiredly."
             gr "You're not supposed to go out after night remember? I'm liable for your safety."
@@ -339,7 +345,8 @@ label dec_10:
         #SFX knock
         ast "Lorenzo, are you in here?"
         lo "Aston?"
-        #CG??
+
+        show cg findinglorenzo
         "Aston barges into the cabin to see a petrified Lorenzo."
 
         ast "Lorenzo!"
