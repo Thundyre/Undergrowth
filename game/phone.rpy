@@ -14,6 +14,7 @@ init -1 python:
         if event == "show_done":
             renpy.sound.play("audio/SendText.ogg")
 
+default message_icon = None
 
 transform phone_transform(pXalign=0.5, pYalign=0.5):
     xcenter pXalign
@@ -30,6 +31,9 @@ transform message_appear(pDirection):
         ease 0.5 alpha 1.0
     parallel:
         easein_back 0.5 xoffset 0
+    on hide:
+        alpha 1.0
+        ease 0.5 alpha 0.0
 
 transform message_appear_icon():
     zoom 0.0
@@ -45,7 +49,27 @@ transform message_narrator:
     parallel:
         easein_back 0.5 yoffset 0
 
+screen walkie_talkie():
+    add "gui/settings/overlay.png"
+    fixed:
+        if pancake:
+            add "gui/radio/satphone.png":
+                xalign 0.9
+                yalign 0.5
+        else:
+            fixed:
+                xalign 0.95
+                yalign 1.0
+                xysize(382, 984)
+                add "gui/radio/walkie_talkie.png"
+                if current_chibi_list:
+                    add current_chibi_list[0]:
+                        xalign 0.5
+                        yalign 0.5
+                        yoffset 5
+            
 screen PhoneDialogue(dialogue, items=None):
+    use walkie_talkie
     fixed:
         xalign 0.3
         yalign 0.5
@@ -87,66 +111,94 @@ screen nvl_phonetext(dialogue):
                         at message_narrator
         else:
             if d.who == MC_Name:
-                $ message_frame = "bubble_white.png"
+                $ message_frame = "gui/radio/bubble_left.png"
             else:
-                $ message_frame = "bubble_yellow.png"
+                $ message_frame = "gui/radio/bubble_right.png"
 
             hbox:
                 spacing 15
-                if d.who == MC_Name:
+                if d.who != MC_Name:
                     xoffset 15
                     box_reverse True
 
+                
+                $ chibi_clear()
                 #show an icon
-                if d.who == MC_Name:
-                    $ message_icon = "pando2"
-                else:
-                    $ message_icon = "pando1"
+                #if d.who == MC_Name:
+                #    $ current_chibi(None)
+                if d.who == "Cassie":
+                    $ current_chibi([chibi_cassie])
+                elif d.who == "Davos":
+                    $ current_chibi([chibi_davos])
+                elif d.who == "Eva":
+                    $ current_chibi([chibi_eva])
+                elif d.who == "Isaak":
+                    $ current_chibi([chibi_isaak])
+                elif d.who == "Jax":
+                    $ current_chibi([chibi_jax])
+                elif d.who == "Koda":
+                    $ current_chibi([chibi_koda])
+                elif d.who == "Ruran":
+                    $ current_chibi([chibi_ruran])
+                elif d.who == "Wilbur":
+                    $ current_chibi([chibi_wilbur])
 
-                add message_icon:
-                    yalign 1.0
-                    yoffset 50
-                    if d.current:
-                        at message_appear_icon()
+                #add message_icon:
+                #    yalign 0.5
+                #    yoffset 10
+                #    if d.current:
+                #        at message_appear_icon()
 
 
                 vbox:
+                    style_prefix "phonename"
                     yalign 1.0
-                    if d.who != MC_Name:
+                    if d.who == MC_Name:
                         text d.who xoffset 50
                     else:
                         text d.who xalign 1.0 xoffset -70
 
                     frame:
-                        if d.who != MC_Name:
+                        if d.who == MC_Name:
                             padding (155,30,30,60)
+                            background Frame(message_frame, 60,30,30,30)
+                            yminimum 161
                         else:
-                            padding (30,30,30,60)
-
-                        background Frame(message_frame, 30,30,30,30)
+                            padding (60,30,100,60)
+                            background Frame(message_frame, 30,30,60,30)
+                            yminimum 161
+                        
                         xsize 800
 
                         if d.current:
-                            if d.who == MC_Name:
+                            if d.who != MC_Name:
                                 at message_appear(1)
                             else:
                                 at message_appear(-1)
 
                         text d.what:
-                            pos (0,0)
+                            pos (0,10)
                             xsize 800
+                            color "#000"
                             slow_cps False
                             
-
-                            if d.who == MC_Name :
-                                color "#000"
+                            if d.who != MC_Name :
                                 text_align 0.0
-                            else:
-                                color "#000"
-
-                                
+  
                             id d.what_id
                 
                 fixed:
                     xysize (128,128) 
         $ previous_d_who = d.who
+
+style phonename_text:
+    color "#f3f3f3"
+
+default current_chibi_list = []
+
+init python:
+    def current_chibi(chibi):
+        current_chibi_list.append(chibi)
+    
+    def chibi_clear():
+        current_chibi_list.clear()

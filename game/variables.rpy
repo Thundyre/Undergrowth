@@ -29,3 +29,16 @@ default christmas_wi = False
 ##-Determines whether they die-------------------##
 default pearl_safe = False
 default aston_safe = False
+
+## Walkie talkie icons variables
+default chibi_cassie = "c_ca_neutral"
+default chibi_davos = "c_da_neutral"
+default chibi_eva = "c_ev_neutral"
+default chibi_isaak = "c_isa_neutral"
+default chibi_jax = "c_ja_neutral"
+default chibi_koda = "c_ko_neutral"
+default chibi_ruran = "c_ru_neutral"
+default chibi_wilbur = "c_wi_neutral"
+
+## Pancake
+default pancake = False
