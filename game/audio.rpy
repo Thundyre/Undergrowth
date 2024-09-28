@@ -3,9 +3,6 @@ init -1 python:
     renpy.music.register_channel("ambience", mixer = "sfx_am", loop=None) 
     renpy.music.register_channel("radio_effect", mixer = "voice", loop=False , stop_on_mute=False)
 
-    
-
-
 #define sample_music = 
 #define sample_ambience =
 #define sample_sound = 
@@ -14,3 +11,8 @@ init -1 python:
 
 $ sample_radio_on = renpy.random.choice(["audio/ui/radio static/uistatic1.ogg", "audio/ui/radio static/uistatic2.ogg", "audio/ui/radio static/uistatic3.ogg"])
 $ sample_radio_off = renpy.random.choice(["audio/ui/radio static/uiclean1.ogg", "audio/ui/radio static/uiclean2.ogg", "audio/ui/radio static/uiclean3.ogg"])
+
+## Music
+define audio.light = "audio/music/mus_light.ogg"
+define audio.neutral = "audio/music/mus_neutral.ogg"
+define audio.anxious = "audio/music/mus_anxious.ogg"

@@ -301,7 +301,7 @@ screen navigation():
             textbutton _("START") action Start()
             textbutton _("CONTINUE") action ShowMenu("load")
             textbutton _("SETTINGS") action ShowMenu("settings")
-            textbutton _("EXTRAS") action ShowMenu("credits")
+            textbutton _("EXTRAS") action ShowMenu("gallery")
             textbutton _("QUIT") action Quit(confirm=not main_menu)
     else:
         vbox:

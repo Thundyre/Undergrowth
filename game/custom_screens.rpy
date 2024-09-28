@@ -243,9 +243,9 @@ screen gallery():
 ##
 ## Music :3
 
-define track1 = "audio/music/Undergrowth_Anxious_Loop.wav"
-define track2 = "audio/music/Undergrowth_Light_Loop.wav"
-define track3 = "audio/music/Undergrowth_Neutral_Loop.wav"
+define track1 = "audio/music/mus_light.ogg"
+define track2 = "audio/music/mus_neutral.ogg"
+define track3 = "audio/music/mus_anxious.ogg"
 
 init python:
 
@@ -253,9 +253,9 @@ init python:
     mr = MusicRoom(fadeout=1.0)
 
     # Step 2. Add music files.
-    #mr.add("audio/music/Undergrowth_Anxious_Loop.wav", always_unlocked=True, action=SetScreenVariable("current_track", 1))
-    #mr.add("audio/music/Undergrowth_Light_Loop.wav", always_unlocked=True, action=SetScreenVariable("current_track", 2))
-    #mr.add("track3")
+    mr.add("audio/music/mus_neutral.ogg", always_unlocked=True, action=SetScreenVariable("current_track", 1))
+    mr.add("audio/music/mus_light.ogg", always_unlocked=True, action=SetScreenVariable("current_track", 2))
+    mr.add("audio/music/mus_anxious.ogg", always_unlocked=True, action=SetScreenVariable("current_track", 3))
 
 default current_track = 1
 
@@ -277,10 +277,10 @@ screen music_room():
                 mousewheel True
                 scrollbars "vertical"
                 xysize (800,815)
-                #vbox:
-                #    textbutton "Track 1" action mr.Play("audio/music/Undergrowth_Anxious_Loop.wav")
-                #    textbutton "Track 2" action mr.Play("audio/music/Undergrowth_Light_Loop.wav")
-                #    textbutton "Track 3" action [mr.Play("track3"), SetScreenVariable("current_track","Track 3")]
+                vbox:
+                    textbutton "Track 1" action mr.Play("audio/music/mus_neutral.ogg")
+                    textbutton "Track 2" action mr.Play("audio/music/mus_light.ogg")
+                    textbutton "Track 3" action mr.Play("audio/music/mus_anxious.ogg")
         vbox:
             spacing 40
             xsize 440
@@ -305,8 +305,8 @@ screen music_room():
                 bar value Preference("music volume")
                 add "volplus"
 
-    #on "replace" action mr.Play("audio/music/Undergrowth_Anxious_Loop.wav")
-    on "replaced" action mr.Stop()
+    on "replace" action mr.Play("audio/music/mus_neutral.ogg")
+    on "replaced" action Play("music", "neutral")
 
 style music_label:
     xalign 0.5
