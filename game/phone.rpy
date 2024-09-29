@@ -50,7 +50,7 @@ transform message_narrator:
         easein_back 0.5 yoffset 0
 
 screen walkie_talkie():
-    add "gui/settings/overlay.png"
+    add "gui/overlay/overlay.png"
     fixed:
         if pancake:
             add "gui/radio/satphone.png":

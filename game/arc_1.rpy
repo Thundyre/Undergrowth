@@ -2422,7 +2422,8 @@ label dec_6_1:
     wt_mo "Sounds like a plan."
     gr "Morgan, can you hold the map for me, I just need to grab my compass real quick."
 
-    with hpunch
+    if persistent.screenshake:
+        with hpunch
 
     show lorenzo neutral
     show pearl confused
@@ -2438,7 +2439,8 @@ label dec_6_1:
     ast "It wasn't just you."
     mo "Was that a gun or-"
 
-    with hpunch
+    if persistent.screenshake:
+        with hpunch
     show ast scared
     show lorenzo scared
     show pearl scared

@@ -215,7 +215,9 @@ label dec_8:
     "He looks out the window again."
 
     #BG Window with bear
-    show cg bearwindow3 with hpunch
+    show cg bearwindow3 
+    if persistent.screenshake:
+        with hpunch
     $ persistent.gallery_bearwindow
     lo "..."
 
