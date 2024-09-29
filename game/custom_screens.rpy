@@ -306,7 +306,7 @@ screen music_room():
                 add "volplus"
 
     on "replace" action mr.Play("audio/music/mus_neutral.ogg")
-    on "replaced" action Play("music", "neutral")
+    on "replaced" action Play("music", "audio/music/mus_neutral.ogg")
 
 style music_label:
     xalign 0.5

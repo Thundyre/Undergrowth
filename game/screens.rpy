@@ -203,6 +203,10 @@ screen choice(items):
     style_prefix "choice"
 
     vbox:
+        if len(items)>4:
+            box_wrap True
+            ymaximum 450
+            style_prefix "choicesmall"
         for i in items:
             textbutton i.caption action i.action
 
@@ -227,6 +231,14 @@ style choice_button_text:
     yalign 0.5
     xalign 0.5
     color "f3f3f3"
+
+style choicesmall_vbox is choice_vbox
+style choicesmall_button_text is choice_button_text
+style choicesmall_button is choice_button:
+    xmaximum 640
+    xmargin 15
+
+
 
 # style choicebubble
 
