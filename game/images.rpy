@@ -60,6 +60,10 @@ image cg meeting = "cgs/meeting.png"
 image cg pearldeath = "cgs/pearldeath.png"
 image cg rash = "cgs/rash.png"
 image cg tomatosoup = "cgs/tomatosoup.png"
+image cg meetingkyle = "cgs/meetingkyle.png"
+image cg bearwindow1 = "cgs/bearwindow1.png"
+image cg bearwindow2 = "cgs/bearwindow2.png"
+image cg bearwindow3 = "cgs/bearwindow3.png"
 
 ## CGs gallery versions
 image gal cg christmas:
@@ -200,3 +204,7 @@ image pearl smile:
     zoom 0.25
     "sprites/pearl/pearl smile.png"
 
+##Pancake
+image satphone:
+    yalign 0.5
+    "gui/radio/satphone.png"
