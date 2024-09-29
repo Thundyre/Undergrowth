@@ -216,6 +216,7 @@ label dec_8:
 
     #BG Window with bear
     show cg bearwindow3 with hpunch
+    $ persistent.gallery_bearwindow
     lo "..."
 
     show black with pushupquick
@@ -395,6 +396,7 @@ label dec_10:
         lo "Aston?"
 
         show cg findinglorenzo
+        $ persistent.gallery_findinglorenzo
         hide ast
         "Aston barges into the cabin to see a petrified Lorenzo."
 
@@ -1325,6 +1327,7 @@ label dec_24:
         "And when it was almost time to sleep, Aston routinely brought the blankets over to the armchair."
         #CG: Aston and Lorenzo cuddling
         show cg christmas
+        $ persistent.gallery_christmas
         "The two cuddle up together on the armchair."
         "It just barely fits the two of them."
         "As the clock struck midnight, it was finally time."
@@ -1733,6 +1736,7 @@ label dec_27:
             pe "Come on Pearl! Focus focus!"
 
             show cg pearldeath
+            $ persistent.gallery_pearldeath
             "Pearl finds herself in front of a large forest clearing. Oddly shaped stones stick out from the ground in a disorderly manner."
             "She walks up to one and inspects it up close."
 
@@ -2020,6 +2024,7 @@ label dec_31:
         xpos -1300
         ypos -700
         blur 5
+    $ persistent.gallery_frozenbody
 #TODO talk to elina
     "A body."
     "A dead body."

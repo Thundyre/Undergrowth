@@ -59,3 +59,5 @@ default persistent.gallery_meeting = False
 default persistent.gallery_pearldeath = False
 default persistent.gallery_rash = False
 default persistent.gallery_tomatosoup = False
+default persistent.gallery_meetingkyle = False
+default persistent.gallery_bearwindow = False

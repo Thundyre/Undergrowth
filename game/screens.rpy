@@ -140,7 +140,7 @@ style window:
 
 style namebox:
     xpos 315
-    ypos 35
+    ypos 22
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -262,7 +262,7 @@ screen quick_menu():
             yalign 1.0
             yoffset -25
 
-            textbutton _("Back") action Rollback()
+            imagebutton auto "gui/quickmenu/back_%s.png" action Rollback()
             imagebutton auto "gui/quickmenu/auto_%s.png" action Preference("auto-forward", "toggle")
             imagebutton auto "gui/quickmenu/skip_%s.png" action Skip() alternate Skip(fast=True, confirm=True)
             imagebutton auto "gui/quickmenu/save_%s.png" action ShowMenu('save') 
@@ -720,16 +720,27 @@ screen settings_gameplay():
     tag submenu
     vbox:
         spacing 100
-        hbox:
-            #spacing 130
-            style_prefix "check"
-            label _("Skip")
+        vbox:
+            spacing 35
             hbox:
-                spacing 10
-                xpos 130
-                textbutton _("Unseen Text") action Preference("skip", "toggle")
-                textbutton _("After Choices") action Preference("after choices", "toggle")
-                textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                style_prefix "check"
+                label _("Screenshake")
+                hbox:
+                    spacing 20
+                    xpos 150
+                    textbutton _("On") action SetField(persistent,"screenshake",True)
+                    textbutton _("Off") action SetField(persistent,"screenshake",False)
+
+            hbox:
+                #spacing 130
+                style_prefix "radio"
+                label _("Skip")
+                hbox:
+                    spacing 10
+                    xpos 130
+                    textbutton _("Unseen Text") action Preference("skip", "toggle")
+                    textbutton _("After Choices") action Preference("after choices", "toggle")
+                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
         vbox:
             style_prefix "additional"
             spacing 20
@@ -1001,6 +1012,7 @@ style check_button:
     selected_hover_background  Frame("gui/navigation/button_s_selected_hover.png", 30, 10)
     selected_idle_background  Frame("gui/navigation/button_s_selected_idle.png", 30, 10)
     ysize 70
+    xsize 160
 
 style check_button_text:
     xalign 0.5
@@ -1036,7 +1048,7 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    add "gui/settings/overlay.png"
+    add "gui/overlay/overlay.png"
 
     style_prefix "history"
 
@@ -1325,7 +1337,7 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
+    add "gui/overlay/overlay.png"
 
     frame:
 
@@ -1337,10 +1349,11 @@ screen confirm(message, yes_action, no_action):
             label _(message):
                 style "confirm_prompt"
                 xalign 0.5
+                yoffset 30
 
             hbox:
                 xalign 0.5
-                spacing 150
+                spacing 100
 
                 textbutton _("Yes") action yes_action
                 textbutton _("No") action no_action
@@ -1352,8 +1365,8 @@ screen confirm(message, yes_action, no_action):
 style confirm_frame is gui_frame
 style confirm_prompt is gui_prompt
 style confirm_prompt_text is gui_prompt_text
-style confirm_button is gui_medium_button
-style confirm_button_text is gui_medium_button_text
+style confirm_button is additional_button
+style confirm_button_text is additional_button_text
 
 style confirm_frame:
     background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
@@ -1363,13 +1376,9 @@ style confirm_frame:
 
 style confirm_prompt_text:
     textalign 0.5
+    line_spacing 15
     layout "subtitle"
 
-style confirm_button:
-    properties gui.button_properties("confirm_button")
-
-style confirm_button_text:
-    properties gui.text_properties("confirm_button")
 
 
 ## Skip indicator screen #######################################################
@@ -1416,8 +1425,9 @@ style skip_triangle is skip_text
 
 style skip_frame:
     ypos gui.skip_ypos
-    background Frame("gui/skip.png", gui.skip_frame_borders, tile=gui.frame_tile)
+    background Frame("gui/notify.png", gui.skip_frame_borders, tile=gui.frame_tile)
     padding gui.skip_frame_borders.padding
+    xsize 360
 
 style skip_text:
     size gui.notify_text_size
@@ -1434,7 +1444,6 @@ style skip_triangle:
 ## the game is quicksaved or a screenshot has been taken.)
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#notify-screen
-```
 screen notify(message):
 
     zorder 100
@@ -1459,13 +1468,12 @@ style notify_text is gui_text
 
 style notify_frame:
     ypos gui.notify_ypos
-
     background Frame("gui/notify.png", gui.notify_frame_borders, tile=gui.frame_tile)
-    padding gui.notify_frame_borders.padding
+    padding (24, 8, 60, 8)
 
 style notify_text:
     properties gui.text_properties("notify")
-```
+
 
 
 ## NVL screen ##################################################################

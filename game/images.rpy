@@ -87,8 +87,18 @@ image gal cg rash:
 image gal cg tomatosoup:
     xysize (317,190)
     "cgs/tomatosoup.png"
+image gal cg meetingkyle:
+    xysize (317,190)
+    "cgs/meetingkyle.png"
+image gal cg bearwindow:
+    xysize (317,190)
+    "cgs/bearwindow1.png"
 
 image locked = "gui/extras/cg_locked.png"
+image cg_hover:
+    "gui/extras/cg_hover.png"
+    xoffset -10
+    yoffset -12
 
 ## Sprites
 

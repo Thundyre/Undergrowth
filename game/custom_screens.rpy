@@ -13,7 +13,7 @@ screen warning:
     tag menu
     zorder 100
     key "K_ESCAPE" action ShowMenu("settings")
-    add "gui/settings/overlay.png"
+    add "gui/overlay/overlay.png"
     fixed:        
         style_prefix "warning"
         xysize(1377,857)
@@ -210,6 +210,16 @@ init python:
     g.condition("persistent.gallery_tomatosoup")
     g.image("cg tomatosoup")
 
+    g.button("meetingkyle")
+    g.condition("persistent.gallery_meetingkyle")
+    g.image("cg meetingkyle")
+
+    g.button("bearwindow")
+    g.condition("persistent.gallery_bearwindow")
+    g.image("cg bearwindow1")
+    g.image("cg bearwindow2")
+    g.image("cg bearwindow3")
+
 screen gallery():
 
     tag menu
@@ -227,17 +237,18 @@ screen gallery():
             xfill True
             yfill True
 
-            add g.make_button("christmas", "gal cg christmas", locked = "locked", hover_border = "gui/extras/cg_unlocked_hover.png",  xalign=0.5, yalign=0.5)
-            add g.make_button("findinglorenzo", "gal cg findinglorenzo", locked = "locked", xalign=0.5, yalign=0.5)
-            add g.make_button("frozenbody", "gal cg frozenbody", locked = "locked", xalign=0.5, yalign=0.5)
+            add g.make_button("meeting", "gal cg meeting", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+            add g.make_button("tomatosoup", "gal cg tomatosoup", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+            add g.make_button("meetingkyle", "gal cg meetingkyle", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
 
-            add g.make_button("meeting", "gal cg meeting", locked = "locked", xalign=0.5, yalign=0.5)
-            add g.make_button("pearldeath", "gal cg pearldeath", locked = "locked", xalign=0.5, yalign=0.5)
-            add g.make_button("rash", "gal cg rash", locked = "locked", xalign=0.5, yalign=0.5)
+            add g.make_button("rash", "gal cg rash", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+            add g.make_button("bearwindow", "gal cg bearwindow", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+            add g.make_button("findinglorenzo", "gal cg findinglorenzo", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
 
-            add g.make_button("tomatosoup", "gal cg tomatosoup", locked = "locked", xalign=0.5, yalign=0.5)
-            text ""
-            text ""
+            add g.make_button("christmas", "gal cg christmas", locked = "locked", hover_border = "cg_hover",  xalign=0.5, yalign=0.5)
+            add g.make_button("pearldeath", "gal cg pearldeath", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+            add g.make_button("frozenbody", "gal cg frozenbody", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+
 
 ## Music Room screen ######################################################
 ##
@@ -253,9 +264,9 @@ init python:
     mr = MusicRoom(fadeout=1.0)
 
     # Step 2. Add music files.
-    mr.add("audio/music/mus_neutral.ogg", always_unlocked=True, action=SetScreenVariable("current_track", 1))
-    mr.add("audio/music/mus_light.ogg", always_unlocked=True, action=SetScreenVariable("current_track", 2))
-    mr.add("audio/music/mus_anxious.ogg", always_unlocked=True, action=SetScreenVariable("current_track", 3))
+    mr.add("audio/music/mus_neutral.ogg", action=SetScreenVariable("current_track", 1))
+    mr.add("audio/music/mus_light.ogg", action=SetScreenVariable("current_track", 2))
+    mr.add("audio/music/mus_anxious.ogg", action=SetScreenVariable("current_track", 3))
 
 default current_track = 1
 

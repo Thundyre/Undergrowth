@@ -3,6 +3,12 @@ init -1 python:
     renpy.music.register_channel("ambience", mixer = "sfx_am", loop=None) 
     renpy.music.register_channel("radio_effect", mixer = "voice", loop=False , stop_on_mute=False)
 
+init python:
+    if not persistent.initialized:
+        persistent.initialized = True
+        preferences.set_volume("sound_ui", 1.0)
+        preferences.set_volume("ambience", 1.0)
+
 #define sample_music = 
 #define sample_ambience =
 #define sample_sound = 

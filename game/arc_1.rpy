@@ -1,5 +1,6 @@
 label nov_1:
     $ save_name = _("Prologue")
+    $ persistent.gallery_bearwindow = True
     tv_hi "Glow glow glow with NuGLO, let us help you restore your skin's shiny supple glow!"
     tv_hi "So what are you waiting for? Grab your very own NuGLO samples at your local stores today!"
 
@@ -465,6 +466,7 @@ label nov_7_11:
     "After a long day, Aston decided that we should have canned soup for tonight."
     "He walks over to Pearl and hovers two different flavors in her face."
     show cg tomatosoup with sdissolve
+    $ persistent.gallery_tomatosoup = True
     ast "We have tomato soup and.. pea soup. Which one do you want?"
     pe "Hmmmm…"
     pe "..."
@@ -1139,6 +1141,7 @@ label nov_16:
 
     "Definitely not natural, it even has a little entrance."
     show cg meetingkyle
+    $ persistent.gallery_meetingkyle
     ky "Hello!"
 
     "An unfamiliar face greets me as I approach the igloo-like structure."
@@ -1827,6 +1830,7 @@ label nov_26:
 
     "Kyle unwrapped his bandage to show a nasty rash. It hurts just looking at it."
     show cg rash
+    $ persistent.gallery_rash
     lo "That… looks bad Kyle."
 
     "I caught Lorenzo pulling on his sleeve."
