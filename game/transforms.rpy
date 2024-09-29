@@ -16,6 +16,8 @@ define slideright = CropMove(0.5, "slideright")
 define slideleft = CropMove(0.5, "slideleft")
 define slidedown = CropMove(0.5, "slidedown")
 
+define pushupquick = PushMove(0.3, "pushup")
+
 define moveindissolve = ComposeTransition(pushleft, after =dissolve)
 
 # SPACINGS FOR 5 CHARACTERS AT ONCE

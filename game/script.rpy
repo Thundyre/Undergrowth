@@ -17,9 +17,11 @@ define ev = Character("Eva")
 define ky = Character("Kyle")
 define el = Character("Elliot")
 define ex1 = Character("Driver")
+define ex2 = Character("Matt")
 define v1 = Character("Child 1")
 define v2 = Character("Child 2")
 define vs = Character("Susie")
+define ha = Character("Hallucinations")
 
 # characters walkie-talkie
 define wt_mo = Character("Morgan", kind=nvl, callback=Phone_SendSound)
@@ -33,7 +35,7 @@ define wt_ru = Character("Ruran", kind=nvl, callback=Phone_ReceiveSound)
 define wt_ev = Character("Eva", kind=nvl, callback=Phone_ReceiveSound)
 define wt_ja = Character("Jax", kind=nvl, callback=Phone_ReceiveSound)
 
-define config.adv_nvl_transition = None
+define config.adv_nvl_transition = Dissolve(0.3)
 define config.nvl_adv_transition = Dissolve(0.3)
 
 # characters other
