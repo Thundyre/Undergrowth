@@ -6,6 +6,9 @@ default joined_aston = False
 default aston_follows = False
 default greg_sus = 0
 
+##=Variables for N4 call-------------------------##
+default n4_call_da = False
+default n4_call_ko = False
 
 ##-Variables for Walkie Talkie intro with RC-----##
 default wt_intro_isa = 0
@@ -14,6 +17,18 @@ default wt_intro_ca = False
 default wt_intro_ja = False
 default wt_intro_ru = 0
 default wt_intro_ev = False
+
+##-Variables for Nov 22---------------------------##
+default pe_check_pockets = False
+default pe_check_shelf = False
+
+##-Variables for Nov 24---------------------------##
+default approach_lo = False
+default approach_pe = False
+
+##-Variables for Nov 27--------------------------##
+default about_ky = False
+default about_lo = False
 
 ##-Variables for Christmas Talk------------------##
 default christmas_ca = False

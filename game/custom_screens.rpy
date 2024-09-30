@@ -19,7 +19,8 @@ screen warning:
             text "Content Warnings":
                 size 80
                 xalign 0.5
-            text "Please keep in mind that Undergrowth is a {b}Psychological Horror{/b} Visual Novel game and that the final game will likely contain themes of the following:\n\n{b}Profanity, Death, Hallucinations, Virus Spread, Blood, Violence, Abduction, References of Experimentations on Animals and Humans{/b}"
+#TODO content warnings
+            text "Please keep in mind that Undergrowth is a {b}Psychological Horror{/b} Visual Novel. \n The current demo contains (insert list of stuff in current demo) \nThe final game will likely contain themes of the following:\n\n{b}Profanity, Death, Hallucinations, Virus Spread, Blood, Violence, Abduction, References of Experimentations on Animals and Humans{/b}"
             textbutton "Dismiss" action ShowMenu("settings"):
                 xalign 0.5
                 yoffset 40

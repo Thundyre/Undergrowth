@@ -79,21 +79,28 @@ define config.exit_transition = dissolve
 
 ## Between screens of the game menu.
 
-define config.intra_transition = dissolve
+define config.intra_transition = Dissolve(.3)
 
 
 ## A transition that is used after a game has been loaded.
 
-define config.after_load_transition = None
+define config.after_load_transition = dissolve
 
 
 ## Used when entering the main menu after the game has ended.
 
-define config.end_game_transition = None
+define config.end_game_transition = dissolve
 
 
 ## A variable to set the transition used when the game starts does not exist.
 ## Instead, use a with statement after showing the initial scene.
+
+## Transition for end of splashscreen into main menu
+define config.end_splash_transition = dissolve
+
+## Many transitions for many things 
+define config.exit_yesno_transition = Dissolve(.3)
+define config.enter_yesno_transition = Dissolve(.3)
 
 
 ## Window management ###########################################################
@@ -186,8 +193,8 @@ init python:
 
     ## To archive files, classify them as 'archive'.
 
-    # build.classify('game/**.png', 'archive')
-    # build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.png', 'archive')
+    build.classify('game/**.jpg', 'archive')
 
     ## Files matching documentation patterns are duplicated in a mac app build,
     ## so they appear in both the app and the zip file.
