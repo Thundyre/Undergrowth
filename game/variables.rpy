@@ -6,6 +6,9 @@ default joined_aston = False
 default aston_follows = False
 default greg_sus = 0
 
+##=Variables for N4 call-------------------------##
+default n4_call_da = False
+default n4_call_ko = False
 
 ##-Variables for Walkie Talkie intro with RC-----##
 default wt_intro_isa = 0
@@ -14,6 +17,10 @@ default wt_intro_ca = False
 default wt_intro_ja = False
 default wt_intro_ru = 0
 default wt_intro_ev = False
+
+##-Variables for Nov 22---------------------------##
+default pe_check_pockets = False
+default pe_check_shelf = False
 
 ##-Variables for Nov 24---------------------------##
 default approach_lo = False
@@ -50,14 +57,3 @@ default chibi_wilbur = "c_wi_neutral"
 
 ## Pancake
 default pancake = False
-
-## Gallery variables
-default persistent.gallery_christmas = False
-default persistent.gallery_findinglorenzo = False
-default persistent.gallery_frozenbody = False
-default persistent.gallery_meeting = False
-default persistent.gallery_pearldeath = False
-default persistent.gallery_rash = False
-default persistent.gallery_tomatosoup = False
-default persistent.gallery_meetingkyle = False
-default persistent.gallery_bearwindow = False

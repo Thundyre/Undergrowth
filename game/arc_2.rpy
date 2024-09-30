@@ -5,21 +5,21 @@ label dec_6_2:
     scene bg maintent_night with longfade
     "I don't know how long it has been."
     "The pounding pain in the back of my head radiates as I try to take in my surroundings."
-    "This is… the main tent?"
+    "This is... the main tent?"
     "There was an avalanche and I.. I was trying to hide from the snow and.."
     show ast neutral at centerleft
     show pearl smile at centerright
     ast "Morgan!"
     pe "He's awake!"
 
-    "I'm relieved that Aston and Pearl are here… but where are the rest?"
+    "I'm relieved that Aston and Pearl are here... but where are the rest?"
 
     ast "You are okay, Morgan. We're in the main tent."
     pe "Or main tent 2.0."
     ast "You have a wound at the back of your head, perhaps caused by falling debris. You were an unlucky target."
     show ast inthought
     ast "And you've been out for about 5 hours now."
-    mo "Where's Lorenzo… Kyle… and Gregory?"
+    mo "Where's Lorenzo... Kyle... and Gregory?"
 
     show pearl sad
     show ast sad
@@ -28,10 +28,10 @@ label dec_6_2:
     "I never thought I'd see him emotional but it looks like Aston's on the verge of breaking down."
 
     show pearl neutral
-    pe "Gregory… He's outside the tent, he's fine."
+    pe "Gregory... He's outside the tent, he's fine."
     pe "Kyle is also fine, he's sorting through our supplies and setting up our sleeping space for tonight."
     show pearl depressed
-    pe "Lorenzo… We haven't found him."
+    pe "Lorenzo... We haven't found him."
     pe "We've tried beeping his Walkie, but we haven't received anything."
     pe "That's how we found you, yours beeped under the snow and we heard it."
 
@@ -96,7 +96,7 @@ label dec_7:
 
     "The search mission went on for hours, but we were unsuccessful. It had to come to a halt for the day."
     "The sun was setting and we had to head back to camp before it turns dark."
-    "Lorenzo has been missing for about 24 hours now… It's not a good sign."
+    "Lorenzo has been missing for about 24 hours now... It's not a good sign."
 
     #EXT: Camp 1A
     scene bg camp2_day with fade
@@ -141,7 +141,7 @@ label dec_7:
     mo "Yeah Lorenzo has been missing for a little over 24 hours at this point."
     co "Rough spot there bud, I hope he's okay."
     co "But still, I'm glad you're in one piece Morg."
-    mo "The things I do for Elly… and you too!"
+    mo "The things I do for Elly... and you too!"
     co "What do you want from me this time? The snowmobile again?"
     mo "You're the best, thank you."
     co "How about the welcome home party that we talked about? I'll even cook for you."
@@ -162,7 +162,7 @@ label dec_8:
     scene cottage with longfade
     #Lorenzo's POV
 
-    lo "Let's see here… I've got food that will last me for a week."
+    lo "Let's see here... I've got food that will last me for a week."
     lo "Two... Two weeks if I can handle eating just one meal per day."
 
     show black with dissolve
@@ -176,7 +176,7 @@ label dec_8:
     "Fortunately, he found himself close to a tiny deserted cabin."
     hide black
 
-    lo "The furniture in here reminds me a lot of the village up north… Maybe this is one of their hunting huts."
+    lo "The furniture in here reminds me a lot of the village up north... Maybe this is one of their hunting huts."
 
     "Looking around, there's a shelf of perishables, a mini fireplace, lots of blankets and a sole rifle leaning against the wall."
     "Lorenzo made a makeshift bed with an armchair and its matching an ottoman."
@@ -185,7 +185,7 @@ label dec_8:
     lo "I need to start finding my bearings tomorrow. Cassie's map never had a cabin on it, so this must be an area that we haven't been to yet."
     lo "I'm sure he's worried sick about me."
     lo "Hang tight, amore. I'll find you."
-    lo "Or you'll find me first… I think that's more probable."
+    lo "Or you'll find me first... I think that's more probable."
 
     #BG Window
     show bg window
@@ -205,7 +205,7 @@ label dec_8:
     lo "Wait, what was that?"
 
     "Out of the corner of his eye, Lorenzo swears that he saw something huge."
-    "Something… unpleasantly familiar."
+    "Something... unpleasantly familiar."
     show cg bearwindow2
     "He pinches himself."
 
@@ -218,14 +218,14 @@ label dec_8:
     show cg bearwindow3 
     if persistent.screenshake:
         with hpunch
-    $ persistent.gallery_bearwindow
+    $ persistent.gallery_bearwindow = True
     lo "..."
 
     show black with pushupquick
     hide cg
     "He crouches under the window to catch his breath."
 
-    lo "The door! The door... Locked, yes. The window… that won't do. I need to cover it up."
+    lo "The door! The door... Locked, yes. The window... that won't do. I need to cover it up."
 
     hide black
     show bg cottage2
@@ -361,7 +361,7 @@ label dec_10:
         mo "Just that, if you're planning on doing that again tonight, please let me know."
         show ast neutral
         ast "Alright, I shall."
-        ast "My search… was unsuccessful."
+        ast "My search... was unsuccessful."
         mo "It's okay, we'll keep trying. You have an ally here."
         show ast happy
         "Aston flashes me a weak smile, and nods."
@@ -398,12 +398,12 @@ label dec_10:
         lo "Aston?"
 
         show cg findinglorenzo
-        $ persistent.gallery_findinglorenzo
+        $ persistent.gallery_findinglorenzo = True
         hide ast
         "Aston barges into the cabin to see a petrified Lorenzo."
 
         ast "Lorenzo!"
-        lo "A-Amore… I thought I'd never see you again."
+        lo "A-Amore... I thought I'd never see you again."
 
         "I closed the door behind Aston and let them have their moment."
         "The two of them share a long awaited embrace."
@@ -455,12 +455,12 @@ label dec_10:
         lo "But I still don't want to believe that he'd do something to Elliot."
         mo "But Gregory doesn't seem suspicious of Kyle?"
         lo "I'd like to believe that it's because Kyle was bitten by Susie."
-        lo "Whereas Elliot and I… I don't even know how I got it in the first place."
-        mo "Do you… think that it's the same infection, but from multiple sources?"
+        lo "Whereas Elliot and I... I don't even know how I got it in the first place."
+        mo "Do you... think that it's the same infection, but from multiple sources?"
         show ast inthought
         ast "That would be probable, yes."
         mo "Speaking of infections, how are you doing Lorenzo?"
-        lo "My arm is still red… but I think something worse has been happening to me."
+        lo "My arm is still red... but I think something worse has been happening to me."
         show lorenzo scared
         lo "I-I don't know, I want to believe that I was just seeing things."
 
@@ -472,7 +472,7 @@ label dec_10:
         lo "It's the bear but... But I was sure I saw it right outside the window."
         lo "I pinched myself while looking directly at it, and no, I wasn't dreaming."
         show lorenzo sad
-        lo "Aston, Morgan… I really don't enjoy the uneasiness I feel running down my spine every time I hear something outside these walls."
+        lo "Aston, Morgan... I really don't enjoy the uneasiness I feel running down my spine every time I hear something outside these walls."
         show ast sad
         ast "Do you want me to stay the night, love?"
         lo "Gregory would be the problem. Both of you can't stay here."
@@ -592,7 +592,7 @@ label dec_11:
     "Green stuff looks like a fluid of some sort dripping from its mouth."
     "Doesn't act like a normal bear."
 
-    lo "And this is… The new feature."
+    lo "And this is... The new feature."
 
     "Mimics speech, but it's not very smart."
 
@@ -654,7 +654,7 @@ label dec_13:
     "Later in the day, I overheard Gregory on the Walkie with Wilbur."
     "It would seem that C2 isn't taking this decision lightly"
     "On one hand, I understand that there's a quota to meet."
-    "On the other… Well, I hate it."
+    "On the other... Well, I hate it."
     "That means giving up on Lorenzo."
     "With nothing much to do for the rest of the day, I think this would be a good day to drop updates."
 
@@ -798,7 +798,7 @@ label dec_14:
         show ast neutral
         ast "I wasn't, but I am feeling a lot better now."
         show ast inthought
-        ast "If what you're saying is true, then what I heard outside was… not you."
+        ast "If what you're saying is true, then what I heard outside was... not you."
         ast "And if you weren't there to accompany me Morgan, I think I would've been a goner."
         "I gave Aston a gentle pat."
         show ast sad
@@ -820,7 +820,7 @@ label dec_14:
             show lorenzo sad
             "Seeing me close the door without Aston behind me, Lorenzo begins to worry."
             lo "I'm glad to see you Morgan but where's Aston?"
-            mo "He… He ran off. I tried to stop him but he said he kept hearing things."
+            mo "He... He ran off. I tried to stop him but he said he kept hearing things."
             mo "When I finally got my flashlight working again, Aston was gone."
             "Just then the door swings open again, Aston is standing there trying to catch his breath."
             show ast neutral at left
@@ -849,7 +849,7 @@ label dec_14:
             show ast neutral
             ast "I'm sorry I ran off, but I am feeling a lot better now."
             show ast inthought
-            ast "If what you're saying is true, then what I heard outside was… not you."
+            ast "If what you're saying is true, then what I heard outside was... not you."
             ast "And if you hadn't reminded me that Lorenzo was safe Morgan, I think I would've been a goner."
             "I gave Aston a gentle pat."
             show ast sad
@@ -871,7 +871,7 @@ label dec_14:
             show lorenzo neutral
             "Seeing me close the door without Aston behind me, Lorenzo begins to worry."
             lo "I'm glad to see you Morgan but where's Aston?"
-            mo "He… He ran off. I tried to stop him but he said he kept hearing things."
+            mo "He... He ran off. I tried to stop him but he said he kept hearing things."
             mo "When I finally got my flashlight working again, Aston was gone."
             show lorenzo sad
             lo "..."
@@ -904,7 +904,7 @@ label dec_15:
     if aston_safe:
         "Today is my turn to accompany Kyle on his photography session."
         "I can't take my mind off what happened last night."
-        "Hallucinations and… all of Lorenzo's symptoms?"
+        "Hallucinations and... all of Lorenzo's symptoms?"
         show ky smile
         ky "Oh dear Morgan! There's lots of deer."
         "That horrible pun snapped me back into reality."
@@ -918,8 +918,8 @@ label dec_15:
     else:
         "Today is my turn to accompany Kyle on his photography session."
         "I can't take my mind off what happened last night."
-        "Hallucinations and… all of Lorenzo's symptoms?"
-        "And Aston… I haven't seen him since last night."
+        "Hallucinations and... all of Lorenzo's symptoms?"
+        "And Aston... I haven't seen him since last night."
         show ky smile
         ky "Oh dear Morgan! There's lots of deer."
         "That horrible pun snapped me back into reality."
@@ -934,7 +934,7 @@ label dec_15:
     "Click click!"
     #SFX camera
 
-    ky "Do you want to talk about it or…?"
+    ky "Do you want to talk about it or...?"
     ky "Actually hold that thought Morgan, are you seeing what I'm seeing over there?"
     hide ky
     show bg forest3_animals
@@ -1026,7 +1026,7 @@ label dec_16:
 
         "Aston and Lorenzo didn't have a bite. Kyle is an outlier."
 
-        mo "Do you think… Elliot had also been exposed the same way?"
+        mo "Do you think... Elliot had also been exposed the same way?"
         ast "I wouldn't be surprised, he spent a lot of time at the RC. Eva and him were close."
 
         "Was Elliot trying to dig around at the RC?"
@@ -1053,7 +1053,7 @@ label dec_16:
         "To deal with whatever Heralign's can of worms is."
         "I have to put my feelings aside and focus on the mission."
         "Maybe it's a stubborn trait of mine, but I'm going to keep believing that he's okay."
-        "Because Elly is well… Elly."
+        "Because Elly is well... Elly."
         "But with Aston, it's different."
         "I've seen it happen right in front of me."
         "I've seen him dealing with an infection that could drive him to literal madness."
@@ -1086,7 +1086,7 @@ label dec_17:
     "Kyle and Pearl paired up today to grab some pictures."
     "Click click click!"
 
-    pe "Let's see squirrels, squirrels, squirrels… and one napping wolf!"
+    pe "Let's see squirrels, squirrels, squirrels... and one napping wolf!"
     ky "Good eye, Pearl!"
 
     "Click click click!"
@@ -1140,7 +1140,7 @@ label dec_17:
 
     "The flash turned on."
 
-    ky "Please don't see me, please don't see me…"
+    ky "Please don't see me, please don't see me..."
 
     "Kyle breaks vision from the bear, hiding behind a large tree."
     "*growl*"
@@ -1166,7 +1166,7 @@ label dec_17:
     "Kyle flips through the camera's gallery once more."
     "There's a blurry shot."
     "One out of frame."
-    "And the last one… distorted."
+    "And the last one... distorted."
     show pearl smile
     pe "Ooh what's this glitchy effect on this blob?"
 
@@ -1195,11 +1195,11 @@ label dec_18:
     wt_ky "Yeah, the bird stuff and a bear."
     wt_ev "You saw a bear? Sure it wasn't something else?"
     wt_ko "Wouldn't they be hibernating?"
-    wt_ky "That's what Pearl has been saying… but I am convinced that I saw one."
+    wt_ky "That's what Pearl has been saying... but I am convinced that I saw one."
     wt_ky "If there really was one, I'll try snagging pictures again."
     wt_ko "Safety's first Kyle! Don't end up on the headlines."
     wt_ky "I am a professional, don't you worry Koda!"
-    wt_is "And the bird pictures… Those were the same ones like the one that Morgan picked up, yes?"
+    wt_is "And the bird pictures... Those were the same ones like the one that Morgan picked up, yes?"
     wt_ky "Oh hey Isaak! And yes."
     wt_is "How many birds were there?"
     wt_ky "About 8 to 10? Have you guys found out why this is happening?"
@@ -1227,7 +1227,7 @@ label dec_20:
         wt_ru "How is Aston?"
         wt_mo "He's hanging in there I think. I'm looking out for him, don't worry."
         wt_ru "Aston is strong, perhaps too strong. He takes on everything and bottles up his own emotions."
-        wt_ru "Lorenzo is the only person who he confides with, and with him missing…"
+        wt_ru "Lorenzo is the only person who he confides with, and with him missing..."
         wt_wi "Keep an eye on him will you, son? He needs all the support he can get."
         wt_mo "Of course."
         #radio ends
@@ -1243,8 +1243,8 @@ label dec_20:
         wt_wi "Hello Morgan! Are you there?"
         wt_mo "What's up?"
         wt_ru "Any updates on Aston?"
-        wt_mo "Aston… hasn't come back."
-        wt_ru "So there's no sign of both of them yet…"
+        wt_mo "Aston... hasn't come back."
+        wt_ru "So there's no sign of both of them yet..."
         wt_wi "Keep us updated will you, son? Let us know if you've seen them."
         wt_mo "Of course."
         #radio ends
@@ -1257,12 +1257,12 @@ label dec_21:
     #INT: Main tent
     show ky smile
     "Kyle is looking through his camera gallery."
-    ky "Hmmm… Oh, Morgan! Hello!"
+    ky "Hmmm... Oh, Morgan! Hello!"
     "He notices me walking into the tent."
     ky "Can I get your opinion on something?"
     "He tilts the camera towards me."
     # TODO glitchedphoto
-    "I don't… like what I am seeing here."
+    "I don't... like what I am seeing here."
     ky "Weird, huh? My camera glitched out on this photo."
     mo "That looks like a bear, no?"
     ky "I mean yeah, I saw it with my eyeballs."
@@ -1299,7 +1299,7 @@ label dec_22:
     "What?"
     "Did she actually put her compass in here?"
     show pearl neutral
-    mo "Pearl? I found it, but… why was it in the crock pot?"
+    mo "Pearl? I found it, but... why was it in the crock pot?"
     show pearl confused
     pe "What, really? That's pretty odd, but thanks Morgan!"
 
@@ -1329,7 +1329,7 @@ label dec_24:
         "And when it was almost time to sleep, Aston routinely brought the blankets over to the armchair."
         #CG: Aston and Lorenzo cuddling
         show cg christmas
-        $ persistent.gallery_christmas
+        $ persistent.gallery_christmas = True
         "The two cuddle up together on the armchair."
         "It just barely fits the two of them."
         "As the clock struck midnight, it was finally time."
@@ -1350,7 +1350,9 @@ label dec_24:
         "But there was still no sign of Aston."
         "He hugs his legs close to his chest."
         show black
-        show ast neutral
+        show ast happy:
+            zoom 2.0
+            xalign 0.5
         "Eyes closed, Aston's face flashes by."
 
         lo "Buon Natale, amore."
@@ -1469,7 +1471,7 @@ label dec_25:
             if not christmas_is:
                 $ christmas_is = True
                 wt_is "Hello?!"
-                wt_mo "Merry Christmas… Isaak?"
+                wt_mo "Merry Christmas... Isaak?"
                 wt_is "Oh, it's you."
                 wt_is "Merry Christmas to you too, Morgan."
                 "I think he might've been expecting someone else."
@@ -1561,13 +1563,13 @@ label dec_26:
     co "You're saying that it's both visual and auditory shit?"
     mo "Yeah, and I have a feeling that Kyle almost caught it on camera."
     mo "I doubt he'd lie about seeing a bear, but it is weird that that's the only thing that's distorted in the photo."
-    co "Hmmm… Think I'll have to consult my doctors to see if there's a possibility."
+    co "Hmmm... Think I'll have to consult my doctors to see if there's a possibility."
     mo "I do have some bad news though. Aston is also infected."
     mo "And I'm pretty sure he hears things that I don't."
 
     if not aston_safe:
-        mo "He went missing a day after our last update and hasn't come back since…"
-        mo "I… I was there and I should've stopped him from running off, but my flashlight died and-"
+        mo "He went missing a day after our last update and hasn't come back since..."
+        mo "I... I was there and I should've stopped him from running off, but my flashlight died and-"
         co "Morgan."
         mo "..."
         co "Chin up soldier. If he's missing, you do whatever you can to find them."
@@ -1597,9 +1599,9 @@ label dec_27:
 
     mo "Pearl what are you doing?"
     pe "Morgan! I uh couldn't sleep at all."
-    mo "... and the gear?"
+    mo "...and the gear?"
     show pearl smile
-    pe "...Fine, you caught me… but don't tell the others."
+    pe "...Fine, you caught me... but don't tell the others."
     pe "I'm going to find Lorenzo."
 
     #choice branch
@@ -1682,7 +1684,7 @@ label dec_27:
         else:
             show pearl neutral
             pe "Being calculative hasn't brought anywhere has it now, Morgan?"
-            pe "Everyone thinks I'm reckless when I'm just trying to help…"
+            pe "Everyone thinks I'm reckless when I'm just trying to help..."
             mo "That's not what I me-"
             show gr confused at right
             gr "Where's this attitude coming from?"
@@ -1729,16 +1731,16 @@ label dec_27:
             "The wind picks up tremendously as Pearl trudges through the snow."
 
             show pearl sad
-            pe "Ugh… I knew I should've checked my pockets. Now I'm out here lost and without my compass."
+            pe "Ugh... I knew I should've checked my pockets. Now I'm out here lost and without my compass."
             pe "And here I thought circling the base of the mountain was a great idea."
             #I can ANIMATE THIS (RUMI)
             pe "I look left? Trees and snow. Look right? Trees and snow. Look straight ahead and oh wow! Trees and snow."
-            pe "The snow is… unrelenting too. It's cold."
+            pe "The snow is... unrelenting too. It's cold."
             show pearl neutral
             pe "Come on Pearl! Focus focus!"
 
             show cg pearldeath
-            $ persistent.gallery_pearldeath
+            $ persistent.gallery_pearldeath = True
             "Pearl finds herself in front of a large forest clearing. Oddly shaped stones stick out from the ground in a disorderly manner."
             "She walks up to one and inspects it up close."
 
@@ -1747,7 +1749,7 @@ label dec_27:
 
             "It was in fact not stone."
             "Or at least to Pearl."
-            "Disfigured and grotesque looking… humans."
+            "Disfigured and grotesque looking... humans."
             "Frozen in time, freezing the frame of their unfortunate fate."
             "Pearl collapses onto the ground, unable to make sense of what she just saw."
 
@@ -1877,7 +1879,7 @@ label dec_30:
     "Yep. Signal's completely dead."
     "The gravity of the situation finally sinks in. Which means Colin... he can't reach me."
     "But I'm not too worried since Colin does have my location."
-    "It's just that, well… It'll probably jeopardize the mission."
+    "It's just that, well... It'll probably jeopardize the mission."
     "Whoever Gregory is calling at HQ, guess he won't be able to reach them anytime soon."
 
     #If Aston is safe
@@ -1921,10 +1923,10 @@ label dec_30:
         lo "I don't think so, amico. The maintenance crew usually comes in every three months."
         mo "How are you feeling Lorenzo?"
         show lorenzo sick
-        lo "I… think it's getting worse."
+        lo "I... think it's getting worse."
         hide lorenzo
         "Lorenzo's state is becoming significantly unstable."
-        ha "L-Laren.. Lorezo… "
+        ha "L-Laren... Lorezo... "
         "He seems like he's shaking under the covers."
         "I wish I could do something for him, maybe get Ruran here to check on him while I'm away."
         "I know Aston would've done the same."
@@ -1945,15 +1947,15 @@ label dec_31:
         "Aston is now ill with his auditory hallucinations."
     #If Aston is not safe
     else:
-        "Aston is now ill with his auditory hallucinations and… we don't know where he is now."
+        "Aston is now ill with his auditory hallucinations and... we don't know where he is now."
     #If Pearl is safe
     if pearl_safe:
         "Pearl also fell sick and hasn't been acting like herself."
     #If Pearl is dead
     else:
-        "Pearl also fell sick, but then left camp one night and didn't come back…"
+        "Pearl also fell sick, but then left camp one night and didn't come back..."
     "So many things happened in the span of a month."
-    "Gosh… Did Elly have to go through this many things?"
+    "Gosh... Did Elly have to go through this many things?"
     "At least Gregory and I are meeting up with Davos and Jax today."
     "The two representatives from C2."
     #If Aston is not safe AND if Pearl is dead
@@ -2026,23 +2028,28 @@ label dec_31:
         xpos -1300
         ypos -700
         blur 5
-    $ persistent.gallery_frozenbody
+    $ persistent.gallery_frozenbody = True
 #TODO talk to elina
     "A body."
     "A dead body."
     "With lesions and gaping wounds, possibly by wolves."
-    "And… weird mushrooms growing out of it?"
+    "And... weird mushrooms growing out of it?"
     "Mauled to an unidentifiable state."
+    show cg frozenbody with fade:
+        zoom 1.0
+        blur 0
+        xalign 0.5
+        yalign 1.0
     "The only telltale sign that it was a human was the arm protruding out from the snow."
-    "A letter tightly grasped in their hand."
+    
 
     #If Pearl and Aston is safe
     if aston_safe and pearl_safe:
         "Davos turns away from the sight."
         ja "The day always turns into an eventful one when I least expect it."
-        da "This… looks like a horrible way to die."
+        da "This... looks like a horrible way to die."
         da "I-I'm gonna go call my pops."
-        mo "Well then… we're stranded and now there's a dead body."
+        mo "Well then... we're stranded and now there's a dead body."
         mo "What else could possibly go wrong?"
 
     #If either Pearl or Aston is missing
@@ -2050,9 +2057,9 @@ label dec_31:
         "I'm not ready to identify who it is."
         "Davos turns away from the sight."
         ja "The day always turns into an eventful one when I least expect it."
-        da "This… looks like a horrible way to die."
+        da "This... looks like a horrible way to die."
         da "I-I'm gonna go call my pops."
-        mo "Well then… we're stranded and now there's a dead body."
+        mo "Well then... we're stranded and now there's a dead body."
         mo "What else could possibly go wrong?"
 
     scene black with fade

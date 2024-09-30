@@ -1,6 +1,5 @@
 label nov_1:
     $ save_name = _("Prologue")
-    $ persistent.gallery_bearwindow = True
     tv_hi "Glow glow glow with NuGLO, let us help you restore your skin's shiny supple glow!"
     tv_hi "So what are you waiting for? Grab your very own NuGLO samples at your local stores today!"
 
@@ -20,7 +19,7 @@ label nov_1:
     #Morgan zips his backpack.
 
     co "Wouldn't try to even if you asked. I'd rather not be stuck in that for three days."
-    mo "Haha well.. I think it's just about time to head off!"
+    mo "Haha well... I think it's just about time to head off!"
     co "Alrighty then. Bring him home and stay safe, soldier."
     mo "I will."
 
@@ -66,7 +65,7 @@ label nov_4:
     "Five people in Camp 1 including myself, and five more in Camp 2."
     "There's also a Research Centre down south, where the research team's situated."
     "Talk about big investments, they have functional labs here."
-    "I noticed along the way buildings far off into the distance."
+    "I noticed buildings far off into the distance along the way."
     "They don't seem all that modern. A village perhaps?"
     "A large lake. Frozen all over."
     "And then there's a large mountain that we're walking towards."
@@ -134,7 +133,7 @@ label nov_4:
     window auto show
 
     mo "Hello! I'm Morgan, thanks for having me."
-    gr "Good, now that introductions are out of the way… Lorenzo, I need to borrow you for a second to talk about supplies."
+    gr "Good, now that introductions are out of the way... Lorenzo, I need to borrow you for a second to talk about supplies."
 
     #back to EVERYONE
     window auto hide
@@ -183,7 +182,7 @@ label nov_4:
     #choice branch start
     #radio selection stuff happens here
     $ pancake = False
-    menu:
+    menu n4_call:
         "Call Davos":
             hide ast
             wt_mo "Hello this is Morgan, is Davos here?"
@@ -201,10 +200,12 @@ label nov_4:
             wt_ko "Oh! I'm Koda, yes! I heard from Pearl you were arriving today."
             wt_ko "I'm over here at the RC with Eva and Isaak, they're both scientists. They're also both my supervisors."
             wt_mo "Are you not a scientist yourself Koda?"
-            wt_ko "Well, not quite yet… but I'm a lab assistant for now!"
+            wt_ko "Well, not quite yet... but I'm a lab assistant for now!"
             wt_ko "Oh I think I have to go now, Isaak is looking for me. Bye Morgan!"
             nvl clear
     #choice branch end
+    if not n4_call_da or not n4_call_ko:
+        jump n4_call
     #back to Pearl after calling
     show pearl smile with dissolve
     pe "So how did it go?"
@@ -221,17 +222,17 @@ label nov_4:
     "I waited till the sun fully set, and watched the sky turn dark."
     "The others are in their tents all zipped up, which means it's probably time to update Colin on my whereabouts."
 
-#TODO PHONE
     show satphone
     co "So are you all snuggled in with blankets Morg?"
     mo "Yeah, I'm pretty sure I'll freeze out here if I don't."
     co "Yeah that won't be ideal man."
-    mo "Co- Actually no, you don't get to be him now. Hmm… How about Pancake?"
-    co "You and Elly I swear… He calls me Pangolin and you call me Pancake. Y'all are not creative."
+    mo "Co- Actually no, you don't get to be him now. Hmm... How about Pancake?"
+    co "You and Elly I swear... He calls me Pangolin and you call me Pancake. Y'all are not creative."
     mo "It's kinda your fault you know."
     co "It's my kiddo's drawing! Can't pay me to change it."
     co "But anyway, I'm sure you're tired Morg, rest up you hear?"
     mo "Alright alright, goodnight Pancake. I'll catch you later."
+    hide satphone
 
 label nov_5:
     scene bg morganstent with longfade
@@ -254,7 +255,7 @@ label nov_5:
     show gr angry at right
     hide lorenzo
     hide ast
-    "And Gregory… He looks like he's about to chew me for being late."
+    "And Gregory... He looks like he's about to chew me out for being late."
     "Whoops."
 
     show gr angry:
@@ -305,13 +306,13 @@ label nov_5:
 
     "\"Do not leave camp under any circumstances.\""
     "\"Do not call HQ unless you have permission to.\""
-    "Oh lovely, that sounds like bright red flags."
+    "Oh lovely, those sounds like bright red flags."
 
     gr "Got any questions?"
-    mo "Yeah uh.. what's with the location specific ones? Wasn't the village to our right yesterday?"
+    mo "Yeah uh... what's with the location specific ones? Wasn't the village to our right yesterday?"
     gr "Well yeah, but I just follow HQ's orders. So it's best we don't try anything funny."
     gr "Heard the villagers there weren't too keen with this whole makeshift camp base situation we're having here."
-    mo "And we're not supposed to call anyone from HQ? Unless we get permission from..?"
+    mo "And we're not supposed to call anyone from HQ? Unless we get permission from...?"
     gr "That would be me. Easier to have one person to gather reports from, they said."
 
     "Those were pretty vague answers."
@@ -353,7 +354,7 @@ label nov_6:
     lo "And as you may notice... I'm not exactly fit to be a camp guide. So this is the best I can do."
     mo "Nah, I wouldn't have guessed."
     show lorenzo smile
-    lo "You flatter me Morgan. Aston on the other hand, would've been a much better fit."
+    lo "You flatter me Morgan. Aston, on the other hand, would've been a much better fit."
     mo "But he chose to be a field medic?"
     lo "Many ways to help others he said, plus being a medic means that we get to spend more time together."
     mo "That's awfully cute."
@@ -370,11 +371,11 @@ label nov_6:
     "He hands Pearl and I some bags and tools."
     show pearl neutral at centerleft
     gr "Alright. The plan is simple. We go out, grab dirt samples, and then I'll send them back to the lab."
-    gr "Today.. let's see.. We'll start by gathering some over 'ere."
+    gr "Today... let's see... We'll start by gathering some over 'ere."
 
     "Holding the map up, Gregory points to a location marked by his pens."
     "This is the first time I've seen the full picture, I wish I could get one myself but it seems like they ran out of maps."
-    "The ones in the main tent weren't updated, since summer, the terrain which I assume looks entirely different from what we're dealing with now."
+    "The ones in the main tent haven't been updated since summer. The terrain looks entirely different from what we're dealing with now."
 
     mo "So I reckon Camp 2 does the same?"
     gr "Same tasks, different area. Environmental study or some shit. I'm not exactly the guy to ask, but if that helps the research team, I ain't complaining."
@@ -393,9 +394,9 @@ label nov_6:
     "Not gravelly, just wet cold soil with no bugs in it."
     "Two scoops to fill up the bag."
     "That'll do for now."
-    "We were also tasked to observe the trees, changes for terrain, weather and such."
+    "We were also tasked to observe the trees, changes to terrain, weather and such."
     "Honestly this is beginning to sound like a dream job. Get paid looking at trees?"
-    "Looking at the checklist in my hands.. Let's see here.."
+    "Looking at the checklist in my hands... Let's see here.."
     "\"Tree trunk color?\" Gray brown."
     "\"Leaves present?\" None."
     "\"Flaky tree bark?\" Doesn't seem like it."
@@ -425,7 +426,7 @@ label nov_6:
     pe "Met Davos at the academy waaaay before and he introduced me to Koda! I kinda miss them now though."
     pe "Gregory's usually the one in charge of delivering stuff, especially during the stormy season. So I haven't seen them in two weeks."
     mo "You've never followed him to the RC?"
-    pe "Not really, I prefer staying at camp than riding the snowmobile. Motion sickness ain't my best friend so."
+    pe "Not really, I prefer staying at camp than riding the snowmobile. Motion sickness ain't my best friend so..."
     mo "Snowmobile?"
     show pearl happy with sdissolve
     pe "Yeah the one that goes vroom vroom but in snow! Gregory has one, I don't remember where he parks it though, it's a tiny walk from camp."
@@ -468,10 +469,10 @@ label nov_7_11:
     show cg tomatosoup with sdissolve
     $ persistent.gallery_tomatosoup = True
     ast "We have tomato soup and.. pea soup. Which one do you want?"
-    pe "Hmmmm…"
+    pe "Hmmmm..."
     pe "..."
     ast "Well?"
-    pe "I kinda want to try pea soup today but.."
+    pe "I kinda want to try pea soup today but..."
     ast "Alright, tomato it is."
     pe "Hehe."
 
@@ -485,8 +486,8 @@ label nov_7_11:
     "I noticed Lorenzo was in the midst of counting meat and potato meal packets."
     show lorenzo pondering
 
-    lo "46.. 47.. 48.."
-    lo "Oh wait, where did I put my pen…? Ah!"
+    lo "46... 47... 48..."
+    lo "Oh wait, where did I put my pen...? Ah!"
     show lorenzo smile
 
     "Lorenzo found his pen, but at what cost?"
@@ -494,7 +495,7 @@ label nov_7_11:
     lo "..."
     mo "You stopped at 48."
     show lorenzo smile with sdissolve
-    lo "Oh! Thank you Morgan. 49.. 50.. 51.."
+    lo "Oh! Thank you Morgan. 49... 50... 51..."
     show lorenzo pondering with sdissolve
     lo "57? That's not nearly enough for a month! I'll need to call support."
     mo "Isn't 57 plenty?"
@@ -527,7 +528,7 @@ label nov_7_11:
     scene bg maintent_day with longfade
 
     "I had some free time on my hands today. According to the numbers that Colin gave me, I have yet to meet the majority of the people here."
-    "The weather isn't suitable for walking longer distances. Apparently it's going to get stormy during these few weeks, months even."
+    "The weather isn't suitable for walking longer distances. Apparently it's going to get stormy during these few weeks... months, even."
     "And of course I can't possibly use Gregory's snowmobile. I'm still envious."
     "I suppose the Walkie shall suffice for now."
     "Who should I beep first?"
@@ -548,6 +549,7 @@ label nov_7_11:
                 wt_mo "I'll let y'all go for now, tell Davos I said hi!"
                 wt_ru "Call us anytime Morgan!"
                 wt_wi "If only this darn wind would let up, I'd love to meet you in person soon!"
+                nvl clear
             else:
                 "I don't think I need to do that now."
 
@@ -559,14 +561,15 @@ label nov_7_11:
                 wt_ca "Well I just want to let you know that I have a map ready for you! The next time Lorenzo or Gregory comes by, I'll have them be our courier pigeon."
                 wt_mo "Thanks! I appreciate it!"
                 wt_ca "Anytime Morgan!"
+                nvl clear
             else:
-                "I don't think I need to do that now"
+                "I don't think I need to do that now."
 
         "Beep Jax":
             if not wt_intro_ja:
                 $ wt_intro_ja = True
                 wt_ja "Yeah, is this the new guy?"
-                wt_mo "Hi Jax, I'm Morgan just thought I'd check on everyone."
+                wt_mo "Hi Jax, I'm Morgan. Just thought I'd check on everyone."
                 wt_ja "That's nice of you."
                 wt_ja "Just doing a routine cleanup on my rifles, nothing much."
                 wt_mo "Oh nice, didn't know we had rifles at camp."
@@ -576,8 +579,9 @@ label nov_7_11:
                 wt_mo "Nah. I am actually pretty rusty."
                 wt_ja "We'll have to see about that."
                 wt_mo "Bet."
+                nvl clear
             else:
-                "I don't think I need to do that now"
+                "I don't think I need to do that now."
 
         "Beep Isaak":
             $ wt_intro_isa += 1
@@ -591,6 +595,7 @@ label nov_7_11:
                 wt_mo "Not really. I'm just calling to say hi."
                 wt_is "I'm Isaak, you're Morgan. I don't like small talk nor do I like people who try to make me engage in small talk."
                 wt_is "Goodbye."
+                nvl clear
 
             elif wt_intro_isa == 4:
                 "Isaak stops responding to you."
@@ -607,6 +612,7 @@ label nov_7_11:
                 wt_ev "Ah yes, the new guy. I'm Eva, I think Koda already told you."
                 wt_ev "I can't talk for long though. Gotta run some errands."
                 wt_mo "I'll leave you to it then."
+                nvl clear
             else:
                 "I don't think I need to do that now."
 
@@ -644,12 +650,12 @@ label nov_12:
     #EXT: Village
     scene bg village1 with longfade
     #Kyle's POV
-    show ky smile at centerleft
+    show ky smile at centerleft with dissolve
     ky "Just one more shot of y'all together.. yep that's cute!"
 
     "Click click!"
 
-    ky "One more.. and done!"
+    ky "One more... and done!"
 
     v1 "I wanna see, I wanna see!"
     v2 "Susie's so pretty, thanks for this Mr. Kyle!"
@@ -659,7 +665,7 @@ label nov_12:
 
     ky "Do you want a portrait of just yourself Susie?"
     vs "Moo!"
-    hide kyle
+    hide ky
     show bg village1_kyle with sdissolve
 
     "Kyle rolled up his sleeves and got to work."
@@ -674,19 +680,19 @@ label nov_12:
     "Susie studies her portrait."
 
     v1 "What's wrong Susie?"
-    show ky sad
-    ky "Was it… not to her liking?"
+    
+    ky "Was it... not to her liking?"
     v2 "Are you okay?"
 
     "The kids start petting Susie's back."
-    "Kyle reached out his hand too to pet Susie's head but before he could even reach her-"
+    "Kyle reached out his hand to pet Susie's head, but before he could even reach her-"
 
     "CHOMP"
-
+    show bg village1 with sdissolve
+    show ky shaken
     "Susie bit his forearm."
 
     vs "Moooo!"
-    show ky sad
     ky "Owwie."
     v1 "Haha! It means Susie likes it! She's happy."
     show ky confused
@@ -699,7 +705,7 @@ label nov_12:
 
     show ky smile
     ky "I think I'll be alright!"
-    vs "Mooo…."
+    vs "Mooo..."
     show ky happy
     ky "Apology accepted Susie!"
 
@@ -723,7 +729,7 @@ label nov_13:
     "It's been roughly a week since I've been here."
     "Everything seems normal, perhaps a little too normal."
     "Collected samples again earlier this afternoon."
-    "And dinner ended two hours ago and everyone is about to head to bed soon."
+    "Dinner ended two hours ago and everyone is about to head to bed soon."
     "I don't feel sleepy yet."
     "I think I'll just walk a circle around camp."
 
@@ -735,13 +741,13 @@ label nov_13:
     "Quiet city to quiet campsite."
     "City lights to the lanterns and stars."
     "My sneakers to snow boots."
-    "Only thing different is that Elly's isn't here."
+    "Only thing different is that Elly isn't here."
     "He'd join me sometimes. I miss that."
     "I wish he'd just-"
 
     show gr neutral
 
-    gr "I understand ma'am but that's not possible."
+    gr "I understand ma'am, but that's not possible."
 
     "Oh, is he on the phone?"
 
@@ -753,12 +759,12 @@ label nov_13:
     "Hey, that's me."
 
     gr "What boy? What d'ya mean?"
-    gr "You told me to take care of em, but Isaak insisted on helping me out."
+    gr "You told me to take care of 'em, but Isaak insisted on helping me out."
     hi "And you never questioned him?"
-    gr "Look, you hired the guy not me. And you told me to work with him."
+    gr "Look, you hired the guy, not me. And you told me to work with him."
     gr "I never had a choice."
     hi "And you never will until you get this done. Remember what's at stake here Gregory. I am not repeating myself."
-    gr "Okay okay. If pressure is what you want, I'll do it."
+    gr "Okay, okay. If pressure is what you want, I'll do it."
     hi "Find him. I don't want to be the one playing clean up every time."
 
     "Whoever's he's talking to sounds full of themselves."
@@ -770,7 +776,7 @@ label nov_13:
     "I hope he ended the call before he said that."
     "Looks like the night walk did yield some great intel."
     "Someone Gregory and Isaak report to."
-    "And a boy… Elly?"
+    "And a boy... Elly?"
     "Nope. I'm not gonna think about the worst case scenario just yet."
     "Let's head to bed."
 
@@ -823,15 +829,14 @@ label nov_14:
     scene bg morganstent with fade
     #INT: Morgan's tent
 
-    # TODO phone starts
     show satphone
     mo "How's my Pancake doing?"
     co "Doing great Morg. Any updates?"
     mo "Well one thing's for sure, Gregory reports to someone higher up in Heralign."
     mo "I can't say it's Hilda for sure, but he seems inexplicably respectful. A little out of character."
     co "I'd say it's a possibility, yeah."
-    mo "And it looks like there's a lot more people when Elly was last here."
-    co "A bunch of new faces eh? Tell me more."
+    mo "And it looks like there's a lot more people than when Elly was last here."
+    co "A bunch of new faces, eh? Tell me more."
 
     #players only get one choice to pick
     menu:
@@ -847,7 +852,7 @@ label nov_14:
 
         #choice branch ends
         #phone ends
-    "Rustle rustle"
+    "rustle rustle"
     "Was that from outside?"
 
 menu:
@@ -876,7 +881,7 @@ menu:
             show black
             "Pitch black. Can't see shit."
 
-            "Rustle rustle"
+            "rustle rustle"
             #SFX
 
             mo "Who's there?!"
@@ -932,7 +937,7 @@ label nov_15:
         "Check the weapon and tool rack":
             "Knives, picks and axes."
             "Pistols and pistol ammo."
-            "Flares and.. nothing much."
+            "Flares and... nothing much."
             "Jax said that they have rifles in C2."
             "Is this unfairness I smell?"
 
@@ -943,7 +948,7 @@ label nov_15:
     "And what do we have here?"
     "There are documents strewn across the table, they weren't here last night."
     "Huh?"
-    "These are… Everyone's profiles?"
+    "These are... Everyone's profiles?"
     "Name: Pearl"
     "Age: 24"
     "Gender: Female"
@@ -959,7 +964,7 @@ label nov_15:
             "Age: REDACTED"
             "Gender: REDACTED"
             "Status: Infected"
-            "Well reading that makes me suuuper comfortable."
+            "Well, reading that makes me suuuper comfortable."
             "There are multiple people with similar profiles like these, and their pictures have been torn out too."
             "No sign of Elliot. I really hope he's not one of them."
             "Better clean this up real quick."
@@ -975,7 +980,7 @@ label nov_15:
     show ast neutral with sdissolve
     ast "Morgan?"
 
-    "Crap that scared me."
+    "Crap, that scared me."
 
     mo "Morning Aston, was just thinking about what to eat for breakfast. Slept well?"
 
@@ -983,11 +988,11 @@ label nov_15:
 
     "Uh oh."
 
-    mo "Well I'm not sure who left these here and I was gonna just keep them away to make space for breakfast."
+    mo "Well, I'm not sure who left these here and I was gonna just keep them away to make space for breakfast."
     show ast inthought
     ast "I think that might be Gregory's. Pearl's still asleep, Lorenzo was with me and you found them here."
 
-    "Gregory's huh, what's he doing with everyone's records?"
+    "Gregory's... huh, what's he doing with everyone's records?"
     show ast neutral
     ast "Is something wrong?"
     mo "Nothing, I think I just woke up on the wrong side of the bed."
@@ -1043,7 +1048,7 @@ label nov_15:
     "The radio turns on."
 
     ev "Hello? I sure hope you guys can hear me."
-    ev "Snowstorm's happening, if you're outside get in like, RIGHT now."
+    ev "Snowstorm's happening, if you're outside get in, like, RIGHT now."
 
     "I didn't know Eva did weather reporting too."
 
@@ -1054,7 +1059,7 @@ label nov_15:
     scene bg maintent_day with dissolve
     "Each one of us sat in a corner of the main tent. Holding it down with our body weight."
     show gr angry at centerleft
-    gr "Everyone hold tight lest we start flying!"
+    gr "Everyone hold tight, lest we start flying!"
 
     "If anyone were to move, I feel like we would actually start flying upwards."
     "I'm glad we secured the tents yesterday. Getting hit like this without warning? Lethal for sure."
@@ -1066,9 +1071,9 @@ label nov_15:
     "I don't know how much time has elapsed."
     "It's still snowing outside, but it would seem that the storm finally decided to calm down."
     show pearl sad at left
-    pe "Is everyone okay..? Are we okay?"
+    pe "Is everyone okay...? Are we okay?"
     show gr neutral
-    gr "Looks like it, everyone is still in one piece aye?"
+    gr "Looks like it, everyone is still in one piece, aye?"
 
     "Lorenzo is already on his Walkie, checking in on Camp 2."
     show lorenzo pondering at centerright
@@ -1090,16 +1095,16 @@ label nov_15:
             wt_mo "Eva! Is everyone at the RC okay?"
             wt_ev "The three of us are fine. We're the ones with a roof here, we should be asking if you're okay."
             wt_mo "We're okay. And it sounds like Camp 2 is alright too!"
-            wt_ko "Thank goodness.. Update us if anything happens okay?"
+            wt_ko "Thank goodness... Update us if anything happens okay?"
 
             pe "Noooooooo! My tent collapsed."
 
             "Pearl's voice could be heard coming from the outside."
 
-            wt_mo "Well.. If you heard that, that's the update I guess. Pearl's tent collapsed."
+            wt_mo "Well... If you heard that, that's the update I guess. Pearl's tent collapsed."
             wt_ko "O-Oh no, poor Pearl."
             wt_ev "You don't sound all that sorry for her Koda."
-            wt_ko "I am, it's just.. It's very Pearl of her."
+            wt_ko "I am, it's just... It's very Pearl of her."
             wt_ev "It looks like the storm actually did some damage."
             wt_ev "Anyway, I'm sure you're busy Morgan, help the girl out will you?"
             nvl clear
@@ -1110,7 +1115,7 @@ label nov_15:
     scene bg morganstent
     "Looks like everything is okay in my tent."
     "Pearl's going to be sleeping in the main tent for the night."
-    "Surviving a snowstorm huh, one check off my extreme bucket list."
+    "Surviving a snowstorm, huh? Well, that's one check off my extreme bucket list."
     "Now I have a reason to demand a snowmobile from Colin."
 
 label nov_16:
@@ -1123,7 +1128,7 @@ label nov_16:
     show lorenzo smile at centerleft
     lo "I'll help you out Pearl, don't worry!"
     show pearl happy
-    pe "Grazie Lorenzo!"
+    pe "Grazie, Lorenzo!"
 
     hide pearl
     hide lorenzo
@@ -1134,20 +1139,20 @@ label nov_16:
     "Gregory went towards Camp 2 earlier, checking for trees. Maybe I should also do the same facing north?"
 
     show bg forest1
-    "Well no fallen trees but…?"
+    "Well no fallen trees but...?"
     "Wait, is that an igloo? It's too perfectly shaped to be natural."
 
     mo "Guys... I'm going to be back real quick. I see something up ahead."
 
     "Definitely not natural, it even has a little entrance."
     show cg meetingkyle
-    $ persistent.gallery_meetingkyle
+    $ persistent.gallery_meetingkyle = True
     ky "Hello!"
 
     "An unfamiliar face greets me as I approach the igloo-like structure."
 
-    ky "Oh geez the snowstorm yesterday was rough huh? My tent ended up flying away last night!"
-    mo "Wait you're telling me you spent the night in… that?"
+    ky "Oh, geez, the snowstorm yesterday was rough, huh? My tent ended up flying away last night!"
+    mo "Wait you're telling me you spent the night in... that?"
 
     "I gesture towards the igloo."
     hide cg meetingkyle
@@ -1197,8 +1202,8 @@ label nov_16:
 
     "I have a feeling Pearl and Kyle will get along just fine."
 
-    gr "Where did you come from son?"
-    ky "Oh just up ahead! I was camping in a tent before it flew away last night."
+    gr "Where did you come from, son?"
+    ky "Oh, just up ahead! I was camping in a tent before it flew away last night."
     show pearl happy
     pe "YES! I'm not the only- uh I-I mean, {nw}"
     show pearl sad with None
@@ -1224,13 +1229,15 @@ label nov_16:
     ky "I was wondering if you had extra tents that I could borrow? I wouldn't want to just impose myself here."
     lo "I don't think we'll have any extras until next month."
     gr "I guess you'll have to leave then."
-    ky "Oh but please sir Gregory, if I could just have a few days of your time? I really can't afford to leave the mountains when it took so much for me to get up here."
+    show ky shaken
+    ky "Oh, but please sir Gregory, if I could just have a few days of your time? I really can't afford to leave the mountains when it took so much for me to get up here."
     ky "I just need some time to capture all the wildlife here."
     pe "I can give you my tent! Then I could sleep in our main tent."
+    show ky happy
     ky "Really? Thank you Pearl!"
     show gr angry
     gr "I didn't even-"
-    ky "Thank you to the rest of you too! Once I get the photos I need, I'll leave the camp. I promise I won't interfere with your.. vacation?"
+    ky "Thank you to the rest of you too! Once I get the photos I need, I'll leave the camp. I promise I won't interfere with your... vacation?"
     gr "We're working here. It ain't a vacation."
     ky "Cool cool! If you need anything at all, please do ask. I'd like to be helpful especially since I'm gonna be crashing here for a while!"
     ast "We should treat the cow bite first."
@@ -1238,7 +1245,7 @@ label nov_16:
 
     scene bg camp1_day with dissolve
     "Snow shoveling day turned out to be much more eventful than we expected."
-    "But now I do worry about dragging another civilian into a mess that I'm not even sure how deep it goes."
+    "But now I am worried about dragging another civilian into a mess whose depth even I'm unsure of."
     "Sounds like I made a bad choice, but the only other option was to leave him to fend for himself."
     "I'm sure it'll be fine for now."
 
@@ -1249,11 +1256,11 @@ label nov_17:
     "Lorenzo and Gregory said that they'll be sending in new samples together. The batch we accumulated over the days was a little too much for one person to handle."
     "While Aston, Pearl and I were tasked to reallocate food portions for an extra person and reset camp to its original form."
     "Which means rebuilding the campfire, fixing our crockpot stand and restabilizing the main tent because Pearl heard creaking in one of the legs last night."
-    "Kyle was a freebird, without a map it'll be hard to navigate around here."
+    "Kyle was a freebird. Without a map, it'll be hard to navigate around here."
     show ky smile at left
     show gr neutral at centerleft
     ky "Heya, do you need some help?"
-    gr "No not really go bother someone else will ya?"
+    gr "No, not really. Go bother someone else, will ya?"
     ky "I could help you guys with heavy stuff? Delivering? Lifting?"
     show ast neutral at centerright
     show lorenzo smile at right
@@ -1267,10 +1274,10 @@ label nov_17:
     ky "I mean sure! You guys know what's best."
 
     "The bewilderment on Gregory's face is loud."
-
+    show gr happy
     gr "We'll give you a lift then. Come outside in 5."
 
-    lo "Think I have everything I need, I'll see you later, amore. Bye friends!"
+    lo "Think I have everything I need. I'll see you later, amore. Bye friends!"
     hide lorenzo with dissolve
     hide gr with dissolve
     show ast neutral with move:
@@ -1282,12 +1289,12 @@ label nov_17:
     pe "I'm sure you'll be fine Kyle."
 
     #INT: Main tent
-
+    show black
     "We made lots of progress within two hours."
     "Tent? Fixed. Crockpot? Fixed."
     "Reorganized the shelves and storage? All done."
     "The camp has been restored to its former glory."
-
+    hide black
     show pearl happy
     pe "Great work guys! We did amazing!"
 
@@ -1296,10 +1303,10 @@ label nov_17:
     wt_ky "Woah Cassie does this mean he received it?"
     wt_mo "Loud and clear Kyle."
     wt_ca "Haha hello Morgan! I was just teaching him how the Walkie works, we happened to have a spare!"
-    wt_ca "And it looks like we have a different courier pigeon, I'll get Kyle to deliver your map tomorrow!"
+    wt_ca "And it looks like we have a different courier pigeon. I'll get Kyle to deliver your map tomorrow!"
     wt_mo "Sweet! Thanks again Cassie, hope the new pigeon doesn't cause you too much trouble."
-    wt_ca "Oh I'm gonna put him to work don't you worry!"
-    wt_ky "I don't have a say in this do I?"
+    wt_ca "Oh, I'm gonna put him to work. Don't you worry!"
+    wt_ky "I don't have a say in this, do I?"
     wt_ca "Nopeeee, that's what you get for making me do extra work, I have to draw a new map for you."
     wt_da "You two should get a room, it's blinding!"
     pe "Spill the tea Davos, what are we looking at?"
@@ -1307,11 +1314,11 @@ label nov_17:
     wt_ky "That is not what I said Davos!"
     wt_ja "It was definitely close enough, right Cassie?"
     wt_ca "D-Don't drag me into this!"
-    wt_mo "Well it sounds like you guys are having fun without us alright."
+    wt_mo "Well, it sounds like you guys are having fun without us alright."
     ast "Remember to grab food supplies too Kyle."
-    wt_wi "All packed and ready Aston, he won't starve on my watch!"
-    wt_ru "Oh Aston, did you also need med supplies? Kyle has a bite on his arm doesn't he?"
-    ast "Yes he got bitten by a cow. I think we have enough supplies though."
+    wt_wi "All packed and ready Aston. He won't starve on my watch!"
+    wt_ru "Oh Aston, did you also need med supplies? Kyle has a bite on his arm, doesn't he?"
+    ast "Yes, he got bitten by a cow. I think we have enough supplies though."
     wt_wi "A cow? My, you're full of surprises aren't you lad?"
     nvl clear
     #beeps end
@@ -1322,15 +1329,15 @@ label nov_17:
     #Lorenzo's POV
     scene bg isaaklab1 with longfade
     show lorenzo smile at centerleft
-    lo "Hngggg.. phew.. I think that's the last box for Isaak? Koda's usually the one that collects boxes but I think they're with Gregory and Eva now."
+    lo "Hngggg... phew.. I think that's the last box for Isaak? Koda's usually the one that collects boxes but I think they're with Gregory and Eva now."
     lo "Isaaaaak? Are you there?"
-    lo "Hmm.. Why is the ice box open- oh."
+    lo "Hmm... Why is the ice box open- oh."
 
     "An unidentifiable animal carcass could be found in the box, covered in ice."
     "Looks about the size of a wolf pup or a large bird."
     "There doesn't seem to be any smell."
-
-    lo "W-Well I guess at least it doesn't stink, maybe I should close it up still."
+    show lorenzo sick
+    lo "W-Well I guess at least it doesn't stink... maybe I should close it up still."
 
     "Lorenzo closes the lid of the ice box."
     #SFX thud
@@ -1365,16 +1372,16 @@ label nov_18:
 
     #SFX Camera shutter
 
-    "And… sent! Colin now has a copy of this."
-
+    "And... sent! Colin now has a copy of this."
+    show satphone
     mo "Hiiii Pancake, I just sent you a picture."
     co "Nice one Morg. So what have you been up to?"
     mo "I survived a snowstorm, my highlight of the week."
-    co "Are you serious? Well I'm glad you're still in one piece soldier."
-    mo "Say.. do we get bonuses for surviving? I've been eyeing this cool snowmobile that the guys have."
+    co "Are you serious? Well, I'm glad you're still in one piece, soldier."
+    mo "Say... do we get bonuses for surviving? I've been eyeing this cool snowmobile that the guys have."
     co "We don't even have snow back home Morg."
-    mo "Just thought I'd put in a request. Anyway I think you'd want to hear this."
-    mo "Profiles of the people at camp, sounds normal enough yeah? But under all the necessary info, there's a part that lists whether the person is infected."
+    mo "Just thought I'd put in a request. Anyway, I think you'd want to hear this."
+    mo "Profiles of the people at camp... sounds normal enough,yeah? But under all the necessary info, there's a part that lists whether the person is infected."
     co "I beg your pardon? Infected? Those are some glaring red flags if I've ever seen one."
 
     #IF MORGAN CHOSE TO DIG FURTHER ON DAY N15th he says this
@@ -1387,7 +1394,7 @@ label nov_18:
     co "Better luck next time! But Gregory huh? Perhaps I should do some digging out here."
     mo "Yeah. Oh, we did get another new member too."
     co "New recruit?"
-    mo "Nah a wildlife photographer! Guy survived the storm in a makeshift igloo."
+    mo "Nah, a wildlife photographer! Guy survived the storm in a makeshift igloo."
     co "Hah! He's insane, I like him. If I had a snowmobile I think he'd deserve it much more than you."
     mo "I thought I was your favorite."
     co "I love everyone the same."
@@ -1397,8 +1404,8 @@ label nov_18:
     co "Come on, can't you act a tiny bit grateful?"
     mo "My mother didn't teach me to lie, but for you Pancake, I'll tolerate the party."
     co "That's very kind of you. Aight good talk, you sleep tight Morg."
-    mo "Nighty night Pancake."
-
+    mo "Nighty night, Pancake."
+    hide satphone
     "I fell asleep soon after."
 
 label nov_19_23:
@@ -1430,19 +1437,19 @@ label nov_19_23:
     ast "...I've survived this long without vegetables. I can live without it."
     show lorenzo pondering
     lo "There are two kinds of people, survive to eat, and eat to survive. Amore, I think you're the latter."
-    ast "Hey, it's not like I avoid everything green, I eat basil on pizza."
+    ast "Hey, it's not like I avoid everything green. I eat basil on pizza."
     mo "What are your favorite pizzas?"
     show ast inthought
     ast "A meatasaurus. If it has mushrooms and onions it'll smell better, but I'd still prefer meat and nothing else."
-    pe "Hmmm I like pep and cheese, or.. Oh! A margherita with extra tomato!"
+    pe "Hmmm, I like pep and cheese, or... Oh! A margherita with extra tomato!"
     show lorenzo smile
     lo "I like pesto with seafood, paired with wine? Mmm! That would be my ideal dinner night."
-    mo "I'm not that picky but I do love me some extra onions, olives and anchovies, I love stinky stuff."
+    mo "I'm not that picky but I do love me some extra onions, olives and anchovies. I love stinky stuff."
     pe "What are your stances on pineapple on pizza?"
     show ast neutral
     ast "Tolerable. It's a nice touch."
     lo "With pesto and seafood, absolutely not! With other savory meats then yes, I can see the vision!"
-    pe "What about you Morgan?"
+    pe "What about you, Morgan?"
     mo "Three for three, I love pineapple on pizza. Especially if they're sweet."
     mo "Do you know any pizza places that do delivery here?"
 
@@ -1461,26 +1468,26 @@ label nov_19_23:
     ky "Morning! I'm planning my routes on the map that Cassie gave me."
     mo "So are you guys a thing yet?"
     show ky flustered
-    ky "W-What? I mean I haven't even taken her out to dinner yet, and I don't even know if she's available you know?"
+    ky "W-What? I mean, I haven't even taken her out to dinner yet, and I don't even know if she's available, you know?"
 
     "The fluster in his voice is evident, looks like the cat really got his tongue."
     show ky smile
     ky "Cassie is really cute though! She seemed interested when I showed her my album, there's lots of pictures of my previous adventures."
     ky "There's also Susie and all the other farm animals."
 
-    "Kyle has his map laid out openly, it was then I noticed something different."
+    "Kyle has his map laid out openly. It was then I noticed something different."
 
-    mo "Wait.. Why do you have extra drawings on your map?"
+    mo "Wait... Why do you have extra drawings on your map?"
     show ky happy
     ky "She drew some animals for me! Waypoints for common sightings of animals."
-    ky "So there's apparently wolves here, bears here if they are not already hibernating, birds of some kind that gather here, deers everywhere…"
+    ky "So there's apparently wolves here, bears here if they are not already hibernating, birds of some kind that gather here, deers everywhere..."
 
     "Kyle explains everything with a large smile painted across his face."
     "He's such a golden retriever."
 
     #21st
     #EXT: Camp 1
-    scene bg camp1_day with longfade
+    scene bg camp1_night with longfade
     "Campfire mealtime."
     show lorenzo smile at left
     show ast neutral:
@@ -1512,8 +1519,8 @@ label nov_19_23:
     gr "I have a daughter, yes. She's about Pearl's age."
     gr "Sometimes I wish I didn't have this job."
     mo "Why would you think so?"
-    gr "Well you know… More time for family, more time for her."
-    gr "Thankfully, I'm retiring soon, I hope that she doesn't hate her old man for being away for so long."
+    gr "Well you know... More time for family, more time for her."
+    gr "Thankfully, I'm retiring soon. I hope that she doesn't hate her old man for being away for so long."
     show gr neutral
     "He recollects himself and continues."
     gr "What about you, got any kids yourself?"
@@ -1539,32 +1546,34 @@ label nov_19_23:
     show pearl smile with move:
         yalign 1.0
     mo "Looking for something?"
-    pe "Yeah.. My compass, I don't remember where I put it."
+    pe "Yeah... My compass, I don't remember where I put it."
 
     #choice branch starts
     menu pearl_compass:
-        "Ask her to check her pockets":
+        "Ask her to check her pockets" if not pe_check_pockets:
             mo "Have you checked your pockets?"
             show pearl happy
-            pe "Oh yeah good idea."
+            pe "Oh yeah, good idea."
             show pearl confused
-            "She thoroughly searches her pockets, but to no avail, guess it's not there."
+            "She thoroughly searches her pockets, but to no avail. Guess it's not there."
+            $ pe_check_pockets = True
             jump pearl_compass
 
-        "Check the food shelf":
+        "Check the food shelf" if not pe_check_shelf:
             "Maybe at the food shelf?"
             "I reached over to the tomato soup section."
             show pearl neutral
             pe "Morgan! I know everyone knows that I love tomato soup but it's not there!"
             "Whoops."
+            $ pe_check_shelf = True
             jump pearl_compass
 
         "Check the storage boxes":
             hide pearl with dissolve
             "Storage with all the important documents. A compass would be too clunky to fit in here."
             "Storage for extra ammo. I doubt she would be flipping through here anyway. We haven't had the need to use guns."
-            "Storage with all the small tools… Oh!"
-            "A compass with… a tomato sticker behind it. Classic Pearl."
+            "Storage with all the small tools... Oh!"
+            "A compass with... a tomato sticker behind it. Classic Pearl."
 
     #choice branch ends
     show pearl smile
@@ -1573,7 +1582,7 @@ label nov_19_23:
     pe "Oooh! Thank you Morgan, you're the best!"
 
     "If we're out in the forest, it would be pretty dangerous to leave your compass back at camp."
-    "I'll need to make sure I remind her every time then."
+    "I'll need to make sure I remind her every tim, then."
 
     #23rd
     #EXT: Camp 1
@@ -1619,28 +1628,28 @@ label nov_24:
     "Today is rest day at camp."
     "Or in Pearl's words, tonight is marshmallow night!"
     "Can't remember the last time I've had a marshmallow, let alone a toasted one."
-    "We were just waiting for sun down and for Kyle to come back from his photography session."
+    "We were just waiting for sundown and for Kyle to come back from his photography session."
     "He seemed pretty excited to put his new map to use this morning."
     "He should be back soon."
     "In the meantime, I should probably mingle around the campfire."
     "Who should I approach first?"
 
     menu nov24_approach:
-        "Approach Pearl":
+        "Approach Pearl" if not approach_pe:
             $ approach_pe = True
             show pearl smile
             "Pearl seems to have a 3-way Walkie setup going on right now."
             da "I'm waiting for my second growth spurt. You'll see Pearl."
-            da "I'm gonna be as tall as or taller than my pops! Within the next few years.. I hope?"
+            da "I'm gonna be as tall as or taller than my pops! Within the next few years... I hope?"
             pe "We love our short king."
-            ko "I'm not sure we can even beat genetics Davos, that's a high bar to reach."
+            ko "I'm not sure we can even beat genetics Davos. That's a high bar to reach."
             show pearl happy
-            pe "High bar to reach pfft."
+            pe "High bar to reach... Pfft."
             da "Hey!"
             mo "So Davos is short?"
             ko "He's 5'3, our beloved short king."
             da "Aww don't join them Morgan."
-            ko "You win some you lose some Davos. But hey, at least you have a great sense of direction."
+            ko "You win some, you lose some Davos. But hey, at least you have a great sense of direction."
             show pearl confused
             pe "Excuse me?"
             ko "Didn't say who but I guess you outed yourself Pearl."
@@ -1650,7 +1659,7 @@ label nov_24:
             nvl clear
             hide pearl
 
-        "Approach Lorenzo":
+        "Approach Lorenzo" if not approach_lo:
             $ approach_lo = True
             "Lorenzo has his eyes closed, resting against the chair."
             "His face scrunches up every so often."
@@ -1673,7 +1682,7 @@ label nov_24:
     show ast scared
     ast "What?"
     hide ast
-    "Aston doesn't wait for me to finish, he drops everything he's doing onto the table and runs out."
+    "Aston doesn't wait for me to finish. He drops everything he's doing onto the table and runs out."
     "With the main tent empty, I've just noticed Gregory isn't anywhere to be found."
     "Would he be in his personal tent now?"
 
@@ -1702,7 +1711,7 @@ label nov_24:
     "Pearl still has the Walkie setup on and the rest of the folks could be heard through them."
     hide pearl
     show ky flustered at centerright
-    "Kyle is.. on the Walkie with Cassie? Nice one, I'm rooting for you two."
+    "Kyle is... on the Walkie with Cassie? Nice one, I'm rooting for you two."
     hide ky
     show gr happy at right
     "Gregory too seems to be enjoying his time, savoring the toasted goodies."
@@ -1711,7 +1720,7 @@ label nov_24:
     "Everyone is having a good time."
     "Unknowingly, their personalities have left an imprint on me."
     "For a while, I let myself bask in the feeling of having new companions."
-    "The feelings however, were short lived. My gut feeling had other plans."
+    "The feelings, however, were short lived. My gut feeling had other plans."
     "Like a premonition, I knew I was just waiting for something bad to happen."
     "I don't like this unshakeable feeling of anxiousness."
     "I remind myself of my mission: Elliot still needs me."
@@ -1719,7 +1728,7 @@ label nov_24:
     "Whoops. Looks like I burnt mine."
     "I chucked the burnt marshmallow away and replaced it with a new one. Paying more attention to it this time."
     "Right now, with the knowledge I have, I'm inclined to believe that Gregory isn't innocent."
-    "There has to be something. Something.. or someone else in the picture that I'm not seeing."
+    "There has to be something. Something... or someone else in the picture that I'm not seeing."
     "What is it? Who is it?"
     "I need to gather more info for Colin."
 
@@ -1736,7 +1745,7 @@ label nov_25:
     pe "Is it just me or does the soil feel different?"
     "Pearl calls me over."
     mo "Sure it's not the melting snow you're feeling?"
-    pe "No like, I've dug downwards three times, I don't remember the soil being hydrated."
+    pe "No, like, I've dug downwards three times, I don't remember the soil being hydrated."
     mo "Looks like a new observation to be made."
     show pearl neutral
     "If the soil is wet, water flow must be present."
@@ -1752,9 +1761,9 @@ label nov_25:
     gr "Isaak's orders. He needs wet soil more than anything else."
     gr "Told me to bring it to him immediately if we found any."
     mo "It can't be from the lake can it?"
-    gr "We have to dig pretty deep down before we hit water remember?"
+    gr "We have to dig pretty deep down before we hit water, remember?"
 
-    "It makes sense, but at the same it doesn't make sense to me."
+    "It makes sense, but at the same time it doesn't make sense to me."
     "I think I need to ask someone with qualifications on this topic."
     "Maybe Eva?"
 
@@ -1776,27 +1785,27 @@ label nov_25:
     "I grabbed onto his shoulders to hold him steady."
 
     mo "You alright?"
-    lo "I'm.. I'm alright, amico. Thank you."
+    lo "I'm... I'm alright, amico. Thank you."
     hide lorenzo
     "He rushes back into his tent."
     "I'm worried. This is the second time I've seen him acting all weird."
 
     #INT: Morgan's tent
     show bg morganstent
-    "Alright better beep Eva."
+    "Alright, better beep Eva."
     menu:
         "Beep Eva":
             wt_ev "What's up?"
             wt_mo "I have questions if you're up for it right now. It's about the samples."
             wt_ev "Shoot."
             wt_mo "Gregory is on his way to deliver wet soil to Isaak, it sounded urgent."
-            wt_mo "We found it near the lake, does that mean anything serious?"
-            wt_ev "Wet soil around the frozen lake? If it's not the snow melting on top of it…"
+            wt_mo "We found it near the lake. Does that mean anything serious?"
+            wt_ev "Wet soil around the frozen lake? If it's not the snow melting on top of it..."
             wt_ev "Then that would mean the lake is eroding."
             wt_ev "And if it erodes, that would mean bad news for us."
             wt_ev "Worst case scenario is it dries up or it becomes a threat for geological hazards."
             wt_ev "It's unfortunate, but it is a natural occurrence."
-            wt_ev "As for why Isaak needs it urgently.. I have no clue. He has never brought that up to us."
+            wt_ev "As for why Isaak needs it urgently... I have no clue. He has never brought that up to us."
             wt_ev "Perhaps I should grab some from him and have a look at it myself."
             wt_mo "Well thanks for that Eva, that's good info."
             wt_ev "You're welcome."
@@ -1825,13 +1834,13 @@ label nov_26:
     ky "Maybe that should be my next adventure, and maybe after my arm has healed."
     mo "The bite from Susie hasn't healed yet?"
     show ky neutral
-    ky "It's not like I haven't been bitten before but this is the first time that it has gotten this bad."
-    ky "It's about time for Aston to help me with a new bandage anyway. Here let me show you."
+    ky "It's not like I haven't been bitten before, but this is the first time that it has gotten this bad."
+    ky "It's about time for Aston to help me with a new bandage anyway. Here, let me show you."
 
     "Kyle unwrapped his bandage to show a nasty rash. It hurts just looking at it."
     show cg rash
-    $ persistent.gallery_rash
-    lo "That… looks bad Kyle."
+    $ persistent.gallery_rash = True
+    lo "That... looks bad Kyle."
 
     "I caught Lorenzo pulling on his sleeve."
     show lorenzo neutral
@@ -1842,7 +1851,7 @@ label nov_26:
     mo "What about you Lorenzo? Are you feeling alright?"
     mo "I'm worried, you nearly collapsed yesterday."
     show lorenzo sad
-    lo "I'm not exactly sick but… I've been having weird dreams recently."
+    lo "I'm not exactly sick but... I've been having weird dreams recently."
     mo "Do you want to talk about it?"
 
     "Lorenzo hesitates for a second."
@@ -1852,19 +1861,19 @@ label nov_26:
     "Lorenzo begins to scribble on his notebook."
     "A bear-shaped thing?"
 
-    lo "See this… This bear thing, it has been following me night after night."
+    lo "See this... This bear thing, it has been following me night after night."
     show lorenzo sad
     lo "I'm sorry if it sounds silly, I just.."
     show ky neutral
     ky "It's not silly Lorenzo, fears are valid!"
     show ky shaken
-    ky "Plus I'd be scared shitless if a normal bear was in front of me, let alone this one."
+    ky "Plus, I'd be scared shitless if a normal bear was in front of me, let alone this one."
     show ky neutral
     mo "Does it act like a normal bear?"
     show lorenzo neutral
-    lo "Oh that's the thing! It doesn't. It's always standing on its hind legs."
+    lo "Oh, that's the thing! It doesn't. It's always standing on its hind legs."
     lo "I can't read its expression but it doesn't feel like a friendly presence."
-    lo "I'm not even sure if it has fur or some kind of… substance? I can't put it into words."
+    lo "I'm not even sure if it has fur or some kind of... substance? I can't put it into words."
     show lorenzo sad
     lo "It's becoming a nightly event."
     show ky sad
@@ -1894,7 +1903,7 @@ label nov_27:
 # TODO PHONE
     show satphone
     mo "Who's the sweetest Pancake in the world?"
-    co "Hey Morg, I know it's just a nickname, but don't get too used to it you hear?"
+    co "Hey Morg, I know it's just a nickname, but don't get too used to it, you hear?"
     co "I don't wanna feel like I have to call you my pappy!"
     mo "Aw come on, humor me. Who's the sweetest Pancake in the world?"
     co "Meeeee. Okay done. What's the update?"
@@ -1919,10 +1928,10 @@ label nov_27:
     else:
         mo "Did Elly ever say anything about these symptoms?"
         co "Nada Morg, first I'm hearing of it."
-        co "Though, Elly did sound sick when we last talked…"
+        co "Though, Elly did sound sick when we last talked..."
         co "He never mentioned anything about an animal bite, nor having nightmares."
-        co "Which now begs the question: Where do you get it from?"
-        mo "There must be another source thens."
+        co "Which now begs the question: where do you get it from?"
+        mo "There must be another source then."
 
         "Suddenly, I hear footsteps from the outside."
 
@@ -1937,7 +1946,7 @@ label nov_27:
         show gr happy
         gr "You call your kid Pancake? That's sweet."
         show gr neutral
-        gr "Sorry for interrupting family time but I've got a favor to ask of ya."
+        gr "Sorry for interrupting family time, but I've got a favor to ask of ya."
         mo "Yeah?"
         show gr worried
         gr "Well, I'm just worried about Lorenzo? You think he's down with the cold or somethin'?"
@@ -1949,11 +1958,11 @@ label nov_27:
 
         "Tell the truth":
             $ greg_sus += 1
-            mo "Well maybe yes. Lorenzo told me that he has been having nightmares but that's about it."
+            mo "Well... maybe, yes. Lorenzo told me that he has been having nightmares, but that's about it."
     #choice branch ends
 
     show gr neutral
-    gr "Hmmm… Oh well. Just keep an eye out will ya?"
+    gr "Hmmm... Oh well. Just keep an eye out will ya?"
     gr "Let me know if you notice anything different about him. Thanks Morg."
     hide gr
     mo "Yes sir."
@@ -1976,11 +1985,12 @@ label nov_30:
     show gr neutral at centerleft
     show ky smile at centerright
     show lorenzo smile at right
+    #TODO add aston and rearrange everyone
     pe "We're all here too!"
-    wt_ev "Alright, good, but it's not about the weather though."
+    wt_ev "Alright, good... but it's not about the weather, though."
     wt_ev "I have bad news and bad news."
     wt_ev "The other day Camp 1 found abnormal amounts of moist dirt."
-    wt_ev "We have confirmed that the lake bed is probably giving way, the contents of the water do match up."
+    wt_ev "We have confirmed that the lake bed is probably giving way. The contents of the water do match up."
     wt_ev "Which ultimately means that the lake might dry up over time."
     wt_da "So the first bad news is that the lake is just gonna go poof on us?"
     wt_ev "Basically yes, Davos. We doubt it will happen anytime soon though."
@@ -1991,7 +2001,7 @@ label nov_30:
     wt_ko "Fungi and the like are important ingredients for antibiotic medication!"
     wt_is "I'm sure you all know survival rules, but I'll just say this."
     wt_is "Do not, under any circumstances, drink the lake water."
-    wt_is "Unless you'd like to find out why, be my guest."
+    wt_is "Unless you'd like to find out why, in which case be my guest."
     wt_ko "L-Let's stay with boiled fresh snow and bottled water to be safe."
     wt_ja "So the water's deemed undrinkable then."
     wt_ja "Any idea how it would affect the wildlife here once the lake fully melts?"
@@ -2009,7 +2019,7 @@ label nov_30:
 
     wt_da "Good for you Cassie!"
     wt_ja "Congrats Cassie!"
-    wt_ev "Not sure why we're cheering for Cassie but yay Cassie."
+    wt_ev "Not sure why we're cheering for Cassie, but... yay Cassie."
     wt_ca "I-I can't with you all."
     show lorenzo smile
     lo "Kyle seems pretty happy about that."
@@ -2032,13 +2042,13 @@ label dec_2:
     #INT: Main tent
     scene bg maintent_day with longfade
     #Aston and Lorenzo's POV
-    show lorenzo sick at centerright
-    show ast sad at centerleft
+    show lorenzo sick at centerright with dissolve
+    show ast sad at centerleft with dissolve
     "While the rest of them were out for the day, Aston and Lorenzo were alone in the main tent."
     "It seems like the bear hasn't stopped its torment on Lorenzo."
     "Waking up in a cold sweat countless times, he developed a fever overnight."
 
-    ast "Your temperature.. When did it start? Last night?"
+    ast "Your temperature... When did it start? Last night?"
     show lorenzo scared
     lo "How bad is it?"
 
@@ -2076,8 +2086,8 @@ label dec_2:
     "Aston cups Lorenzo's face with one hand and then pulls him into an embrace."
 
     show lorenzo scared
-    lo "I don't know what this means, and truthfully.. I am afraid of it."
-    lo "Seeing Kyle's arm.. I wish it was just a coincidence, but it's starting to look the part."
+    lo "I don't know what this means, and truthfully... I am afraid of it."
+    lo "Seeing Kyle's arm... I wish it was just a coincidence, but it's starting to look the part."
 
     show ast inthought
     "Aston ponders for a moment."
@@ -2094,7 +2104,7 @@ label dec_2:
     "Aston gently releases Lorenzo from the hug, and begins cleaning the affected area."
     show ast sad
     ast "Promise me you'll keep this between us for now?"
-    ast "At least not until we figure out what's really happening."
+    ast "At least... not until we figure out what's really happening."
     show lorenzo smile
     lo "You have my word, amore."
 
@@ -2115,26 +2125,26 @@ label dec_3:
 
     wt_wi "Aston my boy, are you there?"
     wt_mo "His hands are full but he's listening, Wilbur."
-    wt_wi "Okay wonderful, we just want to check in on Kyle."
+    wt_wi "Okay, wonderful! We just want to check in on Kyle."
     ast "Yes?"
     wt_ru "Has Kyle had trouble sleeping recently?"
     show ast inthought
     ast "I don't think so."
     wt_wi "You wanna tell him yourself lass?"
     wt_ca "It's like narcolepsy, but the other way around."
-    wt_ca "Bummer.. I don't remember what the word was.."
-    wt_ru "It's insomnia, and you've been having that for.."
+    wt_ca "Bummer... I don't remember what the word was..."
+    wt_ru "It's insomnia, and you've been having that for..."
     wt_ru "Has it been a week yet?"
     wt_ca "A little over a week."
     wt_ca "I wish this was a problem I could sleep off."
-    wt_wi "But yes my boy, we were checking in just to see if everything is in order."
+    wt_wi "But yes, my boy, we were checking in just to see if everything is in order."
     wt_wi "Glad to hear that Kyle is okay!"
     wt_ru "Another thing Aston, have you noticed anyone else with these rashes?"
     wt_ru "If more of these pop up we would have to start sending people to a hospital."
     wt_ru "It may be something that we're not equipped to handle out here."
     show ast neutral
     "Aston freezes up."
-    "That's.. quite unlike him."
+    "That's... quite unlike him."
     wt_mo "Not that we've noticed here. You worried that it's contagious?"
     wt_ru "Always a possibility. It would be better to cover all our bases."
     wt_mo "Well, we'll let you know if anything new happens Ruran."
@@ -2150,19 +2160,19 @@ label dec_3:
     mo "It's okay Aston, I know."
     mo "And I trust that you have your reasons."
     ast "..."
-    show ast neutral
+    show ast happy
     ast "Thanks."
     hide ast
     "That was the most heartfelt 'thanks' I've heard from him."
     "I figure Aston has his own reasons too, but I won't pry for now."
     "It's not hard to imagine Aston covering for Lorenzo, though."
     "I've caught him scratching his arm through his sleeve more times than I can count in the past few days."
-    "If it's contagious then.. This could get ugly really fast."
+    "If it's contagious then... This could get ugly really fast."
 
     #EXT: Camp 1
     show bg camp1_day
     show ky neutral
-    "I bump directly into Kyle who happened to be right outside the tent."
+    "I bump directly into Kyle, who happened to be right outside the tent."
     mo "Is eavesdropping your new hobby?"
     show ky confused
     ky "N-No, I didn't mean to."
@@ -2206,7 +2216,7 @@ label dec_4:
     co "Did Greg ever tell you that he has a daughter?"
     mo "Vaguely, why?"
     co "She's bedridden, in the hospital and she's in desperate need of a new liver."
-    mo "That.. was definitely not the news I was expecting to hear tonight."
+    mo "That... was definitely not the news I was expecting to hear tonight."
     mo "Explains why he wants to retire so soon."
     co "He told you that?"
     mo "Yep, in a few months or so."
@@ -2227,12 +2237,12 @@ label dec_4:
     mo "They don't know if it's contagious."
     mo "But what I do know is that Aston is hiding something."
     co "Is that so?"
-    mo "My best guess is that he's covering for Lorenzo, he might also have a rash."
+    mo "My best guess is that he's covering for Lorenzo. He might also have a rash."
     mo "Seen him scratching his forearm through his coat way too many times now."
     mo "As for why he's hiding it, I have no clue yet."
     co "Might be worth prying that out of him or Lorenzo himself."
     co "So what's the second one?"
-    mo "Other than the fact that the lake's eroding.. Apparently, they found a new fungi-like microorganism present in the water."
+    mo "Other than the fact that the lake's eroding... Apparently, they found a new fungi-like microorganism present in the water."
     mo "The best case scenario is that we find a new source of antibiotic medication."
     co "Sounds like Heralign's gonna strike a pot of gold with that."
     co "But the worst case scenario I'm hearing is that it does the opposite?"
@@ -2245,7 +2255,7 @@ label dec_4:
 
     hide satphone
     "I hung up on Colin."
-    "Fungi, rashes.. I hate the image that my mind's painting right now."
+    "Fungi, rashes... I hate the image that my mind's painting right now."
     "Putting the two and two together, it does sound plausible that it's related."
     "I trust that the guys at the RC will find out soon enough."
 
@@ -2260,15 +2270,15 @@ label dec_5:
         xalign -0.5
     hide ky
     show lorenzo with move:
-        xalign -0.3
-    hide lorenzo with dissolve
+        xalign -0.4
+    hide lorenzo with sdissolve
 
     "The next morning, I walk into the main tent just in time to see Aston and Pearl shoo-ing Lorenzo and Kyle back into their tents."
     "Lorenzo looks a lot worse for wear."
     "And Kyle looks like he's sleepier today."
 
     mo "Are those two alright?"
-    ast "A little worse than yesterday, I'll check in on them in a bit."
+    ast "A little worse than yesterday. I'll check in on them in a bit."
     show pearl sad
     pe "I'm worried for them."
 
@@ -2283,7 +2293,7 @@ label dec_5:
     pe "Koda! Camp 1's here!"
     pe "And hello Jax! Looks like you beat Davos to the radio again."
     wt_ja "Davos just needs to try harder next time."
-    wt_da "You know I can't reach the radio if you raise it up high like that, that's cheating."
+    wt_da "You know I can't reach the radio if you raise it up high like that. That's cheating."
     wt_ja "They don't need to know that."
     wt_ko "Haha! Wonderful that everyone's here, I come bearing a new mission, friends!"
     wt_ko "Isaak and Eva decided it's time to move camp!"
@@ -2298,7 +2308,7 @@ label dec_5:
 
     "I'm secretly hoping that our camps can merge so that I can meet the rest."
     "But on the other hand, calling Colin may prove more difficult with more ears around."
-    "I'm not the one making decisions here so… No point thinking about it until it happens."
+    "I'm not the one making decisions here so... No point thinking about it until it happens."
 
     wt_ja "Joining camps would be really fun."
     wt_ja "What say you, Wilbur and Gregory?"
@@ -2317,7 +2327,7 @@ label dec_5:
     show pearl smile
     pe "I can just eat the marshmallows you toast, problem solved."
 
-    "Alright so that's plan A, merging of camps."
+    "Alright, so that's plan A... merging of camps."
     "Lots of new faces and hopefully lots of info."
 
     wt_ca "I'll go check the coordinates real quick, let's establish a meet up point for tomorrow!"
@@ -2467,7 +2477,7 @@ label dec_6_1:
 
     "Camp dad's voice is loud and clear."
     "He's right, I have to survive this."
-    "Elliot… If we're both still alive, you best bet I'm gonna extort free meals from you everyday."
+    "Elliot... If we're both still alive, you best bet I'm gonna extort free meals from you everyday."
     "The things I do.. or rather the things I have to go through for you."
     "I ran as fast as my legs could take me."
     "The snow below my feet keeps giving way, I'd trip if I'm not careful."
@@ -2489,7 +2499,7 @@ label dec_6_1:
         linear 0.5 alpha 0.5
     with Pause (0.5)
     scene black with fade
-    "I can't lose consciousness now I need to… {w=1.0} no…"
+    "I can't lose consciousness now I need to... {w=1.0} no..."
     jump dec_6_2
 #Morgan passes out
 #Scene transition: Fade to black
