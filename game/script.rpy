@@ -17,9 +17,11 @@ define ev = Character("Eva")
 define ky = Character("Kyle")
 define el = Character("Elliot")
 define ex1 = Character("Driver")
+define ex2 = Character("Matt")
 define v1 = Character("Child 1")
 define v2 = Character("Child 2")
 define vs = Character("Susie")
+define ha = Character("Hallucinations")
 
 # characters walkie-talkie
 define wt_mo = Character("Morgan", kind=nvl, callback=Phone_SendSound)

@@ -1350,7 +1350,9 @@ label dec_24:
         "But there was still no sign of Aston."
         "He hugs his legs close to his chest."
         show black
-        show ast neutral
+        show ast happy:
+            zoom 2.0
+            xalign 0.5
         "Eyes closed, Aston's face flashes by."
 
         lo "Buon Natale, amore."

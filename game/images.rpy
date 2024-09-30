@@ -1,3 +1,6 @@
+## Other things
+image snow = SnowBlossom("gui/navigation/snow.png", count=150, fast=True, start= 20)
+
 ## Chibi Heads
 image c_ca_happy = "chibi/cassie_happy.png"
 image c_ca_neutral = "chibi/cassie_neutral.png"
@@ -30,12 +33,24 @@ image bg camp1_night = "backgrounds/camp1night.png"
 image bg camp2_day = "backgrounds/Camp2Day.png"
 image bg camp2_night = "backgrounds/Camp2night.png"
 image bg cottage = "backgrounds/cottage.png"
+image bg cottage2 = "backgrounds/cottage2.png"
 image bg forest1 = "backgrounds/forest1.png"
 image bg forest2 = "backgrounds/forest2.png"
 image bg maintent_day = "backgrounds/maintentday.png"
 image bg maintent_night = "backgrounds/maintentnight.png"
 image bg morganstent = "backgrounds/morganstent.png"
 image bg walkpath = "backgrounds/walkpath.png"
+image bg forest3 = "backgrounds/forest3.png"
+image bg forest3_animals = "backgrounds/forest3animals.png"
+image bg forest3_bear = "backgrounds/forest3bear.png"
+image bg isaaklab1 = "backgrounds/isaaklab1.png"
+image bg isaaklab2 = "backgrounds/isaaklab2.png"
+image bg snowyplain = "backgrounds/snowyplain.png"
+image bg village1 = "backgrounds/village1.png"
+image bg village1_kyle = "backgrounds/village1Kyle.png"
+image bg walkpath = "backgrounds/walkpath.png"
+image bg waterbody = "backgrounds/waterbody.png"
+image bg window = "backgrounds/window.png"
 
 ## CGs
 image cg christmas = "cgs/christmasA_L.png"
@@ -45,6 +60,45 @@ image cg meeting = "cgs/meeting.png"
 image cg pearldeath = "cgs/pearldeath.png"
 image cg rash = "cgs/rash.png"
 image cg tomatosoup = "cgs/tomatosoup.png"
+image cg meetingkyle = "cgs/meetingkyle.png"
+image cg bearwindow1 = "cgs/bearwindow1.png"
+image cg bearwindow2 = "cgs/bearwindow2.png"
+image cg bearwindow3 = "cgs/bearwindow3.png"
+
+## CGs gallery versions
+image gal cg christmas:
+    xysize (317,190)
+    "cgs/christmasA_L.png"
+image gal cg findinglorenzo:
+    xysize (317,190)
+    "cgs/findingLorenzo.png"
+image gal cg frozenbody:
+    xysize (317,190)
+    "cgs/frozenbody.png"
+image gal cg meeting:
+    xysize (317,190)
+    "cgs/meeting.png"
+image gal cg pearldeath:
+    xysize (317,190)
+    "cgs/pearldeath.png"
+image gal cg rash:
+    xysize (317,190)
+    "cgs/rash.png"
+image gal cg tomatosoup:
+    xysize (317,190)
+    "cgs/tomatosoup.png"
+image gal cg meetingkyle:
+    xysize (317,190)
+    "cgs/meetingkyle.png"
+image gal cg bearwindow:
+    xysize (317,190)
+    "cgs/bearwindow1.png"
+
+image locked = "gui/extras/cg_locked.png"
+image cg_hover:
+    "gui/extras/cg_hover.png"
+    xoffset -10
+    yoffset -12
 
 ## Sprites
 
@@ -159,3 +213,8 @@ image pearl scared:
 image pearl smile:
     zoom 0.25
     "sprites/pearl/pearl smile.png"
+
+##Pancake
+image satphone:
+    yalign 0.5
+    "gui/radio/satphone.png"

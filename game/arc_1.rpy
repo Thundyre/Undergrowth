@@ -680,7 +680,7 @@ label nov_12:
     "Susie studies her portrait."
 
     v1 "What's wrong Susie?"
-    s
+    
     ky "Was it... not to her liking?"
     v2 "Are you okay?"
 
