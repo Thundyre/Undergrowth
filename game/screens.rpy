@@ -309,12 +309,30 @@ screen navigation():
             yoffset -30
 
             spacing 40
-
-            textbutton _("START") action Start()
-            textbutton _("CONTINUE") action ShowMenu("load")
-            textbutton _("SETTINGS") action ShowMenu("settings")
-            textbutton _("EXTRAS") action ShowMenu("gallery")
-            textbutton _("QUIT") action Quit(confirm=not main_menu)
+# textbutton _("Start"):
+#     hover_sound "audio/sfx_bell.mp3"
+#     activate_sound "audio/sfx_bell.mp3"
+#     action Start() 
+            textbutton _("START"):
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action Start()
+            textbutton _("CONTINUE"):
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action ShowMenu("load")
+            textbutton _("SETTINGS"):
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action ShowMenu("settings")
+            textbutton _("EXTRAS"):
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action ShowMenu("gallery")
+            textbutton _("QUIT"):
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action Quit(confirm=not main_menu)
     else:
         vbox:
             style_prefix "navigation"
@@ -333,11 +351,20 @@ screen navigation():
 
                 #textbutton _("History") action ShowMenu("history")
 
-                textbutton _("Save") action ShowMenu("save")
+                textbutton _("Save"):
+                    hover_sound "audio/ui/ui_hover1.ogg"
+                    activate_sound "audio/ui/ui_menu.ogg"
+                    action ShowMenu("save")
 
-            textbutton _("Load") action ShowMenu("load")
+            textbutton _("Load"):
+                    hover_sound "audio/ui/ui_hover1.ogg"
+                    activate_sound "audio/ui/ui_menu.ogg"
+                    action ShowMenu("load")
 
-            textbutton _("Settings") action ShowMenu("settings")
+            textbutton _("Settings"):
+                    hover_sound "audio/ui/ui_hover1.ogg"
+                    activate_sound "audio/ui/ui_menu.ogg"
+                    action ShowMenu("settings")
 
             if _in_replay:
 
@@ -345,12 +372,18 @@ screen navigation():
 
             elif not main_menu:
 
-                textbutton _("Title") action MainMenu()
+                textbutton _("Title"):
+                    hover_sound "audio/ui/ui_hover1.ogg"
+                    activate_sound "audio/ui/ui_menu.ogg"
+                    action MainMenu()
 
             if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
                 ## Help isn't necessary or relevant to mobile devices.
-                textbutton _("Controls") action ShowMenu("controls")
+                textbutton _("Controls"):
+                    hover_sound "audio/ui/ui_hover1.ogg"
+                    activate_sound "audio/ui/ui_menu.ogg"
+                    action ShowMenu("controls")
 
             #textbutton _("About") action ShowMenu("about")
 
@@ -358,9 +391,15 @@ screen navigation():
 
                 ## The quit button is banned on iOS and unnecessary on Android and
                 ## Web.
-                textbutton _("Quit") action Quit(confirm=not main_menu)
+                textbutton _("Quit"):
+                    hover_sound "audio/ui/ui_hover1.ogg"
+                    activate_sound "audio/ui/ui_menu.ogg"
+                    action Quit(confirm=not main_menu)
             
-            textbutton _("Return") action Return()
+            textbutton _("Return"):
+                    hover_sound "audio/ui/ui_hover1.ogg"
+                    activate_sound "audio/ui/ui_menu.ogg"
+                    action Return()
 
 
 style navigation_button:
@@ -368,6 +407,8 @@ style navigation_button:
     hover_background "gui/navigation/button_idle_hover.png"
     selected_hover_background "gui/navigation/button_selected_hover.png"
     selected_idle_background "gui/navigation/button_selected_idle.png"
+    hover_sound "audio/ui/ui_hover1.ogg"
+    activate_sound "audio/ui/ui_menu.ogg"
     properties gui.button_properties("navigation_button")
 
 style navigation_button_text:
@@ -404,7 +445,7 @@ screen main_menu():
     #add "snow"
     
     add "gui/navigation/logo.png":
-        xysize (900,250)
+        xysize (1350,375)
         xalign 0.5
         yalign 0.2
 
@@ -835,19 +876,19 @@ screen settings_audio():
                     spacing 90
                     label _("Mute all")
                     imagebutton auto "gui/settings/check_%s.png" action Preference("all mute", "toggle")
-                hbox:
-                    spacing 27
-                    label _("Radio Static")
-                    imagebutton auto "gui/settings/check_%s.png" action ToggleVariable("radio_static", "static", "clean")
-                    textbutton _("Test"):
-                        if radio_static == "static":
-                            action Play("radio_effect", renpy.random.choice(["audio/ui/radio static/uistatic1.ogg", "audio/ui/radio static/uistatic2.ogg", "audio/ui/radio static/uistatic3.ogg"]))
-                        else:
-                            action Play("radio_effect", renpy.random.choice(["audio/ui/radio static/uiclean1.ogg", "audio/ui/radio static/uiclean2.ogg", "audio/ui/radio static/uiclean3.ogg"]))
-                        pos (20,-20)
+                # hbox:
+                #     spacing 27
+                #     label _("Radio Static")
+                #     imagebutton auto "gui/settings/check_%s.png" action ToggleVariable("radio_static", "static", "clean")
+                #     textbutton _("Test"):
+                #         if radio_static == "static":
+                #             action Play("radio_effect", renpy.random.choice(["audio/ui/radio static/uistatic1.ogg", "audio/ui/radio static/uistatic2.ogg", "audio/ui/radio static/uistatic3.ogg"]))
+                #         else:
+                #             action Play("radio_effect", renpy.random.choice(["audio/ui/radio static/uiclean1.ogg", "audio/ui/radio static/uiclean2.ogg", "audio/ui/radio static/uiclean3.ogg"]))
+                #         pos (20,-20)
     
         vbox:
-            xoffset -220
+            xoffset -50
             yoffset -10
             spacing 30
             hbox:
@@ -1768,14 +1809,14 @@ style vbar:
 style scrollbar:
     variant "small"
     ysize gui.scrollbar_size
-    base_bar Frame("gui/phone/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/phone/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/phone/slider/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame("gui/phone/slider/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
 style vscrollbar:
     variant "small"
     xsize gui.scrollbar_size
-    base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/phone/slider/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame("gui/phone/slider/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
 
 style slider:
     variant "small"

@@ -6,14 +6,15 @@ label dec_6_2:
     "I don't know how long it has been."
     "The pounding pain in the back of my head radiates as I try to take in my surroundings."
     "This is... the main tent?"
-    "There was an avalanche and I.. I was trying to hide from the snow and.."
-    show ast neutral at centerleft
+    "There was an avalanche and I... I was trying to hide from the snow and..."
+    show ast happy at centerleft
     show pearl smile at centerright
     ast "Morgan!"
     pe "He's awake!"
 
     "I'm relieved that Aston and Pearl are here... but where are the rest?"
 
+    show ast neutral
     ast "You are okay, Morgan. We're in the main tent."
     pe "Or main tent 2.0."
     ast "You have a wound at the back of your head, perhaps caused by falling debris. You were an unlucky target."
@@ -23,13 +24,13 @@ label dec_6_2:
 
     show pearl sad
     show ast sad
-    "Pearl looks down.. and Aston, he's looking up?"
+    "Pearl looks down... and Aston, he's looking up?"
     "That was not the reaction I'd hope to see."
     "I never thought I'd see him emotional but it looks like Aston's on the verge of breaking down."
 
     show pearl neutral
     pe "Gregory... He's outside the tent, he's fine."
-    pe "Kyle is also fine, he's sorting through our supplies and setting up our sleeping space for tonight."
+    pe "Kyle is also fine. He's sorting through our supplies and setting up our sleeping space for tonight."
     show pearl depressed
     pe "Lorenzo... We haven't found him."
     pe "We've tried beeping his Walkie, but we haven't received anything."
@@ -39,7 +40,7 @@ label dec_6_2:
     "Aston turns away from us."
 
     mo "Let's go find him."
-    ast "You should rest Morgan, and.. it's too dark outside to see right now."
+    ast "You should rest Morgan, and... it's too dark outside to see right now."
     ast "We've already searched the area around us before sundown."
 
     show pearl sad
@@ -55,8 +56,8 @@ label dec_6_2:
     "He is a tough cookie. He'll survive this."
 
 label dec_7:
-    #EXT: Forest 1
     scene bg forest3 with longfade
+    play music audio.neutral
     "Waking up the next day was challenging."
     "Muscles are sore, head's taken a beating, but other than that I am fine."
     show ast sad
@@ -67,7 +68,7 @@ label dec_7:
 
     #EXT: Forest 2
     show bg forest1
-    "Joining us on our search is Davos and Jax."
+    "Joining us on our search are Davos and Jax."
     "They're trying to cover the area around C2, south of the impact."
     "We doubt that Lorenzo would be around there, since he was with Aston right before the avalanche."
     "But we don't want to take any chances."
@@ -92,10 +93,11 @@ label dec_7:
 
     "We called his name. No response."
 
-    ast "Where are you, my love..?"
+    ast "Where are you, my love...?"
 
+    show black with dissolve
     "The search mission went on for hours, but we were unsuccessful. It had to come to a halt for the day."
-    "The sun was setting and we had to head back to camp before it turns dark."
+    "The sun was setting and we had to head back to camp before it became dark."
     "Lorenzo has been missing for about 24 hours now... It's not a good sign."
 
     #EXT: Camp 1A
@@ -118,17 +120,17 @@ label dec_7:
     show ky neutral
     ky "Gregory and Pearl are gonna help out tomorrow I think."
     mo "Yep. Hopefully it'll make the search much easier."
-
+    stop music
     #INT: Main tent
     scene bg maintent_night with dissolve
+    play ambience amb_campnight_wofire fadein 1.0
     "The sleeping bags have all been moved to the main tent for now."
     "Some of our smaller tents were destroyed so everyone's gotta share the big tent for the time being."
     "I need to call Colin."
-    "Time for the waiting game I guess, once everyone's asleep, I'll step outside."
+    "Time for the waiting game, I guess. Once everyone's asleep, I'll step outside."
 
     #EXT: Camp 1A
     show bg camp2_night
-    #TODO phone start
     show satphone
     mo "Hey Pancake."
     co "Woah, you sound horrible. So my birdie in Heralign HQ was right about the situation?"
@@ -156,6 +158,7 @@ label dec_7:
 
     "I hung up on Colin."
     "I do enjoy terrorizing him, keeps me sane from the mess I'm dealing with here."
+    stop ambience
 
 label dec_8:
     #INT: Cabin
@@ -167,8 +170,8 @@ label dec_8:
 
     show black with dissolve
     "On the day of the avalanche, Lorenzo slipped and tumbled down the hill."
-    "He escaped death in exchange of a few bruises here and there."
-    "He ended up further away from the rest. Hence, why Aston couldn't find him."
+    "He escaped death in exchange for a few bruises here and there."
+    "He ended up further away from the rest...hence why Aston couldn't find him."
     "To make things worse, his Walkie's receiver snapped off during the fall."
     "With no map on hand, it would be hard to navigate back to camp."
     "When the time is ticking and the sun threatens to set, you don't have a lot of options."
@@ -179,7 +182,7 @@ label dec_8:
     lo "The furniture in here reminds me a lot of the village up north... Maybe this is one of their hunting huts."
 
     "Looking around, there's a shelf of perishables, a mini fireplace, lots of blankets and a sole rifle leaning against the wall."
-    "Lorenzo made a makeshift bed with an armchair and its matching an ottoman."
+    "Lorenzo made a makeshift bed with an armchair and its matching ottoman."
     "The silver lining is that it's much more comfortable than a sleeping bag."
 
     lo "I need to start finding my bearings tomorrow. Cassie's map never had a cabin on it, so this must be an area that we haven't been to yet."
@@ -203,7 +206,7 @@ label dec_8:
     #BG Window
     hide cg
     lo "Wait, what was that?"
-
+    play music audio.anxious
     "Out of the corner of his eye, Lorenzo swears that he saw something huge."
     "Something... unpleasantly familiar."
     show cg bearwindow2
@@ -232,6 +235,7 @@ label dec_8:
     "He runs to the blankets and quickly drapes it over the window."
     "After pacing around the room nervously, he decided that he'll hold the rifle in hand while he sleeps tonight."
     "Not sure if the rifle would do any damage but, it's safer to have it than not."
+    stop music
 
 
 label dec_9:
@@ -258,7 +262,7 @@ label dec_9:
     "He's standing up and checking his pockets."
     "I checked my clock, it's 11:41pm. That's already pretty late at camp."
     "Is he doing what I think he's doing?"
-
+    play music audio.neutral
     menu:
         "Call him":
             mo "Aston."
@@ -271,6 +275,7 @@ label dec_9:
 
             menu:
                 "Convince him not to go":
+                    voice "audio/voice/moc_a2_023.ogg"
                     mo "I don't think it's a good idea."
                     show ast angry
                     ast "If you're not going to help me, please do not stop me."
@@ -298,7 +303,7 @@ label dec_9:
             "I don't think I can catch up to Aston anymore at this point."
             hide gr
             "I'm no longer hearing footsteps outside the tent."
-            "If I look for him now, it would do any good."
+            "If I look for him now, it would not do any good."
             "Damn it."
             "I counted my losses and stayed in the tent all night. I didn't get any sleep."
 
@@ -312,6 +317,7 @@ label dec_9:
             menu follow_aston:
                 "Convince him not to go":
                     "I called out to him."
+                    voice "audio/voice/moc_a2_023.ogg"
                     mo "I don't think it's a good idea."
                     show ast angry
                     ast "If you're not going to help me, please do not stop me."
@@ -341,6 +347,7 @@ label dec_9:
 
         #choice branch 2 ends
     #choice branch 1 ends
+    stop music
 
 label dec_10:
     #To Sharkie, this sequence only happens if you fail to join Aston on his adventure, then it just continues downwards
@@ -399,6 +406,7 @@ label dec_10:
 
         show cg findinglorenzo
         $ persistent.gallery_findinglorenzo = True
+        play music audio.light
         hide ast
         "Aston barges into the cabin to see a petrified Lorenzo."
 
@@ -512,6 +520,7 @@ label dec_10:
             "His face no longer scrunches up while he sleeps."
             "It was something I've noticed for the past few days, heard him tossing and turning in his sleep."
             "All is well now."
+    stop music
 
 label dec_11:
     #EXT: Camp 1A
@@ -543,8 +552,8 @@ label dec_11:
     "Doubt."
     "The search, now for two, commences."
 
-    #INT: Cabin
     scene bg cottage2 with fade
+    #play ambience amb_bear_wovoice fadein 1.0
     #Lorenzo's POV
     "Lorenzo is wide awake and feeling restless."
 
@@ -559,6 +568,8 @@ label dec_11:
     lo "Thank you."
 
     "He pulls the blanket higher up to cover his shoulders."
+    #stop ambience fadeout 1.0
+    #play ambience amb_bear fadein 1.0
 
     ha "Lo-Lorenzo."
 
@@ -578,7 +589,8 @@ label dec_11:
     "Aston has always pronounced his name the proper way, and this is just insulting."
     "This realization sparked a defiant fire within him."
     show lorenzo neutral
-    lo "I am hallucinating, aren't I?"
+    voice "audio/voice/loc_a2_36.ogg"
+    lo "Lorenso- I am hallucinating, aren't I?"
 
     "For once instead of fear, Lorenzo is frankly, really sick of this."
     "The torment needs to stop."
@@ -598,7 +610,9 @@ label dec_11:
 
     ha "*growl*"
     show lorenzo smile
-    lo "Hello, poser."
+    voice "audio/voice/loc_a2_40.ogg"
+    lo "Salve, imitatore"
+    #stop ambience fadeout 1.0
 
 label dec_12:
     #EXT: Camp 1A
@@ -640,7 +654,6 @@ label dec_12:
     "They may not be family, they may not even be friends."
     "But they are people Gregory spends the most time with."
     "And that doesn't discredit the fact that deep down, he cares."
-    "He wished that this nightmare would end soon."
 
 label dec_13:
     #EXT: Camp 1A
@@ -662,7 +675,7 @@ label dec_13:
     show bg camp2_night
     "Right. Now that everyone's sleeping, tis' the time."
 
-    #TODO phone start and change lines
+    play ambience amb_campnight_wofire fadein 1.0
     show satphone
     mo "Pancake!"
     co "The number you have dialed is unavailable, please tr-"
@@ -671,11 +684,13 @@ label dec_13:
     mo "Do you want to be goopy or fluffy? Pick one."
     co "Fluffy..."
     mo "Nice. Anyway, you need to hear this."
-    mo "Lorenzo's in a cottage in the forest, but his symptoms are getting worse."
+    voice "audio/voice/moc_a2_052.oggR"
+    mo "Lorenzo's in a cabin in the forest, but his symptoms are getting worse."
     mo "Then Elly's name popped up in conversation."
     mo "Greggy's involved in some way, but we don't have evidence."
     mo "Aston overheard him talking to someone the night before he disappeared."
-    mo "And now Lorenzo is going to camp at the cottage because they don't want to take any chances."
+    voice "audio/voice/moc_a2_056.ogg"
+    mo "And now Lorenzo is going to camp at the cabin because they don't want to take any chances."
     mo "Elly's rash apparently looks exactly like the rashes we're dealing with, and it didn't come from a bite."
     mo "Which is why Kyle is safe, he's an outlier."
     co "Now you're talking Morg! That's a lot that you've gathered here."
@@ -687,10 +702,12 @@ label dec_13:
     "He hung up on me."
     "Damn it, he knows my tricks. That ain't fun."
     "I'll need new ways to annoy him."
+    stop ambience fadeout 1.0
 
 label dec_14:
     #EXT: Forest
     scene bg forest3 with longfade
+    play ambience amb_bad1 fadein 1.0
     show ast neutral
     "Aston and I are once again on our way to meet Lorenzo."
     "This time, we brought supplies and some tools to fix his Walkie."
@@ -764,6 +781,7 @@ label dec_14:
             "I called out to him again."
             "No response."
             "I need to get to Lorenzo, and just pray that Aston shows up at the cabin."
+    stop ambience fadeout 1.0
 
     #choice branch ends
 #TODO DOUBLE CHECK THIS WORKS AS PROPERLY
@@ -1078,8 +1096,8 @@ label dec_16:
         "Seeing that her comment elicited a chuckle out of me, she nodded, satisfied with her work."
 
 label dec_17:
-    #EXT: Forest
     scene bg forest3 with longfade
+    play ambience amb_campday fadein 1.0
     #Kyle's POV
     show ky smile at centerleft
     show pearl smile at centerright
@@ -1111,6 +1129,8 @@ label dec_17:
 
     show ky shaken
     ky "Oh shit that's a bear."
+    stop ambience fadeout 1.0
+    play music audio.anxious
 
     "The bear doesn't notice Kyle's presence."
     "Click!"
@@ -1179,6 +1199,7 @@ label dec_17:
     ky "Could you grab my laptop Pearl? I need backups of these before I lose 'em."
     show pearl smile
     pe "On it!"
+    stop music
 
 label dec_18:
     #INT: Main tent
@@ -1217,7 +1238,7 @@ label dec_18:
 
 label dec_20:
 #20th Aston safe
-#EXT: Camp 1A
+    play music audio.light
     scene bg camp2_day with longfade
     if aston_safe:
         "While enjoying a cup of cocoa by myself, I received a Walkie beep from Wilbur."
@@ -1543,9 +1564,11 @@ label dec_25:
     "I take a deep breath."
 
     mo "Merry Christmas, Elly."
+    stop music
 
 label dec_26:
     scene bg camp2_day with longfade
+    play music audio.neutral
     "Ah yes, it's time for my favorite hobby."
     "Tormenting my beloved 37 year old child."
     "But first, I should send him some pictures."
@@ -1586,9 +1609,11 @@ label dec_26:
         "Weak signal? Never had this issue before."
         "I called him once more."
         "Looks like it's not going through. Guess I'll try again another time."
+        stop music
 
 label dec_27:
     scene bg maintent_night with longfade
+    play ambience amb_campnight_wofire fadein 1.0
     "In the dead of the night I heard someone rummaging through their backpacks."
 
     if aston_safe:
@@ -1670,6 +1695,7 @@ label dec_27:
                 "Tears welled up in her eyes."
                 pe "I wish I could do more."
                 ast "You're doing enough Pearl. Let's go back to sleep okay?"
+                stop ambience fadeout 1.0
 
         #If Aston is not safe
             else:
@@ -1679,6 +1705,7 @@ label dec_27:
                 "Tears welled up in her eyes."
                 pe "I wish I could do more."
                 mo "You're doing enough, but right now you need to get some sleep."
+                stop ambience fadeout 1.0
 
         #Pearl's dead end
         else:
@@ -1723,9 +1750,11 @@ label dec_27:
             "This is all my fault."
             "If anything happens to her, I-"
             "...I won't be able to forgive myself."
+            stop ambience fadeout 1.0
 
             #Scene transition: Fade to black > Fade in forest BG
             scene bg forest3 with longfade
+            play ambience amb_bad2 fadein 1.0
             #Pearl's POV
             show pearl neutral
             "The wind picks up tremendously as Pearl trudges through the snow."
@@ -1766,6 +1795,7 @@ label dec_27:
             pe "Shi-"
             show black with pushupquick
             "Pearl loses her footing and slips down a ravine."
+            stop ambience fadeout 1.0
 
         #@ Sharkie the way it works:
         #If is Aston is present and safe, then Pearl will be safe
@@ -1774,6 +1804,7 @@ label dec_27:
 
 label dec_28:
     scene bg camp2_day with longfade
+    play music audio.neutral
     #Gregory's POV
     show gr neutral
     "Gregory is alone at the campsite."
@@ -1824,6 +1855,7 @@ label dec_28:
     "Knowing the true nature of this operation, and then deceiving the ones that he's working closely with."
     "The choice that he made now affects everyone around him."
     "But to Gregory, it's a necessary burden to bear."
+    stop music
 
 label dec_30:
     scene bg maintent_night with longfade
@@ -1846,6 +1878,7 @@ label dec_30:
 
     #EXT: Camp 1A
     scene bg camp2_night with sdissolve
+    play ambience amb_campnight_wofire fadein 1.0
     "Gregory's Walkie starts beeping the moment I step foot outside."
 
     show gr neutral at centerleft
@@ -1888,6 +1921,7 @@ label dec_30:
         ast "We'll have to check on Lorenzo tonight."
         "Aston, who's also now awake, checks his phone."
         "I should also go to the cabin tonight"
+        stop ambience fadeout 1.0
 
         scene bg cottage2 with fade
         show lorenzo smile
@@ -1914,7 +1948,9 @@ label dec_30:
     #If Aston is not safe
     else:
         "I should also go to the cabin tonight"
+        stop ambience fadeout 1.0
         scene bg cottage2 with fade
+        play ambience amb_bad1 fadein 1.0
         show lorenzo smile
         "I'm paying Lorenzo a visit."
         lo "So the loud crash I heard was real then?"
@@ -1930,9 +1966,11 @@ label dec_30:
         "He seems like he's shaking under the covers."
         "I wish I could do something for him, maybe get Ruran here to check on him while I'm away."
         "I know Aston would've done the same."
+        stop ambience fadeout 1.0
 
 label dec_31:
     scene bg forest2 with longfade
+    play music audio.neutral
     "The next morning comes."
     show gr neutral
     "Gregory and I checking up on the radio tower today."
@@ -2007,6 +2045,7 @@ label dec_31:
 
 
     #continue here
+    stop music
     "I should have a look around. I wonder if you can see Lorenzo's cabin from up here."
     "But then again, the cabin is to the north, and so is the radio tower."
     "Cassie would've spotted it if there weren't so many trees."
@@ -2016,6 +2055,7 @@ label dec_31:
     "And south is where C2 and RC can be seen."
     "It'll be the first time I lay my eyes on-"
     "..."
+    play music audio.anxious
     "I kicked something."
     "Something under the snow maybe?"
 
@@ -2042,7 +2082,9 @@ label dec_31:
     if aston_safe and pearl_safe:
         "Davos turns away from the sight."
         ja "The day always turns into an eventful one when I least expect it."
+        voice "audio/voice/dac_a2_171.ogg"
         da "This... looks like a horrible way to die."
+        voice "audio/voice/dac_a2_181.ogg"
         da "I-I'm gonna go call my pops."
         mo "Well then... we're stranded and now there's a dead body."
         mo "What else could possibly go wrong?"
@@ -2052,7 +2094,9 @@ label dec_31:
         "I'm not ready to identify who it is."
         "Davos turns away from the sight."
         ja "The day always turns into an eventful one when I least expect it."
+        voice "audio/voice/dac_a2_171.ogg"
         da "This... looks like a horrible way to die."
+        voice "audio/voice/dac_a2_181.ogg"
         da "I-I'm gonna go call my pops."
         mo "Well then... we're stranded and now there's a dead body."
         mo "What else could possibly go wrong?"
@@ -2060,7 +2104,12 @@ label dec_31:
     scene black with fade
 ###----------SPOOKTOBER DEMO END----------###
 label demo_end:
-    "Thanks for playing our demo!"
+    show cg endscreen
+    "Thank you for playing Undergrowth (demo)!"
+    "We have a lot in the works and are working towards the full release!"
+    "Please look forward to it!"
+    "And with that, we shall we leave you with a Happy Spooktober!"
+    "- Sincerely, the Undergrowth Dev Team"
 
 
 

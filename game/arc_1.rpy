@@ -1,15 +1,18 @@
 label nov_1:
+    stop music
     $ save_name = _("Prologue")
+    show cg morganhome1
+    $ persistent.gallery_morganhome = True
     tv_hi "Glow glow glow with NuGLO, let us help you restore your skin's shiny supple glow!"
     tv_hi "So what are you waiting for? Grab your very own NuGLO samples at your local stores today!"
 
-    scene black
     $ hidebubbles = True
+    scene black
     #Morgan stands up and switches off the TV abruptly, his phone buzzes.
 
     #Click!
     #SFX
-
+    show cg morganhome2
     mo "Heya."
     co "Got everything you need Morg?"
     mo "Yep just zipping up here and I'm good to go."
@@ -39,7 +42,7 @@ label nov_4:
     ex1 "We're here."
     mo "Whew, alright!"
     scene bg snowyplain with dissolve
-    #EXT: Snowy plain
+    play ambience amb_campday fadein 1.0
     "A vast stretch of white greets me as I exit the car."
     "The cold wind stings a little as it brushes my cheek. Might take a while before I get used to it."
     mo "Hey thanks for the ride!"
@@ -73,6 +76,7 @@ label nov_4:
     scene bg camp1_day with dissolve
     "Against the white snow and the grayish brown trees, the pops of red and orange of the tents stand out beautifully."
     gr "Good job keeping up, let me call the others over 'ere."
+    play music audio.light
     gr "Everyone gather round 'ere, we got a new recruit!"
 
     show cg meeting
@@ -149,7 +153,7 @@ label nov_4:
     lo "Sure thing."
     gr "Pearl, Aston, go help Morgan out will ya?"
     pe "You got it sir! I'll show you around Morgan!"
-
+    stop ambience fadeout 1.0
     scene bg maintent_day with dissolve
 
     "I followed them into one of the bigger tents, it is much more spacious than I thought."
@@ -183,8 +187,9 @@ label nov_4:
     #radio selection stuff happens here
     $ pancake = False
     menu n4_call:
-        "Call Davos":
+        "Call Davos" if not n4_call_da:
             hide ast
+            $ n4_call_da = True
             wt_mo "Hello this is Morgan, is Davos here?"
             wt_da "Oh hello! Morgan, was it? It's nice to meet you!"
             wt_da "I'm in Camp 2, which is a little down south from where you're at!"
@@ -194,8 +199,9 @@ label nov_4:
             wt_wi "Davos? Could you lend me a hand here?"
             wt_da "Oops gotta go! Talk to you next time Morgan!"
             nvl clear
-        "Call Koda":
+        "Call Koda" if not n4_call_ko:
             hide ast
+            $ n4_call_ko = True
             wt_mo "Hello this is Morgan, is this Koda?"
             wt_ko "Oh! I'm Koda, yes! I heard from Pearl you were arriving today."
             wt_ko "I'm over here at the RC with Eva and Isaak, they're both scientists. They're also both my supervisors."
@@ -233,8 +239,10 @@ label nov_4:
     co "But anyway, I'm sure you're tired Morg, rest up you hear?"
     mo "Alright alright, goodnight Pancake. I'll catch you later."
     hide satphone
+    stop music
 
 label nov_5:
+    play music audio.neutral
     scene bg morganstent with longfade
     #INT: Morgan's tent
 
@@ -335,6 +343,8 @@ label nov_5:
 
     "The days definitely seem much shorter here."
     "Looks like I'll have to get used to not having much daytime for the time being."
+    stop music
+
 label nov_6:
     #INT: Morgan's tent
     scene morganstent with longfade
@@ -364,7 +374,8 @@ label nov_6:
     "Our conversation was interrupted by Gregory calling us over to gear up."
     "Alrighty, I guess it's time."
 
-    scene bg forest1 with dissolve
+    scene bg forest3 with dissolve
+    play ambience amb_campday fadein 1.0
     show gr neutral at centerright
 
     "Gregory begins by going through a long checklist of items to collect for the day."
@@ -436,10 +447,11 @@ label nov_6:
     "I finished up the remainder of my trail mix, and got back to work."
     "Gregory seems pleased with my reports."
     "Not bad Morgan, maybe I am suited to be a camp guide."
+    stop ambience fadeout 1.0
 
 label nov_7_11:
     #7th
-    #EXT: Forest
+    play music audio.light
     scene bg waterbody with longfade
 
     "Another sample collection day."
@@ -645,10 +657,12 @@ label nov_7_11:
         "Isaak. Also at the RC. That's really all I know for now."
         "That brings us to a total of 12 people here."
         "I should update Colin when I have the chance."
+        stop music
 
 label nov_12:
     #EXT: Village
     scene bg village1 with longfade
+    play ambience amb_village fadein 1.0
     #Kyle's POV
     show ky smile at centerleft with dissolve
     ky "Just one more shot of y'all together.. yep that's cute!"
@@ -682,6 +696,7 @@ label nov_12:
     v1 "What's wrong Susie?"
     
     ky "Was it... not to her liking?"
+    voice "audio/voice/v2_a1_3.ogg"
     v2 "Are you okay?"
 
     "The kids start petting Susie's back."
@@ -697,6 +712,7 @@ label nov_12:
     v1 "Haha! It means Susie likes it! She's happy."
     show ky confused
     ky "I'm not sure if that's normal cow behavior."
+    voice "audio/voice/v2_a1_2.ogg"
     v2 "Did it hurt Mr. Kyle?"
 
     "Gazing down at his forearm, it seems like Susie's bite managed to break the skin."
@@ -720,10 +736,10 @@ label nov_12:
     "Kyle is going to be the best wildlife photographer to ever exist."
     "Or so he tries to tell himself."
     "After the fact he got bitten by a cow of all things."
+    stop ambience fadeout 1.0
 
 
 label nov_13:
-    #INT:  Morgan's Tent
     scene bg morganstent with longfade
 
     "It's been roughly a week since I've been here."
@@ -733,7 +749,6 @@ label nov_13:
     "I don't feel sleepy yet."
     "I think I'll just walk a circle around camp."
 
-    #EXT: Camp 1
     scene bg camp1_night with dissolve
 
     "Night walks are my happy place."
@@ -748,6 +763,7 @@ label nov_13:
     show gr neutral
 
     gr "I understand ma'am, but that's not possible."
+    play music audio.anxious
 
     "Oh, is he on the phone?"
 
@@ -779,6 +795,7 @@ label nov_13:
     "And a boy... Elly?"
     "Nope. I'm not gonna think about the worst case scenario just yet."
     "Let's head to bed."
+    stop music
 
 
 label nov_14:
@@ -792,6 +809,7 @@ label nov_14:
 
     #EXT: Camp 1
     scene bg camp1_day with dissolve
+    play ambience amb_campday fadein 1.0
     show lorenzo sad with dissolve
 
     lo "Oh Morgan, good morning!"
@@ -825,9 +843,10 @@ label nov_14:
     "Can't collect samples when there's a storm that could strike at any moment."
     "Roll call happened much earlier today, and everyone went back to their respective tents to hunker down for the night."
     "This would probably be a great time to call Colin for updates."
+    stop ambience fadeout 1.0
 
     scene bg morganstent with fade
-    #INT: Morgan's tent
+    play ambience amb_campnight_wofire fadein 1.0
 
     show satphone
     mo "How's my Pancake doing?"
@@ -855,7 +874,7 @@ label nov_14:
     "Rustle rustle"
     "Was that from outside?"
 
-menu:
+    menu:
         #choice branch starts
         "Tell Colin goodnight":
 
@@ -902,6 +921,7 @@ menu:
             "I guess it's time to hit the bed."
 
             #choice branch ends
+    stop ambience
 
 label nov_15:
     #INT: Morgan's tent
@@ -948,6 +968,7 @@ label nov_15:
     "And what do we have here?"
     "There are documents strewn across the table, they weren't here last night."
     "Huh?"
+    play music audio.anxious
     "These are... Everyone's profiles?"
     "Name: Pearl"
     "Age: 24"
@@ -1026,6 +1047,7 @@ label nov_15:
     "Major alarms are blaring in my head."
     "Aston and I share glances for a moment, before he decides to go on about his daily routine."
     "He doesn't question me, nor does he ever bring it up again for the day."
+    stop music
 
     scene bg camp1_day with dissolve
     #EXT: Camp 1
@@ -1147,6 +1169,7 @@ label nov_16:
     "Definitely not natural, it even has a little entrance."
     show cg meetingkyle
     $ persistent.gallery_meetingkyle = True
+    play music audio.light
     ky "Hello!"
 
     "An unfamiliar face greets me as I approach the igloo-like structure."
@@ -1248,6 +1271,7 @@ label nov_16:
     "But now I am worried about dragging another civilian into a mess whose depth even I'm unsure of."
     "Sounds like I made a bad choice, but the only other option was to leave him to fend for himself."
     "I'm sure it'll be fine for now."
+    stop music
 
 label nov_17:
     #INT: Main tent
@@ -1299,7 +1323,8 @@ label nov_17:
     pe "Great work guys! We did amazing!"
 
     #Cassie beeps you
-
+    "Beep!"
+    "Oh, it looks like I've got a message."
     wt_ky "Woah Cassie does this mean he received it?"
     wt_mo "Loud and clear Kyle."
     wt_ca "Haha hello Morgan! I was just teaching him how the Walkie works, we happened to have a spare!"
@@ -1328,6 +1353,7 @@ label nov_17:
 
     #Lorenzo's POV
     scene bg isaaklab1 with longfade
+    play ambience amb_rc fadein 1.0
     show lorenzo smile at centerleft
     lo "Hngggg... phew.. I think that's the last box for Isaak? Koda's usually the one that collects boxes but I think they're with Gregory and Eva now."
     lo "Isaaaaak? Are you there?"
@@ -1345,6 +1371,7 @@ label nov_17:
     lo "I'll let Koda know that his supplies are here I guess."
 
     "Unable to shake off the feeling of uneasiness, Lorenzo decides to leave the lab to go look for the others."
+    stop ambience fadeout 1.0
 
 label nov_18:
     #EXT: Camp 1
@@ -1366,7 +1393,7 @@ label nov_18:
     "The day goes on with lots of fun and banter."
 
     scene bg morganstent with sdissolve
-    #INT: Morgan's tent
+    play music audio.neutral
     "Night time."
     "First things first, the map."
 
@@ -1407,11 +1434,12 @@ label nov_18:
     mo "Nighty night, Pancake."
     hide satphone
     "I fell asleep soon after."
+    stop music
 
 label nov_19_23:
     #19th
-    #EXT: Camp 1
     scene bg camp1_day with longfade
+    play music audio.light
 
     "It's my favorite time of the day, meal time."
     "Looks like there's already a crowd gathered in here."
@@ -1582,10 +1610,10 @@ label nov_19_23:
     pe "Oooh! Thank you Morgan, you're the best!"
 
     "If we're out in the forest, it would be pretty dangerous to leave your compass back at camp."
-    "I'll need to make sure I remind her every tim, then."
+    "I'll need to make sure I remind her every time, then."
+    stop music
 
     #23rd
-    #EXT: Camp 1
     scene bg camp1_day with longfade
     show ky happy at centerleft
     ky "-and then splash! The otter family all jumped into the river together!"
@@ -1602,6 +1630,7 @@ label nov_19_23:
 
     #INT: Main tent
     show bg maintent_day with sdissolve
+    play music audio.neutral
     "Aston skillfully unwraps Kyle's bandage and examines the wound."
     "He turns around and gives Kyle a packet of anti-inflammatory meds."
     show ast inthought
@@ -1696,9 +1725,10 @@ label nov_24:
     ky "I saw a wolf! It was a silly one, kept bumping into trees."
     "I suppose I'll have to leave snooping in Gregory's tent for another time."
     "Marshmallow night is about to start soon."
+    stop music
 
-    #EXT: Camp 1
     scene bg camp1_night with dissolve
+    play music audio.light
     "*crackle crackle*"
     "The fire chirps loudly in the midst of the silent snowy plain."
     "Marshmallow in hand, everyone sits in a circle, patiently toasting their marshmallow."
@@ -1731,6 +1761,7 @@ label nov_24:
     "There has to be something. Something... or someone else in the picture that I'm not seeing."
     "What is it? Who is it?"
     "I need to gather more info for Colin."
+    stop music
 
 label nov_25:
     #EXT: Forest
@@ -1767,8 +1798,8 @@ label nov_25:
     "I think I need to ask someone with qualifications on this topic."
     "Maybe Eva?"
 
-    #EXT: Camp 1
     scene bg camp1_day with dissolve
+    play music audio.neutral
 
     "We quickly returned to the campsite and Gregory hastily drove his snowmobile to the RC."
     "I guess it will be an early day for Pearl and I."
@@ -1815,6 +1846,7 @@ label nov_25:
     "Lake erosion huh?"
     "That does sound bad."
     "But worrying about it won't do anything right now."
+    stop music
 
 label nov_26:
     #INT: Main tent
@@ -1979,13 +2011,21 @@ label nov_30:
     "Today was no different, but as we were about to hunker down for the night, the radio buzzed."
 
     #radio goes brrr connects to camp 1 and 2
+    play music audio.neutral
     wt_ev "Hello campers, is now a good time?"
     wt_ja "Another weather report Eva? Camp 2's all here."
     show pearl smile at left
-    show gr neutral at centerleft
-    show ky smile at centerright
+    show gr neutral:
+        xpos 300
+        yalign 1.0
+    show ky smile:
+        xpos 600
+        yalign 1.0
     show lorenzo smile at right
-    #TODO add aston and rearrange everyone
+    show ast neutral:
+        xpos 1000
+        yalign 1.0
+
     pe "We're all here too!"
     wt_ev "Alright, good... but it's not about the weather, though."
     wt_ev "I have bad news and bad news."
@@ -2009,12 +2049,12 @@ label nov_30:
     wt_ko "That's definitely something to look out for now while we figure out what we have on our end."
     wt_is "Gregory, Wilbur and the rest. You have a new extra task - observe the behaviour of the wildlife."
     wt_is "Get pictures if possible."
-
+    stop music
     "Gregory looks at Kyle, and Kyle points to his camera expectantly."
     gr "Kyle has a camera we can use."
     wt_wi "Hah! It looks like that camera will be useful after all, lad!"
     wt_wi "Gregory won't have a reason to kick you out anymore!"
-
+    play music audio.light
     "Pearl and Kyle fist pump the air together."
 
     wt_da "Good for you Cassie!"
@@ -2037,6 +2077,7 @@ label nov_30:
     nvl clear
     "Well, if I do indirectly end up contributing to modern medicine study, that's a win in my books."
     "I wonder if the weather had something to do with the fungi appearing."
+    stop music
 
 label dec_2:
     #INT: Main tent
@@ -2191,8 +2232,8 @@ label dec_3:
     ky "Yeah! I'd love to, Morgan."
 
 label dec_4:
-    #EXT: Camp 1
     scene bg camp1_night with longfade
+    play music audio.light
     "Night falls in camp."
     "With the info I've gathered over the past few days, I think it's time for another update."
     "After being interrupted by Gregory multiple times, I waited for the signal before dialing up Colin."
@@ -2228,6 +2269,7 @@ label dec_4:
     co "Still that doesn't mean he's off the suspect list."
     mo "You're right."
     mo "Anyway, my turn now, Pancake. I've got two for you today."
+    voice "audio/voice/hellyeah.ogg"
     co "Hell yeah, what's up?"
     mo "We might have a third case of the sickness."
     co "So it's rashes, nightmares and what now?"
@@ -2258,6 +2300,7 @@ label dec_4:
     "Fungi, rashes... I hate the image that my mind's painting right now."
     "Putting the two and two together, it does sound plausible that it's related."
     "I trust that the guys at the RC will find out soon enough."
+    stop music
 
 label dec_5:
     #INT: Main tent
@@ -2344,9 +2387,9 @@ label dec_5:
     mo "Aye aye captain."
 
 label dec_6_1:
-    #EXT: Camp 1
     scene bg camp1_day with longfade
-    "Essentials and equipment have been all well packed."
+    play music audio.neutral
+    "Essentials and equipment have all been well packed."
     "Today is moving day."
     "New terrain to conquer, new friends to meet."
     "I'm sure it'll be lovely."
@@ -2360,22 +2403,24 @@ label dec_6_1:
     show lorenzo smile at right
     hide pearl
     lo "Looks like she forgot."
+    show ast neutral
     ast "How is the route up going to be?"
     show gr with move:
-        xpos 400
+        xpos 200
     show lorenzo with move:
-        xpos 1500
+        xpos 1600
     gr "Alrighty so, here's the route that Cassie drew for us."
 
     "Gregory holds out his map with his outstretched hands for us to see."
 
-    gr "We're gonna start climbing the mountain over 'ere, it's less steep of an angle to trek she said."
+    gr "We're gonna start climbing the mountain over 'ere. It's less steep of an angle to trek, she said."
     gr "Once we've reached the midpoint, we're gonna pivot to this area here. A nice flat area to set up camp."
     mo "Do you know how long that might take us?"
     gr "A few hours at least, we should be able to get there before sundown."
     lo "And we're meeting them at the midpoint, yes?"
     gr "That is correct."
-    show ky smile at left
+    show ky smile at left:
+        xpos -100
     ky "Are we going to come back later to retrieve everything?"
     gr "Yes, that's why the essentials are the only things that we're carrying today. We've gotta make multiple trips over the next few days."
     ky "Cool cool! I'm happy to help wherever needed!"
@@ -2430,8 +2475,8 @@ label dec_6_1:
     wt_mo "I should get Pearl to do a curtain reveal for me."
     pe "Well I don't have curtains but you can crouch behind all of us!"
     wt_mo "Sounds like a plan."
-    gr "Morgan, can you hold the map for me, I just need to grab my compass real quick."
-
+    gr "Morgan, can you hold the map for me? I just need to grab my compass real quick."
+    stop music
     if persistent.screenshake:
         with hpunch
 
@@ -2441,7 +2486,7 @@ label dec_6_1:
     show ast confused
     show gr confused
 
-    "*boom*"
+    "{b}{i}{size=+5}*boom*"
     #SFX
     "That sounded like a gun, but louder."
 
@@ -2456,31 +2501,33 @@ label dec_6_1:
     show pearl scared
     show ky shaken
     show gr scared
-    "*rumble*"
+    "{b}{i}{size=+5}*rumble*"
     #SFX
     #TODO start shakingggg
     "The ground beneath us starts shaking."
-    "That doesn't feel.. right?"
+    "That doesn't feel... right?"
     "Instinctively, Gregory and I look towards the top of the mountain."
     gr "What the-"
     "Oh no."
-    "Actually that's an understatement, we're fucked."
+    "Actually, that's an understatement. We're fucked."
     "From the peak of the mountains, the snow is gushing down at us at breakneck speed."
 
-    wi "AVALANCHE!! TAKE COVER!!"
+    wi "{size=+5}AVALANCHE!! TAKE COVER!!"
 
     "Wilbur's voice rings out and brings us back to center."
     "Run, hide and survive, or get swallowed alive."
-    show gr scared
-    gr "DON'T JUST STAND THERE, RUN!!"
-    scene bg forest2 with sdissolve
+    show cg avalanche
+    $ persistent.gallery_avalanche = True
+    gr "{size=+5}{i}DON'T JUST STAND THERE, RUN!!"
 
     "Camp dad's voice is loud and clear."
+    hide cg
+    scene bg forest2 with sdissolve
     "He's right, I have to survive this."
-    "Elliot... If we're both still alive, you best bet I'm gonna extort free meals from you everyday."
-    "The things I do.. or rather the things I have to go through for you."
+    "Elliot... If we're both still alive, you best bet I'm gonna extort free meals from you every day."
+    "The things I do... or rather the things I have to go through for you."
     "I ran as fast as my legs could take me."
-    "The snow below my feet keeps giving way, I'd trip if I'm not careful."
+    "The snow below my feet keeps giving way. I'll trip if I'm not careful."
     "I can't outrun the snow, it'll catch up to me soon."
     "There's a rock formation up ahead, tall enough to shelter me from the onslaught."
     "Bingo! That's my ticket out of here."
@@ -2493,14 +2540,14 @@ label dec_6_1:
         parallel:
             linear 0.2 ypos 1080
 
-    mo "Ugh.."
+    mo "Ugh..."
     "I felt a strike towards the back of my head."
     show black:
         linear 0.5 alpha 0.5
     with Pause (0.5)
     scene black with fade
-    "I can't lose consciousness now I need to... {w=1.0} no..."
-    jump dec_6_2
+    "I can't lose consciousness now. I need to... {w=1.0} No..."
+    jump tr_dec_6
 #Morgan passes out
 #Scene transition: Fade to black
 #Arc 1 ends

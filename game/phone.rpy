@@ -160,7 +160,7 @@ screen nvl_phonetext(dialogue):
 
                     frame:
                         if d.who == MC_Name:
-                            padding (155,30,30,60)
+                            padding (155,30,40,60)
                             background Frame(message_frame, 60,30,30,30)
                             yminimum 161
                         else:

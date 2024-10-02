@@ -1,4 +1,5 @@
 label tr_nov_1:
+    $ save_name = _("Prologue")
     #INT:  Morgan’s Apartment
     #Hilda's voice can be heard from the TV advertisement.
     hi "Glow glow glow with NuGLO, let us help you restore your skin's shiny supple glow!"
@@ -18,11 +19,12 @@ label tr_nov_1:
     mo "I will."
     #With one final look at his living room, Morgan swings his backpack onto his shoulder and then leaves his apartment.
 
-    jump nov_1
+    jump nov_4
 
 label tr_dec_6:
     #INT: Locker Room
-
+    show cg memory
+    $ persistent.gallery_memory = True
     #Morgan enters the locker room and sees Elliot there packing up his belongings. 
     mo "Woah Elly, are you going somewhere?"
     el "Yep! It's gonna be a long trip."

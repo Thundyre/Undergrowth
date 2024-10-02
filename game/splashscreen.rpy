@@ -1,11 +1,15 @@
 ##Splashscreen
 image spooklogo:
-    "spooktoberlogo.png"
+    "images/spooktoberlogo.png"
     zoom 0.8
 
 label splashscreen:
     scene black
     with Pause(1.0)
+    show text "Please play with headphones on for the best experience." with dissolve:
+        ypos 0.5
+    with Pause(1.0)
+    hide text with dissolve
 
     show text "This demo was made for" with dissolve:
         ypos 200

@@ -1,0 +1,22 @@
+{
+    "nov_1_ee115034": {
+        "area": [
+            720,
+            45,
+            480,
+            225
+        ],
+        "clear_retain": true,
+        "properties": "bottom_right"
+    },
+    "nov_1_f81ddb1f": {
+        "area": [
+            720,
+            45,
+            560,
+            225
+        ],
+        "clear_retain": true,
+        "properties": "bottom_right"
+    }
+}
