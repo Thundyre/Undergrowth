@@ -15,14 +15,14 @@ label nov_1:
     show cg morganhome2
     mo "Heya."
     co "Got everything you need Morg?"
-    mo "Yep just zipping up here and I'm good to go."
+    mo "Yep, just zipping up here and I'm good to go."
     co "Sure you got everything?"
     mo "Can't fit you in my bag now, can I?"
 
     #Morgan zips his backpack.
 
     co "Wouldn't try to even if you asked. I'd rather not be stuck in that for three days."
-    mo "Haha well... I think it's just about time to head off!"
+    mo "Haha, well... I think it's just about time to head off!"
     co "Alrighty then. Bring him home and stay safe, soldier."
     mo "I will."
 
@@ -51,19 +51,19 @@ label nov_4:
     "I slowly make my way towards him. Trudging the snow is a feat for sure."
     "It also doesn't help that I've been in the car for hours on end."
     show gr neutral
-    gr "You're Morgan yes? I'm Gregory. Hope the ride up here wasn't too much for you to handle."
-    mo "Well walking in snow is definitely much more difficult than sitting in a car I think. It's nice to meet you, Gregory."
+    gr "You're Morgan, yes? I'm Gregory. Hope the ride up here wasn't too much for you to handle."
+    mo "Well walking in snow is definitely much more difficult than sitting in a car, I think. It's nice to meet you, Gregory."
     "He gives me a firm handshake."
     gr "Let's head to camp."
 
     scene bg forest1 with dissolve
 
     "Along the way, Gregory fills me in on the operation and the rest of the people at camp."
-    "The \"Mission\"? Collecting samples from the environment."
+    "The Mission? Collecting samples from the environment."
     "Be it sources of water, dirt, trees and maybe foliage once the snow melts."
     "We're basically here to run errands for the scientists here to find new sources of penicillin."
     "The good stuff in antibiotic medication."
-    "AKA things that Heralign Inc. needs."
+    "A.K.A things that Heralign Inc. needs."
     "The Camp. Well there's two camps actually."
     "Five people in Camp 1 including myself, and five more in Camp 2."
     "There's also a Research Centre down south, where the research team's situated."
@@ -215,7 +215,7 @@ label nov_4:
     #back to Pearl after calling
     show pearl smile with dissolve
     pe "So how did it go?"
-    mo "Walkie talkie works for sure. Thanks Pearl.. and Aston?"
+    mo "Walkie talkie works for sure. Thanks Pearl... and Aston?"
     pe "Aston went out to look for Lorenzo and Gregory."
     pe "It's getting late and the sun is going down, I think all that's left is to show you your tent!"
     show bg camp1_night
@@ -247,7 +247,7 @@ label nov_5:
     #INT: Morgan's tent
 
     "I woke up to the sound of Pearl calling for me outside my tent."
-    "Man do I miss the comfort of an actual bed, my back is still sore from all the traveling."
+    "Man, do I miss the comfort of an actual bed. My back is still sore from all the traveling."
 
     pe "Wake up Morgaaannnn. Gregory's about to start!"
 
@@ -275,7 +275,7 @@ label nov_5:
         xpos 0.8
 
     gr "Alright nice, you're up. I'll cut you some slack since it's your first day."
-    gr "And because it is your first day here, we gotta make sure you understand the rules."
+    gr "And because it's your first day here, we gotta make sure you understand the rules."
 
     "He hands me a booklet."
     "'{i}The Camp Guide's Guide{/i}'"
@@ -407,7 +407,7 @@ label nov_6:
     "That'll do for now."
     "We were also tasked to observe the trees, changes to terrain, weather and such."
     "Honestly this is beginning to sound like a dream job. Get paid looking at trees?"
-    "Looking at the checklist in my hands... Let's see here.."
+    "Looking at the checklist in my hands... Let's see here..."
     "\"Tree trunk color?\" Gray brown."
     "\"Leaves present?\" None."
     "\"Flaky tree bark?\" Doesn't seem like it."
@@ -631,7 +631,7 @@ label nov_7_11:
         "Beep Ruran":
             if wt_intro_ru == 0:
                 $ wt_intro_ru += 1
-                "Oh well it looks like her Walkie may be charging right now."
+                "Oh, well. It looks like her Walkie may be charging right now."
 
         #beep Ruran after the first beep
             else:
@@ -665,7 +665,7 @@ label nov_12:
     play ambience amb_village fadein 1.0
     #Kyle's POV
     show ky smile at centerleft with dissolve
-    ky "Just one more shot of y'all together.. yep that's cute!"
+    ky "Just one more shot of y'all together... yep, that's cute!"
 
     "Click click!"
 
@@ -1377,7 +1377,7 @@ label nov_18:
     #EXT: Camp 1
     scene  bg camp1_day with dissolve
 
-    "The next day, Kyle returns home from Camp 2. Gregory had to pick him up cause the ragdoll idea wasn't as great as he thought."
+    "The next day, Kyle returns home from Camp 2. Gregory had to pick him up 'cause the ragdoll idea wasn't as great as he thought."
     show pearl smile at centerright
     show ky smile at centerleft
     pe "You're finally back! Thought you didn't want to leave Cassie."
@@ -1408,7 +1408,7 @@ label nov_18:
     mo "Say... do we get bonuses for surviving? I've been eyeing this cool snowmobile that the guys have."
     co "We don't even have snow back home Morg."
     mo "Just thought I'd put in a request. Anyway, I think you'd want to hear this."
-    mo "Profiles of the people at camp... sounds normal enough,yeah? But under all the necessary info, there's a part that lists whether the person is infected."
+    mo "Profiles of the people at camp... sounds normal enough, yeah? But under all the necessary info, there's a part that lists whether the person is infected."
     co "I beg your pardon? Infected? Those are some glaring red flags if I've ever seen one."
 
     #IF MORGAN CHOSE TO DIG FURTHER ON DAY N15th he says this
@@ -1867,7 +1867,7 @@ label nov_26:
     mo "The bite from Susie hasn't healed yet?"
     show ky neutral
     ky "It's not like I haven't been bitten before, but this is the first time that it has gotten this bad."
-    ky "It's about time for Aston to help me with a new bandage anyway. Here, let me show you."
+    ky "It's about time for Aston to help me with a new bandage, anyway. Here, let me show you."
 
     "Kyle unwrapped his bandage to show a nasty rash. It hurts just looking at it."
     show cg rash
@@ -1895,7 +1895,7 @@ label nov_26:
 
     lo "See this... This bear thing, it has been following me night after night."
     show lorenzo sad
-    lo "I'm sorry if it sounds silly, I just.."
+    lo "I'm sorry if it sounds silly, I just..."
     show ky neutral
     ky "It's not silly Lorenzo, fears are valid!"
     show ky shaken
@@ -1909,7 +1909,7 @@ label nov_26:
     show lorenzo sad
     lo "It's becoming a nightly event."
     show ky sad
-    ky "That sounds rough Lorenzo.."
+    ky "That sounds rough Lorenzo..."
 
     "Kyle's rash is worrying. Lorenzo's dreams are worrying."
     "That's two things that happened within a week."
@@ -2370,21 +2370,21 @@ label dec_5:
     show pearl smile
     pe "I can just eat the marshmallows you toast, problem solved."
 
-    "Alright, so that's plan A... merging of camps."
+    "Alright, so that's plan A...merging of camps."
     "Lots of new faces and hopefully lots of info."
 
     wt_ca "I'll go check the coordinates real quick, let's establish a meet up point for tomorrow!"
     wt_ca "I'll Walkie you later Gregory!"
-    gr "That'll be lovely Cassie."
+    gr "That'll be lovely, Cassie."
     gr "How long do you reckon we'll be up there, Isaak?"
     wt_is "Until I have enough, there's no rough estimate right now."
     wt_ko "We'll leave you guys to it for now! Big day tomorrow!"
     nvl clear
     #radio ends
 
-    gr "Well, you heard the man, let's start packing the essentials."
+    gr "Well, you heard the man. Let's start packing the essentials."
     gr "We're moving at dawn."
-    mo "Aye aye captain."
+    mo "Aye aye, captain."
 
 label dec_6_1:
     scene bg camp1_day with longfade
@@ -2409,22 +2409,22 @@ label dec_6_1:
         xpos 200
     show lorenzo with move:
         xpos 1600
-    gr "Alrighty so, here's the route that Cassie drew for us."
+    gr "Alrighty so...here's the route that Cassie drew for us."
 
-    "Gregory holds out his map with his outstretched hands for us to see."
+    "Gregory holds out his map with outstretched hands for us to see."
 
     gr "We're gonna start climbing the mountain over 'ere. It's less steep of an angle to trek, she said."
     gr "Once we've reached the midpoint, we're gonna pivot to this area here. A nice flat area to set up camp."
     mo "Do you know how long that might take us?"
-    gr "A few hours at least, we should be able to get there before sundown."
+    gr "A few hours at least. We should be able to get there before sundown."
     lo "And we're meeting them at the midpoint, yes?"
     gr "That is correct."
     show ky smile at left:
         xpos -100
     ky "Are we going to come back later to retrieve everything?"
     gr "Yes, that's why the essentials are the only things that we're carrying today. We've gotta make multiple trips over the next few days."
-    ky "Cool cool! I'm happy to help wherever needed!"
-    mo "We'll definitely be needing the extra hands Kyle."
+    ky "Cool, cool! I'm happy to help wherever needed!"
+    mo "We'll definitely be needing the extra hands, Kyle."
     show pearl happy at right
     pe "I'm back and ready to go! Double checked my pockets this time."
     lo "Shall we?"
@@ -2447,33 +2447,33 @@ label dec_6_1:
     #SFX radio beeps
     wt_wi "Hello my friends! Checking in to see if everyone's on their merry way!"
     show ky smile
-    ky "We've started trekking a while ago Wilbur! We're on our way!"
+    ky "We've started trekking a while ago, Wilbur! We're on our way!"
     wt_da "Glad to hear you're excited, Kyle!"
     show ky happy
-    ky "I mean it's photography! Of course I'm excited."
+    ky "I mean, it's photography! Of course I'm excited."
     show ky flustered
-    ky "I'm also excited to see you guys, Cassie especially."
+    ky "I'm also excited to see you guys... Cassie especially."
     show ky smile
     wt_ru "Cassie is once again hiding behind me, but she's got the message."
     wt_ca "Ruran! How could you!"
     wt_ru "Haha!"
-    wt_da "Also I hope Pearl didn't forget her compass today."
+    wt_da "Also, I hope Pearl didn't forget her compass today."
     wt_mo "She did."
     show pearl neutral
     pe "Morgan! I am a good camp guide, I swear!"
     lo "We believe in you, Pearl."
     show pearl smile
     pe "Thank you."
-    wt_ja "On the topic of photography, what animal do you think we'll see most of Kyle?"
+    wt_ja "On the topic of photography... What animal do you think we'll see most of Kyle?"
     ky "You know, I'm not exactly sure since this is the first time we'll be up here."
     ky "My guess would be wolves or coyotes, any non-friendly but friend-shaped doggos."
     wt_da "I'm hoping we can capture birds. We've never really seen them on lower ground."
     wt_da "Bird watching's about to get interesting!"
-    wt_wi "How far more till the meet up point Cassie?"
+    wt_wi "How far more till the meet up point, Cassie?"
     wt_ca "Well, with our current pacing, we'll see them in about an hour or less!"
     wt_ru "That sounds great. We'll be just on time for lunch. This time, together."
     wt_mo "I should get Pearl to do a curtain reveal for me."
-    pe "Well I don't have curtains but you can crouch behind all of us!"
+    pe "Well, I don't have curtains, but you can crouch behind all of us!"
     wt_mo "Sounds like a plan."
     gr "Morgan, can you hold the map for me? I just need to grab my compass real quick."
     stop music
@@ -2492,7 +2492,7 @@ label dec_6_1:
 
     wt_ja "Y'all hear something?"
     ast "It wasn't just you."
-    mo "Was that a gun or-"
+    mo "Was that a gun, or-"
 
     if persistent.screenshake:
         with hpunch
@@ -2528,7 +2528,7 @@ label dec_6_1:
     "The things I do... or rather the things I have to go through for you."
     "I ran as fast as my legs could take me."
     "The snow below my feet keeps giving way. I'll trip if I'm not careful."
-    "I can't outrun the snow, it'll catch up to me soon."
+    "I can't outrun the snow...it'll catch up to me soon."
     "There's a rock formation up ahead, tall enough to shelter me from the onslaught."
     "Bingo! That's my ticket out of here."
     "Almost there, just a few more steps and I'll-"
