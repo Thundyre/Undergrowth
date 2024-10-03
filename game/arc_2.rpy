@@ -629,7 +629,7 @@ label dec_12:
     gr "What?"
     show gr angry
     gr "Listen here lady, I don't care what you rich people think about us."
-    gr "But Lorenzo isn't just someone you can replace like that."
+    gr "But Lorenzo isn't someone you can just replace like that."
     hi "The 'rich people' like the one you're talking to right now can buy you a liver."
     gr "..."
     hi "Think about it Gregory, once your job here is done, you'll have all the time in the world to be with your little girl."
@@ -868,7 +868,7 @@ label dec_14:
             ast "I'm sorry I ran off, but I am feeling a lot better now."
             show ast inthought
             ast "If what you're saying is true, then what I heard outside was... not you."
-            ast "And if you hadn't reminded me that Lorenzo was safe Morgan, I think I would've been a goner."
+            ast "If you hadn't reminded me that Lorenzo was safe Morgan, I think I would've been a goner."
             "I gave Aston a gentle pat."
             show ast sad
             ast "But will you be okay, love?"
@@ -1188,7 +1188,7 @@ label dec_17:
     "One out of frame."
     "And the last one... distorted."
     show pearl smile
-    pe "Ooh what's this glitchy effect on this blob?"
+    pe "Ooh! What's this glitchy effect on this blob?"
 
     "Kyle takes another picture on the spot."
     "There's no distortion."
