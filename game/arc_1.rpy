@@ -1131,7 +1131,7 @@ label nov_15:
             wt_ev "Anyway, I'm sure you're busy Morgan, help the girl out will you?"
             nvl clear
             #radio selection stuff end
-    show black
+    scene black with dissolve
     "The night ended after we did a round of damage inspection."
 
     scene bg morganstent
@@ -1314,6 +1314,7 @@ label nov_17:
 
     #INT: Main tent
     show black
+    hide ky
     "We made lots of progress within two hours."
     "Tent? Fixed. Crockpot? Fixed."
     "Reorganized the shelves and storage? All done."
