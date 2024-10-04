@@ -1,6 +1,7 @@
 init -1 python:
     renpy.music.register_channel("sound_ui", mixer = "sound_ui", loop=None)
     renpy.music.register_channel("ambience", mixer = "ambience", loop=None)
+
     renpy.music.register_channel("radio_effect", mixer = "voice", loop=False , stop_on_mute=False)
 
 init python:
@@ -34,3 +35,4 @@ define amb_campnight = "audio/ambience/amb_campnight.ogg"
 define amb_rc = "audio/ambience/amb_rc.ogg"
 define amb_village = "audio/ambience/amb_village.ogg"
 define amb_campnight_wofire = "audio/ambience/amb_campnightwofire.ogg"
+

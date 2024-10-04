@@ -14,7 +14,9 @@ screen warning:
     zorder 100
     key "K_ESCAPE" action ShowMenu("settings")
     add "gui/overlay/overlay.png"
+
     fixed:
+
         style_prefix "warning"
         xysize(1377,857)
         xalign 0.5
@@ -98,6 +100,7 @@ screen credits():
                         label _("Lead Programmer")
                         label _("UI Designer, Misc. art,\nAssistant Programmer ")
                         label _("Sprite Artist")
+
                         #label _("Animator")
                         label _("Composer")
                         label _("Voice Director")
@@ -136,7 +139,9 @@ screen credits():
                         text "{a=https://ruminio.itch.io/}Ruminio{/a}"
                         text "" size 15
                         text "{a=https://twitter.com/MasterThoe}Thoe{/a}"
+
                         #text "{a=https://candycornskull.itch.io/}Candycornskull{/a}"
+
                         text "{a=https://twitter.com/henkkastorm}Henri Tikkala{/a}"
                         text "{a=https://twitter.com/barkervoiceover}Jett Barker{/a}"
 
@@ -233,54 +238,37 @@ init python:
     # g.condiition("persistent.gallery_memory")
     # g.image("cg memory")
 
+
 screen gallery():
 
     tag menu
     add "gui/extras/extras_background.png"
     use extras
 
-    vbox:
+    fixed:
         style_prefix "gallery"
+        xsize 1240
+        ysize 780
+        xpos 500
+        ypos 140
+        grid 3 3:
 
-        # vpgrid:
-        #     xsize 1240
-        #     ysize 780
-        #     xpos 550
-        #     ypos 140
-        #     cols 3
-        #     spacing 50
-        #     draggable True
-        #     mousewheel True
+            xfill True
+            yfill True
 
-        #     scrollbars "vertical"
-        fixed:
-            style_prefix "gallery"
-            xsize 1240
-            ysize 780
-            xpos 500
-            ypos 140
-            grid 3 3:
+            add g.make_button("meeting", "gal cg meeting", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+            add g.make_button("tomatosoup", "gal cg tomatosoup", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+            add g.make_button("meetingkyle", "gal cg meetingkyle", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
 
-                xfill True
-                yfill True
+            add g.make_button("rash", "gal cg rash", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+            add g.make_button("bearwindow", "gal cg bearwindow", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+            add g.make_button("findinglorenzo", "gal cg findinglorenzo", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
 
-                add g.make_button("meeting", "gal cg meeting", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
-                add g.make_button("tomatosoup", "gal cg tomatosoup", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
-                add g.make_button("meetingkyle", "gal cg meetingkyle", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+            add g.make_button("christmas", "gal cg christmas", locked = "locked", hover_border = "cg_hover",  xalign=0.5, yalign=0.5)
+            add g.make_button("pearldeath", "gal cg pearldeath", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
+            add g.make_button("frozenbody", "gal cg frozenbody", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
 
-                add g.make_button("rash", "gal cg rash", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
-                add g.make_button("bearwindow", "gal cg bearwindow", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
-                add g.make_button("findinglorenzo", "gal cg findinglorenzo", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
 
-                add g.make_button("christmas", "gal cg christmas", locked = "locked", hover_border = "cg_hover",  xalign=0.5, yalign=0.5)
-                add g.make_button("pearldeath", "gal cg pearldeath", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
-                add g.make_button("frozenbody", "gal cg frozenbody", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
-
-                # add g.make_button("avalanche", "gal cg avalanche", locked = "locked", hover_border = "cg_hover",  xalign=0.5, yalign=0.5)
-                # add g.make_button("morganhome", "gal cg morganhome", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
-                # add g.make_button("memory", "gal cg memory", locked = "locked", hover_border = "cg_hover", xalign=0.5, yalign=0.5)
-
-style extras_vscrollbar is controls_vscrollbar
 ## Music Room screen ######################################################
 ##
 ## Music :3
@@ -375,7 +363,9 @@ style music_button_text is additional_button_text:
 ##
 ## Additional options selectable only once, at the start of a new game
 
+
 #default radio_static = "static"
+
 default screenshake = True
 
 screen add_options():
@@ -389,5 +379,6 @@ screen add_options():
             style_prefix "radio"
             vbox:
                 spacing 40
+
                 #label _("Radio Static")
                 label _("Screenshake")

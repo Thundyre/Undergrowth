@@ -50,7 +50,7 @@ transform message_narrator:
         easein_back 0.5 yoffset 0
 
 screen walkie_talkie():
-    add "gui/settings/overlay.png"
+    add "gui/overlay/overlay.png"
     fixed:
         if pancake:
             add "gui/radio/satphone.png":
@@ -186,6 +186,7 @@ screen nvl_phonetext(dialogue):
                             color "#000"
                             outlines [ (absolute(1), "#00000000", absolute(0), absolute(0)) ]
                             slow_cps False
+                            outlines [(0, "#000000", 0, 0)]
                             
                             if d.who != MC_Name :
                                 text_align 0.0

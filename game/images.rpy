@@ -111,6 +111,7 @@ image gal cg memory:
     xysize (317,190)
     "cgs/memory.png"
 
+
 image locked = "gui/extras/cg_locked.png"
 image cg_hover:
     "gui/extras/cg_hover.png"

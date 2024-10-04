@@ -1,8 +1,10 @@
 label nov_1:
+
     stop music
     $ save_name = _("Prologue")
     show cg morganhome1
     $ persistent.gallery_morganhome = True
+
     tv_hi "Glow glow glow with NuGLO, let us help you restore your skin's shiny supple glow!"
     tv_hi "So what are you waiting for? Grab your very own NuGLO samples at your local stores today!"
 
@@ -15,14 +17,18 @@ label nov_1:
     show cg morganhome2
     mo "Heya."
     co "Got everything you need Morg?"
+
     mo "Yep, just zipping up here and I'm good to go."
+
     co "Sure you got everything?"
     mo "Can't fit you in my bag now, can I?"
 
     #Morgan zips his backpack.
 
     co "Wouldn't try to even if you asked. I'd rather not be stuck in that for three days."
+
     mo "Haha, well... I think it's just about time to head off!"
+
     co "Alrighty then. Bring him home and stay safe, soldier."
     mo "I will."
 
@@ -41,8 +47,10 @@ label nov_4:
     mo "I guess I'm here to find out."
     ex1 "We're here."
     mo "Whew, alright!"
+    
     scene bg snowyplain with dissolve
     play ambience amb_campday fadein 1.0
+
     "A vast stretch of white greets me as I exit the car."
     "The cold wind stings a little as it brushes my cheek. Might take a while before I get used to it."
     mo "Hey thanks for the ride!"
@@ -188,6 +196,7 @@ label nov_4:
     $ pancake = False
     menu n4_call:
         "Call Davos" if not n4_call_da:
+
             hide ast
             $ n4_call_da = True
             wt_mo "Hello this is Morgan, is Davos here?"
@@ -374,6 +383,7 @@ label nov_6:
     "Our conversation was interrupted by Gregory calling us over to gear up."
     "Alrighty, I guess it's time."
 
+
     scene bg forest3 with dissolve
     play ambience amb_campday fadein 1.0
     show gr neutral at centerright
@@ -408,6 +418,7 @@ label nov_6:
     "We were also tasked to observe the trees, changes to terrain, weather and such."
     "Honestly this is beginning to sound like a dream job. Get paid looking at trees?"
     "Looking at the checklist in my hands... Let's see here..."
+
     "\"Tree trunk color?\" Gray brown."
     "\"Leaves present?\" None."
     "\"Flaky tree bark?\" Doesn't seem like it."
@@ -631,6 +642,7 @@ label nov_7_11:
         "Beep Ruran":
             if wt_intro_ru == 0:
                 $ wt_intro_ru += 1
+
                 "Oh, well. It looks like her Walkie may be charging right now."
 
         #beep Ruran after the first beep
@@ -696,6 +708,7 @@ label nov_12:
     v1 "What's wrong Susie?"
     
     ky "Was it... not to her liking?"
+
     voice "audio/voice/v2_a1_3.ogg"
     v2 "Are you okay?"
 
@@ -765,6 +778,7 @@ label nov_13:
     gr "I understand ma'am, but that's not possible."
     play music audio.anxious
 
+
     "Oh, is he on the phone?"
 
     gr "We'll have to wait till the lake unfreezes."
@@ -808,8 +822,9 @@ label nov_14:
     "Is it coming from the radio?"
 
     #EXT: Camp 1
-    scene bg camp1_day with dissolve
+    scene bg camp1_day with dissolveh
     play ambience amb_campday fadein 1.0
+
     show lorenzo sad with dissolve
 
     lo "Oh Morgan, good morning!"
@@ -871,7 +886,9 @@ label nov_14:
 
         #choice branch ends
         #phone ends
-    "Rustle rustle"
+
+    "*rustle rustle*"
+
     "Was that from outside?"
 
     menu:
@@ -900,7 +917,7 @@ label nov_14:
             show black
             "Pitch black. Can't see shit."
 
-            "Rustle rustle"
+            "rustle rustle"
             #SFX
 
             mo "Who's there?!"
@@ -968,7 +985,9 @@ label nov_15:
     "And what do we have here?"
     "There are documents strewn across the table, they weren't here last night."
     "Huh?"
+
     play music audio.anxious
+
     "These are... Everyone's profiles?"
     "Name: Pearl"
     "Age: 24"
@@ -1131,7 +1150,9 @@ label nov_15:
             wt_ev "Anyway, I'm sure you're busy Morgan, help the girl out will you?"
             nvl clear
             #radio selection stuff end
+
     scene black with dissolve
+
     "The night ended after we did a round of damage inspection."
 
     scene bg morganstent
@@ -1170,6 +1191,7 @@ label nov_16:
     show cg meetingkyle
     $ persistent.gallery_meetingkyle = True
     play music audio.light
+
     ky "Hello!"
 
     "An unfamiliar face greets me as I approach the igloo-like structure."
@@ -1315,6 +1337,7 @@ label nov_17:
     #INT: Main tent
     show black
     hide ky
+
     "We made lots of progress within two hours."
     "Tent? Fixed. Crockpot? Fixed."
     "Reorganized the shelves and storage? All done."
@@ -1355,6 +1378,7 @@ label nov_17:
     #Lorenzo's POV
     scene bg isaaklab1 with longfade
     play ambience amb_rc fadein 1.0
+
     show lorenzo smile at centerleft
     lo "Hngggg... phew.. I think that's the last box for Isaak? Koda's usually the one that collects boxes but I think they're with Gregory and Eva now."
     lo "Isaaaaak? Are you there?"
@@ -1379,6 +1403,7 @@ label nov_18:
     scene  bg camp1_day with dissolve
 
     "The next day, Kyle returns home from Camp 2. Gregory had to pick him up 'cause the ragdoll idea wasn't as great as he thought."
+
     show pearl smile at centerright
     show ky smile at centerleft
     pe "You're finally back! Thought you didn't want to leave Cassie."
@@ -1395,6 +1420,7 @@ label nov_18:
 
     scene bg morganstent with sdissolve
     play music audio.neutral
+
     "Night time."
     "First things first, the map."
 
@@ -1410,6 +1436,7 @@ label nov_18:
     co "We don't even have snow back home Morg."
     mo "Just thought I'd put in a request. Anyway, I think you'd want to hear this."
     mo "Profiles of the people at camp... sounds normal enough, yeah? But under all the necessary info, there's a part that lists whether the person is infected."
+
     co "I beg your pardon? Infected? Those are some glaring red flags if I've ever seen one."
 
     #IF MORGAN CHOSE TO DIG FURTHER ON DAY N15th he says this
@@ -1441,6 +1468,7 @@ label nov_19_23:
     #19th
     scene bg camp1_day with longfade
     play music audio.light
+
 
     "It's my favorite time of the day, meal time."
     "Looks like there's already a crowd gathered in here."
@@ -1632,6 +1660,7 @@ label nov_19_23:
     #INT: Main tent
     show bg maintent_day with sdissolve
     play music audio.neutral
+
     "Aston skillfully unwraps Kyle's bandage and examines the wound."
     "He turns around and gives Kyle a packet of anti-inflammatory meds."
     show ast inthought
@@ -1727,9 +1756,10 @@ label nov_24:
     "I suppose I'll have to leave snooping in Gregory's tent for another time."
     "Marshmallow night is about to start soon."
     stop music
-
+    
     scene bg camp1_night with dissolve
     play music audio.light
+
     "*crackle crackle*"
     "The fire chirps loudly in the midst of the silent snowy plain."
     "Marshmallow in hand, everyone sits in a circle, patiently toasting their marshmallow."
@@ -1870,6 +1900,7 @@ label nov_26:
     ky "It's not like I haven't been bitten before, but this is the first time that it has gotten this bad."
     ky "It's about time for Aston to help me with a new bandage, anyway. Here, let me show you."
 
+
     "Kyle unwrapped his bandage to show a nasty rash. It hurts just looking at it."
     show cg rash
     $ persistent.gallery_rash = True
@@ -1899,6 +1930,7 @@ label nov_26:
     show lorenzo sad
     lo "I'm sorry if it sounds silly, I just..."
     hide cg
+
     show ky neutral
     ky "It's not silly Lorenzo, fears are valid!"
     show ky shaken
@@ -1913,6 +1945,7 @@ label nov_26:
     lo "It's becoming a nightly event."
     show ky sad
     ky "That sounds rough Lorenzo..."
+
 
     "Kyle's rash is worrying. Lorenzo's dreams are worrying."
     "That's two things that happened within a week."
@@ -2014,6 +2047,7 @@ label nov_30:
     "Today was no different, but as we were about to hunker down for the night, the radio buzzed."
 
     #radio goes brrr connects to camp 1 and 2
+
     play music audio.neutral
     wt_ev "Hello campers, is now a good time?"
     wt_ja "Another weather report Eva? Camp 2's all here."
@@ -2237,6 +2271,7 @@ label dec_3:
 label dec_4:
     scene bg camp1_night with longfade
     play music audio.light
+
     "Night falls in camp."
     "With the info I've gathered over the past few days, I think it's time for another update."
     "After being interrupted by Gregory multiple times, I waited for the signal before dialing up Colin."
@@ -2373,12 +2408,14 @@ label dec_5:
     show pearl smile
     pe "I can just eat the marshmallows you toast, problem solved."
 
+
     "Alright, so that's plan A...merging of camps."
     "Lots of new faces and hopefully lots of info."
 
     wt_ca "I'll go check the coordinates real quick, let's establish a meet up point for tomorrow!"
     wt_ca "I'll Walkie you later Gregory!"
     gr "That'll be lovely, Cassie."
+
     gr "How long do you reckon we'll be up there, Isaak?"
     wt_is "Until I have enough, there's no rough estimate right now."
     wt_ko "We'll leave you guys to it for now! Big day tomorrow!"
@@ -2393,6 +2430,7 @@ label dec_6_1:
     scene bg camp1_day with longfade
     play music audio.neutral
     "Essentials and equipment have all been well packed."
+
     "Today is moving day."
     "New terrain to conquer, new friends to meet."
     "I'm sure it'll be lovely."
@@ -2414,6 +2452,7 @@ label dec_6_1:
         xpos 1600
     gr "Alrighty so...here's the route that Cassie drew for us."
 
+
     "Gregory holds out his map with outstretched hands for us to see."
 
     gr "We're gonna start climbing the mountain over 'ere. It's less steep of an angle to trek, she said."
@@ -2422,12 +2461,14 @@ label dec_6_1:
     gr "A few hours at least. We should be able to get there before sundown."
     lo "And we're meeting them at the midpoint, yes?"
     gr "That is correct."
+
     show ky smile at left:
         xpos -100
     ky "Are we going to come back later to retrieve everything?"
     gr "Yes, that's why the essentials are the only things that we're carrying today. We've gotta make multiple trips over the next few days."
     ky "Cool, cool! I'm happy to help wherever needed!"
     mo "We'll definitely be needing the extra hands, Kyle."
+
     show pearl happy at right
     pe "I'm back and ready to go! Double checked my pockets this time."
     lo "Shall we?"
@@ -2456,6 +2497,7 @@ label dec_6_1:
     ky "I mean, it's photography! Of course I'm excited."
     show ky flustered
     ky "I'm also excited to see you guys... Cassie especially."
+
     show ky smile
     wt_ru "Cassie is once again hiding behind me, but she's got the message."
     wt_ca "Ruran! How could you!"
@@ -2490,12 +2532,14 @@ label dec_6_1:
     show gr confused
 
     "{b}{i}{size=+5}*boom*"
+
     #SFX
     "That sounded like a gun, but louder."
 
     wt_ja "Y'all hear something?"
     ast "It wasn't just you."
     mo "Was that a gun, or-"
+
 
     if persistent.screenshake:
         with hpunch
@@ -2504,7 +2548,9 @@ label dec_6_1:
     show pearl scared
     show ky shaken
     show gr scared
+    
     "{b}{i}{size=+5}*rumble*"
+
     #SFX
     #TODO start shakingggg
     "The ground beneath us starts shaking."
@@ -2519,6 +2565,7 @@ label dec_6_1:
 
     "Wilbur's voice rings out and brings us back to center."
     "Run, hide and survive, or get swallowed alive."
+
     show cg avalanche
     $ persistent.gallery_avalanche = True
     gr "{size=+5}{i}DON'T JUST STAND THERE, RUN!!"
@@ -2529,6 +2576,7 @@ label dec_6_1:
     "He's right, I have to survive this."
     "Elliot... If we're both still alive, you best bet I'm gonna extort free meals from you every day."
     "The things I do... or rather the things I have to go through for you."
+
     "I ran as fast as my legs could take me."
     "The snow below my feet keeps giving way. I'll trip if I'm not careful."
     "I can't outrun the snow...it'll catch up to me soon."
@@ -2543,14 +2591,18 @@ label dec_6_1:
         parallel:
             linear 0.2 ypos 1080
 
+
     mo "Ugh..."
+
     "I felt a strike towards the back of my head."
     show black:
         linear 0.5 alpha 0.5
     with Pause (0.5)
     scene black with fade
+
     "I can't lose consciousness now. I need to... {w=1.0} No..."
     jump tr_dec_6
+
 #Morgan passes out
 #Scene transition: Fade to black
 #Arc 1 ends
