@@ -701,13 +701,10 @@ label dec_13:
     mo "Do you want to be goopy or fluffy? Pick one."
     co "Fluffy..."
     mo "Nice. Anyway, you need to hear this."
-    voice "audio/voice/moc_a2_052.oggR"
     mo "Lorenzo's in a cabin in the forest, but his symptoms are getting worse."
     mo "Then Elly's name popped up in conversation."
     mo "Greggy's involved in some way, but we don't have evidence."
     mo "Aston overheard him talking to someone the night before he disappeared."
-
-    voice "audio/voice/moc_a2_056.ogg"
     mo "And now Lorenzo is going to camp at the cabin because they don't want to take any chances."
 
     mo "Elly's rash apparently looks exactly like the rashes we're dealing with, and it didn't come from a bite."
@@ -1633,7 +1630,7 @@ label dec_26:
         mo "I... I was there and I should've stopped him from running off, but my flashlight died and-"
         co "Morgan."
         mo "..."
-        co "Chin up soldier. If he's missing, you do whatever you can to find them."
+        co "Chin up, Morg. If he's missing, you do whatever you can to find them."
         mo "Mmhmm."
         co "Okay and what about Elly? Do you think it's also related?"
         mo "It may very well be the same thing, yes."
@@ -1666,7 +1663,8 @@ label dec_27:
     mo "...and the gear?"
     show pearl smile
     pe "...Fine, you caught me... but don't tell the others."
-    if aston safe:
+
+    if aston_safe:
         pe "I'm going to find Lorenzo."
     else:
         pe "I'm going to find them."
@@ -2083,7 +2081,7 @@ label dec_31:
     else:
     #radio start
         wt_ja "Good morning. We're on our way."
-        wt_da "Just 5 minutes or so left. We'll be there soon."
+        wt_da "Just 5 minutes left. We'll be there soon."
         wt_mo "The view's great up here guys."
         wt_ja "Hell yeah, nice to finally watch you in action, Mr. Rusty with rifles."
         wt_mo "Is that going to be my new nickname?"

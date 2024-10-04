@@ -14,7 +14,7 @@ label tr_nov_1:
     mo "Can't fit you in my bag now, can I?"
     #Morgan zips his backpack.
     co "Wouldn't try to even if you asked. I'd rather not be stuck in that for three days."
-    mo "Haha well.. I think it's just about time to head off!"
+    mo "Haha, well.. I think it's just about time to head off!"
     co "Alrighty then. Bring him home and stay safe, soldier."
     mo "I will."
     #With one final look at his living room, Morgan swings his backpack onto his shoulder and then leaves his apartment.
