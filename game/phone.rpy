@@ -50,7 +50,7 @@ transform message_narrator:
         easein_back 0.5 yoffset 0
 
 screen walkie_talkie():
-    add "gui/settings/overlay.png"
+    add "gui/overlay/overlay.png"
     fixed:
         if pancake:
             add "gui/radio/satphone.png":
@@ -60,13 +60,17 @@ screen walkie_talkie():
             fixed:
                 xalign 0.95
                 yalign 1.0
-                xysize(382, 984)
-                add "gui/radio/walkie_talkie.png"
+                xysize(382, 984)#382,984
+                add "gui/radio/walkie_talkie.png":
+                    zoom 1.3
+                    xpos -100
                 if current_chibi_list:
                     add current_chibi_list[0]:
+                        zoom 1.3
                         xalign 0.5
                         yalign 0.5
-                        yoffset 5
+                        yoffset 150
+                        xoffset -50
             
 screen PhoneDialogue(dialogue, items=None):
     use walkie_talkie
@@ -81,7 +85,7 @@ screen PhoneDialogue(dialogue, items=None):
             xsize 1170
             ysize 800
             draggable True
-            mousewheel True
+            mousewheel False
             # cols 1
             yinitial 1.0
             # scrollbars "vertical"
@@ -180,11 +184,13 @@ screen nvl_phonetext(dialogue):
                             pos (0,10)
                             xsize 800
                             color "#000"
+                            outlines [ (absolute(1), "#00000000", absolute(0), absolute(0)) ]
                             slow_cps False
+                            outlines [(0, "#000000", 0, 0)]
                             
                             if d.who != MC_Name :
                                 text_align 0.0
-  
+
                             id d.what_id
                 
                 fixed:

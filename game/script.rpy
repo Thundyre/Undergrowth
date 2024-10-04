@@ -35,12 +35,12 @@ define wt_ru = Character("Ruran", kind=nvl, callback=Phone_ReceiveSound)
 define wt_ev = Character("Eva", kind=nvl, callback=Phone_ReceiveSound)
 define wt_ja = Character("Jax", kind=nvl, callback=Phone_ReceiveSound)
 
-define config.adv_nvl_transition = None
+define config.adv_nvl_transition = Dissolve(0.3)
 define config.nvl_adv_transition = Dissolve(0.3)
 
 # characters other
 define tv_hi = Character(None, image= "pando1", kind = bubble, retain = True)
 
 label start:
-    $ save_name = _("Arc 1")    
+
     jump nov_1

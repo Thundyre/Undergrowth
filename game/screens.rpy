@@ -52,13 +52,13 @@ style vbar:
 
 style scrollbar:
     ysize gui.scrollbar_size
-    base_bar Frame("gui/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame("gui/slider/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
 style vscrollbar:
     xsize gui.scrollbar_size
-    base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/slider/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame("gui/slider/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
 
 style slider:
     ysize gui.slider_size
@@ -309,6 +309,7 @@ screen navigation():
             yoffset -30
 
             spacing 40
+
 # textbutton _("Start"):
 #     hover_sound "audio/sfx_bell.mp3"
 #     activate_sound "audio/sfx_bell.mp3"
@@ -333,6 +334,7 @@ screen navigation():
                 hover_sound "audio/ui/ui_hover1.ogg"
                 activate_sound "audio/ui/ui_menu.ogg"
                 action Quit(confirm=not main_menu)
+                
     else:
         vbox:
             style_prefix "navigation"
@@ -876,6 +878,7 @@ screen settings_audio():
                     spacing 90
                     label _("Mute all")
                     imagebutton auto "gui/settings/check_%s.png" action Preference("all mute", "toggle")
+
                 # hbox:
                 #     spacing 27
                 #     label _("Radio Static")
