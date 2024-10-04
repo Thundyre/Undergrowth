@@ -9,7 +9,7 @@ label tr_nov_1:
     #SFX
     mo "Heya."
     co "Got everything you need Morg?"
-    mo "Yep just zipping up here and I'm good to go."
+    mo "Yep, just zipping up here and I'm good to go."
     co "Sure you got everything?" 
     mo "Can't fit you in my bag now, can I?"
     #Morgan zips his backpack.

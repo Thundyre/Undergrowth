@@ -17,18 +17,12 @@ label nov_1:
     show cg morganhome2
     mo "Heya."
     co "Got everything you need Morg?"
-
     mo "Yep, just zipping up here and I'm good to go."
-
     co "Sure you got everything?"
     mo "Can't fit you in my bag now, can I?"
-
     #Morgan zips his backpack.
-
     co "Wouldn't try to even if you asked. I'd rather not be stuck in that for three days."
-
     mo "Haha, well... I think it's just about time to head off!"
-
     co "Alrighty then. Bring him home and stay safe, soldier."
     mo "I will."
 
@@ -145,7 +139,7 @@ label nov_4:
     window auto show
 
     mo "Hello! I'm Morgan, thanks for having me."
-    gr "Good, now that introductions are out of the way... Lorenzo, I need to borrow you for a second to talk about supplies."
+    gr "Okay... Good! Now that introductions are out of the way... Lorenzo, I need to borrow you for a second to talk about supplies."
 
     #back to EVERYONE
     window auto hide
@@ -292,7 +286,7 @@ label nov_5:
 
     show pearl confused at centerleft
     pe "I've been through this a thousand times, do I still need to be here?"
-    gr "Yeah because you need reminding every time you attempt to do something reckless."
+    gr "Yeah...because you need reminding every time you attempt to do something reckless."
     pe "..."
     show pearl sad
 
@@ -708,8 +702,6 @@ label nov_12:
     v1 "What's wrong Susie?"
     
     ky "Was it... not to her liking?"
-
-    voice "audio/voice/v2_a1_3.ogg"
     v2 "Are you okay?"
 
     "The kids start petting Susie's back."
@@ -725,7 +717,6 @@ label nov_12:
     v1 "Haha! It means Susie likes it! She's happy."
     show ky confused
     ky "I'm not sure if that's normal cow behavior."
-    voice "audio/voice/v2_a1_2.ogg"
     v2 "Did it hurt Mr. Kyle?"
 
     "Gazing down at his forearm, it seems like Susie's bite managed to break the skin."

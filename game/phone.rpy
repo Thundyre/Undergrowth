@@ -186,7 +186,6 @@ screen nvl_phonetext(dialogue):
                             color "#000"
                             outlines [ (absolute(1), "#00000000", absolute(0), absolute(0)) ]
                             slow_cps False
-                            outlines [(0, "#000000", 0, 0)]
                             
                             if d.who != MC_Name :
                                 text_align 0.0

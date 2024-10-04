@@ -158,7 +158,7 @@ label dec_7:
     co "What do you want from me this time? The snowmobile again?"
     mo "You're the best, thank you."
     co "How about the welcome home party that we talked about? I'll even cook for you."
-    mo "Okay okay. I'll take that, but you've gotta give papa a kiss."
+    mo "Okay, alright, I'll take that. But you've gotta give papa a kiss."
     co "No."
     mo "Aww, are you shy?"
     co "You enjoy terrorizing me, don't you, Morg?"
