@@ -1180,7 +1180,8 @@ label nov_16:
     "I gesture towards the igloo."
     hide cg meetingkyle
     show ky smile
-    ky "Looks pretty neat huh? I made it myself! It's cold but it does the trick, I wouldn't want to do that for another night though."
+    ky "Looks pretty neat huh? I made it myself! It's cold but it does the trick."
+    ky "I wouldn't want to do that for another night though."
     ky "Say, do you happen to have more tents?"
     mo "I'm not sure but I could go check?"
     ky "That would be awesome sauce! Oh wait, where are my manners? I'm Kyle, nice meeting you out here!"
@@ -1430,7 +1431,8 @@ label nov_18:
     mo "That sucks."
     co "Come on, can't you act a tiny bit grateful?"
     mo "My mother didn't teach me to lie, but for you Pancake, I'll tolerate the party."
-    co "That's very kind of you. Aight good talk, you sleep tight Morg."
+    co "That's very kind of you."
+    co "Aight good talk, you sleep tight Morg."
     mo "Nighty night, Pancake."
     hide satphone
     "I fell asleep soon after."
@@ -1777,7 +1779,7 @@ label nov_25:
     "Pearl calls me over."
     mo "Sure it's not the melting snow you're feeling?"
     pe "No, like, I've dug downwards three times, I don't remember the soil being hydrated."
-    mo "Looks like a new observation to be made."
+    "Looks like there's a new observation to be made."
     show pearl neutral
     "If the soil is wet, water flow must be present."
     "The ice shouldn't really start melting this early. At least that's what it says in '{i}The Camp Guide's Guide{/i}'."
@@ -2269,7 +2271,6 @@ label dec_4:
     co "Still that doesn't mean he's off the suspect list."
     mo "You're right."
     mo "Anyway, my turn now, Pancake. I've got two for you today."
-    voice "audio/voice/hellyeah.ogg"
     co "Hell yeah, what's up?"
     mo "We might have a third case of the sickness."
     co "So it's rashes, nightmares and what now?"

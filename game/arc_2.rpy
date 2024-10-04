@@ -275,7 +275,6 @@ label dec_9:
 
             menu:
                 "Convince him not to go":
-                    voice "audio/voice/moc_a2_023.ogg"
                     mo "I don't think it's a good idea."
                     show ast angry
                     ast "If you're not going to help me, please do not stop me."
@@ -317,7 +316,6 @@ label dec_9:
             menu follow_aston:
                 "Convince him not to go":
                     "I called out to him."
-                    voice "audio/voice/moc_a2_023.ogg"
                     mo "I don't think it's a good idea."
                     show ast angry
                     ast "If you're not going to help me, please do not stop me."
@@ -589,7 +587,6 @@ label dec_11:
     "Aston has always pronounced his name the proper way, and this is just insulting."
     "This realization sparked a defiant fire within him."
     show lorenzo neutral
-    voice "audio/voice/loc_a2_36.ogg"
     lo "Lorenso- I am hallucinating, aren't I?"
 
     "For once instead of fear, Lorenzo is frankly, really sick of this."
@@ -610,7 +607,6 @@ label dec_11:
 
     ha "*growl*"
     show lorenzo smile
-    voice "audio/voice/loc_a2_40.ogg"
     lo "Salve, imitatore."
     #stop ambience fadeout 1.0
 
@@ -1627,7 +1623,10 @@ label dec_27:
     mo "...and the gear?"
     show pearl smile
     pe "...Fine, you caught me... but don't tell the others."
-    pe "I'm going to find Lorenzo."
+    if aston safe:
+        pe "I'm going to find Lorenzo."
+    else:
+        pe "I'm going to find them."
 
     #choice branch
     if aston_safe:
@@ -2076,15 +2075,12 @@ label dec_31:
     "And... weird mushrooms growing out of it?"
     "Mauled to an unidentifiable state."
     "The only telltale sign that it was a human was the arm protruding out from the snow."
-    "A letter tightly grasped in their hand."
 
     #If Pearl and Aston is safe
     if aston_safe and pearl_safe:
         "Davos turns away from the sight."
         ja "The day always turns into an eventful one when I least expect it."
-        voice "audio/voice/dac_a2_171.ogg"
         da "This... looks like a horrible way to die."
-        voice "audio/voice/dac_a2_181.ogg"
         da "I-I'm gonna go call my pops."
         mo "Well then... we're stranded and now there's a dead body."
         mo "What else could possibly go wrong?"
@@ -2094,9 +2090,7 @@ label dec_31:
         "I'm not ready to identify who it is."
         "Davos turns away from the sight."
         ja "The day always turns into an eventful one when I least expect it."
-        voice "audio/voice/dac_a2_171.ogg"
         da "This... looks like a horrible way to die."
-        voice "audio/voice/dac_a2_181.ogg"
         da "I-I'm gonna go call my pops."
         mo "Well then... we're stranded and now there's a dead body."
         mo "What else could possibly go wrong?"
