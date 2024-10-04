@@ -553,7 +553,7 @@ label dec_11:
     "The search, now for two, commences."
 
     scene bg cottage2 with fade
-    #play ambience amb_bear_wovoice fadein 1.0
+    play ambience amb_bear_wonoise fadein 1.0
     #Lorenzo's POV
     "Lorenzo is wide awake and feeling restless."
 
@@ -568,8 +568,8 @@ label dec_11:
     lo "Thank you."
 
     "He pulls the blanket higher up to cover his shoulders."
-    #stop ambience fadeout 1.0
-    #play ambience amb_bear fadein 1.0
+    stop ambience fadeout 1.0
+    play ambience amb_bear fadein 1.0
 
     ha "Lo-Lorenzo."
 
@@ -612,7 +612,7 @@ label dec_11:
     show lorenzo smile
     voice "audio/voice/loc_a2_40.ogg"
     lo "Salve, imitatore."
-    #stop ambience fadeout 1.0
+    stop ambience fadeout 1.0
 
 label dec_12:
     #EXT: Camp 1A
