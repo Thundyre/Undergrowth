@@ -69,6 +69,8 @@ image cg morganhome1 = "cgs/morganhome1.png"
 image cg morganhome2 = "cgs/morganhome2.png"
 image cg memory = "cgs/memory.png"
 image cg endscreen = "images/endscreen.png"
+image cg lorenzosdrawing = "cgs/lorenzosdrawing.png"
+image cg glitchedphoto = "cgs/glitchedphoto.png"
 
 
 ## CGs gallery versions

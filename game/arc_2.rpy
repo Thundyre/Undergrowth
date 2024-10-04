@@ -1135,9 +1135,10 @@ label dec_17:
     "The bear doesn't notice Kyle's presence."
     "Click!"
     #SFX camera
-    # TODO glitchedphoto
+    show cg glitchedphoto
     "He checks his camera."
     "It's a tad blurry."
+    hide cg
     show ky neutral
     ky "Let me try that again."
 
@@ -1282,12 +1283,13 @@ label dec_21:
     "He notices me walking into the tent."
     ky "Can I get your opinion on something?"
     "He tilts the camera towards me."
-    # TODO glitchedphoto
+    show cg glitchedphoto
     "I don't... like what I am seeing here."
     ky "Weird, huh? My camera glitched out on this photo."
     mo "That looks like a bear, no?"
     ky "I mean, yeah, I saw it with my eyeballs."
     ky "But it looked nothing like the picture here."
+    hide cg
     "I touched Kyle's forehead to feel his temperature."
     ky "No fever!"
     "I'm not sure if Kyle is infected."

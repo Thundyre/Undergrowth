@@ -1892,11 +1892,13 @@ label nov_26:
     lo "Let me draw them real quick."
 
     "Lorenzo begins to scribble on his notebook."
+    show cg lorenzosdrawing
     "A bear-shaped thing?"
 
     lo "See this... This bear thing, it has been following me night after night."
     show lorenzo sad
     lo "I'm sorry if it sounds silly, I just..."
+    hide cg
     show ky neutral
     ky "It's not silly Lorenzo, fears are valid!"
     show ky shaken
