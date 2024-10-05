@@ -1,4 +1,5 @@
 label tr_nov_1:
+    $ save_name = _("Prologue")
     #INT:  Morgan’s Apartment
     #Hilda's voice can be heard from the TV advertisement.
     hi "Glow glow glow with NuGLO, let us help you restore your skin's shiny supple glow!"
@@ -8,21 +9,22 @@ label tr_nov_1:
     #SFX
     mo "Heya."
     co "Got everything you need Morg?"
-    mo "Yep just zipping up here and I'm good to go."
+    mo "Yep, just zipping up here and I'm good to go."
     co "Sure you got everything?" 
     mo "Can't fit you in my bag now, can I?"
     #Morgan zips his backpack.
     co "Wouldn't try to even if you asked. I'd rather not be stuck in that for three days."
-    mo "Haha well.. I think it's just about time to head off!"
+    mo "Haha, well.. I think it's just about time to head off!"
     co "Alrighty then. Bring him home and stay safe, soldier."
     mo "I will."
     #With one final look at his living room, Morgan swings his backpack onto his shoulder and then leaves his apartment.
 
-    jump nov_1
+    jump nov_4
 
 label tr_dec_6:
     #INT: Locker Room
-
+    show cg memory
+    $ persistent.gallery_memory = True
     #Morgan enters the locker room and sees Elliot there packing up his belongings. 
     mo "Woah Elly, are you going somewhere?"
     el "Yep! It's gonna be a long trip."

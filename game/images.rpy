@@ -64,6 +64,14 @@ image cg meetingkyle = "cgs/meetingkyle.png"
 image cg bearwindow1 = "cgs/bearwindow1.png"
 image cg bearwindow2 = "cgs/bearwindow2.png"
 image cg bearwindow3 = "cgs/bearwindow3.png"
+image cg avalanche = "cgs/avalanceGM.png"
+image cg morganhome1 = "cgs/morganhome1.png"
+image cg morganhome2 = "cgs/morganhome2.png"
+image cg memory = "cgs/memory.png"
+image cg endscreen = "images/endscreen.png"
+image cg lorenzosdrawing = "cgs/lorenzosdrawing.png"
+image cg glitchedphoto = "cgs/glitchedphoto.png"
+
 
 ## CGs gallery versions
 image gal cg christmas:
@@ -93,6 +101,16 @@ image gal cg meetingkyle:
 image gal cg bearwindow:
     xysize (317,190)
     "cgs/bearwindow1.png"
+image gal cg avalanche:
+    xysize (317,190)
+    "cgs/avalanceGM.png"
+image gal cg morganhome:
+    xysize (317,190)
+    "cgs/morganhome1.png"
+image gal cg memory:
+    xysize (317,190)
+    "cgs/memory.png"
+
 
 image locked = "gui/extras/cg_locked.png"
 image cg_hover:
