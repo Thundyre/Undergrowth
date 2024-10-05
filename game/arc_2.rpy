@@ -132,7 +132,7 @@ label dec_7:
     stop music
     #INT: Main tent
     scene bg maintent_night with dissolve
-    play ambience amb_campnight_wofire fadein 1.0
+    play ambience amb_campnightwofire fadein 1.0
 
     "The sleeping bags have all been moved to the main tent for now."
     "Some of our smaller tents were destroyed, so everyone's gotta share the big tent for the time being."
@@ -566,7 +566,6 @@ label dec_11:
     "The search, now for two, commences."
 
     scene bg cottage2 with fade
-    play ambience amb_bear_wonoise fadein 1.0
 
     #Lorenzo's POV
     "Lorenzo is wide awake and feeling restless."
@@ -582,8 +581,7 @@ label dec_11:
     lo "Thank you."
 
     "He pulls the blanket higher up to cover his shoulders."
-    stop ambience fadeout 1.0
-    play ambience amb_bear fadein 1.0
+    play ambience amb_lobear fadein 1.0
 
     ha "Lo-Lorenzo."
 
@@ -691,7 +689,7 @@ label dec_13:
     show bg camp2_night
 
     "Right. Now that everyone's sleeping, 'tis the time."
-    play ambience amb_campnight_wofire fadein 1.0
+    play ambience amb_campnightwofire fadein 1.0
 
     show satphone
     mo "Pancake!"
@@ -723,7 +721,7 @@ label dec_13:
 label dec_14:
     #EXT: Forest
     scene bg forest3 with longfade
-    play ambience amb_bad1 fadein 1.0
+    play ambience amb_asthalu fadein 1.0
 
     show ast neutral
     "Aston and I are once again on our way to meet Lorenzo."
@@ -1648,7 +1646,7 @@ label dec_26:
 
 label dec_27:
     scene bg maintent_night with longfade
-    play ambience amb_campnight_wofire fadein 1.0
+    play ambience amb_campnightwofire fadein 1.0
     "In the dead of the night, I heard someone rummaging through their backpacks."
 
     if aston_safe:
@@ -1793,11 +1791,10 @@ label dec_27:
             "This is all my fault."
             "If anything happens to her, I-"
             "...I won't be able to forgive myself."
-            stop ambience fadeout 1.0
+            
 
             #Scene transition: Fade to black > Fade in forest BG
             scene bg forest3 with longfade
-            play ambience amb_bad2 fadein 1.0
 
             #Pearl's POV
             show pearl neutral
@@ -1811,6 +1808,8 @@ label dec_27:
             pe "The snow is... unrelenting too. It's cold."
             show pearl neutral
             pe "Come on Pearl! Focus focus!"
+            stop ambience fadeout 1.0
+            play ambience amb_icebody fadein 1.0
 
             show cg pearldeath
             $ persistent.gallery_pearldeath = True
@@ -1923,7 +1922,7 @@ label dec_30:
 
     #EXT: Camp 1A
     scene bg camp2_night with sdissolve
-    play ambience amb_campnight_wofire fadein 1.0
+    play ambience amb_campnightwofire fadein 1.0
 
     "Gregory's Walkie starts beeping the moment I step foot outside."
 
@@ -1998,7 +1997,7 @@ label dec_30:
         "I should also go to the cabin tonight"
         stop ambience fadeout 1.0
         scene bg cottage2 with fade
-        play ambience amb_bad1 fadein 1.0
+        play ambience amb_lobear fadein 1.0
 
         show lorenzo smile
         "I'm paying Lorenzo a visit."

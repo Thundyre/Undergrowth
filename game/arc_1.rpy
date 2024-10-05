@@ -788,7 +788,7 @@ label nov_13:
     gr "Okay, okay. If pressure is what you want, I'll do it."
     hi "Find him. I don't want to be the one playing clean up every time."
 
-    "Whoever's he's talking to sounds full of themselves."
+    "Whoever he's talking to sounds full of themselves."
     show gr angry
     gr "Her? Playing clean up? What a load of bullshit. I'm the one here cleaning up every damn time."
 
@@ -852,7 +852,7 @@ label nov_14:
     stop ambience fadeout 1.0
 
     scene bg morganstent with fade
-    play ambience amb_campnight_wofire fadein 1.0
+    play ambience amb_campnightwofire fadein 1.0
 
     show satphone
     mo "How's my Pancake doing?"
