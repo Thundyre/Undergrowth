@@ -1,6 +1,7 @@
 init -1 python:
-    renpy.music.register_channel("sound_ui", mixer = "sfx_ui", loop=None)
-    renpy.music.register_channel("ambience", mixer = "sfx_am", loop=None) 
+    renpy.music.register_channel("sound_ui", mixer = "sound_ui", loop=None)
+    renpy.music.register_channel("ambience", mixer = "ambience", loop=None)
+
     renpy.music.register_channel("radio_effect", mixer = "voice", loop=False , stop_on_mute=False)
 
 init python:
@@ -22,3 +23,16 @@ $ sample_radio_off = renpy.random.choice(["audio/ui/radio static/uiclean1.ogg", 
 define audio.light = "audio/music/mus_light.ogg"
 define audio.neutral = "audio/music/mus_neutral.ogg"
 define audio.anxious = "audio/music/mus_anxious.ogg"
+
+## Ambienece
+define amb_bad1 = "audio/ambience/amb_bad1.ogg"
+define amb_bad1_wovoice = "audio/ambience/amb_bad1wovoice.ogg"
+define amb_bad2 = "audio/ambience/amb_bad2.ogg"
+define amb_bear = "audio/ambience/amb_bear.ogg"
+define amb_bear_wonoise = "audio/ambience/amb_bearwonoise.ogg"
+define amb_campday = "audio/ambience/amb_campday.ogg"
+define amb_campnight = "audio/ambience/amb_campnight.ogg"
+define amb_rc = "audio/ambience/amb_rc.ogg"
+define amb_village = "audio/ambience/amb_village.ogg"
+define amb_campnight_wofire = "audio/ambience/amb_campnightwofire.ogg"
+

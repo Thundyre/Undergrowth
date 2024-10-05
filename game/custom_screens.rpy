@@ -14,7 +14,9 @@ screen warning:
     zorder 100
     key "K_ESCAPE" action ShowMenu("settings")
     add "gui/overlay/overlay.png"
-    fixed:        
+
+    fixed:
+
         style_prefix "warning"
         xysize(1377,857)
         xalign 0.5
@@ -98,14 +100,15 @@ screen credits():
                         label _("Lead Programmer")
                         label _("UI Designer, Misc. art,\nAssistant Programmer ")
                         label _("Sprite Artist")
-                        label _("Animator")
+
+                        #label _("Animator")
                         label _("Composer")
                         label _("Voice Director")
-                        
+
                         label "" text_size 10
                         label _("Cast") text_size 60
                         label "" text_size 10
-                        
+
                         label _("Morgan")
                         label _("Colin")
                         label _("Hilda")
@@ -136,12 +139,14 @@ screen credits():
                         text "{a=https://ruminio.itch.io/}Ruminio{/a}"
                         text "" size 15
                         text "{a=https://twitter.com/MasterThoe}Thoe{/a}"
-                        text "{a=https://candycornskull.itch.io/}Candycornskull{/a}"
+
+                        #text "{a=https://candycornskull.itch.io/}Candycornskull{/a}"
+
                         text "{a=https://twitter.com/henkkastorm}Henri Tikkala{/a}"
                         text "{a=https://twitter.com/barkervoiceover}Jett Barker{/a}"
 
                         text "" size 120
-                        
+
                         text "{a=https://twitter.com/XantheVyce}Xander M. Grant{/a}"
                         text "{a=https://twitter.com/MahoganyVoice}James Rudolph{/a}"
                         text "{a=https://twitter.com/VanessaBenVO}Vanessa Benoit{/a}"
@@ -219,6 +224,20 @@ init python:
     g.image("cg bearwindow1")
     g.image("cg bearwindow2")
     g.image("cg bearwindow3")
+
+    # g.button("avalanche")
+    # g.condiition("persistent.gallery_avalanche")
+    # g.image("cg avalanche")
+
+    # g.button("morganhome")
+    # g.condiition("persistent.gallery_morganhome")
+    # g.image("cg morganhome1")
+    # g.image("cg morganhome2")
+
+    # g.button("memory")
+    # g.condiition("persistent.gallery_memory")
+    # g.image("cg memory")
+
 
 screen gallery():
 
@@ -344,7 +363,9 @@ style music_button_text is additional_button_text:
 ##
 ## Additional options selectable only once, at the start of a new game
 
-default radio_static = "static"
+
+#default radio_static = "static"
+
 default screenshake = True
 
 screen add_options():
@@ -358,5 +379,6 @@ screen add_options():
             style_prefix "radio"
             vbox:
                 spacing 40
-                label _("Radio Static")
+
+                #label _("Radio Static")
                 label _("Screenshake")

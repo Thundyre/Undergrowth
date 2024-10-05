@@ -23,7 +23,7 @@ define gui.show_name = False
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "SpooktoberDemo"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -49,7 +49,7 @@ define build.name = "Undergrowth"
 define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
-
+define config.auto_voice = "voice/{id}.ogg"
 
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
@@ -84,17 +84,28 @@ define config.intra_transition = dissolve
 
 ## A transition that is used after a game has been loaded.
 
-define config.after_load_transition = None
+define config.after_load_transition = fade
 
 
 ## Used when entering the main menu after the game has ended.
 
-define config.end_game_transition = None
+define config.end_game_transition = dissolve
 
 
 ## A variable to set the transition used when the game starts does not exist.
 ## Instead, use a with statement after showing the initial scene.
+# More Transitions
+define config.end_splash_transition = dissolve
 
+define config.enter_yesno_transition = Dissolve(.3)
+define config.exit_yesno_transition = Dissolve(.3)
+
+define config.exit_replay_transition = dissolve
+
+define config.game_main_transition = dissolve
+
+define config.window_hide_transition = dissolve
+define config.window_show_transition = dissolve
 
 ## Window management ###########################################################
 ##
@@ -120,7 +131,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 40
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
@@ -128,6 +139,9 @@ default preferences.text_cps = 0
 
 default preferences.afm_time = 15
 
+## Autosave slots ##############################################################
+
+define config.autosave_slots = 4
 
 ## Save directory ##############################################################
 ##
@@ -143,7 +157,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "Undergrowth-1724156795"
+define config.save_directory = "Undergrowth"
 
 
 ## Icon ########################################################################
@@ -152,6 +166,8 @@ define config.save_directory = "Undergrowth-1724156795"
 
 define config.window_icon = "gui/window_icon.png"
 
+define build.change_icon_i686 = True
+## Warn people about antivirus software possibly flagging the game
 
 ## Build configuration #########################################################
 ##
@@ -183,17 +199,37 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
+    build.classify('**.psd', None)
+    build.classify('game/cache/**', None)
+    ## NOTE: This excludes markdown and txt files. If you use these formats for
+    ## README or instructions, you may want to remove these lines.
+    build.classify('**.txt', None)
+    build.classify('**.md', None)
 
     ## To archive files, classify them as 'archive'.
 
-    # build.classify('game/**.png', 'archive')
-    # build.classify('game/**.jpg', 'archive')
+    build.classify("game/**.rpy", "archive")
+    build.classify("game/**.rpym", "archive")
+
+    build.classify("game/**.webp", "archive")
+    build.classify("game/**.webm", "archive")
+    build.classify("game/**.mp4", "archive")
+    build.classify("game/**.png", "archive")
+    build.classify("game/**.jpg", "archive")
+    build.classify("game/**.ttf", "archive")
+    build.classify("game/**.otf", "archive")
+    build.classify("game/**.mp3", "archive")
+    build.classify("game/**.wav", "archive")
+    build.classify("game/**.ogg", "archive")
+    build.classify("game/**.opus", "archive")
+    build.classify("game/**.rpyc", "archive")
+    build.classify("game/**.rpymc", "archive")
+
 
     ## Files matching documentation patterns are duplicated in a mac app build,
     ## so they appear in both the app and the zip file.
 
-    build.documentation('*.html')
-    build.documentation('*.txt')
+
 
 
 ## A Google Play license key is required to perform in-app purchases. It can be
