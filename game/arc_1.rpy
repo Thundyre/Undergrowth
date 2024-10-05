@@ -56,7 +56,7 @@ label nov_4:
     scene bg forest1 with dissolve
 
     "Along the way, Gregory fills me in on the operation and the rest of the people at camp."
-    "The Mission? Collecting samples from the environment."
+    "The \"Mission\"? Collecting samples from the environment."
     "Be it sources of water, dirt, trees and maybe foliage once the snow melts."
     "We're basically here to run errands for the scientists here to find new sources of penicillin."
     "The good stuff in antibiotic medication."
@@ -852,7 +852,7 @@ label nov_14:
 
         #choice branch ends
         #phone ends
-    "rustle rustle"
+    "Rustle rustle"
     "Was that from outside?"
 
 menu:
@@ -881,7 +881,7 @@ menu:
             show black
             "Pitch black. Can't see shit."
 
-            "rustle rustle"
+            "Rustle rustle"
             #SFX
 
             mo "Who's there?!"
