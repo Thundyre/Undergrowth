@@ -31,13 +31,14 @@ label dec_6_2:
     "I never thought I'd see him emotional, but it looks like Aston's on the verge of breaking down."
 
     show pearl neutral
-
     pe "Gregory... He's outside the tent. He's fine."
+    show pearl sad
     pe "Kyle is also fine. He's sorting through our supplies and setting up our sleeping space for tonight."
 
     show pearl depressed
     pe "Lorenzo... We haven't found him."
     pe "We've tried beeping his Walkie, but we haven't received anything."
+    show pearl neutral
     pe "That's how we found you! Yours beeped under the snow and we heard it."
 
     hide ast with sdissolve
@@ -83,17 +84,22 @@ label dec_7:
     wt_ja "How's the status of your camp? Heard you got knocked out, Morgan."
     wt_mo "Yep. It still hurts too."
     wt_mo "Pearl, Gregory and Kyle are at base, and Aston is here with us to find Lorenzo."
+    $ chibi_davos = "images/chibi/davos_worried.png"
     wt_da "I promise we'll do our best, Aston. We'll find him."
+    $ chibi_jax = "images/chibi/jax_neutral.png"
     wt_ja "On C2's side, Cassie sprained her ankle. Wilbur had a few scrapes."
+    $ chibi_jax = "images/chibi/jax_worried.png"
     wt_ja "Ruran and I got pushed out pretty far from the rest. Took a while for us to locate where we were."
     wt_da "I was lucky enough to avoid most of the hits."
 
     "Aston has been trying to reach Lorenzo through his Walkie."
 
     wt_ja "Eva and Koda were pretty worried about us."
+    $ chibi_jax = "images/chibi/jax_neutral.png"
     wt_ja "Even Isaak called. That was pretty unlike him."
     ast "Any sign of him?"
     wt_da "We haven't seen anything out of the ordinary, Aston."
+    $ chibi_jax = "images/chibi/jax_worried.png"
     wt_ja "Let's keep calling out."
     mo "Lorenzo!"
     da "Lorenzo! Where are you!"
@@ -124,8 +130,9 @@ label dec_7:
     mo "It's not a 'you' problem Kyle. Don't worry."
     ky "Yeah, I just wish there was something I could do for him right now."
     mo "You haven't fully recovered from whatever you're dealing with, either. You need to rest."
+    show ky confused
     ky "I know, which sucks. The best I can do is just hold the fort until everyone comes home."
-    show ky neutral
+    show ky smile
     ky "Gregory and Pearl are gonna help out tomorrow, I think."
 
     mo "Yep. Hopefully it'll make the search much easier."
@@ -293,14 +300,18 @@ label dec_9:
 
                 "Join him":
                     mo "I know what you're doing, but please let me come along. It's dangerous to go alone."
+                    show ast sad
                     "Aston looks worriedly at me."
 
         #choice branch 2 ends
             show gr neutral at right
             gr "Are you guys heading out?"
             "Gregory sits up, tiredly."
+            show gr angry
             gr "You're not supposed to go out after night remember? I'm liable for your safety."
+            show ast angry
             ast "Lorenzo is out there, I can't possibly sleep it off like it's nothing."
+            show gr neutral
             gr "Look, you can try if you want."
             gr "But it is cold as shit out there, and your flashlight is not gonna be helpful."
             "Aston doesn't say anything else."
@@ -379,6 +390,7 @@ label dec_10:
         mo "Just that, if you're planning on doing that again tonight, please let me know."
         show ast neutral
         ast "Alright, I shall."
+        show ast sad
         ast "My search... was unsuccessful."
         mo "It's okay, we'll keep trying. You have an ally here."
         show ast happy
@@ -412,6 +424,7 @@ label dec_10:
 
         "Aston knocks on the door."
         #SFX knock
+        show ast sad
         ast "Lorenzo, are you in here?"
         lo "Aston?"
 
@@ -432,13 +445,13 @@ label dec_10:
         hide cg
         show bg cottage2
         show ast happy at centerleft
-        show lorenzo smile at centerright
+        show lorenzo sad at centerright
         ast "Thank goodness."
         lo "I knew you'd find me, amore."
         lo "I'm sorry for worrying you, and everyone as well."
 
         "With tears forming in his eyes, Lorenzo beams at me as well."
-
+        show lorenzo smile
         lo "It's good to see you too, Morgan."
 
         "I gave him a gentle pat on his shoulder."
@@ -446,6 +459,7 @@ label dec_10:
         mo "And I'm glad that you're okay."
         show ast sad
         ast "I don't want you to stay here alone, love."
+        show lorenzo sad
         ast "But I'm worried about bringing you back to camp."
         mo "What's that about?"
 
@@ -460,9 +474,9 @@ label dec_10:
 
         lo "One day he just disappeared without a trace."
         lo "His belongings all have been rummaged through, as if he was rushing to somewhere."
+        show ast inthought
         ast "And the reason why I don't want Lorenzo to go back to camp is because of Gregory."
         ast "Elliot had a descriptively similar rash forming on the back of his right shoulder."
-        show ast inthought
         ast "Ruran was treating him back then. I never had a peek at it so I can't be sure."
         show ast neutral
         ast "On the night before he disappeared, I overheard Gregory on the phone."
@@ -475,14 +489,16 @@ label dec_10:
         show lorenzo neutral
         lo "But I still don't want to believe that he'd do something to Elliot."
         mo "But Gregory doesn't seem suspicious of Kyle?"
+        show lorenzo pondering
         lo "I'd like to believe that it's because Kyle was bitten by Susie."
+        show lorenzo sad
         lo "Whereas Elliot and I... I don't even know how I got it in the first place."
         mo "Do you... think that it's the same infection, but from multiple sources?"
         show ast inthought
         ast "That would be probable, yes."
         mo "Speaking of infections, how are you doing Lorenzo?"
         lo "My arm is still red... but I think something worse has been happening to me."
-        show lorenzo scared
+        show lorenzo sick
         lo "I-I don't know, I want to believe that I was just seeing things."
 
         show ast neutral with move:
@@ -502,7 +518,9 @@ label dec_10:
         mo "The game ends if Gregory gets suspicious before Lorenzo's arm heals."
         mo "This would mean that Aston and I can only visit you during the night."
         mo "And this would mean that you have to tank through the day without us here."
+        show lorenzo neutral
         lo "...I think I can do that."
+        show ast sad
         ast "Will you be okay?"
         show lorenzo smile
         lo "For you amore, I will be strong for you."
@@ -516,6 +534,7 @@ label dec_10:
         mo "Alright, let me know when you're ready to go back Aston."
         mo "We have about 5 hours till dawn, but ideally we should get some sleep in too."
         mo "Wouldn't want to look suspiciously groggy the next day."
+        show ast sad
         ast "That's very true."
         mo "Well then, wake me up when it's time."
         hide ast
