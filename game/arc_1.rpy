@@ -1363,6 +1363,7 @@ label nov_17:
     show gr neutral at centerleft
     ky "Heya, do you need some help?"
     gr "No, not really. Go bother someone else, will ya?"
+    show ky sad
     ky "I could help you guys with heavy stuff? Delivering? Lifting?"
     show ast neutral at centerright
     show lorenzo smile at right
@@ -1373,19 +1374,22 @@ label nov_17:
     ast "Camp 2 is pretty far by foot, are you sure?"
     show gr confused
     gr "The snowmobile can fit two people, so unless you'd like to be dragged like a ragdoll along with our other supplies, walking is the way."
+    show ast neutral
+    show lorenzo sad
     ky "I mean sure! You guys know what's best."
 
     "The bewilderment on Gregory's face is loud."
     show gr happy
     gr "We'll give you a lift then. Come outside in 5."
-
+    show lorenzo smile
+    show ast happy
     lo "Think I have everything I need. I'll see you later, amore. Bye friends!"
     hide lorenzo with dissolve
     hide gr with dissolve
     show ast neutral with move:
         xalign 0.5
     "Lorenzo bids Aston and us farewell and follows Gregory outside."
-    show ky smile
+    show ky shaken
     show pearl smile at right
     ky "I forgot to ask if they had helmets."
     pe "I'm sure you'll be fine Kyle."
@@ -1408,22 +1412,29 @@ label nov_17:
     wt_ky "Woah Cassie does this mean he received it?"
     wt_mo "Loud and clear Kyle."
     wt_ca "Haha hello Morgan! I was just teaching him how the Walkie works, we happened to have a spare!"
+    $ chibi_cassie = "images/chibi/cassie_neutral.png"
     wt_ca "And it looks like we have a different courier pigeon. I'll get Kyle to deliver your map tomorrow!"
     wt_mo "Sweet! Thanks again Cassie, hope the new pigeon doesn't cause you too much trouble."
     wt_ca "Oh, I'm gonna put him to work. Don't you worry!"
     wt_ky "I don't have a say in this, do I?"
     wt_ca "Nopeeee, that's what you get for making me do extra work, I have to draw a new map for you."
+    $ chibi_davos = "images/chibi/davos_worried.png"
     wt_da "You two should get a room, it's blinding!"
     pe "Spill the tea Davos, what are we looking at?"
+    $ chibi_davos = "images/chibi/davos_happy.png"
     wt_da "You should've been here just now! H-H-Hi my name is K-Kyle, I think you're c-cute."
     wt_ky "That is not what I said Davos!"
+    $ chibi_jax = "images/chibi/jax_happy.png"
     wt_ja "It was definitely close enough, right Cassie?"
+    $ chibi_cassie = "images/chibi/cassie_worried.png"
     wt_ca "D-Don't drag me into this!"
     wt_mo "Well, it sounds like you guys are having fun without us alright."
     ast "Remember to grab food supplies too Kyle."
     wt_wi "All packed and ready Aston. He won't starve on my watch!"
+    $ chibi_ruran = "images/chibi/ruran_worried.png"
     wt_ru "Oh Aston, did you also need med supplies? Kyle has a bite on his arm, doesn't he?"
     ast "Yes, he got bitten by a cow. I think we have enough supplies though."
+    $ chibi_wilbur = "images/chibi/wilbur_happy.png"
     wt_wi "A cow? My, you're full of surprises aren't you lad?"
     nvl clear
     #beeps end
@@ -1435,10 +1446,14 @@ label nov_17:
     scene bg isaaklab1 with longfade
     play ambience amb_rc fadein 1.0
 
-    show lorenzo smile at centerleft
+    show lorenzo pondering at centerleft
     lo "Hngggg... phew.. I think that's the last box for Isaak? Koda's usually the one that collects boxes but I think they're with Gregory and Eva now."
+    show lorenzo sad
     lo "Isaaaaak? Are you there?"
+    show lorenzo neutral
     lo "Hmm... Why is the ice box open- oh."
+    stop ambience fadeout 1.0
+    play music audio.anxious fadein 1.0
 
     "An unidentifiable animal carcass could be found in the box, covered in ice."
     "Looks about the size of a wolf pup or a large bird."
@@ -1452,17 +1467,18 @@ label nov_17:
     lo "I'll let Koda know that his supplies are here I guess."
 
     "Unable to shake off the feeling of uneasiness, Lorenzo decides to leave the lab to go look for the others."
-    stop ambience fadeout 1.0
+    stop music fadeout 5.0
 
 label nov_18:
     #EXT: Camp 1
     scene  bg camp1_day with dissolve
-
+    play ambience amb_campday fadein 1.0
     "The next day, Kyle returns home from Camp 2. Gregory had to pick him up 'cause the ragdoll idea wasn't as great as he thought."
 
-    show pearl smile at centerright
+    show pearl happy at centerright
     show ky smile at centerleft
     pe "You're finally back! Thought you didn't want to leave Cassie."
+    show ky happy
     ky "I am a man of my words Pearl! Gotta send these supplies back here, and this, for you!"
 
     "Kyle hands me a newly drawn map."
@@ -1475,6 +1491,7 @@ label nov_18:
     "The day goes on with lots of fun and banter."
 
     scene bg morganstent with sdissolve
+    stop ambience fadeout 5.0
     play music audio.neutral
 
     "Night time."
@@ -1532,41 +1549,52 @@ label nov_19_23:
 
     #INT: Main tent
     show bg maintent_day
-    show lorenzo smile at left
-    show ast neutral at centerleft
+    show lorenzo neutral at left
+    show ast sad at centerleft
     show pearl confused at centerright
     lo "Amore, you need to eat more greens!"
+    show ast inthought
     ast "I don't eat green vegetables."
     pe "But what about corn? Or carrots? Eggplants?"
+    show ast neutral
+    show lorenzo smile
     ast "Normally I'd choose not to, but I know it's healthy so I tolerate them."
+    show pearl sad
     pe "So no to pea soup?"
     ast "No to pea soup, they're green."
 
     "Lorenzo notices me walking in."
-
+    show lorenzo happy
     lo "Morgan! Do you like vegetables?"
     mo "I love them roasted or stir fried, but not too much if they're boiled."
     show pearl smile
+    show ast inthought
     pe "See Aston, you're the pickiest!"
     ast "...I've survived this long without vegetables. I can live without it."
-    show lorenzo pondering
+    show lorenzo smile
     lo "There are two kinds of people, survive to eat, and eat to survive. Amore, I think you're the latter."
+    show ast neutral
     ast "Hey, it's not like I avoid everything green. I eat basil on pizza."
     mo "What are your favorite pizzas?"
     show ast inthought
     ast "A meatasaurus. If it has mushrooms and onions it'll smell better, but I'd still prefer meat and nothing else."
+    show pearl happy
     pe "Hmmm, I like pep and cheese, or... Oh! A margherita with extra tomato!"
-    show lorenzo smile
+    show lorenzo happy
     lo "I like pesto with seafood, paired with wine? Mmm! That would be my ideal dinner night."
     mo "I'm not that picky but I do love me some extra onions, olives and anchovies. I love stinky stuff."
     pe "What are your stances on pineapple on pizza?"
     show ast neutral
     ast "Tolerable. It's a nice touch."
+    show lorenzo sad
     lo "With pesto and seafood, absolutely not! With other savory meats then yes, I can see the vision!"
+    show pearl smile
     pe "What about you, Morgan?"
     mo "Three for three, I love pineapple on pizza. Especially if they're sweet."
     mo "Do you know any pizza places that do delivery here?"
-
+    show lorenzo smile
+    show pearl scared
+    show ast happy
     "*gurgle*"
     #SFX
     "Someone's stomach lets out a deafening growl."
@@ -1604,7 +1632,7 @@ label nov_19_23:
     scene bg camp1_night with longfade
     "Campfire mealtime."
     show lorenzo smile at left
-    show ast neutral:
+    show ast happy:
         xpos 300
         yalign 1.0
     "Lorenzo and Aston are sharing a plate of dried fruit as usual."
@@ -1633,9 +1661,9 @@ label nov_19_23:
     gr "I have a daughter, yes. She's about Pearl's age."
     gr "Sometimes I wish I didn't have this job."
     mo "Why would you think so?"
+    show gr neutral
     gr "Well you know... More time for family, more time for her."
     gr "Thankfully, I'm retiring soon. I hope that she doesn't hate her old man for being away for so long."
-    show gr neutral
     "He recollects himself and continues."
     gr "What about you, got any kids yourself?"
     mo "I actually have a 4 year old running around back at home."
@@ -1651,7 +1679,7 @@ label nov_19_23:
     scene bg maintent_day with longfade
     "*crash*"
     "Did I walk into something uninvited?"
-    show pearl smile:
+    show pearl scared:
         xalign 0.5
         ypos 600
     pe "I'm okay!"
@@ -1676,7 +1704,7 @@ label nov_19_23:
         "Check the food shelf" if not pe_check_shelf:
             "Maybe at the food shelf?"
             "I reached over to the tomato soup section."
-            show pearl neutral
+            show pearl sad
             pe "Morgan! I know everyone knows that I love tomato soup but it's not there!"
             "Whoops."
             $ pe_check_shelf = True
@@ -1737,10 +1765,12 @@ label nov_19_23:
     ast "Good as new. Remember to take those meds."
     show ky happy
     ky "Sure thing, thanks Aston!"
+    stop music fadeout 5.0
 
 label nov_24:
     #EXT: Camp 1
     scene bg camp1_day with longfade
+    play music audio.light
     "Today is rest day at camp."
     "Or in Pearl's words, tonight is marshmallow night!"
     "Can't remember the last time I've had a marshmallow, let alone a toasted one."
@@ -1764,12 +1794,14 @@ label nov_24:
             da "Hey!"
             mo "So Davos is short?"
             ko "He's 5'3, our beloved short king."
+            show pearl smile
             da "Aww don't join them Morgan."
             ko "You win some, you lose some Davos. But hey, at least you have a great sense of direction."
             show pearl confused
             pe "Excuse me?"
             ko "Didn't say who but I guess you outed yourself Pearl."
             mo "I can confirm that Pearl doesn't do well when we're out collecting."
+            show pearl sad
             pe "Morgaaaaaaaaaannnnnn."
             da "Run Morgan, run!"
             nvl clear
@@ -1812,10 +1844,9 @@ label nov_24:
     ky "I saw a wolf! It was a silly one, kept bumping into trees."
     "I suppose I'll have to leave snooping in Gregory's tent for another time."
     "Marshmallow night is about to start soon."
-    stop music
+    
     
     scene bg camp1_night with dissolve
-    play music audio.light
 
     "*crackle crackle*"
     "The fire chirps loudly in the midst of the silent snowy plain."
@@ -1849,7 +1880,7 @@ label nov_24:
     "There has to be something. Something... or someone else in the picture that I'm not seeing."
     "What is it? Who is it?"
     "I need to gather more info for Colin."
-    stop music
+    stop music fadeout 5.0
 
 label nov_25:
     #EXT: Forest
@@ -1880,6 +1911,7 @@ label nov_25:
     gr "Isaak's orders. He needs wet soil more than anything else."
     gr "Told me to bring it to him immediately if we found any."
     mo "It can't be from the lake can it?"
+    show gr confused
     gr "We have to dig pretty deep down before we hit water, remember?"
 
     "It makes sense, but at the same time it doesn't make sense to me."
@@ -1919,14 +1951,19 @@ label nov_25:
             wt_ev "Shoot."
             wt_mo "Gregory is on his way to deliver wet soil to Isaak, it sounded urgent."
             wt_mo "We found it near the lake. Does that mean anything serious?"
+            $ chibi_eva = "images/chibi/eva_worried.png"
             wt_ev "Wet soil around the frozen lake? If it's not the snow melting on top of it..."
             wt_ev "Then that would mean the lake is eroding."
             wt_ev "And if it erodes, that would mean bad news for us."
             wt_ev "Worst case scenario is it dries up or it becomes a threat for geological hazards."
+            $ chibi_eva = "images/chibi/eva_neutral.png"
             wt_ev "It's unfortunate, but it is a natural occurrence."
+            $ chibi_eva = "images/chibi/eva_worried.png"
             wt_ev "As for why Isaak needs it urgently... I have no clue. He has never brought that up to us."
+            $ chibi_eva = "images/chibi/eva_neutral.png"
             wt_ev "Perhaps I should grab some from him and have a look at it myself."
             wt_mo "Well thanks for that Eva, that's good info."
+            $ chibi_eva = "images/chibi/eva_happy.png"
             wt_ev "You're welcome."
             nvl clear
     #beep end
@@ -1953,6 +1990,7 @@ label nov_26:
     ky "I don't really know, which makes it the fun part!"
     ky "Maybe that should be my next adventure, and maybe after my arm has healed."
     mo "The bite from Susie hasn't healed yet?"
+    show lorenzo sad
     show ky neutral
     ky "It's not like I haven't been bitten before, but this is the first time that it has gotten this bad."
     ky "It's about time for Aston to help me with a new bandage, anyway. Here, let me show you."
@@ -1964,14 +2002,12 @@ label nov_26:
     lo "That... looks bad Kyle."
 
     "I caught Lorenzo pulling on his sleeve."
-    show lorenzo neutral
     hide cg
     show ky sad
     ky "I know, and honestly, I've been feeling a lot groggier recently. Is it the weather or just me?"
     mo "I don't think it's a matter of the weather."
     mo "What about you Lorenzo? Are you feeling alright?"
     mo "I'm worried, you nearly collapsed yesterday."
-    show lorenzo sad
     lo "I'm not exactly sick but... I've been having weird dreams recently."
     mo "Do you want to talk about it?"
 
@@ -1994,9 +2030,10 @@ label nov_26:
     ky "Plus, I'd be scared shitless if a normal bear was in front of me, let alone this one."
     show ky neutral
     mo "Does it act like a normal bear?"
-    show lorenzo neutral
+    show lorenzo scared
     lo "Oh, that's the thing! It doesn't. It's always standing on its hind legs."
     lo "I can't read its expression but it doesn't feel like a friendly presence."
+    show lorenzo sick
     lo "I'm not even sure if it has fur or some kind of... substance? I can't put it into words."
     show lorenzo sad
     lo "It's becoming a nightly event."
@@ -2006,7 +2043,6 @@ label nov_26:
 
     "Kyle's rash is worrying. Lorenzo's dreams are worrying."
     "That's two things that happened within a week."
-    show lorenzo scared
     lo "I've woken Aston up way too many times during the night. I feel horrible for disrupting his sleep."
     mo "I doubt he'd be worrying about his sleep when you're in distress my friend."
     show ky smile
@@ -2107,6 +2143,7 @@ label nov_30:
 
     play music audio.neutral
     wt_ev "Hello campers, is now a good time?"
+    $ chibi_jax = "images/chibi/jax_neutral.png"
     wt_ja "Another weather report Eva? Camp 2's all here."
     show pearl smile at left
     show gr neutral:
@@ -2122,51 +2159,68 @@ label nov_30:
 
     pe "We're all here too!"
     wt_ev "Alright, good... but it's not about the weather, though."
+    $ chibi_eva = "images/chibi/eva_neutral.png"
     wt_ev "I have bad news and bad news."
     wt_ev "The other day Camp 1 found abnormal amounts of moist dirt."
     wt_ev "We have confirmed that the lake bed is probably giving way. The contents of the water do match up."
+    $ chibi_eva = "images/chibi/eva_worried.png"
     wt_ev "Which ultimately means that the lake might dry up over time."
+    $ chibi_davos = "images/chibi/davos_worried.png"
     wt_da "So the first bad news is that the lake is just gonna go poof on us?"
     wt_ev "Basically yes, Davos. We doubt it will happen anytime soon though."
     wt_mo "What's the other bad news?"
     wt_is "The lake's water has an unknown strand of fungi-like contaminants."
     wt_is "But it may just be what Heralign Inc. needs."
+    $ chibi_koda = "images/chibi/koda_happy.png"
     wt_ko "The best case scenario is that we'll find a new source to gather something like penicillin."
     wt_ko "Fungi and the like are important ingredients for antibiotic medication!"
     wt_is "I'm sure you all know survival rules, but I'll just say this."
     wt_is "Do not, under any circumstances, drink the lake water."
     wt_is "Unless you'd like to find out why, in which case be my guest."
+    $ chibi_koda = "images/chibi/koda_worried.png"
     wt_ko "L-Let's stay with boiled fresh snow and bottled water to be safe."
+    $ chibi_jax = "images/chibi/jax_worried.png"
     wt_ja "So the water's deemed undrinkable then."
+    $ chibi_jax = "images/chibi/jax_neutral.png"
     wt_ja "Any idea how it would affect the wildlife here once the lake fully melts?"
+    $ chibi_jax = "images/chibi/jax_worried.png"
     wt_ja "I'd hate it if something were to happen to them."
+    $ chibi_koda = "images/chibi/koda_neutral.png"
     wt_ko "That's definitely something to look out for now while we figure out what we have on our end."
     wt_is "Gregory, Wilbur and the rest. You have a new extra task - observe the behaviour of the wildlife."
     wt_is "Get pictures if possible."
-    stop music
+    stop music fadeout 3.0
     "Gregory looks at Kyle, and Kyle points to his camera expectantly."
     gr "Kyle has a camera we can use."
+    $ chibi_wilbur = "images/chibi/wilbur_happy.png"
     wt_wi "Hah! It looks like that camera will be useful after all, lad!"
     wt_wi "Gregory won't have a reason to kick you out anymore!"
     play music audio.light
+    show ky happy
+    show pearl happy
     "Pearl and Kyle fist pump the air together."
-
+    $ chibi_davos = "images/chibi/davos_happy.png"
     wt_da "Good for you Cassie!"
+    $ chibi_jax = "images/chibi/jax_happy.png"
     wt_ja "Congrats Cassie!"
-    wt_ev "Not sure why we're cheering for Cassie, but... yay Cassie."
+    $ chibi_eva = "images/chibi/eva_happy.png"
+    wt_ev "Not sure why we're cheering for Cassie, but... yay Cassie!"
+    $ chibi_cassie = "images/chibi/cassie_worried.png"
     wt_ca "I-I can't with you all."
-    show lorenzo smile
+    show lorenzo happy
     lo "Kyle seems pretty happy about that."
     pe "Should've seen him in person, he was cheering!"
+    show ast happy
     ast "Weren't you also fist pumping the air?"
-    show pearl happy
     pe "Well yeah, I'm excited for him too!"
     wt_mo "Cassie did you catch that? Kyle's going to stay for longer."
+    $ chibi_ruran = "images/chibi/ruran_happy.png"
     wt_ru "She's hiding behind me."
     wt_ru "Looks like the message has been well received."
+    $ chibi_cassie = "images/chibi/cassie_worried.png"
     wt_ca "Not you too, Ruran."
+    $ chibi_davos = "images/chibi/davos_neutral.png"
     wt_da "Aww Cassie, don't hide."
-    show ky happy
     ky "I'll do my best guys! I'm glad that my skills will be of some value now!"
     nvl clear
     "Well, if I do indirectly end up contributing to modern medicine study, that's a win in my books."

@@ -617,7 +617,7 @@ label dec_11:
     "Doesn't act like a normal bear."
 
 
-    lo "And, this... This is the new feature."
+    lo "And, this... This is a new feature."
 
     "Mimics speech, but it's not very smart."
 
