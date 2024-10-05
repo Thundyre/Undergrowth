@@ -56,6 +56,7 @@ label nov_4:
     gr "You're Morgan, yes? I'm Gregory. Hope the ride up here wasn't too much for you to handle."
     mo "Well walking in snow is definitely much more difficult than sitting in a car, I think. It's nice to meet you, Gregory."
     "He gives me a firm handshake."
+    show gr happy
     gr "Let's head to camp."
 
     scene bg forest1 with dissolve
@@ -160,9 +161,10 @@ label nov_4:
 
     "I followed them into one of the bigger tents, it is much more spacious than I thought."
     "A small table, a shelf full of equipment and perishables, and some unlit lanterns on the ground."
-    show pearl smile at centerleft
+    show pearl happy at centerleft
     show ast neutral at centerright
     pe "Welcome to our little cave, we put lots of our equipment in here!"
+    show pearl smile with dissolve
     pe "The rest outside are all personal tents for all your personal stuff."
     pe "There's extra blankets, flare guns and thingies. Aston organizes everything here cause I always misplace stuff."
     show pearl confused with dissolve
@@ -200,16 +202,19 @@ label nov_4:
             $ chibi_davos = "images/chibi/davos_happy.png"
             wt_da "Haha yes! I'm here with my pops Wilbur, Cassie, Ruran and Jax. They're kinda busy right now though."
             wt_wi "Davos? Could you lend me a hand here?"
+            $ chibi_davos = "images/chibi/davos_neutral.png"
             wt_da "Oops gotta go! Talk to you next time Morgan!"
             nvl clear
         "Call Koda" if not n4_call_ko:
             hide ast
             $ n4_call_ko = True
             wt_mo "Hello this is Morgan, is this Koda?"
+            $ chibi_koda = "images/chibi/koda_happy.png"
             wt_ko "Oh! I'm Koda, yes! I heard from Pearl you were arriving today."
             wt_ko "I'm over here at the RC with Eva and Isaak, they're both scientists. They're also both my supervisors."
             wt_mo "Are you not a scientist yourself Koda?"
             wt_ko "Well, not quite yet... but I'm a lab assistant for now!"
+            $ chibi_koda = "images/chibi/koda_worried.png"
             wt_ko "Oh I think I have to go now, Isaak is looking for me. Bye Morgan!"
             nvl clear
     #choice branch end
@@ -219,7 +224,9 @@ label nov_4:
     show pearl smile with dissolve
     pe "So how did it go?"
     mo "Walkie talkie works for sure. Thanks Pearl... and Aston?"
+    show pearl neutral with dissolve
     pe "Aston went out to look for Lorenzo and Gregory."
+    show pearl happy with dissolve
     pe "It's getting late and the sun is going down, I think all that's left is to show you your tent!"
     show bg camp1_night
     "Pearl walks me out to an orange tent, ensures I have all my supplies and then heads to her own for the night."
@@ -278,6 +285,7 @@ label nov_5:
         xpos 0.8
 
     gr "Alright nice, you're up. I'll cut you some slack since it's your first day."
+    show gr neutral with dissolve
     gr "And because it's your first day here, we gotta make sure you understand the rules."
 
     "He hands me a booklet."
@@ -287,9 +295,9 @@ label nov_5:
     show pearl confused at centerleft
     pe "I've been through this a thousand times, do I still need to be here?"
     gr "Yeah...because you need reminding every time you attempt to do something reckless."
+    show pearl sad with dissolve
     pe "..."
-    show pearl sad
-
+    
     "Gregory runs us through the list of basic camp rules."
     "All of which I'm already familiar with."
     "Time to put that 3 months of camp training knowledge to work."
@@ -314,7 +322,6 @@ label nov_5:
     "\"Do not attempt to handle animal carcasses without protective gear.\""
     "What kind of gear are we talking about? And why are we handling carcasses?"
 
-
     "\"Do not leave camp under any circumstances.\""
     "\"Do not call HQ unless you have permission to.\""
     "Oh lovely, those sounds like bright red flags."
@@ -322,8 +329,10 @@ label nov_5:
     gr "Got any questions?"
     mo "Yeah uh... what's with the location specific ones? Wasn't the village to our right yesterday?"
     gr "Well yeah, but I just follow HQ's orders. So it's best we don't try anything funny."
+    show gr confused with dissolve
     gr "Heard the villagers there weren't too keen with this whole makeshift camp base situation we're having here."
     mo "And we're not supposed to call anyone from HQ? Unless we get permission from...?"
+    show gr neutral with dissolve
     gr "That would be me. Easier to have one person to gather reports from, they said."
 
     "Those were pretty vague answers."
@@ -332,12 +341,13 @@ label nov_5:
     gr "Alright... Pearl? Any questions from ya?"
     show pearl happy
     pe "Is it time for breakfast? Cause I smell something!"
+    show gr worried with dissolve
     gr "..."
+    show gr neutral with dissolve
     gr "Let's eat I guess."
 
     "Aston hands us all a breakfast burrito."
     "Pearl's burrito has a ridiculous amount of tomato sauce."
-
 
     "The rest of the day was spent on learning how to use camp gear and equipment."
     "Basic first aid."
@@ -363,6 +373,7 @@ label nov_6:
     "The rest were outside around the campfire. Preparing breakfast."
 
     mo "So how's your morning going?"
+    show lorenzo neutral
     lo "Just liaising with the supply crew at HQ. A financier's job never ends until everyone gets supplies."
     lo "And as you may notice... I'm not exactly fit to be a camp guide. So this is the best I can do."
     mo "Nah, I wouldn't have guessed."
@@ -393,9 +404,11 @@ label nov_6:
     "The ones in the main tent haven't been updated since summer. The terrain looks entirely different from what we're dealing with now."
 
     mo "So I reckon Camp 2 does the same?"
+    show gr worried
     gr "Same tasks, different area. Environmental study or some shit. I'm not exactly the guy to ask, but if that helps the research team, I ain't complaining."
     show pearl smile with sdissolve
     pe "Never thought I'd be excited to play with dirt again."
+    show gr neutral
     gr "Please don't tarnish the samples with your hands."
     show pearl sad with sdissolve
     pe "Okaaay."
@@ -442,6 +455,7 @@ label nov_6:
     pe "Met Davos at the academy waaaay before and he introduced me to Koda! I kinda miss them now though."
     pe "Gregory's usually the one in charge of delivering stuff, especially during the stormy season. So I haven't seen them in two weeks."
     mo "You've never followed him to the RC?"
+    show pearl depressed with sdissolve
     pe "Not really, I prefer staying at camp than riding the snowmobile. Motion sickness ain't my best friend so..."
     mo "Snowmobile?"
     show pearl happy with sdissolve
@@ -467,19 +481,21 @@ label nov_7_11:
     show pearl smile at centerleft
     show gr neutral at centerright
     gr "Pearl could you get me the-"
-    show pearl happy
+    show pearl happy with sdissolve
     pe "The pick? I got it sir!"
+    show gr worried
     gr "No the-"
     pe "OH the ice saw thingy? Here you go sir!"
+    show gr scared
     gr "..."
     gr "Actually Pearl... I just want the checklist."
     pe "You got it!"
-
+    show gr neutral
     "Gregory seems like he's having a great time."
 
     #8th
     #INT: Main tent
-    scene bg maintent_night with longfade
+    scene bg camp1_night with longfade
 
     "After a long day, Aston decided that we should have canned soup for tonight."
     "He walks over to Pearl and hovers two different flavors in her face."
@@ -511,11 +527,12 @@ label nov_7_11:
     show lorenzo neutral
     lo "..."
     mo "You stopped at 48."
-    show lorenzo smile with sdissolve
+    show lorenzo happy with sdissolve
     lo "Oh! Thank you Morgan. 49... 50... 51..."
     show lorenzo pondering with sdissolve
     lo "57? That's not nearly enough for a month! I'll need to call support."
     mo "Isn't 57 plenty?"
+    show lorenzo smile with sdissolve
     lo "Not if Gregory and Aston keep inhaling them so quickly."
     mo "I have to agree that it's probably the best thing we have."
     lo "Si amico. So 57 isn't nearly enough."
@@ -536,6 +553,7 @@ label nov_7_11:
     show gr angry with sdissolve
     gr "You're an ass you know that?"
     isa "..."
+    show gr worried with sdissolve
     gr "Alright I'll be on my way."
 
     "They're not friends. Noted."
@@ -555,9 +573,12 @@ label nov_7_11:
         "Beep Wilbur":
             if not wt_intro_wi:
                 $ wt_intro_wi = True
+                $ chibi_wilbur = "images/chibi/wilbur_happy.png"
                 wt_wi "Hello Morgan! I heard lots about you from Pearl and Davos!"
                 wt_mo "I'm surprised you already knew about me, they sure are close."
+                $ chibi_wilbur = "images/chibi/wilbur_neutral.png"
                 wt_wi "Well yes! News travels fast around here lad! Oh Ruran my friend, would you like to say hi?"
+                $ chibi_ruran = "images/chibi/ruran_happy.png"
                 wt_ru "Is it Morgan? It is nice to meet you Morgan, I'm Ruran."
                 wt_mo "Oh the other camp medic? Aston told me that you're his mentor."
                 wt_ru "Yes I am. He's great, and it's always nice to have extra hands in case of emergencies."
@@ -573,10 +594,13 @@ label nov_7_11:
         "Beep Cassie":
             if not wt_intro_ca:
                 $ wt_intro_ca = True
+                $ chibi_cassie = "images/chibi/cassie_happy.png"
                 wt_ca "What a coincidence! I was just about to beep ya! I'm Cassie!"
                 wt_mo "It's nice meeting you Cassie, I'm Morgan."
+                $ chibi_cassie = "images/chibi/cassie_neutral.png"
                 wt_ca "Well I just want to let you know that I have a map ready for you! The next time Lorenzo or Gregory comes by, I'll have them be our courier pigeon."
                 wt_mo "Thanks! I appreciate it!"
+                $ chibi_cassie = "images/chibi/cassie_happy.png"
                 wt_ca "Anytime Morgan!"
                 nvl clear
             else:
@@ -587,13 +611,16 @@ label nov_7_11:
                 $ wt_intro_ja = True
                 wt_ja "Yeah, is this the new guy?"
                 wt_mo "Hi Jax, I'm Morgan. Just thought I'd check on everyone."
+                $ chibi_jax = "images/chibi/jax_happy.png"
                 wt_ja "That's nice of you."
+                $ chibi_jax = "images/chibi/jax_neutral.png"
                 wt_ja "Just doing a routine cleanup on my rifles, nothing much."
                 wt_mo "Oh nice, didn't know we had rifles at camp."
                 wt_ja "You know how to handle one?"
                 wt_mo "I'm a little out of practice."
                 wt_ja "Usually people say that to sound humble."
                 wt_mo "Nah. I am actually pretty rusty."
+                $ chibi_jax = "images/chibi/jax_happy.png"
                 wt_ja "We'll have to see about that."
                 wt_mo "Bet."
                 nvl clear
@@ -626,7 +653,9 @@ label nov_7_11:
                 $ wt_intro_ev = True
                 wt_ev "Yes?"
                 wt_mo "It's Morgan, just thought I'd call to say hello!"
+                $ chibi_eva = "images/chibi/eva_happy.png"
                 wt_ev "Ah yes, the new guy. I'm Eva, I think Koda already told you."
+                $ chibi_eva = "images/chibi/eva_neutral.png"
                 wt_ev "I can't talk for long though. Gotta run some errands."
                 wt_mo "I'll leave you to it then."
                 nvl clear
@@ -705,14 +734,15 @@ label nov_12:
     v2 "Are you okay?"
 
     "The kids start petting Susie's back."
-    "Kyle reached out his hand to pet Susie's head, but before he could even reach her-"
+    "Kyle reached out to pet Susie's head but before he could even reach her-"
 
-    "CHOMP"
+    "CHOMP!"
     show bg village1 with sdissolve
     show ky shaken
     "Susie bit his forearm."
 
     vs "Moooo!"
+    show ky sad
     ky "Owwie."
     v1 "Haha! It means Susie likes it! She's happy."
     show ky confused
@@ -764,7 +794,7 @@ label nov_13:
     "He'd join me sometimes. I miss that."
     "I wish he'd just-"
 
-    show gr neutral
+    show gr scared
 
     gr "I understand ma'am, but that's not possible."
     play music audio.anxious
@@ -774,15 +804,18 @@ label nov_13:
 
     gr "We'll have to wait till the lake unfreezes."
     hi "So nothing new to report? It's getting pretty boring Gregory."
+    show gr neutral with dissolve
     gr "I can't move mountains nor change the seasons."
     hi "What about the boy? The coppers would've been onto it by now."
 
     "Hey, that's me."
-
+    show gr confused with sdissolve
     gr "What boy? What d'ya mean?"
     gr "You told me to take care of 'em, but Isaak insisted on helping me out."
     hi "And you never questioned him?"
+    show gr angry with dissolve
     gr "Look, you hired the guy, not me. And you told me to work with him."
+    show gr neutral with dissolve
     gr "I never had a choice."
     hi "And you never will until you get this done. Remember what's at stake here Gregory. I am not repeating myself."
     gr "Okay, okay. If pressure is what you want, I'll do it."
@@ -813,7 +846,7 @@ label nov_14:
     "Is it coming from the radio?"
 
     #EXT: Camp 1
-    scene bg camp1_day with dissolveh
+    scene bg camp1_day with dissolve
     play ambience amb_campday fadein 1.0
 
     show lorenzo sad with dissolve
@@ -841,10 +874,11 @@ label nov_14:
     ast "Could you help me keep the crockpot away? Thank you."
     show pearl smile at centerright with sdissolve
     pe "Man, imagine if the wind blows and we all end up flying. That would be horrible!"
+    show lorenzo sick with dissolve
     lo "Don't put that image in my head Pearl, that's terrifying."
     show pearl sad
     pe "Sorry."
-
+    show lorenzo neutral with dissolve
     "With the tents fully secured, we went about our day at the campsite."
     "Can't collect samples when there's a storm that could strike at any moment."
     "Roll call happened much earlier today, and everyone went back to their respective tents to hunker down for the night."
@@ -929,7 +963,7 @@ label nov_14:
             "I guess it's time to hit the bed."
 
             #choice branch ends
-    stop ambience
+    stop ambience fadeout 1.0
 
 label nov_15:
     #INT: Morgan's tent
@@ -940,6 +974,7 @@ label nov_15:
     "But it looks like the storm didn't hit us last night."
 
     scene bg camp1_day with dissolve
+    play ambience amb_camp fadein 1.0
     #EXT: Camp 1
 
     "For once, I'm the first one up today."
@@ -970,9 +1005,9 @@ label nov_15:
             "Is this unfairness I smell?"
 
     #choice branch ends
-
     "I turn to the large table in the middle that we use for meals if we're not outside near the campfire."
     "Think Lorenzo uses it the most if not for meals. Lots of writing and calculations he needs to do for his job."
+    stop ambience fadeout 5.0
     "And what do we have here?"
     "There are documents strewn across the table, they weren't here last night."
     "Huh?"
@@ -1034,12 +1069,12 @@ label nov_15:
     gr "Oh, up early are we?"
 
     "Gregory's voice booms from behind Aston."
-
+    show ast confused
     ast "Gregory did you leave these here?"
 
     show gr angry
     "A slight uneasiness coming from Gregory's hurried footsteps could be heard."
-
+    show ast neutral
     ast "We were just about to go look for you. Morgan and I were deciding what to eat for breakfast."
     show gr neutral
     "Almost instantaneously, Gregory's face softened from relief."
@@ -1047,6 +1082,7 @@ label nov_15:
     "He didn't have to lie."
 
     mo "Anything you'd like in particular Gregory?"
+    show gr happy
     gr "I'll leave it up to you guys."
 
     show gr with move:
@@ -1057,7 +1093,7 @@ label nov_15:
     "Major alarms are blaring in my head."
     "Aston and I share glances for a moment, before he decides to go on about his daily routine."
     "He doesn't question me, nor does he ever bring it up again for the day."
-    stop music
+    stop music fadeout 3.0
 
     scene bg camp1_day with dissolve
     #EXT: Camp 1
@@ -1065,7 +1101,7 @@ label nov_15:
     "The records have been occupying my mind all day."
     "At least there's meat and potatoes for tonight for a temporary distraction."
     "Can't solve cases on an empty stomach."
-    show lorenzo pondering at centerleft
+    show lorenzo sad at centerleft
     lo "Morgan, are you feeling alright? You haven't been touching your food."
     mo "The food's great Lorenzo, I just have a headache."
     show pearl smile at centerright
@@ -1075,7 +1111,8 @@ label nov_15:
     "The campfire embers dance violently around the pit."
 
     "WRRRRRRRRRRRRR"
-
+    show pearl scared
+    show lorenzo scared
     "Oh that's bad news."
     "The radio turns on."
 
@@ -1125,8 +1162,10 @@ label nov_15:
     menu:
         "Beep Eva":
             wt_mo "Eva! Is everyone at the RC okay?"
+            $ chibi_eva = "images/chibi/eva_worried.png"
             wt_ev "The three of us are fine. We're the ones with a roof here, we should be asking if you're okay."
             wt_mo "We're okay. And it sounds like Camp 2 is alright too!"
+            $ chibi_koda = "images/chibi/koda_worried.png"
             wt_ko "Thank goodness... Update us if anything happens okay?"
 
             pe "Noooooooo! My tent collapsed."
@@ -1134,10 +1173,14 @@ label nov_15:
             "Pearl's voice could be heard coming from the outside."
 
             wt_mo "Well... If you heard that, that's the update I guess. Pearl's tent collapsed."
+            $ chibi_koda = "images/chibi/koda_happy.png"
             wt_ko "O-Oh no, poor Pearl."
             wt_ev "You don't sound all that sorry for her Koda."
+            $ chibi_eva = "images/chibi/koda_neutral.png"
             wt_ko "I am, it's just... It's very Pearl of her."
+            $ chibi_eva = "images/chibi/eva_worried.png"
             wt_ev "It looks like the storm actually did some damage."
+            $ chibi_eva = "images/chibi/eva_neutral.png"
             wt_ev "Anyway, I'm sure you're busy Morgan, help the girl out will you?"
             nvl clear
             #radio selection stuff end
@@ -1194,18 +1237,21 @@ label nov_16:
     hide cg meetingkyle
     show ky smile
     ky "Looks pretty neat huh? I made it myself! It's cold but it does the trick."
+    show ky sad
     ky "I wouldn't want to do that for another night though."
+    show ky smile
     ky "Say, do you happen to have more tents?"
     mo "I'm not sure but I could go check?"
+    show ky happy
     ky "That would be awesome sauce! Oh wait, where are my manners? I'm Kyle, nice meeting you out here!"
     mo "Morgan, nice meeting you too. Why were you out here alone anyway?"
-    show ky happy
     ky "Long story short, I'm a wildlife photographer! I'm on a solo expedition to capture the animals around here."
 
     "He proudly raises the camera hanging around his neck."
-
+    show ky smile
     ky "So like 2 days ago, I was at the village up north. Met the locals, some farm kids, and then I also got bitten by a cow. Pictures turned out great though!"
     mo "A cow? Looks like you had an eventful day. The villagers were friendlier I hope?"
+    show ky happy
     ky "Oh yes, super friendly and they actually offered me to stay with them, but I thought it'd be counterintuitive to stay there with farm animals when I'm looking to find wild ones."
     ky "They gave me extra blankets as a parting gift! I'd be a goner without them last night."
 
@@ -1217,7 +1263,7 @@ label nov_16:
     scene bg camp1_day with dissolve
 
     mo "Heya guys, I'm back with a new friend."
-    show ky smile:
+    show ky happy:
         xpos 650
         yalign 1.0
 
@@ -1238,46 +1284,64 @@ label nov_16:
     show ast neutral at right
 
     "I have a feeling Pearl and Kyle will get along just fine."
-
+    show gr confused
+    show pearl smile
     gr "Where did you come from, son?"
+    show ky smile
     ky "Oh, just up ahead! I was camping in a tent before it flew away last night."
     show pearl happy
     pe "YES! I'm not the only- uh I-I mean, {nw}"
     show pearl sad with None
     extend "that really sucks. Where did you end up sleeping?"
     mo "You're not gonna believe it."
+    show ky happy
     ky "A man made igloo."
+    show pearl smile
+    show gr neutral
     show ast inthought
     ast "All igloos are man made."
+    show ky smile
     ky "Oh damn you're right. I took some pictures, wanna see?"
     show lorenzo sad
     lo "Santo cielo, you survived the night in that?"
+    show ky happy
     ky "Yeah! I was at the village two days ago and they gave me blankets! Thanks to them, I survived the cold!"
+    show ky sad
     ky "Then I also got bitten by a cow named Susie. Which reminds me, do you guys also have extra bandages?"
-    show ast neutral
+    show ast confused
     ast "Let me have a look at it."
     show lorenzo smile
+    show ast neutral
     lo "Aston here is our camp medic! He'll fix you right up."
-
+    show gr angry
     gr "So how long do you plan on staying?"
 
     "Gregory asking the important questions here."
 
     ky "I was wondering if you had extra tents that I could borrow? I wouldn't want to just impose myself here."
+    show lorenzo pondering
     lo "I don't think we'll have any extras until next month."
+    show gr neutral
     gr "I guess you'll have to leave then."
     show ky shaken
+    show lorenzo neutral
     ky "Oh, but please sir Gregory, if I could just have a few days of your time? I really can't afford to leave the mountains when it took so much for me to get up here."
     ky "I just need some time to capture all the wildlife here."
+    show pearl happy
     pe "I can give you my tent! Then I could sleep in our main tent."
     show ky happy
     ky "Really? Thank you Pearl!"
     show gr angry
     gr "I didn't even-"
+    show ky smile
+    show lorenzo smile
     ky "Thank you to the rest of you too! Once I get the photos I need, I'll leave the camp. I promise I won't interfere with your... vacation?"
     gr "We're working here. It ain't a vacation."
+    show ky happy
     ky "Cool cool! If you need anything at all, please do ask. I'd like to be helpful especially since I'm gonna be crashing here for a while!"
+    show ast inthought
     ast "We should treat the cow bite first."
+    show ky shaken
     ky "Ah yes! Totally forgot about that."
 
     scene bg camp1_day with dissolve
