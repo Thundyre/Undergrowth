@@ -912,13 +912,7 @@ label nov_14:
 
         #choice branch ends
         #phone ends
-<<<<<<< HEAD
-    "Rustle rustle"
-=======
-
     "*rustle rustle*"
-
->>>>>>> 78b8da490055ec7fa8dd8e83f9bc643b4d11ea06
     "Was that from outside?"
 
     menu:
