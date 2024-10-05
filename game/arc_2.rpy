@@ -2158,7 +2158,7 @@ label demo_end:
     "Thank you for playing Undergrowth (demo)!"
     "We have a lot in the works and are working towards the full release!"
     "Please look forward to it!"
-    "And with that, we shall we leave you with a Happy Spooktober!"
+    "And with that, we shall leave you with a Happy Spooktober!"
     "- Sincerely, the Undergrowth Dev Team"
 
 

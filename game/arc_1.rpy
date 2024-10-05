@@ -2244,7 +2244,6 @@ label dec_2:
     "Aston removes the thermometer from Lorenzo's mouth."
 
     ast "38 degrees, that's a fever."
-    show ast scared
     ast "Do you want me to take you to the hospital?"
     show lorenzo sad
     lo "I don't know if that's feasible right now."
@@ -2256,7 +2255,7 @@ label dec_2:
     show ast inthought
     ast "One day he's at camp, the next day he goes missing."
     ast "Call me paranoid, but I don't want to find out. Not when Gregory is here."
-    show lorenzo pondering
+    show lorenzo sick
     lo "That makes two of us then."
 
     show lorenzo sad
@@ -2274,8 +2273,9 @@ label dec_2:
         xpos 800
     "Aston cups Lorenzo's face with one hand and then pulls him into an embrace."
 
-    show lorenzo scared
+    show lorenzo sad
     lo "I don't know what this means, and truthfully... I am afraid of it."
+    show lorenzo sick
     lo "Seeing Kyle's arm... I wish it was just a coincidence, but it's starting to look the part."
 
     show ast inthought
@@ -2283,6 +2283,7 @@ label dec_2:
 
     ast "If it spreads on contact, then it wouldn't make sense."
     ast "I'm the one changing his bandages every day."
+    show ast sad
     ast "Any idea where you could've gotten this?"
     show lorenzo sad
     lo "I'm not too sure myself."
@@ -2291,15 +2292,16 @@ label dec_2:
         xpos 500
 
     "Aston gently releases Lorenzo from the hug, and begins cleaning the affected area."
-    show ast sad
     ast "Promise me you'll keep this between us for now?"
     ast "At least... not until we figure out what's really happening."
-    show lorenzo smile
+    show lorenzo neutral
     lo "You have my word, amore."
 
     "Holding Lorenzo's hands in his, Aston takes a deep breath."
-    show ast sad
+    show ast neutral
     ast "You're going to be okay, love."
+    show ast happy
+    show lorenzo smile
     ast "We'll figure something out."
 
 label dec_3:
@@ -2311,25 +2313,35 @@ label dec_3:
     "Suddenly, Aston's Walkie goes off on the table."
     ast "Morgan, could you help me with that?"
     mo "Sure thing bud."
-
+    $ chibi_wilbur = "images/chibi/wilbur_happy.png"
     wt_wi "Aston my boy, are you there?"
     wt_mo "His hands are full but he's listening, Wilbur."
+    $ chibi_wilbur = "images/chibi/wilbur_neutral.png"
     wt_wi "Okay, wonderful! We just want to check in on Kyle."
     ast "Yes?"
+    $ chibi_ruran = "images/chibi/ruran_worried.png"
     wt_ru "Has Kyle had trouble sleeping recently?"
     show ast inthought
     ast "I don't think so."
     wt_wi "You wanna tell him yourself lass?"
+    $ chibi_cassie = "images/chibi/cassie_neutral.png"
     wt_ca "It's like narcolepsy, but the other way around."
+    $ chibi_cassie = "images/chibi/cassie_worried.png"
     wt_ca "Bummer... I don't remember what the word was..."
+    $ chibi_ruran = "images/chibi/ruran_neutral.png"
     wt_ru "It's insomnia, and you've been having that for..."
+    $ chibi_ruran = "images/chibi/ruran_worried.png"
     wt_ru "Has it been a week yet?"
+    $ chibi_cassie = "images/chibi/cassie_neutral.png"
     wt_ca "A little over a week."
     wt_ca "I wish this was a problem I could sleep off."
     wt_wi "But yes, my boy, we were checking in just to see if everything is in order."
+    $ chibi_wilbur = "images/chibi/wilbur_happy.png"
     wt_wi "Glad to hear that Kyle is okay!"
+    $ chibi_ruran = "images/chibi/ruran_worried.png"
     wt_ru "Another thing Aston, have you noticed anyone else with these rashes?"
     wt_ru "If more of these pop up we would have to start sending people to a hospital."
+    $ chibi_ruran = "images/chibi/ruran_neutral.png"
     wt_ru "It may be something that we're not equipped to handle out here."
     show ast neutral
     "Aston freezes up."
@@ -2337,8 +2349,10 @@ label dec_3:
     wt_mo "Not that we've noticed here. You worried that it's contagious?"
     wt_ru "Always a possibility. It would be better to cover all our bases."
     wt_mo "Well, we'll let you know if anything new happens Ruran."
+    $ chibi_ruran = "images/chibi/ruran_happy.png"
     wt_ru "That would be ideal, thank you Morgan."
     wt_mo "And take care Cassie!"
+    $ chibi_cassie = "images/chibi/cassie_happy.png"
     wt_ca "I shall."
     nvl clear
     #radio end
@@ -2366,14 +2380,14 @@ label dec_3:
     show ky confused
     ky "N-No, I didn't mean to."
     mo "I'm just kidding. You must be worried about her."
-    show ky smile
+    show ky sad
     ky "That obvious, huh?"
     "Kyle's too easy to read. It's not hard to guess how he's feeling."
     "He looks down at his forearm worriedly."
     mo "Hey, don't you start blaming yourself. We don't even know what's happening to Cassie yet."
-    show ky sad
     ky "What if it was me?"
     mo "Then I would've gotten it too, but I've been sleeping like a baby every night."
+    show ky neutral
     "The tension in his shoulders visibly relaxed."
     mo "Wanna help me out with lunch?"
     show ky smile
@@ -2448,14 +2462,15 @@ label dec_4:
     "Fungi, rashes... I hate the image that my mind's painting right now."
     "Putting the two and two together, it does sound plausible that it's related."
     "I trust that the guys at the RC will find out soon enough."
-    stop music
+    stop music fadeout 3.0
 
 label dec_5:
     #INT: Main tent
     scene bg maintent_day with longfade
+    play music audio.neutral fadein 3.0
     show ky sad at left
     show lorenzo sick at centerleft
-    show pearl neutral at right
+    show pearl sad at right
     show ast neutral at centerright
     show ky with move:
         xalign -0.5
@@ -2469,8 +2484,8 @@ label dec_5:
     "And Kyle looks like he's sleepier today."
 
     mo "Are those two alright?"
+    show ast inthought
     ast "A little worse than yesterday. I'll check in on them in a bit."
-    show pearl sad
     pe "I'm worried for them."
 
     "Oop, looks like the radio is on again."
@@ -2479,17 +2494,24 @@ label dec_5:
     #TODO RADIO
 
     wt_ko "Hello hello! Is everyone here?"
+    $ chibi_jax = "images/chibi/jax_happy.png"
     wt_ja "Hey Koda, C2's here."
     show pearl smile
+    show ast neutral
     pe "Koda! Camp 1's here!"
     pe "And hello Jax! Looks like you beat Davos to the radio again."
     wt_ja "Davos just needs to try harder next time."
+    $ chibi_davos = "images/chibi/davos_worried.png"
     wt_da "You know I can't reach the radio if you raise it up high like that. That's cheating."
+    $ chibi_jax = "images/chibi/jax_neutral.png"
     wt_ja "They don't need to know that."
+    $ chibi_koda = "images/chibi/koda_happy.png"
     wt_ko "Haha! Wonderful that everyone's here, I come bearing a new mission, friends!"
     wt_ko "Isaak and Eva decided it's time to move camp!"
+    $ chibi_koda = "images/chibi/koda_neutral.png"
     wt_ko "So remember when we said stuff about animals and lake dirt stuff?"
     wt_ko "They want dirt samples from the east side mountain, just so we can be sure that it's definitely coming from the lake."
+    $ chibi_koda = "images/chibi/koda_happy.png"
     wt_ko "And to kill two birds with one stone, moving to higher ground means that you have more vantage over the forest on ground level."
     wt_ko "Perfect for scouting animals."
     gr "So uh... Are we joining camps again kid?"
@@ -2503,19 +2525,25 @@ label dec_5:
 
     wt_ja "Joining camps would be really fun."
     wt_ja "What say you, Wilbur and Gregory?"
+    show pearl happy
     gr "I have no objections, it is the most efficient way."
+    $ chibi_wilbur = "images/chibi/wilbur_happy.png"
     wt_wi "That settles it then!"
     wt_wi "And it looks like we'll finally see Morgan in the flesh!"
-    show pearl happy
     pe "Oh my goodness, that means everyone will meet Morgan for the first time!"
     wt_mo "About time for that big reveal, huh?"
     wt_mo "And here I thought I could stay mysterious forever."
+    $ chibi_wilbur = "images/chibi/wilbur_neutral.png"
     wt_wi "That is perhaps the most exciting news, yes!"
+    $ chibi_wilbur = "images/chibi/wilbur_happy.png"
     wt_wi "The more friends to camp with, the merrier!"
+    $ chibi_davos = "images/chibi/davos_happy.png"
     wt_da "We can do campfire story nights again, can't wait!"
+    $ chibi_koda = "images/chibi/koda_happy.png"
     wt_ko "I'd love to join too, Davos."
     wt_da "Hehe, we can bet on how many marshmallows Pearl will burn."
-    show pearl smile
+    show ast happy
+    show pearl confused
     pe "I can just eat the marshmallows you toast, problem solved."
 
 
@@ -2524,21 +2552,25 @@ label dec_5:
 
     wt_ca "I'll go check the coordinates real quick, let's establish a meet up point for tomorrow!"
     wt_ca "I'll Walkie you later Gregory!"
+    show gr happy
     gr "That'll be lovely, Cassie."
-
+    show gr confused
     gr "How long do you reckon we'll be up there, Isaak?"
     wt_is "Until I have enough, there's no rough estimate right now."
+    $ chibi_koda = "images/chibi/koda_happy.png"
     wt_ko "We'll leave you guys to it for now! Big day tomorrow!"
     nvl clear
     #radio ends
-
+    
+    show ast neutral
+    show pearl neutral
     gr "Well, you heard the man. Let's start packing the essentials."
+    show gr neutral
     gr "We're moving at dawn."
     mo "Aye aye, captain."
 
 label dec_6_1:
     scene bg camp1_day with longfade
-    play music audio.neutral
     "Essentials and equipment have all been well packed."
 
     "Today is moving day."
@@ -2564,23 +2596,28 @@ label dec_6_1:
 
 
     "Gregory holds out his map with outstretched hands for us to see."
-
+    show gr happy
     gr "We're gonna start climbing the mountain over 'ere. It's less steep of an angle to trek, she said."
     gr "Once we've reached the midpoint, we're gonna pivot to this area here. A nice flat area to set up camp."
     mo "Do you know how long that might take us?"
+    show gr confused
     gr "A few hours at least. We should be able to get there before sundown."
+    show lorenzo neutral
     lo "And we're meeting them at the midpoint, yes?"
+    show gr neutral
     gr "That is correct."
 
     show ky smile at left:
         xpos -100
     ky "Are we going to come back later to retrieve everything?"
     gr "Yes, that's why the essentials are the only things that we're carrying today. We've gotta make multiple trips over the next few days."
+    show ky happy
     ky "Cool, cool! I'm happy to help wherever needed!"
     mo "We'll definitely be needing the extra hands, Kyle."
 
     show pearl happy at right
     pe "I'm back and ready to go! Double checked my pockets this time."
+    show lorenzo smile
     lo "Shall we?"
 
     scene bg forest2 with dissolve
@@ -2600,32 +2637,38 @@ label dec_6_1:
 
     #SFX radio beeps
     wt_wi "Hello my friends! Checking in to see if everyone's on their merry way!"
-    show ky smile
     ky "We've started trekking a while ago, Wilbur! We're on our way!"
     wt_da "Glad to hear you're excited, Kyle!"
     show ky happy
     ky "I mean, it's photography! Of course I'm excited."
     show ky flustered
     ky "I'm also excited to see you guys... Cassie especially."
-
     show ky smile
     wt_ru "Cassie is once again hiding behind me, but she's got the message."
+    $ chibi_cassie = "images/chibi/cassie_worried.png"
     wt_ca "Ruran! How could you!"
     wt_ru "Haha!"
+    $ chibi_davos = "images/chibi/davos_neutral.png"
     wt_da "Also, I hope Pearl didn't forget her compass today."
     wt_mo "She did."
-    show pearl neutral
+    show pearl sad
     pe "Morgan! I am a good camp guide, I swear!"
     lo "We believe in you, Pearl."
     show pearl smile
     pe "Thank you."
     wt_ja "On the topic of photography... What animal do you think we'll see most of Kyle?"
+    show ky neutral
     ky "You know, I'm not exactly sure since this is the first time we'll be up here."
+    show ky happy
     ky "My guess would be wolves or coyotes, any non-friendly but friend-shaped doggos."
     wt_da "I'm hoping we can capture birds. We've never really seen them on lower ground."
+    $ chibi_davos = "images/chibi/davos_happy.png"
     wt_da "Bird watching's about to get interesting!"
+    $ chibi_wilbur = "images/chibi/wilbur_neutral.png"
     wt_wi "How far more till the meet up point, Cassie?"
+    $ chibi_cassie = "images/chibi/cassie_neutral.png"
     wt_ca "Well, with our current pacing, we'll see them in about an hour or less!"
+    $ chibi_ruran = "images/chibi/ruran_happy.png"
     wt_ru "That sounds great. We'll be just on time for lunch. This time, together."
     wt_mo "I should get Pearl to do a curtain reveal for me."
     pe "Well, I don't have curtains, but you can crouch behind all of us!"
@@ -2646,6 +2689,7 @@ label dec_6_1:
     #SFX
     "That sounded like a gun, but louder."
 
+    $ chibi_jax = "images/chibi/jax_worried.png"
     wt_ja "Y'all hear something?"
     ast "It wasn't just you."
     mo "Was that a gun, or-"
