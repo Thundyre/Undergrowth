@@ -24,7 +24,7 @@ define audio.light = "audio/music/mus_light.ogg"
 define audio.neutral = "audio/music/mus_neutral.ogg"
 define audio.anxious = "audio/music/mus_anxious.ogg"
 
-## Ambienece
+## Ambience
 define amb_bad1 = "audio/ambience/amb_bad1.ogg"
 define amb_bad1_wovoice = "audio/ambience/amb_bad1wovoice.ogg"
 define amb_bad2 = "audio/ambience/amb_bad2.ogg"
@@ -36,3 +36,7 @@ define amb_rc = "audio/ambience/amb_rc.ogg"
 define amb_village = "audio/ambience/amb_village.ogg"
 define amb_campnight_wofire = "audio/ambience/amb_campnightwofire.ogg"
 
+#some of these aren't used anymore ^
+
+## SFX
+define audio.ReceiveText  = "audio/sfx/ReceiveText.ogg"

@@ -11,10 +11,11 @@ label nov_1:
     $ hidebubbles = True
     scene black
     #Morgan stands up and switches off the TV abruptly, his phone buzzes.
+    #SFX phonebuzz
 
     #Click!
-    #SFX
     show cg morganhome2
+    #SFX phoneclick
     mo "Heya."
     co "Got everything you need Morg?"
     mo "Yep, just zipping up here and I'm good to go."
@@ -49,6 +50,7 @@ label nov_4:
     "The cold wind stings a little as it brushes my cheek. Might take a while before I get used to it."
     mo "Hey thanks for the ride!"
     ex1 "No worries, Gregory should be up ahead waiting for ya."
+    #SFX cardoor
     "I gaze towards the direction where he pointed, and sure enough, there was an older man waving his hand at me."
     "I slowly make my way towards him. Trudging the snow is a feat for sure."
     "It also doesn't help that I've been in the car for hours on end."
@@ -172,6 +174,7 @@ label nov_4:
     ast "Walkie talkie, Pearl."
     show pearl happy with dissolve
     pe "Oh yes! The Walkie talkie!"
+    #SFX jacket
     "Pearl whips out a walkie talkie deep in her jacket pockets and hands it to me."
     show ast inthought with dissolve
     ast "We should probably test it before you head out. Our codes have all been saved, you can reach any one of us anytime."
@@ -394,6 +397,7 @@ label nov_6:
     show gr neutral at centerright
 
     "Gregory begins by going through a long checklist of items to collect for the day."
+    #SFX tools
     "He hands Pearl and I some bags and tools."
     show pearl neutral at centerleft
     gr "Alright. The plan is simple. We go out, grab dirt samples, and then I'll send them back to the lab."
@@ -416,10 +420,11 @@ label nov_6:
     hide pearl with dissolve
     "Snow and dirt. Alright let's see."
     "Scoop."
-    #Scoop SFX
+    #SFX scoop
 
     "To my eyes, it looks like plain old dirt."
     "Not gravelly, just wet cold soil with no bugs in it."
+    #SFX scoop
     "Two scoops to fill up the bag."
     "That'll do for now."
     "We were also tasked to observe the trees, changes to terrain, weather and such."
@@ -494,7 +499,7 @@ label nov_7_11:
     "Gregory seems like he's having a great time."
 
     #8th
-    #INT: Main tent
+    #EXT: Camp 1
     scene bg camp1_night with longfade
 
     "After a long day, Aston decided that we should have canned soup for tonight."
@@ -540,7 +545,7 @@ label nov_7_11:
     #10th
     #EXT: Camp 1
     scene bg camp1_day with longfade
-
+    #SFX snowmobile
     "While on the way back to my tent. Gregory looks like he's about to go to the RC on his snowmobile."
     show gr neutral
     "Never actually paid attention to how cool it looks."
@@ -673,7 +678,7 @@ label nov_7_11:
                 "Probably still charging."
 
         #everyone has to be called once, if not the player shouldn't be able to leave the selection screen
-        "That's everyone" if wt_intro_ca and wt_intro_ev and wt_intro_isa >= 1 and wt_intro_ja and wt_intro_ru == 1 and wt_intro_wi:
+        "That's everyone!" if wt_intro_ca and wt_intro_ev and wt_intro_isa >= 1 and wt_intro_ja and wt_intro_ru == 1 and wt_intro_wi:
         #exit radio to end branch
             nvl clear
             jump wt_intro_end
@@ -701,7 +706,7 @@ label nov_12:
     #Kyle's POV
     show ky smile at centerleft with dissolve
     ky "Just one more shot of y'all together... yep, that's cute!"
-
+    #SFX camera1
     "Click click!"
 
     ky "One more... and done!"
@@ -718,6 +723,7 @@ label nov_12:
     show bg village1_kyle with sdissolve
 
     "Kyle rolled up his sleeves and got to work."
+    #SFX camera2
     "Click click click!"
 
     ky "Here you go Susie!"
@@ -762,7 +768,6 @@ label nov_12:
     "Kyle reaches out again, this time with his sleeves down."
     "Achievement unlocked, he pets the cow!"
     "After getting his fill of cow scritches, Kyle bids the children goodbye."
-
     "Susie isn't wild, but a fluffy friend nonetheless."
     "But to Kyle, his mission is far from over."
     "He grips his camera tightly in his hands."
@@ -785,6 +790,7 @@ label nov_13:
 
     scene bg camp1_night with dissolve
 
+    #SFX snowfoot
     "Night walks are my happy place."
     "The scenery is different than in the city, but at least the air is fresher here."
     "Quiet city to quiet campsite."
@@ -840,6 +846,8 @@ label nov_14:
     #INT: Morgan's tent
     scene bg morganstent with longfade
     play ambience amb_intcampday fadein 1.0
+    
+    #SFX wrr
     "WRRRRRRRR"
 
     "What in the world was that?"
@@ -911,7 +919,7 @@ label nov_14:
 
         #choice branch ends
         #phone ends
-
+    #SFX rustle1
     "*rustle rustle*"
 
     "Was that from outside?"
@@ -943,8 +951,8 @@ label nov_14:
             show black
             "Pitch black. Can't see shit."
 
+            #SFX rustle2
             "rustle rustle"
-            #SFX
 
             mo "Who's there?!"
             show gr neutral
@@ -1095,7 +1103,7 @@ label nov_15:
         xpos -200
 
     hide gr
-    "He quickly grabbed all those files and went back to his tent."
+    "He grabbed all the files quickly and went back to his tent."
     "Major alarms are blaring in my head."
     "Aston and I share glances for a moment, before he decides to go on about his daily routine."
     "He doesn't question me, nor does he ever bring it up again for the day."
@@ -1103,7 +1111,7 @@ label nov_15:
 
     scene bg camp1_day with dissolve
     #EXT: Camp 1
-    play ambience amb_campnight fadein 1.0
+    play ambience amb_campnightwfire fadein 1.0
 
     "The records have been occupying my mind all day."
     "At least there's meat and potatoes for tonight for a temporary distraction."
@@ -1114,14 +1122,17 @@ label nov_15:
     show pearl smile at centerright
     pe "Aston should have some meds for that! I can go get them for-"
     show pearl neutral
+    #SFX wind
     "A strong gust of wind begins to pick up, cutting Pearl's sentence short."
     "The campfire embers dance violently around the pit."
     stop ambience fadeout 3.0
 
+    #SFX wrr
     "WRRRRRRRRRRRRR"
     show pearl scared
     show lorenzo scared
     "Oh that's bad news."
+    #SFX radio
     "The radio turns on."
 
     ev "Hello? I sure hope you guys can hear me."
@@ -1130,6 +1141,8 @@ label nov_15:
     "I didn't know Eva did weather reporting too."
 
     gr "You heard her! IN. NOW."
+
+    #SFX tag but it's actually ambience that I need to make
 
     "Oh fuck."
     "They weren't kidding when they said snow storms mean business in these parts."
@@ -1143,7 +1156,7 @@ label nov_15:
     "But I wonder how those ropes and weighted bags will fare in this storm."
     "It would be a problem if my tent flies, I can't let anyone read my journal."
 
-    #SFX wind dies down
+    #SFX wind dies down, ambience gone
 
     "I don't know how much time has elapsed."
     "It's still snowing outside, but it would seem that the storm finally decided to calm down."
@@ -1223,7 +1236,8 @@ label nov_16:
     hide pearl
     hide lorenzo
 
-    "Dig dig digging, this is a lot of snow. We'll be here all day."
+    #SFX shovel
+    "Dig dig digging, there is a lot of snow piled up. We'll be here all day."
     "Lorenzo said that they once had to deal with fallen trees, it was not a fun experience."
     "Snow is much easier to remove, so I appreciate the lack of trees."
     "Gregory went towards Camp 2 earlier, checking for trees. Maybe I should also do the same facing north?"
@@ -1424,6 +1438,7 @@ label nov_17:
     play music audio.light
 
     #Cassie beeps you
+    #SFX beep
     "Beep!"
     "Oh, it looks like I've got a message."
     wt_ky "Woah Cassie does this mean he received it?"
@@ -1478,9 +1493,9 @@ label nov_17:
     "There doesn't seem to be any smell."
     show lorenzo sick
     lo "W-Well I guess at least it doesn't stink... maybe I should close it up still."
-
+    
     "Lorenzo closes the lid of the ice box."
-    #SFX thud
+    #SFX icebox
     show bg isaaklab2
     lo "I'll let Koda know that his supplies are here I guess."
 
@@ -1515,7 +1530,7 @@ label nov_18:
     "Night time."
     "First things first, the map."
 
-    #SFX Camera shutter
+    #SFX phonecamera
 
     "And... sent! Colin now has a copy of this."
     show satphone
@@ -1613,7 +1628,7 @@ label nov_19_23:
     show pearl scared
     show ast happy
     "*gurgle*"
-    #SFX
+    #SFX stomach
     "Someone's stomach lets out a deafening growl."
 
     mo "I guess the answer is no."
@@ -1647,7 +1662,9 @@ label nov_19_23:
     #21st
     #EXT: Camp 1
     scene bg camp1_night with longfade
-    "Campfire mealtime."
+    play ambience amb_campnightwfire fadein 1.0
+
+    "Mealtime around the campfire!"
     show lorenzo smile at left
     show ast happy:
         xpos 300
@@ -1690,10 +1707,13 @@ label nov_19_23:
 
     "Colin's face flashes in my mind."
     "Yeah, my 4 year old child."
+    stop ambience fadeout 3.0
 
     #22nd
     #INT: Main tent
     scene bg maintent_day with longfade
+
+    #SFX toolrack
     "*crash*"
     "Did I walk into something uninvited?"
     show pearl scared:
@@ -1763,6 +1783,7 @@ label nov_19_23:
     show bg maintent_day with sdissolve
     play music audio.neutral
 
+    #SFX bandage1
     "Aston skillfully unwraps Kyle's bandage and examines the wound."
     "He turns around and gives Kyle a packet of anti-inflammatory meds."
     show ast inthought
@@ -1777,6 +1798,7 @@ label nov_19_23:
     mo "Can cows carry rabies?"
     show ast inthought
     ast "I think so, but I'm pretty sure the farm animals here are all vaccinated against it."
+    #SFX bandage2
     "Aston swiftly wraps a new bandage around Kyle's forearm."
     show ast neutral
     ast "Good as new. Remember to take those meds."
@@ -1794,7 +1816,7 @@ label nov_24:
     "We were just waiting for sundown and for Kyle to come back from his photography session."
     "He seemed pretty excited to put his new map to use this morning."
     "He should be back soon."
-    "In the meantime, I should probably mingle around the campfire."
+    "In the meantime, I should probably mingle around."
     "Who should I approach first?"
 
     menu nov24_approach:
@@ -2017,7 +2039,7 @@ label nov_26:
     ky "It's about time for Aston to help me with a new bandage, anyway. Here, let me show you."
     stop ambience fadeout 3.0
     play music audio.neutral
-
+    #SFX bandage1
     "Kyle unwrapped his bandage to show a nasty rash. It hurts just looking at it."
     show cg rash
     $ persistent.gallery_rash = True
@@ -2037,6 +2059,7 @@ label nov_26:
     show lorenzo neutral
     lo "Let me draw them real quick."
 
+    #SFX scribble
     "Lorenzo begins to scribble on his notebook."
     show cg lorenzosdrawing
     "A bear-shaped thing?"
@@ -2074,7 +2097,7 @@ label nov_26:
     show lorenzo smile
     lo "I'm lucky to have him."
 
-    "We gave him pats on his back."
+    "We pat his back."
     show ky happy
     ky "Let us know if there's anything we can do to help!"
     lo "Thank you my friends."
@@ -2118,6 +2141,7 @@ label nov_27:
         co "Which now begs the question: where do you get it from?"
         mo "There must be another source then."
 
+        #SFX snowfoot2
         "Suddenly, I hear footsteps from the outside."
 
         gr "Morgan? You there?"
@@ -2128,6 +2152,7 @@ label nov_27:
         hide satphone
         "I hung up on Colin."
 
+        #SFX tentzipo
         show gr happy
         gr "You call your kid Pancake? That's sweet."
         show gr neutral
@@ -2151,7 +2176,7 @@ label nov_27:
     gr "Let me know if you notice anything different about him. Thanks Morg."
     hide gr
     mo "Yes sir."
-
+    #SFX tentzipc
     "Now that was a peculiar request. I didn't like the sound of that."
     "Anyhow, I should look out for Lorenzo."
     "I sincerely hope that his nightmares subsides soon."
@@ -2164,7 +2189,7 @@ label nov_30:
     "The past few days have just been the usual routine."
     "Wake up. Eat. Collect samples. Repeat."
     "Today was no different, but as we were about to hunker down for the night, the radio buzzed."
-
+    #SFX radio
     #radio goes brrr connects to camp 1 and 2
     stop ambience fadeout 3.0
     play music audio.neutral
@@ -2293,6 +2318,7 @@ label dec_2:
     ast "What's wrong?"
 
     play music audio.light
+    #SFX sleeve
     "Lorenzo rolls his sleeve on his left arm."
     "A rash. Less severe than Kyle's but the similarities are undeniable."
 
@@ -2341,6 +2367,7 @@ label dec_3:
     show ast neutral
     "Today I was tasked with lunch duties, helping Aston out in the main tent."
     "A certain someone really wanted tomato soup, so I'm on 'can opening' duty."
+    #SFX beep
     "Suddenly, Aston's Walkie goes off on the table."
     ast "Morgan, could you help me with that?"
     mo "Sure thing bud."
@@ -2408,6 +2435,7 @@ label dec_3:
     show bg camp1_day
     play ambience amb_campday fadein 1.0
     show ky neutral
+    #SFX bump
     "I bump directly into Kyle, who happened to be right outside the tent."
     mo "Is eavesdropping your new hobby?"
     show ky confused
@@ -2522,6 +2550,7 @@ label dec_5:
     ast "A little worse than yesterday. I'll check in on them in a bit."
     pe "I'm worried for them."
 
+    #SFX radio
     "Oop, looks like the radio is on again."
     show gr neutral at left
     "And Gregory walks in right on time."
@@ -2579,7 +2608,6 @@ label dec_5:
     show ast happy
     show pearl confused
     pe "I can just eat the marshmallows you toast, problem solved."
-
 
     "Alright, so that's plan A...merging of camps."
     "Lots of new faces and hopefully lots of info."
@@ -2658,6 +2686,7 @@ label dec_6_1:
     #EXT: Forest mountain
     "In a single file, we followed Gregory up the trail."
     "Hiking up the snow doesn't seem too bad now that I had a whole month of practice."
+    #SFX snowfootmulti
     "The snow crunches under our feet in a nice rhythmical pattern."
     show ky smile at left
     show pearl smile:
@@ -2719,10 +2748,10 @@ label dec_6_1:
     show ast confused
     show gr confused
 
+    #SFX boom
     "{b}{i}{size=+5}*boom*"
 
-    #SFX
-    "That sounded like a gun, but louder."
+    "That sounded like a muffled gun, but louder."
 
     $ chibi_jax = "images/chibi/jax_worried.png"
     wt_ja "Y'all hear something?"
@@ -2738,6 +2767,7 @@ label dec_6_1:
     show ky shaken
     show gr scared
     
+    #SFX rumble
     "{b}{i}{size=+5}*rumble*"
 
     #SFX
@@ -2746,6 +2776,7 @@ label dec_6_1:
     "That doesn't feel... right?"
     "Instinctively, Gregory and I look towards the top of the mountain."
     gr "What the-"
+    #SFX or ambience avalanche
     "Oh no."
     "Actually, that's an understatement. We're fucked."
     "From the peak of the mountains, the snow is gushing down at us at breakneck speed."
@@ -2773,7 +2804,7 @@ label dec_6_1:
     "Bingo! That's my ticket out of here."
     "Almost there, just a few more steps and I'll-"
 
-    #SFX thud
+    #SFX rock
     show bg forest2:
         zoom 2
         linear 0.2 blur 20

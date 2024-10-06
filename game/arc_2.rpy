@@ -146,7 +146,8 @@ label dec_7:
     "The sleeping bags have all been moved to the main tent for now."
     "Some of our smaller tents were destroyed, so everyone's gotta share the big tent for the time being."
     "I need to call Colin."
-    "Time for the waiting game, I guess. Once everyone's asleep, I'll step outside."
+    "Time for the waiting game, I guess."
+    "Once everyone's asleep, I'll step outside."
 
     #EXT: Camp 1A
     show bg camp2_night
@@ -191,20 +192,20 @@ label dec_8:
 
     show black with dissolve
     "On the day of the avalanche, Lorenzo slipped and tumbled down the hill."
-    "He escaped death in exchange for a few bruises here and there."
-    "He ended up further away from the rest...hence why Aston couldn't find him."
+    "He escaped death but sustained a few bruises here and there."
+    "He ended up further away from the rest... Separated from Aston."
     "To make things worse, his Walkie's receiver snapped off during the fall."
-    "With no map on hand, it would be hard to navigate back to camp."
+    "With no map on hand, it would be difficult to navigate back to camp."
     "When time is ticking and the sun threatens to set, you don't have a lot of options."
     "Shelter is the first prerequisite for survival in this situation."
     "Fortunately, he found himself close to a tiny deserted cabin."
+    "It's not fancy by any means, but there's a roof over his head now."
     hide black
 
     lo "The furniture in here reminds me a lot of the village up north... Maybe this is one of their hunting huts."
 
     "Looking around, there's a shelf of perishables, a mini fireplace, lots of blankets and a sole rifle leaning against the wall."
     "Lorenzo made a makeshift bed with an armchair and its matching ottoman."
-
     "The silver lining is that it's much more comfortable than a sleeping bag."
 
     lo "I need to start finding my bearings tomorrow. Cassie's map never had a cabin on it, so this must be an area that we haven't been to yet."
@@ -242,6 +243,7 @@ label dec_8:
 
     #BG Window with bear
     show cg bearwindow3 
+    #SFX play sound bearwwindow
     if persistent.screenshake:
         with hpunch
     $ persistent.gallery_bearwindow = True
@@ -255,6 +257,7 @@ label dec_8:
 
     hide black
     show bg cottage2
+    #SFX blanket
     "He runs to the blankets and quickly drapes it over the window."
     "After pacing around the room nervously, he decided that he'll hold the rifle in hand while he sleeps tonight."
     "Not sure if the rifle would do any damage but, it's safer to have it than not."
@@ -267,14 +270,14 @@ label dec_9:
     "The search today went on longer than the other days."
     "Still no sign of Lorenzo."
     "We've cleared the area around the lake, the surrounding area of the village."
-    "Even where I was first dropped off but still nothing."
+    "Even where I was first dropped off, but still nothing."
     "The site of the avalanche yielded no results either."
-    "The guys at Camp 2 have been digging around the area."
-    "I heard that Eva and Koda were there too to support the camp."
+    "The guys at Camp 2 have been digging around too."
+    "I heard Eva and Koda were there to support the camp as well."
     "We've never found any of Lorenzo's belongings."
     "He must've been pretty far when we separated."
+    #SFX backpack
     "*rustle*"
-    #SFX sleeping bag
     "Sounds like I'm not the only one awake."
 
     #INT: Main tent
@@ -413,27 +416,27 @@ label dec_10:
         "Well, I hate this."
         "A night walk in the forest is never fun, unless you live for the thrill."
         "I don't particularly find putting myself at risk of getting mauled by animals 'thrilling' so to speak."
-        "The only thing comforting is that it isn't snowing."
-        "And also the fact that Aston is with me, we're not alone in this dreaded cold."
-        "We took an entirely different path this time."
+        "I'm just glad that it isn't snowing right now."
+        "And the fact that Aston is with me...at least we're not alone in this dreaded cold."
+        "We decided to take an entirely different path this time."
         "Gregory did say the east side of the mountains is a big no-no."
-        "But that's exactly the way we're going to go."
+        "But that's exactly the direction we are going to go."
         "After walking for a bit, my flashlight reflects off a different surface."
-        "It's not trees or snow. Is that a window?"
+        "Shiny. It's not a tree."
+        "Is that a window?"
 
         show ast neutral
         mo "Aston, look."
 
         "We shined our flashlights towards the same spot."
         "A cabin, it looks kinda small."
-        "Maybe for hunting supplies?"
-        "We walked up to the cabin and inspected the door up close."
+        "A hunting cabin, maybe?"
+        "We walked up to the door and inspected it up close."
 
         mo "I suppose we should give a polite knock before entering?"
         stop ambience fadeout 5.0
-
-        "Aston knocks on the door."
         #SFX knock
+        "Aston knocks on the door."
         show ast sad
         ast "Lorenzo, are you in here?"
         lo "Aston?"
@@ -443,10 +446,12 @@ label dec_10:
         play music audio.light
 
         hide ast
+        #SFX cabindooro
         "Aston barges into the cabin to see a petrified Lorenzo."
 
         ast "Lorenzo!"
         lo "A-Amore... I thought I'd never see you again."
+        #SFX cabindoorc
 
         "I closed the door behind Aston and let them have their moment."
         "The two of them share a long awaited embrace."
@@ -560,7 +565,7 @@ label dec_10:
             "We made it back before sunrise."
             "Aston fell asleep immediately upon getting back."
             "His face no longer scrunches up while he sleeps."
-            "It was something I've noticed for the past few days, heard him tossing and turning in his sleep."
+            "No more tossing and turning in his sleep."
             "All is well now."
     stop music fadeout 3.0
 
@@ -629,7 +634,7 @@ label dec_11:
     ha "Lorenzo."
     show lorenzo sad
     "Lorenzo's face scrunches up in disappointment."
-    "Aston has always pronounced his name the proper way, and this is just insulting."
+    "Aston doesn't say his name like that, this is just insulting."
     "This realization sparked a defiant fire within him."
     show lorenzo neutral
     lo "Lorenso- I'm hallucinating, aren't I?"
@@ -641,7 +646,7 @@ label dec_11:
     lo "Okay, I'll play your game."
     lo "If you're not going to leave me alone, I might as well get to know you."
     "He grabs his journal and turns to a blank page and jots down some notes."
-
+    #SFX pen
     "Characteristics:"
     "Black bear, no fur, goop-like."
     "Green stuff looks like a fluid of some sort dripping from its mouth."
@@ -717,7 +722,7 @@ label dec_13:
     "It would seem that C2 isn't taking this decision lightly."
     "On one hand, I understand that there's a quota to meet."
     "On the other... Well, I hate it."
-    "That means giving up on Lorenzo."
+    "That would mean giving up on Lorenzo."
     "With nothing much to do for the rest of the day, I think this would be a good day to drop updates."
 
     #EXT: Camp 1A
@@ -803,6 +808,7 @@ label dec_14:
             mo "What is it? Talk to me."
             "As I try to get a hold of him, my flashlight dies."
             show black
+            #SFX flashlight
             "I swapped my batteries out as fast as I could."
             hide black
             show ast scared
@@ -824,6 +830,7 @@ label dec_14:
             "As I try to get a hold of him, my flashlight dies."
             show black
             hide ast
+            #SFX flashlight
             "I swapped my batteries out as fast as I could."
             hide black
             "When the lights turn back on, Aston has gone missing."
@@ -850,12 +857,14 @@ label dec_14:
         lo "I'm glad to see you both!"
         show ast with move:
             xpos 400
+        #SFX hug
         "Aston runs to Lorenzo and gives him a quick hug."
         show ast with move:
             xpos 300
         show lorenzo smile
         "Lorenzo then reaches out to grab his journal."
         lo "Have a seat, I have some info for you guys."
+        #SFX page
         "He flips to his recent notes in his journal."
         show ast neutral
         mo "Have you been studying it?"
@@ -912,6 +921,7 @@ label dec_14:
             show lorenzo sad
             show ast sad with move:
                 xpos 400
+            #SFX hug
             "Aston runs to Lorenzo and gives him a quick hug."
             show ast with move:
                 xpos 300
@@ -919,6 +929,7 @@ label dec_14:
             show lorenzo smile
             "Lorenzo then reaches out to grab his journal."
             lo "Have a seat, I have some info for you guys."
+            #SFX page
             "He flips to his recent notes in his journal."
             show ast neutral
             mo "Have you been studying it?"
@@ -970,6 +981,7 @@ label dec_14:
             "Lorenzo then reaches out to grab his journal."
             show lorenzo sad
             lo "Well have a seat, I have some info for you Morgan."
+            #SFX page
             "He flips to his recent notes in his journal."
             mo "Have you been studying it?"
             show lorenzo neutral
@@ -1026,9 +1038,8 @@ label dec_15:
         mo "Yeah.. but I'll be alright Kyle."
 
     #continue script from here
-
+    #SFX camera1
     "Click click!"
-    #SFX camera
     ky "Do you want to talk about it or...?"
     show ky confused
     ky "Actually hold that thought Morgan, are you seeing what I'm seeing over there?"
@@ -1175,6 +1186,7 @@ label dec_16:
         show pearl smile
         "With a concerned look on her face, she extends her arms out and offers a hug."
         "I accepted the hug and she gave me a few pats on the back."
+        #SFX hug
         show pearl neutral
         pe "You looked like you needed it Morgan."
         pe "And you're not alone here, we're all here with you."
@@ -1194,12 +1206,14 @@ label dec_17:
     show ky smile at centerleft
     show pearl smile at centerright
     "Kyle and Pearl paired up today to grab some pictures."
+    #SFX camera2
     "Click click click!"
     pe "Let's see squirrels, squirrels, squirrels... and one napping wolf!"
     show ky happy
     show pearl happy
     ky "Good eye, Pearl!"
     show pearl smile
+    #SFX camera2
     "Click click click!"
     show ky neutral
     "He looks down at his camera, proud of his shots."
@@ -1228,8 +1242,8 @@ label dec_17:
     play music audio.anxious fadein 3.0
 
     "The bear doesn't notice Kyle's presence."
+    #SFX camera1
     "Click!"
-    #SFX camera
     show cg glitchedphoto
     "He checks his camera."
     "It's a tad blurry."
@@ -1237,9 +1251,8 @@ label dec_17:
 
     show ky neutral
     ky "Let me try that again."
-
+    #SFX camera1
     "Click!"
-    #SFX camera
     "He checks his camera once again."
     "The bear isn't in the picture."
     show ky confused
@@ -1248,10 +1261,9 @@ label dec_17:
     "Seems like the bear was moving about and now it's clawing a tree."
     show ky neutral
     ky "Okay, third time's the charm!"
-
-    "Click!"
     #SFX flash
-
+    "Click!"
+    
     show ky shaken
     ky "Shit."
 
@@ -1260,6 +1272,7 @@ label dec_17:
     ky "Please don't see me, please don't see me..."
 
     "Kyle breaks vision from the bear, hiding behind a large tree."
+    #SFX growl
     "*growl*"
 
     ky "..."
@@ -1287,7 +1300,7 @@ label dec_17:
     "And the last one... distorted."
     show pearl smile
     pe "Ooh! What's this glitchy effect on this blob?"
-
+    #SFX camera1
     "Kyle takes another picture on the spot."
     "There's no distortion."
     show pearl confused
@@ -1349,6 +1362,7 @@ label dec_20:
     scene bg camp2_day with longfade
     if aston_safe:
         "While enjoying a cup of cocoa by myself, I received a Walkie beep from Wilbur."
+        #SFX beep
         #radio start
         wt_wi "Hello Morgan! Are you there?"
         wt_mo "What's up?"
@@ -1369,6 +1383,7 @@ label dec_20:
     #EXT: Camp 1A
     else:
         "While enjoying a cup of cocoa by myself, I received a quick Walkie beep from Wilbur."
+        #SFX beep
         #radio start
         $ chibi_wilbur = "images/chibi/wilbur_worried.png"
         wt_wi "Hello Morgan! Are you there?"
@@ -1461,7 +1476,6 @@ label dec_23:
 
     "I walked into a conversation that the trio were having."
     "She says that she's fine. I genuinely hope so."
-    "Time to add another person to the 'worry' list."
 
 label dec_24:
     #24th Aston safe
@@ -1492,6 +1506,7 @@ label dec_24:
         "Gentle specks of white falling to the ground."
         "But there was still no sign of Aston."
         show lorenzo sick
+        #SFX cloth
         "He hugs his legs close to his chest."
         show black
         show ast happy:
@@ -1755,7 +1770,8 @@ label dec_26:
 
 label dec_27:
     scene bg maintent_night with longfade
-    play ambience amb_campnight fadein 1.0
+    play ambience amb_intcampnight fadein 1.0
+    #SFX backpack
     "In the dead of the night, I heard someone rummaging through their backpacks."
 
     if aston_safe:
@@ -1895,6 +1911,7 @@ label dec_27:
             with Pause(0.1)
             hide pearl with sdissolve
             show ky shaken
+            #SFX toolrack
             "With a swift movement, she knocks over the tool rack blocking the flap of the tent."
 
             show gr angry with move:
@@ -1903,9 +1920,11 @@ label dec_27:
 
             "Crap, she forgot her compass."
             "Kyle rushes to move the rack out the way while we quickly gear up."
+            stop ambience fadeout 3.0
 
             #EXT: Camp 1
             scene bg camp2_night with dissolve
+            play ambience amb_campnight fadein 1.0
             show ky shaken at centerleft
             ky "Pearl! Where are you?"
             show gr angry at centerright
@@ -1920,6 +1939,7 @@ label dec_27:
 
             #Pearl's POV
             show pearl neutral
+            #SFX wind
             "The wind picks up tremendously as Pearl trudges through the snow."
 
             show pearl sad
@@ -1946,6 +1966,7 @@ label dec_27:
             "Or at least to Pearl."
             "Disfigured and grotesque looking... humans."
             "Frozen in time, freezing the frame of their unfortunate fate."
+            #SFX snowground
             "Pearl collapses onto the ground, unable to make sense of what she just saw."
 
             pe "Nope! Nope nope nope-"
@@ -1955,11 +1976,14 @@ label dec_27:
             "But fortunately she was lucky. She squints her eyes to see a large rock wall ahead."
 
             pe "The mountain! Now I just have to make it back."
+            #SFX snowrun
 
             "Pearl starts sprinting towards it, but unbeknownst to her, the terrain ahead was a rather dangerous one."
+            #SFX rockslip
 
             pe "Shi-"
             show black with pushupquick
+            #SFX fall
             "Pearl loses her footing and slips down a ravine."
             stop ambience fadeout 1.0
 
@@ -1978,6 +2002,7 @@ label dec_28:
     "Morgan and the rest are out on a search mission again."
 
     show gr angry
+    #SFX dial
     gr "Pick up damn it."
 
     "Gregory tries reaching HQ on his phone but the calls keep disconnecting."
@@ -2027,6 +2052,7 @@ label dec_28:
 label dec_30:
     scene bg maintent_night with longfade
     with vpunch
+    #SFX radiotower
     "*CRASH*"
     "I was rudely woken up by a horrendous noise."
     "What the hell was that?"
@@ -2046,7 +2072,7 @@ label dec_30:
     #EXT: Camp 1A
     scene bg camp2_night with sdissolve
     play ambience amb_campnight fadein 1.0
-
+    #SFX beep
     "Gregory's Walkie starts beeping the moment I step foot outside."
 
     show gr neutral at centerleft
@@ -2160,7 +2186,7 @@ label dec_31:
     "The next morning comes."
     show gr neutral
     "Gregory and I are checking up on the radio tower today."
-
+    #SFX snowfoot
     "Hiking up this mountain gives me déjà vu."
     "Just earlier this month, we had plans to merge camps."
     "But then an avalanche happened."
@@ -2252,6 +2278,7 @@ label dec_31:
     "Looks like there's also a ravine."
     "And south is where C2 and RC can be seen."
     "It'll be the first time I lay my eyes on-"
+    #SFX snowbump
     "..."
     play music audio.anxious
     "I kicked something."
