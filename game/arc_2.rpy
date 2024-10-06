@@ -257,7 +257,7 @@ label dec_8:
 
     hide black
     show bg cottage2
-    #SFX blanket
+    play sound blanket
     "He runs to the blankets and quickly drapes it over the window."
     "After pacing around the room nervously, he decided that he'll hold the rifle in hand while he sleeps tonight."
     "Not sure if the rifle would do any damage but, it's safer to have it than not."
@@ -276,7 +276,7 @@ label dec_9:
     "I heard Eva and Koda were there to support the camp as well."
     "We've never found any of Lorenzo's belongings."
     "He must've been pretty far when we separated."
-    #SFX backpack
+    play sound backpack
     "*rustle*"
     "Sounds like I'm not the only one awake."
 
@@ -435,7 +435,7 @@ label dec_10:
 
         mo "I suppose we should give a polite knock before entering?"
         stop ambience fadeout 5.0
-        #SFX knock
+        play sound knock
         "Aston knocks on the door."
         show ast sad
         ast "Lorenzo, are you in here?"
@@ -446,12 +446,12 @@ label dec_10:
         play music audio.light
 
         hide ast
-        #SFX cabindooro
+        play sound cabinopen
         "Aston barges into the cabin to see a petrified Lorenzo."
 
         ast "Lorenzo!"
         lo "A-Amore... I thought I'd never see you again."
-        #SFX cabindoorc
+        play sound cabinclose
 
         "I closed the door behind Aston and let them have their moment."
         "The two of them share a long awaited embrace."
@@ -864,7 +864,7 @@ label dec_14:
         show lorenzo smile
         "Lorenzo then reaches out to grab his journal."
         lo "Have a seat, I have some info for you guys."
-        #SFX page
+        play sound page
         "He flips to his recent notes in his journal."
         show ast neutral
         mo "Have you been studying it?"
@@ -929,7 +929,7 @@ label dec_14:
             show lorenzo smile
             "Lorenzo then reaches out to grab his journal."
             lo "Have a seat, I have some info for you guys."
-            #SFX page
+            play sound page
             "He flips to his recent notes in his journal."
             show ast neutral
             mo "Have you been studying it?"
@@ -981,7 +981,7 @@ label dec_14:
             "Lorenzo then reaches out to grab his journal."
             show lorenzo sad
             lo "Well have a seat, I have some info for you Morgan."
-            #SFX page
+            play sound page
             "He flips to his recent notes in his journal."
             mo "Have you been studying it?"
             show lorenzo neutral
@@ -1038,7 +1038,7 @@ label dec_15:
         mo "Yeah.. but I'll be alright Kyle."
 
     #continue script from here
-    #SFX camera1
+    play sound camera2
     "Click click!"
     ky "Do you want to talk about it or...?"
     show ky confused
@@ -1150,7 +1150,7 @@ label dec_16:
         "Something of importance must be happening there."
         "I wonder how the water-fungi testing is going."
         "Time to make a trip down there, but I can't show up uninvited."
-        "I'll find a reason to."
+        "I'll have to find a reason to."
         stop music fadeout 3.0
 
 
@@ -1206,14 +1206,14 @@ label dec_17:
     show ky smile at centerleft
     show pearl smile at centerright
     "Kyle and Pearl paired up today to grab some pictures."
-    #SFX camera2
+    play sound camera3
     "Click click click!"
     pe "Let's see squirrels, squirrels, squirrels... and one napping wolf!"
     show ky happy
     show pearl happy
     ky "Good eye, Pearl!"
     show pearl smile
-    #SFX camera2
+    play sound camera3
     "Click click click!"
     show ky neutral
     "He looks down at his camera, proud of his shots."
@@ -1242,7 +1242,7 @@ label dec_17:
     play music audio.anxious fadein 3.0
 
     "The bear doesn't notice Kyle's presence."
-    #SFX camera1
+    play sound camera1
     "Click!"
     show cg glitchedphoto
     "He checks his camera."
@@ -1251,7 +1251,7 @@ label dec_17:
 
     show ky neutral
     ky "Let me try that again."
-    #SFX camera1
+    play sound camera1
     "Click!"
     "He checks his camera once again."
     "The bear isn't in the picture."
@@ -1261,7 +1261,7 @@ label dec_17:
     "Seems like the bear was moving about and now it's clawing a tree."
     show ky neutral
     ky "Okay, third time's the charm!"
-    #SFX flash
+    play sound flash
     "Click!"
     
     show ky shaken
@@ -1292,7 +1292,7 @@ label dec_17:
     "Kyle takes a few deep breaths and the two head back to camp."
 
     #EXT: Camp 1A
-    show bg camp2_day
+    show bg maintent_night
     show ky confused
     "Kyle flips through the camera's gallery once more."
     "There's a blurry shot."
@@ -1300,7 +1300,7 @@ label dec_17:
     "And the last one... distorted."
     show pearl smile
     pe "Ooh! What's this glitchy effect on this blob?"
-    #SFX camera1
+    play sound camera1
     "Kyle takes another picture on the spot."
     "There's no distortion."
     show pearl confused
@@ -1318,6 +1318,7 @@ label dec_18:
     play ambience amb_intcampday fadein 1.0
         #Kyle's POV
     show ky smile
+    play sound beep
     "Kyle's Walkie starts beeping."
     "It's from Koda."
     #radio starts
@@ -1362,7 +1363,7 @@ label dec_20:
     scene bg camp2_day with longfade
     if aston_safe:
         "While enjoying a cup of cocoa by myself, I received a Walkie beep from Wilbur."
-        #SFX beep
+        play sound beep
         #radio start
         wt_wi "Hello Morgan! Are you there?"
         wt_mo "What's up?"
@@ -1383,7 +1384,7 @@ label dec_20:
     #EXT: Camp 1A
     else:
         "While enjoying a cup of cocoa by myself, I received a quick Walkie beep from Wilbur."
-        #SFX beep
+        play sound beep
         #radio start
         $ chibi_wilbur = "images/chibi/wilbur_worried.png"
         wt_wi "Hello Morgan! Are you there?"
@@ -1487,6 +1488,7 @@ label dec_24:
         #CG: Aston and Lorenzo cuddling
         show cg christmas
         $ persistent.gallery_christmas = True
+        play sound snuggle
         "The two cuddle up together on the armchair."
         "It just barely fits the two of them."
         "As the clock struck midnight, it was finally time."
@@ -1506,7 +1508,7 @@ label dec_24:
         "Gentle specks of white falling to the ground."
         "But there was still no sign of Aston."
         show lorenzo sick
-        #SFX cloth
+        play sound cloth
         "He hugs his legs close to his chest."
         show black
         show ast happy:
@@ -1730,7 +1732,7 @@ label dec_26:
     "Tormenting my beloved 37 year old child."
     "But first, I should send him some pictures."
     "And... Sent!"
-    #SFX ding
+    play sound ding
     #TODO phone start
     show satphone
     co "Heya Morg, calling again so soon?"
@@ -1771,7 +1773,7 @@ label dec_26:
 label dec_27:
     scene bg maintent_night with longfade
     play ambience amb_intcampnight fadein 1.0
-    #SFX backpack
+    play sound backpack
     "In the dead of the night, I heard someone rummaging through their backpacks."
 
     if aston_safe:
@@ -1911,7 +1913,7 @@ label dec_27:
             with Pause(0.1)
             hide pearl with sdissolve
             show ky shaken
-            #SFX toolrack
+            play sound toolrack
             "With a swift movement, she knocks over the tool rack blocking the flap of the tent."
 
             show gr angry with move:
@@ -1976,14 +1978,14 @@ label dec_27:
             "But fortunately she was lucky. She squints her eyes to see a large rock wall ahead."
 
             pe "The mountain! Now I just have to make it back."
-            #SFX snowrun
+            play sound snowrun
 
             "Pearl starts sprinting towards it, but unbeknownst to her, the terrain ahead was a rather dangerous one."
             #SFX rockslip
 
             pe "Shi-"
             show black with pushupquick
-            #SFX fall
+            play sound fall
             "Pearl loses her footing and slips down a ravine."
             stop ambience fadeout 1.0
 
@@ -2002,7 +2004,7 @@ label dec_28:
     "Morgan and the rest are out on a search mission again."
 
     show gr angry
-    #SFX dial
+    play sound dial
     gr "Pick up damn it."
 
     "Gregory tries reaching HQ on his phone but the calls keep disconnecting."
@@ -2052,7 +2054,7 @@ label dec_28:
 label dec_30:
     scene bg maintent_night with longfade
     with vpunch
-    #SFX radiotower
+    play sound radiotower
     "*CRASH*"
     "I was rudely woken up by a horrendous noise."
     "What the hell was that?"
@@ -2072,7 +2074,7 @@ label dec_30:
     #EXT: Camp 1A
     scene bg camp2_night with sdissolve
     play ambience amb_campnight fadein 1.0
-    #SFX beep
+    play sound radio
     "Gregory's Walkie starts beeping the moment I step foot outside."
 
     show gr neutral at centerleft

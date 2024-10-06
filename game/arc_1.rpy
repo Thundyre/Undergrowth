@@ -6,16 +6,17 @@ label nov_1:
     $ persistent.gallery_morganhome = True
 
     tv_hi "Glow glow glow with NuGLO, let us help you restore your skin's shiny supple glow!"
+    play sound phonebuzz
     tv_hi "So what are you waiting for? Grab your very own NuGLO samples at your local stores today!"
 
     $ hidebubbles = True
+    play sound ding 
     scene black
     #Morgan stands up and switches off the TV abruptly, his phone buzzes.
-    #SFX phonebuzz
 
     #Click!
     show cg morganhome2
-    #SFX phoneclick
+    
     mo "Heya."
     co "Got everything you need Morg?"
     mo "Yep, just zipping up here and I'm good to go."
@@ -419,12 +420,13 @@ label nov_6:
     hide gr with dissolve
     hide pearl with dissolve
     "Snow and dirt. Alright let's see."
+    play sound scoop1
     "Scoop."
-    #SFX scoop
+    
 
     "To my eyes, it looks like plain old dirt."
     "Not gravelly, just wet cold soil with no bugs in it."
-    #SFX scoop
+    play sound scoop2
     "Two scoops to fill up the bag."
     "That'll do for now."
     "We were also tasked to observe the trees, changes to terrain, weather and such."
@@ -545,7 +547,7 @@ label nov_7_11:
     #10th
     #EXT: Camp 1
     scene bg camp1_day with longfade
-    #SFX snowmobile
+    play sound snowmobile loop
     "While on the way back to my tent. Gregory looks like he's about to go to the RC on his snowmobile."
     show gr neutral
     "Never actually paid attention to how cool it looks."
@@ -562,6 +564,7 @@ label nov_7_11:
     gr "Alright I'll be on my way."
 
     "They're not friends. Noted."
+    stop sound
 
     #11th
     #INT: Main tent
@@ -706,7 +709,7 @@ label nov_12:
     #Kyle's POV
     show ky smile at centerleft with dissolve
     ky "Just one more shot of y'all together... yep, that's cute!"
-    #SFX camera1
+    play sound camera2
     "Click click!"
 
     ky "One more... and done!"
@@ -723,7 +726,7 @@ label nov_12:
     show bg village1_kyle with sdissolve
 
     "Kyle rolled up his sleeves and got to work."
-    #SFX camera2
+    play sound camera3
     "Click click click!"
 
     ky "Here you go Susie!"
@@ -919,7 +922,7 @@ label nov_14:
 
         #choice branch ends
         #phone ends
-    #SFX rustle1
+    play sound rustle1
     "*rustle rustle*"
 
     "Was that from outside?"
@@ -936,8 +939,7 @@ label nov_14:
             "I paused to listen, but the sound doesn't seem to happen again."
             "I should text Colin real quick."
             "\"Sorry. I thought I heard someone outside.\""
-            "Ding!"
-            #SFX
+            play sound ding
             "\"Oh yeah, better be safe than sorry. Updates for another time then.\""
             hide satphone
             "I guess it's time to hit the bed."
@@ -947,11 +949,12 @@ label nov_14:
             mo "One moment."
             stop ambience fadeout 1.0
             play ambience amb_campnight fadein 1.0
+            play sound zipopen
             "I unzipped my tent just enough to peer outside."
             show black
             "Pitch black. Can't see shit."
 
-            #SFX rustle2
+            play sound rustle2
             "rustle rustle"
 
             mo "Who's there?!"
@@ -965,11 +968,11 @@ label nov_14:
             hide black
             stop ambience fadeout 3.0
             play ambience amb_intcampnight fadein 3.0
+            play sound zipclose
             "I zipped my tent up quickly."
             "Looks like Colin hung up on me."
             "\"I am okay. Gregory was outside.\""
-            "Ding!"
-            #SFX
+            play sound ding
             "\"Aight careful out there Morg.\""
             "I guess it's time to hit the bed."
 
@@ -1109,7 +1112,7 @@ label nov_15:
     "He doesn't question me, nor does he ever bring it up again for the day."
     stop music fadeout 3.0
 
-    scene bg camp1_day with dissolve
+    scene bg camp1_night with dissolve
     #EXT: Camp 1
     play ambience amb_campnightwfire fadein 1.0
 
@@ -1132,7 +1135,7 @@ label nov_15:
     show pearl scared
     show lorenzo scared
     "Oh that's bad news."
-    #SFX radio
+    play sound radio
     "The radio turns on."
 
     ev "Hello? I sure hope you guys can hear me."
@@ -1236,7 +1239,7 @@ label nov_16:
     hide pearl
     hide lorenzo
 
-    #SFX shovel
+    play sound shovel
     "Dig dig digging, there is a lot of snow piled up. We'll be here all day."
     "Lorenzo said that they once had to deal with fallen trees, it was not a fun experience."
     "Snow is much easier to remove, so I appreciate the lack of trees."
@@ -1438,7 +1441,7 @@ label nov_17:
     play music audio.light
 
     #Cassie beeps you
-    #SFX beep
+    play sound beep
     "Beep!"
     "Oh, it looks like I've got a message."
     wt_ky "Woah Cassie does this mean he received it?"
@@ -1495,7 +1498,7 @@ label nov_17:
     lo "W-Well I guess at least it doesn't stink... maybe I should close it up still."
     
     "Lorenzo closes the lid of the ice box."
-    #SFX icebox
+    play sound icebox
     show bg isaaklab2
     lo "I'll let Koda know that his supplies are here I guess."
 
@@ -1530,8 +1533,7 @@ label nov_18:
     "Night time."
     "First things first, the map."
 
-    #SFX phonecamera
-
+    play sound ding
     "And... sent! Colin now has a copy of this."
     show satphone
     mo "Hiiii Pancake, I just sent you a picture."
@@ -1783,7 +1785,7 @@ label nov_19_23:
     show bg maintent_day with sdissolve
     play music audio.neutral
 
-    #SFX bandage1
+    play sound bandage1
     "Aston skillfully unwraps Kyle's bandage and examines the wound."
     "He turns around and gives Kyle a packet of anti-inflammatory meds."
     show ast inthought
@@ -1798,7 +1800,7 @@ label nov_19_23:
     mo "Can cows carry rabies?"
     show ast inthought
     ast "I think so, but I'm pretty sure the farm animals here are all vaccinated against it."
-    #SFX bandage2
+    play sound bandage2
     "Aston swiftly wraps a new bandage around Kyle's forearm."
     show ast neutral
     ast "Good as new. Remember to take those meds."
@@ -2039,7 +2041,7 @@ label nov_26:
     ky "It's about time for Aston to help me with a new bandage, anyway. Here, let me show you."
     stop ambience fadeout 3.0
     play music audio.neutral
-    #SFX bandage1
+    play sound bandage1
     "Kyle unwrapped his bandage to show a nasty rash. It hurts just looking at it."
     show cg rash
     $ persistent.gallery_rash = True
@@ -2059,7 +2061,7 @@ label nov_26:
     show lorenzo neutral
     lo "Let me draw them real quick."
 
-    #SFX scribble
+    play sound scribble
     "Lorenzo begins to scribble on his notebook."
     show cg lorenzosdrawing
     "A bear-shaped thing?"
@@ -2152,7 +2154,7 @@ label nov_27:
         hide satphone
         "I hung up on Colin."
 
-        #SFX tentzipo
+        play sound zipopen
         show gr happy
         gr "You call your kid Pancake? That's sweet."
         show gr neutral
@@ -2176,7 +2178,7 @@ label nov_27:
     gr "Let me know if you notice anything different about him. Thanks Morg."
     hide gr
     mo "Yes sir."
-    #SFX tentzipc
+    play sound zipclose
     "Now that was a peculiar request. I didn't like the sound of that."
     "Anyhow, I should look out for Lorenzo."
     "I sincerely hope that his nightmares subsides soon."
@@ -2189,7 +2191,7 @@ label nov_30:
     "The past few days have just been the usual routine."
     "Wake up. Eat. Collect samples. Repeat."
     "Today was no different, but as we were about to hunker down for the night, the radio buzzed."
-    #SFX radio
+    play sound radio
     #radio goes brrr connects to camp 1 and 2
     stop ambience fadeout 3.0
     play music audio.neutral
@@ -2318,7 +2320,7 @@ label dec_2:
     ast "What's wrong?"
 
     play music audio.light
-    #SFX sleeve
+    play sound sleeve
     "Lorenzo rolls his sleeve on his left arm."
     "A rash. Less severe than Kyle's but the similarities are undeniable."
 
@@ -2367,11 +2369,11 @@ label dec_3:
     show ast neutral
     "Today I was tasked with lunch duties, helping Aston out in the main tent."
     "A certain someone really wanted tomato soup, so I'm on 'can opening' duty."
-    #SFX beep
+    play sound radio
     "Suddenly, Aston's Walkie goes off on the table."
     ast "Morgan, could you help me with that?"
     mo "Sure thing bud."
-    $ chibi_wilbur = "images/chibi/wilbur_happy.png"
+    $ chibi_wilbur = "images/chibi/wilbur_happy.pnOg"
     wt_wi "Aston my boy, are you there?"
     wt_mo "His hands are full but he's listening, Wilbur."
     $ chibi_wilbur = "images/chibi/wilbur_neutral.png"
@@ -2550,7 +2552,7 @@ label dec_5:
     ast "A little worse than yesterday. I'll check in on them in a bit."
     pe "I'm worried for them."
 
-    #SFX radio
+    play sound beep
     "Oop, looks like the radio is on again."
     show gr neutral at left
     "And Gregory walks in right on time."
@@ -2698,7 +2700,10 @@ label dec_6_1:
         yalign 1.0
     show ast neutral at right
 
-    #SFX radio beeps
+
+    play sound beep
+    "Beep!"
+    "It's Gregory's Walkie."
     wt_wi "Hello my friends! Checking in to see if everyone's on their merry way!"
     ky "We've started trekking a while ago, Wilbur! We're on our way!"
     wt_da "Glad to hear you're excited, Kyle!"
@@ -2748,7 +2753,7 @@ label dec_6_1:
     show ast confused
     show gr confused
 
-    #SFX boom
+    play sound boom
     "{b}{i}{size=+5}*boom*"
 
     "That sounded like a muffled gun, but louder."
@@ -2794,7 +2799,7 @@ label dec_6_1:
     hide cg
     scene bg forest2 with sdissolve
     "He's right, I have to survive this."
-    "Elliot... If we're both still alive, you best bet I'm gonna extort free meals from you every day."
+    "Elly... If we're both still alive, you best bet I'm gonna extort free meals from you every day."
     "The things I do... or rather the things I have to go through for you."
 
     "I ran as fast as my legs could take me."
@@ -2804,14 +2809,14 @@ label dec_6_1:
     "Bingo! That's my ticket out of here."
     "Almost there, just a few more steps and I'll-"
 
-    #SFX rock
+    
     show bg forest2:
         zoom 2
         linear 0.2 blur 20
         parallel:
             linear 0.2 ypos 1080
 
-
+    play sound stone
     mo "Ugh..."
 
     "I felt a strike towards the back of my head."
