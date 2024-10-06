@@ -67,7 +67,7 @@ label nov_4:
     "We're basically here to run errands for the scientists here to find new sources of penicillin."
     "The good stuff in antibiotic medication."
     "A.K.A things that Heralign Inc. needs."
-    "The Camp. Well there's two camps actually."
+    "The Camp. Well... There's two camps actually."
     "Five people in Camp 1 including myself, and five more in Camp 2."
     "There's also a Research Centre down south, where the research team's situated."
     "Talk about big investments, they have functional labs here."
@@ -356,12 +356,12 @@ label nov_5:
 
     "The days definitely seem much shorter here."
     "Looks like I'll have to get used to not having much daytime for the time being."
-    stop music
+    stop music fadeout 3.0
 
 label nov_6:
     #INT: Morgan's tent
     scene morganstent with longfade
-
+    play ambience amb_intcampday fadein 1.0
     "Nice, I woke up on time."
     "Today is sample collection day. Wouldn't want to miss that."
     "Wonder what that's all about?"
@@ -387,7 +387,7 @@ label nov_6:
     "I wonder how long they've been together."
     "Our conversation was interrupted by Gregory calling us over to gear up."
     "Alrighty, I guess it's time."
-
+    stop ambience fadeout 3.0
 
     scene bg forest3 with dissolve
     play ambience amb_campday fadein 1.0
@@ -833,18 +833,18 @@ label nov_13:
     "And a boy... Elly?"
     "Nope. I'm not gonna think about the worst case scenario just yet."
     "Let's head to bed."
-    stop music
+    stop music fadeout 3.0
 
 
 label nov_14:
     #INT: Morgan's tent
     scene bg morganstent with longfade
-
+    play ambience amb_intcampday fadein 1.0
     "WRRRRRRRR"
 
     "What in the world was that?"
     "Is it coming from the radio?"
-
+    stop ambience fadeout 3.0
     #EXT: Camp 1
     scene bg camp1_day with dissolve
     play ambience amb_campday fadein 1.0
@@ -883,10 +883,10 @@ label nov_14:
     "Can't collect samples when there's a storm that could strike at any moment."
     "Roll call happened much earlier today, and everyone went back to their respective tents to hunker down for the night."
     "This would probably be a great time to call Colin for updates."
-    stop ambience fadeout 1.0
+    stop ambience fadeout 3.0
 
     scene bg morganstent with fade
-    play ambience amb_campnightwofire fadein 1.0
+    play ambience amb_intcampnight fadein 1.0
 
     show satphone
     mo "How's my Pancake doing?"
@@ -937,7 +937,8 @@ label nov_14:
         "Check outside":
             hide satphone
             mo "One moment."
-
+            stop ambience fadeout 1.0
+            play ambience amb_campnight fadein 1.0
             "I unzipped my tent just enough to peer outside."
             show black
             "Pitch black. Can't see shit."
@@ -954,6 +955,8 @@ label nov_14:
             mo "Nah, you're good. I'm gonna head back to bed."
             hide gr
             hide black
+            stop ambience fadeout 3.0
+            play ambience amb_intcampnight fadein 3.0
             "I zipped my tent up quickly."
             "Looks like Colin hung up on me."
             "\"I am okay. Gregory was outside.\""
@@ -968,21 +971,24 @@ label nov_14:
 label nov_15:
     #INT: Morgan's tent
     scene bg morganstent with longfade
+    play ambience amb_intcampday fadein 1.0
 
     "Another day, another round of sore backs."
     "I don't think I'll ever get used to sleeping on packed snow."
     "But it looks like the storm didn't hit us last night."
-
+    stop ambience fadeout 1.0
+    
     scene bg camp1_day with dissolve
-    play ambience amb_camp fadein 1.0
+    play ambience amb_campday fadein 1.0
     #EXT: Camp 1
 
     "For once, I'm the first one up today."
     "Aston and Lorenzo are usually the earliest."
     "Followed by Gregory."
     "And then it's always a battle between Pearl and I."
-
+    stop ambience fadeout 1.0
     show bg maintent_day
+    play ambience amb_intcampday fadein 1.0
     #INT: Main tent
 
     "I guess I could go snoop around in the main tent for a bit."
@@ -1097,6 +1103,7 @@ label nov_15:
 
     scene bg camp1_day with dissolve
     #EXT: Camp 1
+    play ambience amb_campnight fadein 1.0
 
     "The records have been occupying my mind all day."
     "At least there's meat and potatoes for tonight for a temporary distraction."
@@ -1109,6 +1116,7 @@ label nov_15:
     show pearl neutral
     "A strong gust of wind begins to pick up, cutting Pearl's sentence short."
     "The campfire embers dance violently around the pit."
+    stop ambience fadeout 3.0
 
     "WRRRRRRRRRRRRR"
     show pearl scared
@@ -1143,6 +1151,8 @@ label nov_15:
     pe "Is everyone okay...? Are we okay?"
     show gr neutral
     gr "Looks like it, everyone is still in one piece, aye?"
+
+    play ambience amb_intcampnight fadein 5.0
 
     "Lorenzo is already on his Walkie, checking in on Camp 2."
     show lorenzo pondering at centerright
@@ -1194,10 +1204,13 @@ label nov_15:
     "Pearl's going to be sleeping in the main tent for the night."
     "Surviving a snowstorm, huh? Well, that's one check off my extreme bucket list."
     "Now I have a reason to demand a snowmobile from Colin."
+    stop ambience fadeout 3.0
 
 label nov_16:
     #EXT: Camp 1
     scene bg camp1_day with moveindissolve
+    play ambience amb_campday fadein 1.0
+
     "The next day after the storm, we got to work rebuilding the campsite."
     "Other than fixing Pearl's tent, we've got some shoveling to do, the snow piled up real high and we lost our campfire."
     show pearl sad at centerright
@@ -1222,6 +1235,7 @@ label nov_16:
     mo "Guys... I'm going to be back real quick. I see something up ahead."
 
     "Definitely not natural, it even has a little entrance."
+    stop ambience fadeout 3.0
     show cg meetingkyle
     $ persistent.gallery_meetingkyle = True
     play music audio.light
@@ -1349,11 +1363,12 @@ label nov_16:
     "But now I am worried about dragging another civilian into a mess whose depth even I'm unsure of."
     "Sounds like I made a bad choice, but the only other option was to leave him to fend for himself."
     "I'm sure it'll be fine for now."
-    stop music
+    stop music fadeout 3.0
 
 label nov_17:
     #INT: Main tent
     scene bg maintent_day with longfade
+    play ambience amb_intcampday fadein 1.0
     "It's been three days since we were stuck at camp."
     "Lorenzo and Gregory said that they'll be sending in new samples together. The batch we accumulated over the days was a little too much for one person to handle."
     "While Aston, Pearl and I were tasked to reallocate food portions for an extra person and reset camp to its original form."
@@ -1405,6 +1420,8 @@ label nov_17:
     hide black
     show pearl happy
     pe "Great work guys! We did amazing!"
+    stop ambience fadeout 3.0
+    play music audio.light
 
     #Cassie beeps you
     "Beep!"
@@ -1441,6 +1458,7 @@ label nov_17:
 
     "They're such a silly bunch."
     "We all ended up talking for hours and had to swap Walkies multiple times cause the batteries kept running out."
+    stop music fadeout 3.0
 
     #Lorenzo's POV
     scene bg isaaklab1 with longfade
@@ -1536,13 +1554,12 @@ label nov_18:
     mo "Nighty night, Pancake."
     hide satphone
     "I fell asleep soon after."
-    stop music
+    stop music fadeout 3.0
 
 label nov_19_23:
     #19th
     scene bg camp1_day with longfade
     play music audio.light
-
 
     "It's my favorite time of the day, meal time."
     "Looks like there's already a crowd gathered in here."
@@ -1725,7 +1742,7 @@ label nov_19_23:
 
     "If we're out in the forest, it would be pretty dangerous to leave your compass back at camp."
     "I'll need to make sure I remind her every time, then."
-    stop music
+    stop music fadeout 3.0
 
     #23rd
     scene bg camp1_day with longfade
@@ -1847,6 +1864,7 @@ label nov_24:
     
     
     scene bg camp1_night with dissolve
+    play ambience amb_campnightwfire fadein 1.0
 
     "*crackle crackle*"
     "The fire chirps loudly in the midst of the silent snowy plain."
@@ -1880,11 +1898,13 @@ label nov_24:
     "There has to be something. Something... or someone else in the picture that I'm not seeing."
     "What is it? Who is it?"
     "I need to gather more info for Colin."
+    stop ambience fadeout 5.0
     stop music fadeout 5.0
 
 label nov_25:
     #EXT: Forest
     scene bg waterbody with longfade
+    play ambience amb_campday fadein 1.0
     "Marshmallow night was a success, I had a great night's sleep."
     "New day, new samples."
     "New samples, from the same old lake."
@@ -1917,7 +1937,7 @@ label nov_25:
     "It makes sense, but at the same time it doesn't make sense to me."
     "I think I need to ask someone with qualifications on this topic."
     "Maybe Eva?"
-
+    stop ambience fadeout 3.0
     scene bg camp1_day with dissolve
     play music audio.neutral
 
@@ -1971,11 +1991,12 @@ label nov_25:
     "Lake erosion huh?"
     "That does sound bad."
     "But worrying about it won't do anything right now."
-    stop music
+    stop music fadeout 3.0
 
 label nov_26:
     #INT: Main tent
     scene bg maintent_day with longfade
+    play ambience amb_intcampday fadein 1.0
     "Kyle, Lorenzo and I were having a discussion about animals."
     show ky smile at centerleft
     ky "Favorite animal I've photographed? Definitely toucans!"
@@ -1994,7 +2015,8 @@ label nov_26:
     show ky neutral
     ky "It's not like I haven't been bitten before, but this is the first time that it has gotten this bad."
     ky "It's about time for Aston to help me with a new bandage, anyway. Here, let me show you."
-
+    stop ambience fadeout 3.0
+    play music audio.neutral
 
     "Kyle unwrapped his bandage to show a nasty rash. It hurts just looking at it."
     show cg rash
@@ -2023,7 +2045,7 @@ label nov_26:
     show lorenzo sad
     lo "I'm sorry if it sounds silly, I just..."
     hide cg
-
+    
     show ky neutral
     ky "It's not silly Lorenzo, fears are valid!"
     show ky shaken
@@ -2039,7 +2061,7 @@ label nov_26:
     lo "It's becoming a nightly event."
     show ky sad
     ky "That sounds rough Lorenzo..."
-
+   
 
     "Kyle's rash is worrying. Lorenzo's dreams are worrying."
     "That's two things that happened within a week."
@@ -2056,9 +2078,11 @@ label nov_26:
     show ky happy
     ky "Let us know if there's anything we can do to help!"
     lo "Thank you my friends."
+    stop music fadeout 3.0
 
 label nov_27:
     #INT: Morgan's tent
+    play ambience amb_intcampnight fadein 1.0
     scene bg morganstent with longfade
     "It's time for a check in with my beloved Pancake."
 # TODO PHONE
@@ -2131,16 +2155,18 @@ label nov_27:
     "Now that was a peculiar request. I didn't like the sound of that."
     "Anyhow, I should look out for Lorenzo."
     "I sincerely hope that his nightmares subsides soon."
+    stop ambience fadeout 3.0
 
 label nov_30:
     #INT: Main tent
     scene bg maintent_day with longfade
+    play ambience amb_intcampday fadein 1.0
     "The past few days have just been the usual routine."
     "Wake up. Eat. Collect samples. Repeat."
     "Today was no different, but as we were about to hunker down for the night, the radio buzzed."
 
     #radio goes brrr connects to camp 1 and 2
-
+    stop ambience fadeout 3.0
     play music audio.neutral
     wt_ev "Hello campers, is now a good time?"
     $ chibi_jax = "images/chibi/jax_neutral.png"
@@ -2225,11 +2251,12 @@ label nov_30:
     nvl clear
     "Well, if I do indirectly end up contributing to modern medicine study, that's a win in my books."
     "I wonder if the weather had something to do with the fungi appearing."
-    stop music
+    stop music fadeout 3.0
 
 label dec_2:
     #INT: Main tent
     scene bg maintent_day with longfade
+    play ambience amb_intcampday fadein 3.0
     #Aston and Lorenzo's POV
     show lorenzo sick at centerright with dissolve
     show ast sad at centerleft with dissolve
@@ -2257,6 +2284,7 @@ label dec_2:
     ast "Call me paranoid, but I don't want to find out. Not when Gregory is here."
     show lorenzo sick
     lo "That makes two of us then."
+    stop ambience fadeout 3.0
 
     show lorenzo sad
     "Lorenzo fumbles with his sleeve, finding it increasingly difficult to resist the urge to scratch the itch on his arm."
@@ -2264,6 +2292,7 @@ label dec_2:
     show ast sad
     ast "What's wrong?"
 
+    play music audio.light
     "Lorenzo rolls his sleeve on his left arm."
     "A rash. Less severe than Kyle's but the similarities are undeniable."
 
@@ -2303,10 +2332,12 @@ label dec_2:
     show ast happy
     show lorenzo smile
     ast "We'll figure something out."
+    stop music fadeout 3.0
 
 label dec_3:
     #INT: Main tent
     scene bg maintent_day with longfade
+    play ambience amb_intcampday fadein 1.0
     show ast neutral
     "Today I was tasked with lunch duties, helping Aston out in the main tent."
     "A certain someone really wanted tomato soup, so I'm on 'can opening' duty."
@@ -2371,9 +2402,11 @@ label dec_3:
     "It's not hard to imagine Aston covering for Lorenzo, though."
     "I've caught him scratching his arm through his sleeve more times than I can count in the past few days."
     "If it's contagious then... This could get ugly really fast."
+    stop ambience fadeout 3.0
 
     #EXT: Camp 1
     show bg camp1_day
+    play ambience amb_campday fadein 1.0
     show ky neutral
     "I bump directly into Kyle, who happened to be right outside the tent."
     mo "Is eavesdropping your new hobby?"
@@ -2392,6 +2425,7 @@ label dec_3:
     mo "Wanna help me out with lunch?"
     show ky smile
     ky "Yeah! I'd love to, Morgan."
+    stop ambience fadeout 3.0
 
 label dec_4:
     scene bg camp1_night with longfade
@@ -2675,6 +2709,7 @@ label dec_6_1:
     wt_mo "Sounds like a plan."
     gr "Morgan, can you hold the map for me? I just need to grab my compass real quick."
     stop music
+
     if persistent.screenshake:
         with hpunch
 

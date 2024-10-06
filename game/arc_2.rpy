@@ -3,6 +3,7 @@ label dec_6_2:
     $ save_name = _("Arc 2")
     #Scene transition: Fade to black, then fade back in slowly
     scene bg maintent_night with longfade
+    play ambience amb_intcampnight fadein 1.0
     "I don't know how long it has been."
     "The pounding pain in the back of my head radiates as I try to take in my surroundings."
     "This is... the main tent?"
@@ -59,6 +60,7 @@ label dec_6_2:
     "We fall silent, looking at each other I can sense that we're all determined to find him."
     "The worry lingers, but I know we'll do the best we can."
     "He's a tough cookie. He'll survive this."
+    stop ambience fadeout 3.0
 
 label dec_7:
     scene bg forest3 with longfade
@@ -136,10 +138,10 @@ label dec_7:
     ky "Gregory and Pearl are gonna help out tomorrow, I think."
 
     mo "Yep. Hopefully it'll make the search much easier."
-    stop music
+    stop music fadeout 3.0
     #INT: Main tent
     scene bg maintent_night with dissolve
-    play ambience amb_campnightwofire fadein 1.0
+    play ambience amb_campnight fadein 1.0
 
     "The sleeping bags have all been moved to the main tent for now."
     "Some of our smaller tents were destroyed, so everyone's gotta share the big tent for the time being."
@@ -176,11 +178,12 @@ label dec_7:
 
     "I hung up on Colin."
     "I do enjoy terrorizing him...keeps me sane from the mess I'm dealing with here."
-    stop ambience
+    stop ambience fadeout 3.0
 
 label dec_8:
     #INT: Cabin
     scene cottage with longfade
+    play ambience amb_cabin fadein 1.0
     #Lorenzo's POV
 
     lo "Let's see here... I've got food that will last me for a week."
@@ -218,9 +221,10 @@ label dec_8:
     "Time passes much slower without the rest of them."
 
     #BG Window with bear
-    # TODO ASK ELINA ABOUT MISSING TREES STUFF
+    #TODO ASK ELINA ABOUT MISSING TREES STUFF
     show cg bearwindow1
     "About this time of day, Aston would've been making dinner."
+    stop ambience
 
     #BG Window
     hide cg
@@ -254,7 +258,7 @@ label dec_8:
     "He runs to the blankets and quickly drapes it over the window."
     "After pacing around the room nervously, he decided that he'll hold the rifle in hand while he sleeps tonight."
     "Not sure if the rifle would do any damage but, it's safer to have it than not."
-    stop music
+    stop music fadeout 3.0
 
 
 label dec_9:
@@ -275,12 +279,14 @@ label dec_9:
 
     #INT: Main tent
     scene bg maintent_night with dissolve
+    play ambience amb_intcampnight fadein 1.0
     "I cracked my eyes open slightly."
     show ast inthought
     "It's Aston."
     "He's standing up and checking his pockets."
     "I checked my clock, it's 11:41pm. That's already pretty late at camp."
     "Is he doing what I think he's doing?"
+    stop ambience fadeout 3.0
     play music audio.neutral
     menu:
         "Call him":
@@ -368,7 +374,7 @@ label dec_9:
 
         #choice branch 2 ends
     #choice branch 1 ends
-    stop music
+    stop music fadeout 3.0
 
 
 label dec_10:
@@ -376,6 +382,7 @@ label dec_10:
     #(STRIKE 1 added to Gregory sus meter, whenever you see this Sharkie lmk cause I have questions to ask)
     #EXT: Camp 1A
     scene bg camp2_day with longfade
+    play ambience amb_campday fadein 1.0
     if not joined_aston:
         "The search commences today."
         "Gregory was right about Aston, he made it back before dawn."
@@ -395,11 +402,13 @@ label dec_10:
         mo "It's okay, we'll keep trying. You have an ally here."
         show ast happy
         "Aston flashes me a weak smile, and nods."
+        stop ambience fadeout 3.0
 
     #To Sharkie, skip to this sequence if you successfully join Aston on his adventure
     label find_lorenzo:
         scene forest3 with fade
     #EXT: Forest
+        play ambience amb_campnight fadein 1.0
         "Did I ever mention loving night walks?"
         "Well, I hate this."
         "A night walk in the forest is never fun, unless you live for the thrill."
@@ -421,6 +430,7 @@ label dec_10:
         "We walked up to the cabin and inspected the door up close."
 
         mo "I suppose we should give a polite knock before entering?"
+        stop ambience fadeout 5.0
 
         "Aston knocks on the door."
         #SFX knock
@@ -552,7 +562,7 @@ label dec_10:
             "His face no longer scrunches up while he sleeps."
             "It was something I've noticed for the past few days, heard him tossing and turning in his sleep."
             "All is well now."
-    stop music
+    stop music fadeout 3.0
 
 label dec_11:
     #EXT: Camp 1A
@@ -651,6 +661,7 @@ label dec_11:
 label dec_12:
     #EXT: Camp 1A
     scene bg camp2_night with longfade
+    play ambience amb_campnight fadein 1.0
     #Gregory's POV
     "Gregory sits on a rock some distance away from the main tent."
     show gr neutral
@@ -690,6 +701,7 @@ label dec_12:
     "They may not be family, they may not even be friends."
     "But they are people Gregory spends the most time with."
     "And that doesn't discredit the fact that deep down, he cares."
+    stop ambience fadeout 3.0
 
 label dec_13:
     #EXT: Camp 1A
@@ -712,7 +724,7 @@ label dec_13:
     show bg camp2_night
     stop ambience fadeout 3.0
     "Right. Now that everyone's sleeping, 'tis the time."
-    play ambience amb_campnightwofire fadein 1.0
+    play ambience amb_campnight fadein 1.0
 
     show satphone
     mo "Pancake!"
@@ -945,6 +957,7 @@ label dec_14:
         else:
             scene bg cottage2 with dissolve
             #INT: Cabin
+            play ambience amb_cabin fadein 1.0
             show lorenzo smile
             "Upon entering the cabin, I see Lorenzo waiting patiently for us to arrive."
             show lorenzo sad
@@ -970,6 +983,7 @@ label dec_14:
             lo "It would seem that way, yes."
             lo "Morgan. Will you help me find him?"
             mo "I will, Lorenzo."
+            stop ambience fadeout 3.0
 
 
     #@ Sharkie the way it works:
@@ -1021,7 +1035,7 @@ label dec_15:
     hide ky
     show bg forest3_animals
     "Amongst the herd of deer lies a disturbing goop of an animal."
-
+    play music audio.anxious 
 
     "It looks like a dead bird."
     show ky sad
@@ -1046,6 +1060,7 @@ label dec_15:
     show ky shaken
     ky "A-Are you gonna pick all of them up?"
     mo "One should suffice I hope?"
+    stop music fadeout 3.0
 
 label dec_16:
     #EXT: Camp 1A
@@ -1131,6 +1146,7 @@ label dec_16:
     #If Aston not safe
     else:
         scene bg camp2_day with longfade
+        play ambience amb_campday fadein 1.0
         "Aston has been missing for two days now."
         "C1 aborted the original dirt and photography mission."
         "Gregory said that we're doing round 2 of search and rescue."
@@ -1168,6 +1184,7 @@ label dec_16:
         "The image of Pearl running after him with a can of pea soup is hilarious."
         show pearl happy
         "Seeing that her comment elicited a chuckle out of me, she nodded, satisfied with her work."
+        stop ambience fadeout 3.0
 
 label dec_17:
     scene bg forest3 with longfade
@@ -1285,6 +1302,7 @@ label dec_17:
 label dec_18:
     #INT: Main tent
     scene bg maintent_day with longfade
+    play ambience amb_intcampday fadein 1.0
         #Kyle's POV
     show ky smile
     "Kyle's Walkie starts beeping."
@@ -1320,6 +1338,7 @@ label dec_18:
     $ chibi_eva = "images/chibi/eva_happy.png"
     wt_ev "Anyway, thanks Kyle. Really great shots by the way, stunning photos."
     wt_ky "I take pride in that! Thank you!"
+    stop ambience fadeout 3.0
     #radio ends
     nvl clear
 
@@ -1736,7 +1755,7 @@ label dec_26:
 
 label dec_27:
     scene bg maintent_night with longfade
-    play ambience amb_campnightwofire fadein 1.0
+    play ambience amb_campnight fadein 1.0
     "In the dead of the night, I heard someone rummaging through their backpacks."
 
     if aston_safe:
@@ -2026,7 +2045,7 @@ label dec_30:
 
     #EXT: Camp 1A
     scene bg camp2_night with sdissolve
-    play ambience amb_campnightwofire fadein 1.0
+    play ambience amb_campnight fadein 1.0
 
     "Gregory's Walkie starts beeping the moment I step foot outside."
 
@@ -2061,6 +2080,8 @@ label dec_30:
     gr "We'll think about it when it happens."
 
     scene bg maintent_night with sdissolve
+    stop ambience fadeout 3.0
+    play ambience amb_intcampnight fadein 1.0
     "I ran back into the main tent to grab my satellite phone."
     "Yep. Signal's completely dead."
     "The gravity of the situation finally sinks in. Which means Colin... he can't reach me."
@@ -2080,6 +2101,7 @@ label dec_30:
 
         scene bg cottage2 with fade
         show lorenzo sad
+        play music audio.light 
         "We're paying Lorenzo a visit."
         show ast neutral at centerleft
         lo "So the loud crash I heard was real then?"
@@ -2104,6 +2126,7 @@ label dec_30:
         show lorenzo happy
         "He tousles Lorenzo's hair gently."
         "I'm glad things are starting to change for the better."
+        stop music fadeout 3.0
 
     #If Aston is not safe
     else:
