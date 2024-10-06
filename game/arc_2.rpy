@@ -243,7 +243,7 @@ label dec_8:
 
     #BG Window with bear
     show cg bearwindow3 
-    #SFX play sound bearwwindow
+    play sound lobeargrowl
     if persistent.screenshake:
         with hpunch
     $ persistent.gallery_bearwindow = True
@@ -276,7 +276,7 @@ label dec_9:
     "I heard Eva and Koda were there to support the camp as well."
     "We've never found any of Lorenzo's belongings."
     "He must've been pretty far when we separated."
-    play sound backpack
+    play sound backpack volume 0.5
     "*rustle*"
     "Sounds like I'm not the only one awake."
 
@@ -646,7 +646,7 @@ label dec_11:
     lo "Okay, I'll play your game."
     lo "If you're not going to leave me alone, I might as well get to know you."
     "He grabs his journal and turns to a blank page and jots down some notes."
-    #SFX pen
+    play sound pen
     "Characteristics:"
     "Black bear, no fur, goop-like."
     "Green stuff looks like a fluid of some sort dripping from its mouth."
@@ -808,7 +808,7 @@ label dec_14:
             mo "What is it? Talk to me."
             "As I try to get a hold of him, my flashlight dies."
             show black
-            #SFX flashlight
+            play sound flashlight
             "I swapped my batteries out as fast as I could."
             hide black
             show ast scared
@@ -830,7 +830,7 @@ label dec_14:
             "As I try to get a hold of him, my flashlight dies."
             show black
             hide ast
-            #SFX flashlight
+            play sound flashlight
             "I swapped my batteries out as fast as I could."
             hide black
             "When the lights turn back on, Aston has gone missing."
@@ -857,7 +857,7 @@ label dec_14:
         lo "I'm glad to see you both!"
         show ast with move:
             xpos 400
-        #SFX hug
+        play sound hug
         "Aston runs to Lorenzo and gives him a quick hug."
         show ast with move:
             xpos 300
@@ -921,7 +921,7 @@ label dec_14:
             show lorenzo sad
             show ast sad with move:
                 xpos 400
-            #SFX hug
+            play sound hug
             "Aston runs to Lorenzo and gives him a quick hug."
             show ast with move:
                 xpos 300
@@ -1186,7 +1186,7 @@ label dec_16:
         show pearl smile
         "With a concerned look on her face, she extends her arms out and offers a hug."
         "I accepted the hug and she gave me a few pats on the back."
-        #SFX hug
+        play sound hug
         show pearl neutral
         pe "You looked like you needed it Morgan."
         pe "And you're not alone here, we're all here with you."
@@ -1272,7 +1272,7 @@ label dec_17:
     ky "Please don't see me, please don't see me..."
 
     "Kyle breaks vision from the bear, hiding behind a large tree."
-    #SFX growl
+    play sound beargrowl
     "*growl*"
 
     ky "..."
@@ -1941,7 +1941,7 @@ label dec_27:
 
             #Pearl's POV
             show pearl neutral
-            #SFX wind
+            play sound wind2
             "The wind picks up tremendously as Pearl trudges through the snow."
 
             show pearl sad
@@ -1968,7 +1968,7 @@ label dec_27:
             "Or at least to Pearl."
             "Disfigured and grotesque looking... humans."
             "Frozen in time, freezing the frame of their unfortunate fate."
-            #SFX snowground
+            play sound snowground
             "Pearl collapses onto the ground, unable to make sense of what she just saw."
 
             pe "Nope! Nope nope nope-"
@@ -1981,7 +1981,7 @@ label dec_27:
             play sound snowrun
 
             "Pearl starts sprinting towards it, but unbeknownst to her, the terrain ahead was a rather dangerous one."
-            #SFX rockslip
+            play sound slip
 
             pe "Shi-"
             show black with pushupquick
@@ -2280,7 +2280,7 @@ label dec_31:
     "Looks like there's also a ravine."
     "And south is where C2 and RC can be seen."
     "It'll be the first time I lay my eyes on-"
-    #SFX snowbump
+    play sound kick
     "..."
     play music audio.anxious
     "I kicked something."

@@ -46,12 +46,12 @@ label nov_4:
     
     scene bg snowyplain with dissolve
     play ambience amb_campday fadein 1.0
-
+    play sound cardoor
     "A vast stretch of white greets me as I exit the car."
     "The cold wind stings a little as it brushes my cheek. Might take a while before I get used to it."
     mo "Hey thanks for the ride!"
     ex1 "No worries, Gregory should be up ahead waiting for ya."
-    #SFX cardoor
+    
     "I gaze towards the direction where he pointed, and sure enough, there was an older man waving his hand at me."
     "I slowly make my way towards him. Trudging the snow is a feat for sure."
     "It also doesn't help that I've been in the car for hours on end."
@@ -175,7 +175,7 @@ label nov_4:
     ast "Walkie talkie, Pearl."
     show pearl happy with dissolve
     pe "Oh yes! The Walkie talkie!"
-    #SFX jacket
+    play sound jacket
     "Pearl whips out a walkie talkie deep in her jacket pockets and hands it to me."
     show ast inthought with dissolve
     ast "We should probably test it before you head out. Our codes have all been saved, you can reach any one of us anytime."
@@ -398,7 +398,7 @@ label nov_6:
     show gr neutral at centerright
 
     "Gregory begins by going through a long checklist of items to collect for the day."
-    #SFX tools
+    play sound tools
     "He hands Pearl and I some bags and tools."
     show pearl neutral at centerleft
     gr "Alright. The plan is simple. We go out, grab dirt samples, and then I'll send them back to the lab."
@@ -850,7 +850,7 @@ label nov_14:
     scene bg morganstent with longfade
     play ambience amb_intcampday fadein 1.0
     
-    #SFX wrr
+    play sound wrr
     "WRRRRRRRR"
 
     "What in the world was that?"
@@ -1125,12 +1125,12 @@ label nov_15:
     show pearl smile at centerright
     pe "Aston should have some meds for that! I can go get them for-"
     show pearl neutral
-    #SFX wind
+    play sound wind1
     "A strong gust of wind begins to pick up, cutting Pearl's sentence short."
     "The campfire embers dance violently around the pit."
     stop ambience fadeout 3.0
 
-    #SFX wrr
+    play sound wrr
     "WRRRRRRRRRRRRR"
     show pearl scared
     show lorenzo scared
@@ -1143,9 +1143,10 @@ label nov_15:
 
     "I didn't know Eva did weather reporting too."
 
-    gr "You heard her! IN. NOW."
 
-    #SFX tag but it's actually ambience that I need to make
+    gr "You heard her! IN. NOW."
+    play sound snowstorm loop
+   
 
     "Oh fuck."
     "They weren't kidding when they said snow storms mean business in these parts."
@@ -1159,7 +1160,7 @@ label nov_15:
     "But I wonder how those ropes and weighted bags will fare in this storm."
     "It would be a problem if my tent flies, I can't let anyone read my journal."
 
-    #SFX wind dies down, ambience gone
+    stop sound fadeout 3.0
 
     "I don't know how much time has elapsed."
     "It's still snowing outside, but it would seem that the storm finally decided to calm down."
@@ -1715,7 +1716,7 @@ label nov_19_23:
     #INT: Main tent
     scene bg maintent_day with longfade
 
-    #SFX toolrack
+    play sound toolrack volume 0.5
     "*crash*"
     "Did I walk into something uninvited?"
     show pearl scared:
@@ -2772,16 +2773,16 @@ label dec_6_1:
     show ky shaken
     show gr scared
     
-    #SFX rumble
+    play sound rumble
     "{b}{i}{size=+5}*rumble*"
 
-    #SFX
     #TODO start shakingggg
     "The ground beneath us starts shaking."
     "That doesn't feel... right?"
     "Instinctively, Gregory and I look towards the top of the mountain."
     gr "What the-"
-    #SFX or ambience avalanche
+    
+    play audio avalanche
     "Oh no."
     "Actually, that's an understatement. We're fucked."
     "From the peak of the mountains, the snow is gushing down at us at breakneck speed."
@@ -2793,6 +2794,7 @@ label dec_6_1:
 
     show cg avalanche
     $ persistent.gallery_avalanche = True
+    play audio avalanche2
     gr "{size=+5}{i}DON'T JUST STAND THERE, RUN!!"
 
     "Camp dad's voice is loud and clear."
