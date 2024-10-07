@@ -23,7 +23,7 @@ define gui.show_name = False
 
 ## The version of the game.
 
-define config.version = "SpooktoberDemo"
+define config.version = "SpooktoberDemo_1.1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the

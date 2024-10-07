@@ -1985,7 +1985,9 @@ label dec_27:
 
             pe "Shi-"
             show black with pushupquick
+            hide cg
             play sound fall
+            show cg pearldeath2
             "Pearl loses her footing and slips down a ravine."
             stop ambience fadeout 1.0
 
