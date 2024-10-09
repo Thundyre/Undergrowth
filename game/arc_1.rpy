@@ -2374,7 +2374,7 @@ label dec_3:
     "Suddenly, Aston's Walkie goes off on the table."
     ast "Morgan, could you help me with that?"
     mo "Sure thing bud."
-    $ chibi_wilbur = "images/chibi/wilbur_happy.pnOg"
+    $ chibi_wilbur = "images/chibi/wilbur_happy.png"
     wt_wi "Aston my boy, are you there?"
     wt_mo "His hands are full but he's listening, Wilbur."
     $ chibi_wilbur = "images/chibi/wilbur_neutral.png"
