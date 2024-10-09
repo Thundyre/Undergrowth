@@ -26,7 +26,7 @@ label dec_6_2:
 
     show pearl sad
     show ast sad
-    
+
     "Pearl looks down... and Aston, he's looking up?"
     "That was not the reaction I'd hope to see."
     "I never thought I'd see him emotional, but it looks like Aston's on the verge of breaking down."
@@ -242,7 +242,7 @@ label dec_8:
     "He looks out the window again."
 
     #BG Window with bear
-    show cg bearwindow3 
+    show cg bearwindow3
     play sound lobeargrowl
     if persistent.screenshake:
         with hpunch
@@ -1046,7 +1046,7 @@ label dec_15:
     hide ky
     show bg forest3_animals
     "Amongst the herd of deer lies a disturbing goop of an animal."
-    play music audio.anxious 
+    play music audio.anxious
 
     "It looks like a dead bird."
     show ky sad
@@ -1263,7 +1263,7 @@ label dec_17:
     ky "Okay, third time's the charm!"
     play sound flash
     "Click!"
-    
+
     show ky shaken
     ky "Shit."
 
@@ -1625,6 +1625,7 @@ label dec_25:
                 wt_ko "Eva kicked me out of the lab today just for that reason!"
                 $ chibi_koda = "images/chibi/koda_happy.png"
                 wt_ko "Time for some well earned rest!"
+                nvl clear
             else:
                 "I've already talked to them."
 
@@ -1934,7 +1935,7 @@ label dec_27:
             "This is all my fault."
             "If anything happens to her, I-"
             "...I won't be able to forgive myself."
-            
+
 
             #Scene transition: Fade to black > Fade in forest BG
             scene bg forest3 with longfade
@@ -2131,7 +2132,7 @@ label dec_30:
 
         scene bg cottage2 with fade
         show lorenzo sad
-        play music audio.light 
+        play music audio.light
         "We're paying Lorenzo a visit."
         show ast neutral at centerleft
         lo "So the loud crash I heard was real then?"
@@ -2310,7 +2311,7 @@ label dec_31:
         xalign 0.5
         yalign 1.0
     "The only telltale sign that it was a human was the arm protruding out from the snow."
-    
+
 
     #If Pearl and Aston is safe
     if aston_safe and pearl_safe:
