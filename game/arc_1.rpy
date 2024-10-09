@@ -10,13 +10,13 @@ label nov_1:
     tv_hi "So what are you waiting for? Grab your very own NuGLO samples at your local stores today!"
 
     $ hidebubbles = True
-    play sound ding 
+    play sound ding
     scene black
     #Morgan stands up and switches off the TV abruptly, his phone buzzes.
 
     #Click!
     show cg morganhome2
-    
+
     mo "Heya."
     co "Got everything you need Morg?"
     mo "Yep, just zipping up here and I'm good to go."
@@ -43,7 +43,7 @@ label nov_4:
     mo "I guess I'm here to find out."
     ex1 "We're here."
     mo "Whew, alright!"
-    
+
     scene bg snowyplain with dissolve
     play ambience amb_campday fadein 1.0
     play sound cardoor
@@ -51,7 +51,7 @@ label nov_4:
     "The cold wind stings a little as it brushes my cheek. Might take a while before I get used to it."
     mo "Hey thanks for the ride!"
     ex1 "No worries, Gregory should be up ahead waiting for ya."
-    
+
     "I gaze towards the direction where he pointed, and sure enough, there was an older man waving his hand at me."
     "I slowly make my way towards him. Trudging the snow is a feat for sure."
     "It also doesn't help that I've been in the car for hours on end."
@@ -301,7 +301,7 @@ label nov_5:
     gr "Yeah...because you need reminding every time you attempt to do something reckless."
     show pearl sad with dissolve
     pe "..."
-    
+
     "Gregory runs us through the list of basic camp rules."
     "All of which I'm already familiar with."
     "Time to put that 3 months of camp training knowledge to work."
@@ -422,7 +422,7 @@ label nov_6:
     "Snow and dirt. Alright let's see."
     play sound scoop1
     "Scoop."
-    
+
 
     "To my eyes, it looks like plain old dirt."
     "Not gravelly, just wet cold soil with no bugs in it."
@@ -738,7 +738,7 @@ label nov_12:
     "Susie studies her portrait."
 
     v1 "What's wrong Susie?"
-    
+
     ky "Was it... not to her liking?"
     v2 "Are you okay?"
 
@@ -849,7 +849,7 @@ label nov_14:
     #INT: Morgan's tent
     scene bg morganstent with longfade
     play ambience amb_intcampday fadein 1.0
-    
+
     play sound wrr
     "WRRRRRRRR"
 
@@ -988,7 +988,7 @@ label nov_15:
     "I don't think I'll ever get used to sleeping on packed snow."
     "But it looks like the storm didn't hit us last night."
     stop ambience fadeout 1.0
-    
+
     scene bg camp1_day with dissolve
     play ambience amb_campday fadein 1.0
     #EXT: Camp 1
@@ -1146,7 +1146,7 @@ label nov_15:
 
     gr "You heard her! IN. NOW."
     play sound snowstorm loop
-   
+
 
     "Oh fuck."
     "They weren't kidding when they said snow storms mean business in these parts."
@@ -1497,7 +1497,7 @@ label nov_17:
     "There doesn't seem to be any smell."
     show lorenzo sick
     lo "W-Well I guess at least it doesn't stink... maybe I should close it up still."
-    
+
     "Lorenzo closes the lid of the ice box."
     play sound icebox
     show bg isaaklab2
@@ -1886,8 +1886,8 @@ label nov_24:
     ky "I saw a wolf! It was a silly one, kept bumping into trees."
     "I suppose I'll have to leave snooping in Gregory's tent for another time."
     "Marshmallow night is about to start soon."
-    
-    
+
+
     scene bg camp1_night with dissolve
     play ambience amb_campnightwfire fadein 1.0
 
@@ -2071,7 +2071,7 @@ label nov_26:
     show lorenzo sad
     lo "I'm sorry if it sounds silly, I just..."
     hide cg
-    
+
     show ky neutral
     ky "It's not silly Lorenzo, fears are valid!"
     show ky shaken
@@ -2087,7 +2087,7 @@ label nov_26:
     lo "It's becoming a nightly event."
     show ky sad
     ky "That sounds rough Lorenzo..."
-   
+
 
     "Kyle's rash is worrying. Lorenzo's dreams are worrying."
     "That's two things that happened within a week."
@@ -2626,7 +2626,7 @@ label dec_5:
     wt_ko "We'll leave you guys to it for now! Big day tomorrow!"
     nvl clear
     #radio ends
-    
+
     show ast neutral
     show pearl neutral
     gr "Well, you heard the man. Let's start packing the essentials."
@@ -2761,6 +2761,7 @@ label dec_6_1:
 
     $ chibi_jax = "images/chibi/jax_worried.png"
     wt_ja "Y'all hear something?"
+    nvl clear
     ast "It wasn't just you."
     mo "Was that a gun, or-"
 
@@ -2772,7 +2773,7 @@ label dec_6_1:
     show pearl scared
     show ky shaken
     show gr scared
-    
+
     play sound rumble
     "{b}{i}{size=+5}*rumble*"
 
@@ -2781,7 +2782,7 @@ label dec_6_1:
     "That doesn't feel... right?"
     "Instinctively, Gregory and I look towards the top of the mountain."
     gr "What the-"
-    
+
     play audio avalanche
     "Oh no."
     "Actually, that's an understatement. We're fucked."
@@ -2811,7 +2812,7 @@ label dec_6_1:
     "Bingo! That's my ticket out of here."
     "Almost there, just a few more steps and I'll-"
 
-    
+
     show bg forest2:
         zoom 2
         linear 0.2 blur 20

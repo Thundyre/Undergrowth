@@ -345,22 +345,27 @@ screen navigation():
                 hover_sound "audio/ui/ui_hover1.ogg"
                 activate_sound "audio/ui/ui_menu.ogg"
                 action Start()
+                alt "start game"
             textbutton _("CONTINUE") at hover_anim:
                 hover_sound "audio/ui/ui_hover1.ogg"
                 activate_sound "audio/ui/ui_menu.ogg"
                 action ShowMenu("load")
+                alt "load game"
             textbutton _("SETTINGS")at hover_anim:
                 hover_sound "audio/ui/ui_hover1.ogg"
                 activate_sound "audio/ui/ui_menu.ogg"
                 action ShowMenu("settings")
+                alt "game settings"
             textbutton _("EXTRAS") at hover_anim:
                 hover_sound "audio/ui/ui_hover1.ogg"
                 activate_sound "audio/ui/ui_menu.ogg"
                 action ShowMenu("gallery")
+                alt "extras"
             textbutton _("QUIT") at hover_anim:
                 hover_sound "audio/ui/ui_hover1.ogg"
                 activate_sound "audio/ui/ui_menu.ogg"
                 action Quit(confirm=not main_menu)
+                alt "quit to desktop"
 
     else:
         vbox:
@@ -384,16 +389,19 @@ screen navigation():
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
                     action ShowMenu("save")
+                    alt "save"
 
             textbutton _("Load"):
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
                     action ShowMenu("load")
+                    alt "load"
 
             textbutton _("Settings"):
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
                     action ShowMenu("settings")
+                    alt " game settings"
 
             if _in_replay:
 
@@ -405,6 +413,7 @@ screen navigation():
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
                     action MainMenu()
+                    alt "exit to title"
 
             if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -413,6 +422,7 @@ screen navigation():
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
                     action ShowMenu("controls")
+                    alt "controls"
 
             #textbutton _("About") action ShowMenu("about")
 
@@ -798,8 +808,8 @@ screen settings_gameplay():
                 hbox:
                     spacing 20
                     xpos 150
-                    textbutton _("On") action SetField(persistent,"screenshake",True) alt "screenshake on"
-                    textbutton _("Off") action SetField(persistent,"screenshake",False) alt "screenshake off"
+                    textbutton _("On") action SetField(persistent,"screenshake",True) alt "turn on screenshake"
+                    textbutton _("Off") action SetField(persistent,"screenshake",False) alt "turn off screenshake"
 
             hbox:
                 #spacing 130

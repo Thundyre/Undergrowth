@@ -366,7 +366,7 @@ style music_button_text is additional_button_text:
 
 #default radio_static = "static"
 
-default screenshake = True
+default persistent.screenshake = True
 
 screen add_options():
     add "bg forest1" at sepia
