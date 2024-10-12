@@ -596,8 +596,10 @@ label nov_7_11:
                 wt_ru "Call us anytime Morgan!"
                 wt_wi "If only this darn wind would let up, I'd love to meet you in person soon!"
                 nvl clear
+                jump wt_intro
             else:
                 "I don't think I need to do that now."
+                jump wt_intro
 
         "Beep Cassie":
             if not wt_intro_ca:
@@ -611,8 +613,10 @@ label nov_7_11:
                 $ chibi_cassie = "images/chibi/cassie_happy.png"
                 wt_ca "Anytime Morgan!"
                 nvl clear
+                jump wt_intro
             else:
                 "I don't think I need to do that now."
+                jump wt_intro
 
         "Beep Jax":
             if not wt_intro_ja:
@@ -632,14 +636,17 @@ label nov_7_11:
                 wt_ja "We'll have to see about that."
                 wt_mo "Bet."
                 nvl clear
+                jump wt_intro
             else:
                 "I don't think I need to do that now."
+                jump wt_intro
 
         "Beep Isaak":
             $ wt_intro_isa += 1
         #Isaak won't pick up the first or second time
             if wt_intro_isa <= 2:
                 "Nothing. There doesn't seem to be any response."
+                jump wt_intro
 
         #beeping Isaak for the third time
             elif wt_intro_isa == 3:
@@ -648,13 +655,16 @@ label nov_7_11:
                 wt_is "I'm Isaak, you're Morgan. I don't like small talk nor do I like people who try to make me engage in small talk."
                 wt_is "Goodbye."
                 nvl clear
+                jump wt_intro
 
             elif wt_intro_isa == 4:
                 "Isaak stops responding to you."
                 "Rude."
+                jump wt_intro
 
             else:
                 "I don't think I need to do that now."
+                jump wt_intro
 
         "Beep Eva":
             if not wt_intro_ev:
@@ -667,18 +677,22 @@ label nov_7_11:
                 wt_ev "I can't talk for long though. Gotta run some errands."
                 wt_mo "I'll leave you to it then."
                 nvl clear
+                jump wt_intro
             else:
                 "I don't think I need to do that now."
+                jump wt_intro
 
         "Beep Ruran":
             if wt_intro_ru == 0:
                 $ wt_intro_ru += 1
 
                 "Oh, well. It looks like her Walkie may be charging right now."
+                jump wt_intro
 
         #beep Ruran after the first beep
             else:
                 "Probably still charging."
+                jump wt_intro
 
         #everyone has to be called once, if not the player shouldn't be able to leave the selection screen
         "That's everyone!" if wt_intro_ca and wt_intro_ev and wt_intro_isa >= 1 and wt_intro_ja and wt_intro_ru == 1 and wt_intro_wi:
@@ -686,9 +700,8 @@ label nov_7_11:
             nvl clear
             jump wt_intro_end
         #choice branch ends
-    if not wt_intro_ca or not wt_intro_ev or wt_intro_isa < 1 or not wt_intro_ja or wt_intro_ru < 1 or wt_intro_wi:
-
-        jump wt_intro
+    # if not wt_intro_ca or not wt_intro_ev or wt_intro_isa < 1 or not wt_intro_ja or wt_intro_ru < 1 or not wt_intro_wi:
+    #     jump wt_intro
 
     label wt_intro_end:
         "I think that's all of them."
