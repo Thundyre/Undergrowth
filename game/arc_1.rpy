@@ -736,7 +736,7 @@ label nov_12:
     ky "Do you want a portrait of just yourself Susie?"
     vs "Moo!"
     hide ky
-    show bg village1_kyle with sdissolve
+    show bg village1_kyle with dissolve
 
     "Kyle rolled up his sleeves and got to work."
     play sound camera3
@@ -1238,7 +1238,7 @@ label nov_15:
 
 label nov_16:
     #EXT: Camp 1
-    scene bg camp1_day with moveindissolve
+    scene bg camp1_day with longfade
     play ambience amb_campday fadein 1.0
 
     "The next day after the storm, we got to work rebuilding the campsite."
@@ -2847,6 +2847,6 @@ label dec_6_1:
 #Morgan passes out
 #Scene transition: Fade to black
 #Arc 1 ends
-#Insert Candy's animated sequence here, Dec 6th Elliot's scene
+
 
 
