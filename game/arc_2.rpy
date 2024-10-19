@@ -84,6 +84,7 @@ label dec_7:
 
 
     wt_ja "How's the status of your camp? Heard you got knocked out, Morgan."
+    $ chibi_morgan = "images/chibi/morgan_worried.png"
     wt_mo "Yep. It still hurts too."
     wt_mo "Pearl, Gregory and Kyle are at base, and Aston is here with us to find Lorenzo."
     $ chibi_davos = "images/chibi/davos_worried.png"
@@ -1324,23 +1325,29 @@ label dec_18:
     #radio starts
     $ chibi_koda = "images/chibi/koda_happy.png"
     wt_ko "Hi Kyle! Is now a good time?"
+    $ chibi_kyle = "images/chibi/kyle_happy.png"
     wt_ky "I'm all ears!"
     $ chibi_eva = "images/chibi/eva_neutral.png"
     wt_ev "It would seem that most of the animals are okay."
     $ chibi_eva = "images/chibi/eva_worried.png"
     wt_ev "But there were two strange things you've encountered?"
+    $ chibi_kyle = "images/chibi/kyle_worried.png"
     wt_ky "Yeah, the bird stuff and a bear."
     $ chibi_eva = "images/chibi/eva_neutral.png"
     wt_ev "You saw a bear? Sure it wasn't something else?"
     $ chibi_koda = "images/chibi/koda_worried.png"
     wt_ko "Wouldn't they be hibernating?"
     wt_ky "That's what Pearl has been saying... but I am convinced that I saw one."
+    $ chibi_kyle = "images/chibi/kyle_neutral.png"
     wt_ky "If there really was one, I'll try snagging pictures again."
     wt_ko "Safety's first Kyle! Don't end up on the headlines."
+    $ chibi_kyle = "images/chibi/kyle_happy.png"
     wt_ky "I am a professional, don't you worry Koda!"
     wt_is "And the bird pictures... Those were the same ones like the one that Morgan picked up, yes?"
+    $ chibi_kyle = "images/chibi/kyle_neutral.png"
     wt_ky "Oh hey Isaak! And yes."
     wt_is "How many birds were there?"
+    $ chibi_kyle = "images/chibi/kyle_worried.png"
     wt_ky "About 8 to 10? Have you guys found out why this is happening?"
     wt_is "No. We haven't got an inkling."
     wt_ky "And its appearance? The globby slimy icky stuff?"
@@ -1351,6 +1358,7 @@ label dec_18:
     wt_ky "Sorry sorry. Just want to make sure that we're all safe while we're out there."
     $ chibi_eva = "images/chibi/eva_happy.png"
     wt_ev "Anyway, thanks Kyle. Really great shots by the way, stunning photos."
+    $ chibi_kyle = "images/chibi/kyle_happy.png"
     wt_ky "I take pride in that! Thank you!"
     stop ambience fadeout 3.0
     #radio ends
@@ -1366,14 +1374,17 @@ label dec_20:
         play sound beep
         #radio start
         wt_wi "Hello Morgan! Are you there?"
+        $ chibi_morgan = "images/chibi/morgan_neutral.png"
         wt_mo "What's up?"
         $ chibi_ruran = "images/chibi/ruran_worried.png"
         wt_ru "How is Aston?"
+        $ chibi_morgan = "images/chibi/morgan_worried.png"
         wt_mo "He's hanging in there I think. I'm looking out for him, don't worry."
         wt_ru "Aston is strong, perhaps too strong. He takes on everything and bottles up his own emotions."
         wt_ru "Lorenzo is the only person who he confides with, and with him missing..."
         $ chibi_wilbur = "images/chibi/wilbur_worried.png"
         wt_wi "Keep an eye on him will you, son? He needs all the support he can get."
+        $ chibi_morgan = "images/chibi/morgan_neutral.png"
         wt_mo "Of course."
         #radio ends
         nvl clear
@@ -1388,13 +1399,16 @@ label dec_20:
         #radio start
         $ chibi_wilbur = "images/chibi/wilbur_worried.png"
         wt_wi "Hello Morgan! Are you there?"
+        $ chibi_morgan = "images/chibi/morgan_neutral.png"
         wt_mo "What's up?"
         $ chibi_ruran = "images/chibi/ruran_worried.png"
         wt_ru "Any updates on Aston?"
+        $ chibi_morgan = "images/chibi/morgan_worried.png"
         wt_mo "Aston... hasn't come back."
         wt_ru "So there's no sign of both of them yet..."
         $ chibi_wilbur = "images/chibi/wilbur_worried.png"
         wt_wi "Keep us updated will you, son? Let us know if you've seen them."
+        $ chibi_morgan = "images/chibi/morgan_neutral.png"
         wt_mo "Of course."
         #radio ends
         nvl clear
@@ -1548,11 +1562,13 @@ label dec_25:
         "Beep Wilbur":
             if not christmas_wi:
                 $ christmas_wi = True
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "Merry Christmas, Wilbur!"
                 $ chibi_wilbur = "images/chibi/wilbur_happy.png"
                 wt_wi "Morgan! Thank you and Merry Christmas to you too!"
                 $ chibi_wilbur = "images/chibi/wilbur_neutral.png"
                 wt_wi "Make sure to have a great feast today and call your family, yes?"
+                $ chibi_morgan = "images/chibi/morgan_neutral.png"
                 wt_mo "You bet I will."
                 nvl clear
             else:
@@ -1561,10 +1577,12 @@ label dec_25:
         "Beep Ruran":
             if not christmas_ru:
                 $ christmas_ru = True
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "Merry Christmas, Ruran!"
                 $ chibi_ruran = "images/chibi/ruran_happy.png"
                 wt_ru "Merry Christmas to you too Morgan!"
                 wt_ru "I hope that your wishes come true."
+                $ chibi_morgan = "images/chibi/morgan_neutral.png"
                 wt_mo "Likewise to you Ruran."
                 nvl clear
             else:
@@ -1573,11 +1591,13 @@ label dec_25:
         "Beep Davos":
             if not christmas_da:
                 $ christmas_da = True
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "Davos! Merry Christmas!"
                 $ chibi_davos = "images/chibi/davos_neutral.png"
                 wt_da "Merry Christmas Morgan! I heard the moon's going to be bright tonight!"
                 $ chibi_davos = "images/chibi/davos_happy.png"
                 wt_da "You wouldn't want to miss out on that!"
+                $ chibi_morgan = "images/chibi/morgan_neutral.png"
                 wt_mo "That sounds lovely, I'll be sure to look up tonight."
                 nvl clear
             else:
@@ -1586,12 +1606,15 @@ label dec_25:
         "Beep Cassie":
             if not christmas_ca:
                 $ christmas_ca = True
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "Merry Christmas, Cassie!"
                 $ chibi_cassie = "images/chibi/cassie_happy.png"
                 wt_ca "Aww thank you Morgan! Merry Christmas to you too!"
+                $ chibi_morgan = "images/chibi/morgan_neutral.png"
                 wt_mo "Hope your ankle has been healing well."
                 $ chibi_cassie = "images/chibi/cassie_neutral.png"
                 wt_ca "Thankfully it has! Give it another week or two and I'll be up and running!"
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "It's a Christmas miracle!"
                 $ chibi_cassie = "images/chibi/cassie_happy.png"
                 wt_ca "You're so right."
@@ -1602,12 +1625,15 @@ label dec_25:
         "Beep Jax":
             if not christmas_ja:
                 $ christmas_ja = True
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "Merry Christmas!"
                 $ chibi_jax = "images/chibi/jax_neutral.png"
                 wt_ja "And Merry Christmas to you!"
+                $ chibi_morgan = "images/chibi/morgan_neutral.png"
                 wt_mo "How's Christmas for you so far?"
                 $ chibi_jax = "images/chibi/jax_happy.png"
                 wt_ja "I slept in today, so now I'm all refreshed."
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "Nothing beats those extra hours of sleep."
                 "Nice, Jax and I are like-minded in that regard."
                 nvl clear
@@ -1617,9 +1643,11 @@ label dec_25:
         "Beep Koda":
             if not christmas_ko:
                 $ christmas_ko = True
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "Hey Koda! Merry Christmas!"
                 $ chibi_koda = "images/chibi/koda_happy.png"
                 wt_ko "Morgan! Merry Christmas! I hope your day has been great!"
+                $ chibi_morgan = "images/chibi/morgan_neutral.png"
                 wt_mo "It has been, yes. Hope you're taking time off to actually relax!"
                 $ chibi_koda = "images/chibi/koda_neutral.png"
                 wt_ko "Eva kicked me out of the lab today just for that reason!"
@@ -1632,11 +1660,13 @@ label dec_25:
         "Beep Eva":
             if not christmas_ev:
                 $ christmas_ev = True
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "Merry Christmas, Eva!"
                 $ chibi_eva = "images/chibi/eva_happy.png"
                 wt_ev "Thanks! Merry Christmas to you too, Morgan."
                 $ chibi_eva = "images/chibi/eva_neutral.png"
                 wt_ev "I hope you prepared presents."
+                $ chibi_morgan = "images/chibi/morgan_worried.png"
                 wt_mo "Oh, I didn't."
                 $ chibi_eva = "images/chibi/eva_happy.png"
                 wt_ev "Really? That's a shame."
@@ -1651,6 +1681,7 @@ label dec_25:
             if not christmas_is:
                 $ christmas_is = True
                 wt_is "Hello?!"
+                $ chibi_morgan = "images/chibi/morgan_worried.png"
                 wt_mo "Merry Christmas... Isaak?"
                 wt_is "Oh, it's you."
                 wt_is "Merry Christmas to you too, Morgan."
@@ -1662,10 +1693,13 @@ label dec_25:
         "Beep Lorenzo":
             if not christmas_lo:
                 $ christmas_lo = True
-                wt_mo "Merry Christmas, Lorenzo."
                 if aston_safe:
+                    $ chibi_morgan = "images/chibi/morgan_neutral.png"
+                    wt_mo "Merry Christmas, Lorenzo."
                     "He won't respond because it's daytime, but I know that he can hear me, and that's all that matters."
                 else:
+                    $ chibi_morgan = "images/chibi/morgan_worried.png"
+                    wt_mo "Merry Christmas, Lorenzo."
                     "I'll bring Aston back to you."
                 nvl clear
             else:
@@ -2233,18 +2267,22 @@ label dec_31:
         wt_ja "Good morning. We're on our way."
         $ chibi_davos = "images/chibi/davos_happy.png"
         wt_da "Just 5 minutes or so left! We'll be there soon."
+        $ chibi_morgan = "images/chibi/morgan_happy.png"
         wt_mo "The view's great up here guys."
         $ chibi_jax = "images/chibi/jax_happy.png"
         wt_ja "Hell yeah, nice to finally watch you in action, Mr. Rusty with rifles."
+        $ chibi_morgan = "images/chibi/morgan_neutral.png"
         wt_mo "Is that going to be my new nickname?"
         $ chibi_jax = "images/chibi/jax_happy.png"
         wt_ja "Yeah."
+        $ chibi_morgan = "images/chibi/morgan_happy.png"
         wt_mo "I'm ready to be humbled then, Mr. Great with guns."
         $ chibi_davos = "images/chibi/davos_neutral.png"
         wt_da "What's with the rifle thing? Are you getting private lessons from Jax?"
         wt_mo "I wish."
         $ chibi_davos = "images/chibi/davos_happy.png"
         wt_da "Oh Morgan! I think I see you up there!"
+        $ chibi_morgan = "images/chibi/morgan_neutral.png"
         wt_mo "Nice! Let's meet up at the midpoint in 5."
         #radio ends
         "I look away from my Walkie to see someone waving."
@@ -2258,15 +2296,18 @@ label dec_31:
         wt_ja "Good morning. We're on our way."
         $ chibi_davos = "images/chibi/davos_neutral.png"
         wt_da "Just 5 minutes left. We'll be there soon."
+        $ chibi_morgan = "images/chibi/morgan_neutral.png"
         wt_mo "The view's great up here guys."
         $ chibi_jax = "images/chibi/jax_neutral.png"
         wt_ja "Hell yeah, nice to finally watch you in action, Mr. Rusty with rifles."
         wt_mo "Is that going to be my new nickname?"
         $ chibi_jax = "images/chibi/jax_happy.png"
         wt_ja "Yeah."
+        $ chibi_morgan = "images/chibi/morgan_happy.png"
         wt_mo "I'm ready to be humbled then, Mr. Great with guns."
         $ chibi_davos = "images/chibi/davos_happy.png"
         wt_da "I think I see you Morgan!"
+        $ chibi_morgan = "images/chibi/morgan_neutral.png"
         wt_mo "Nice! Let's meet up at the midpoint in 5."
         nvl clear
     #radio ends

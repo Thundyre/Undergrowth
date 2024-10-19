@@ -54,6 +54,10 @@ default chibi_jax = "c_ja_neutral"
 default chibi_koda = "c_ko_neutral"
 default chibi_ruran = "c_ru_neutral"
 default chibi_wilbur = "c_wi_neutral"
+default chibi_kyle = "c_ky_neutral"
+default chibi_morgan = "c_mo_neutral"
+# default chibi_walkie = "c_walkie"  
+
 
 ## Pancake
 default pancake = False

@@ -200,9 +200,11 @@ label nov_4:
 
             hide ast
             $ n4_call_da = True
+            $ chibi_morgan = "images/chibi/morgan_happy.png"
             wt_mo "Hello this is Morgan, is Davos here?"
             wt_da "Oh hello! Morgan, was it? It's nice to meet you!"
             wt_da "I'm in Camp 2, which is a little down south from where you're at!"
+            $ chibi_morgan = "images/chibi/morgan_neutral.png"
             wt_mo "Pleased to meet ya! There's also five of you there, yes?"
             $ chibi_davos = "images/chibi/davos_happy.png"
             wt_da "Haha, yes! I'm here with my pops Wilbur, Cassie, Ruran and Jax. They're kinda busy right now though."
@@ -213,10 +215,12 @@ label nov_4:
         "Call Koda" if not n4_call_ko:
             hide ast
             $ n4_call_ko = True
+            $ chibi_morgan = "images/chibi/morgan_happy.png"
             wt_mo "Hello, this is Morgan. Is this Koda?"
             $ chibi_koda = "images/chibi/koda_happy.png"
             wt_ko "Oh! I'm Koda, yes! I heard from Pearl you were arriving today."
             wt_ko "I'm over here at the RC with Eva and Isaak, they're both scientists. They're also both my supervisors."
+            $ chibi_morgan = "images/chibi/morgan_neutral.png"
             wt_mo "Are you not a scientist yourself Koda?"
             wt_ko "Well, not quite yet... but I'm a lab assistant for now!"
             $ chibi_koda = "images/chibi/koda_worried.png"
@@ -585,15 +589,19 @@ label nov_7_11:
                 $ wt_intro_wi = True
                 $ chibi_wilbur = "images/chibi/wilbur_happy.png"
                 wt_wi "Hello Morgan! I heard lots about you from Pearl and Davos!"
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "I'm surprised you already knew about me, they sure are close."
                 $ chibi_wilbur = "images/chibi/wilbur_neutral.png"
                 wt_wi "Well, yes! News travels fast around here lad! Oh, Ruran my friend, would you like to say hi?"
                 $ chibi_ruran = "images/chibi/ruran_happy.png"
                 wt_ru "Is it Morgan? It is nice to meet you Morgan, I'm Ruran."
+                $ chibi_morgan = "images/chibi/morgan_neutral.png"
                 wt_mo "Oh, the other camp medic? Aston told me that you're his mentor."
                 wt_ru "Yes I am. He's great, and it's always nice to have extra hands in case of emergencies."
                 wt_wi "Hope Aston will warm up to you soon, that boy has always been a man of few words. Know him long enough and you'll realize he's a big softie!"
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "'Aston' and 'softie' were two words I never expected in the same sentence, but thank you for telling me."
+                $ chibi_morgan = "images/chibi/morgan_neutral.png"
                 wt_mo "I'll let y'all go for now, tell Davos I said hi!"
                 wt_ru "Call us anytime, Morgan!"
                 wt_wi "If only this darn wind would let up, I'd love to meet you in person soon!"
@@ -611,6 +619,7 @@ label nov_7_11:
                 wt_mo "It's nice meeting you Cassie, I'm Morgan."
                 $ chibi_cassie = "images/chibi/cassie_neutral.png"
                 wt_ca "Well I just want to let you know that I have a map ready for you! The next time Lorenzo or Gregory comes by, I'll have them be our courier pigeon."
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "Thanks! I appreciate it!"
                 $ chibi_cassie = "images/chibi/cassie_happy.png"
                 wt_ca "Anytime Morgan!"
@@ -624,6 +633,7 @@ label nov_7_11:
             if not wt_intro_ja:
                 $ wt_intro_ja = True
                 wt_ja "Yeah, is this the new guy?"
+                $ chibi_morgan = "images/chibi/morgan_neutral.png"
                 wt_mo "Hi Jax, I'm Morgan. Just thought I'd check on everyone."
                 $ chibi_jax = "images/chibi/jax_happy.png"
                 wt_ja "That's nice of you."
@@ -631,11 +641,14 @@ label nov_7_11:
                 wt_ja "Just doing a routine cleanup on my rifles, nothing much."
                 wt_mo "Oh nice, didn't know we had rifles at camp."
                 wt_ja "You know how to handle one?"
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "I'm a little out of practice."
                 wt_ja "Usually people say that to sound humble."
+                $ chibi_morgan = "images/chibi/morgan_neutral.png"
                 wt_mo "Nah. I am actually pretty rusty."
                 $ chibi_jax = "images/chibi/jax_happy.png"
                 wt_ja "We'll have to see about that."
+                $ chibi_morgan = "images/chibi/morgan_happy.png"
                 wt_mo "Bet."
                 nvl clear
                 jump wt_intro
@@ -653,6 +666,7 @@ label nov_7_11:
         #beeping Isaak for the third time
             elif wt_intro_isa == 3:
                 wt_is "This better be an emergency."
+                $ chibi_morgan = "images/chibi/morgan_worried.png"
                 wt_mo "Not really. I'm just calling to say hi."
                 wt_is "I'm Isaak, you're Morgan. I don't like small talk nor do I like people who try to make me engage in small talk."
                 wt_is "Goodbye."
@@ -672,6 +686,7 @@ label nov_7_11:
             if not wt_intro_ev:
                 $ wt_intro_ev = True
                 wt_ev "Yes?"
+                $ chibi_morgan = "images/chibi/morgan_neutral.png"
                 wt_mo "It's Morgan, just thought I'd call to say hello!"
                 $ chibi_eva = "images/chibi/eva_happy.png"
                 wt_ev "Ah yes, the new guy. I'm Eva, I think Koda already told you."
@@ -1203,9 +1218,11 @@ label nov_15:
     #radio selection stuff
     menu:
         "Beep Eva":
+            $ chibi_morgan = "images/chibi/morgan_worried.png"
             wt_mo "Eva! Is everyone at the RC okay?"
             $ chibi_eva = "images/chibi/eva_worried.png"
             wt_ev "The three of us are fine. We're the ones with a roof here, we should be asking if you're okay."
+            $ chibi_morgan = "images/chibi/morgan_neutral.png"
             wt_mo "We're okay. And it sounds like Camp 2 is alright too!"
             $ chibi_koda = "images/chibi/koda_worried.png"
             wt_ko "Thank goodness... Update us if anything happens okay?"
@@ -1460,13 +1477,17 @@ label nov_17:
     play sound beep
     "Beep!"
     "Oh, it looks like I've got a message."
+    # $ chibi_walkie = "images/chibi/clearwalkie.png"
+    $ chibi_kyle = "images/chibi/kyle_happy.png"
     wt_ky "Woah Cassie does this mean he received it?"
     wt_mo "Loud and clear Kyle."
     wt_ca "Haha hello Morgan! I was just teaching him how the Walkie works, we happened to have a spare!"
     $ chibi_cassie = "images/chibi/cassie_neutral.png"
     wt_ca "And it looks like we have a different courier pigeon. I'll get Kyle to deliver your map tomorrow!"
+    $ chibi_morgan = "images/chibi/morgan_happy.png"
     wt_mo "Sweet! Thanks again Cassie, hope the new pigeon doesn't cause you too much trouble."
     wt_ca "Oh, I'm gonna put him to work. Don't you worry!"
+    $ chibi_kyle = "images/chibi/kyle_neutral.png"
     wt_ky "I don't have a say in this, do I?"
     wt_ca "Nopeeee, that's what you get for making me do extra work, I have to draw a new map for you."
     $ chibi_davos = "images/chibi/davos_worried.png"
@@ -1474,6 +1495,7 @@ label nov_17:
     pe "Spill the tea Davos, what are we looking at?"
     $ chibi_davos = "images/chibi/davos_happy.png"
     wt_da "You should've been here just now! H-H-Hi my name is K-Kyle, I think you're c-cute."
+    $ chibi_kyle = "images/chibi/kyle_worried.png"
     wt_ky "That is not what I said Davos!"
     $ chibi_jax = "images/chibi/jax_happy.png"
     wt_ja "It was definitely close enough, right Cassie?"
@@ -1487,6 +1509,7 @@ label nov_17:
     ast "Yes, he got bitten by a cow. I think we have enough supplies though."
     $ chibi_wilbur = "images/chibi/wilbur_happy.png"
     wt_wi "A cow? My, you're full of surprises aren't you lad?"
+
     nvl clear
     #beeps end
 
@@ -2007,9 +2030,11 @@ label nov_25:
     menu:
         "Beep Eva":
             wt_ev "What's up?"
+            $ chibi_morgan = "images/chibi/morgan_neutral.png"
             wt_mo "I have questions if you're up for it right now. It's about the samples."
             wt_ev "Shoot."
             wt_mo "Gregory is on his way to deliver wet soil to Isaak, it sounded urgent."
+            $ chibi_morgan = "images/chibi/morgan_worried.png"
             wt_mo "We found it near the lake. Does that mean anything serious?"
             $ chibi_eva = "images/chibi/eva_worried.png"
             wt_ev "Wet soil around the frozen lake? If it's not the snow melting on top of it..."
@@ -2022,6 +2047,7 @@ label nov_25:
             wt_ev "As for why Isaak needs it urgently... I have no clue. He has never brought that up to us."
             $ chibi_eva = "images/chibi/eva_neutral.png"
             wt_ev "Perhaps I should grab some from him and have a look at it myself."
+            $ chibi_morgan = "images/chibi/morgan_neutral.png"
             wt_mo "Well thanks for that Eva, that's good info."
             $ chibi_eva = "images/chibi/eva_happy.png"
             wt_ev "You're welcome."
@@ -2237,6 +2263,7 @@ label nov_30:
     $ chibi_davos = "images/chibi/davos_worried.png"
     wt_da "So the first bad news is that the lake is just gonna go poof on us?"
     wt_ev "Basically yes, Davos. We doubt it will happen anytime soon though."
+    $ chibi_morgan = "images/chibi/morgan_worried.png"
     wt_mo "What's the other bad news?"
     wt_is "The lake's water has an unknown strand of fungi-like contaminants."
     wt_is "But it may just be what Heralign Inc. needs."
@@ -2282,6 +2309,7 @@ label nov_30:
     show ast happy
     ast "Weren't you also fist pumping the air?"
     pe "Well yeah, I'm excited for him too!"
+    $ chibi_morgan = "images/chibi/morgan_happy.png"
     wt_mo "Cassie did you catch that? Kyle's going to stay for longer."
     $ chibi_ruran = "images/chibi/ruran_happy.png"
     wt_ru "She's hiding behind me."
@@ -2391,6 +2419,7 @@ label dec_3:
     mo "Sure thing bud."
     $ chibi_wilbur = "images/chibi/wilbur_happy.png"
     wt_wi "Aston my boy, are you there?"
+    $ chibi_morgan = "images/chibi/morgan_neutral.png"
     wt_mo "His hands are full but he's listening, Wilbur."
     $ chibi_wilbur = "images/chibi/wilbur_neutral.png"
     wt_wi "Okay, wonderful! We just want to check in on Kyle."
@@ -2422,11 +2451,14 @@ label dec_3:
     show ast neutral
     "Aston freezes up."
     "That's... quite unlike him."
+    $ chibi_morgan = "images/chibi/morgan_worried.png"
     wt_mo "Not that we've noticed here. You worried that it's contagious?"
     wt_ru "Always a possibility. It would be better to cover all our bases."
+    $ chibi_morgan = "images/chibi/morgan_neutral.png"
     wt_mo "Well, we'll let you know if anything new happens Ruran."
     $ chibi_ruran = "images/chibi/ruran_happy.png"
     wt_ru "That would be ideal, thank you Morgan."
+    $ chibi_morgan = "images/chibi/morgan_happy.png"
     wt_mo "And take care Cassie!"
     $ chibi_cassie = "images/chibi/cassie_happy.png"
     wt_ca "I shall."
@@ -2612,6 +2644,7 @@ label dec_5:
     wt_wi "That settles it then!"
     wt_wi "And it looks like we'll finally see Morgan in the flesh!"
     pe "Oh my goodness, that means everyone will meet Morgan for the first time!"
+    $ chibi_morgan = "images/chibi/morgan_happy.png"
     wt_mo "About time for that big reveal, huh?"
     wt_mo "And here I thought I could stay mysterious forever."
     $ chibi_wilbur = "images/chibi/wilbur_neutral.png"
@@ -2734,6 +2767,7 @@ label dec_6_1:
     wt_ru "Haha!"
     $ chibi_davos = "images/chibi/davos_neutral.png"
     wt_da "Also, I hope Pearl didn't forget her compass today."
+    $ chibi_morgan = "images/chibi/morgan_happy.png"
     wt_mo "She did."
     show pearl sad
     pe "Morgan! I am a good camp guide, I swear!"
@@ -2756,6 +2790,7 @@ label dec_6_1:
     wt_ru "That sounds great. We'll be just on time for lunch. This time, together."
     wt_mo "I should get Pearl to do a curtain reveal for me."
     pe "Well, I don't have curtains, but you can crouch behind all of us!"
+    $ chibi_morgan = "images/chibi/morgan_neutral.png"
     wt_mo "Sounds like a plan."
     gr "Morgan, can you hold the map for me? I just need to grab my compass real quick."
     stop music
