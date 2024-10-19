@@ -81,10 +81,11 @@ label nov_4:
     "After about an hour of walking, we've finally reached the campsite."
     scene bg camp1_day with dissolve
     "Against the white snow and the grayish brown trees, the pops of red and orange of the tents stand out beautifully."
+    show gr happy
     gr "Good job keeping up, let me call the others over 'ere."
     play music audio.light
     gr "Everyone gather round 'ere, we got a new recruit!"
-
+    hide gr
     show cg meeting
     $ persistent.gallery_meeting = True
     "Three people emerge from the tents."
@@ -233,6 +234,7 @@ label nov_4:
     show pearl happy with dissolve
     pe "It's getting late and the sun is going down, I think all that's left is to show you your tent!"
     show bg camp1_night
+    hide pearl
     "Pearl walks me out to an orange tent, ensures I have all my supplies and then heads to her own for the night."
 
     scene bg morganstent with dissolve
@@ -372,7 +374,7 @@ label nov_6:
     "I should go look for the rest."
 
     scene bg maintent_day with dissolve
-    show lorenzo pondering
+    show lorenzo pondering with dissolve
     "As I entered the tent, I saw a lone Lorenzo scribbling away at his notebook."
     "The rest were outside around the campfire, preparing breakfast."
 
@@ -395,7 +397,7 @@ label nov_6:
 
     scene bg forest3 with dissolve
     play ambience amb_campday fadein 1.0
-    show gr neutral at centerright
+    show gr neutral at centerright with dissolve
 
     "Gregory begins by going through a long checklist of items to collect for the day."
     play sound tools
@@ -1051,7 +1053,7 @@ label nov_15:
     "Status: Uninfected"
     "Uninfected?"
     "That's an odd way to label someone."
-    "Would Elliot's copy be in here then?"
+    "Would Elly's copy be in here then?"
 
     menu:
         "Dig through the documents":
@@ -1062,7 +1064,7 @@ label nov_15:
             "Status: Infected"
             "Well, reading that makes me suuuper comfortable."
             "There are multiple people with similar profiles like these, and their pictures have been torn out too."
-            "No sign of Elliot. I really hope he's not one of them."
+            "No sign of Elly. I really hope he's not one of them."
             "Better clean this up real quick."
 
         "Don't dig through them":
@@ -1115,8 +1117,8 @@ label nov_15:
     show gr happy
     gr "I'll leave it up to you guys."
 
-    show gr with move:
-        xpos -200
+    # show gr with move:
+    #     xpos -200
 
     hide gr
     "He grabbed all the files quickly and went back to his tent."
@@ -1229,7 +1231,7 @@ label nov_15:
 
     "The night ended after we did a round of damage inspection."
 
-    scene bg morganstent
+    scene bg morganstent with dissolve
     "Looks like everything is okay in my tent."
     "Pearl's going to be sleeping in the main tent for the night."
     "Surviving a snowstorm, huh? Well, that's one check off my extreme bucket list."
@@ -1292,7 +1294,7 @@ label nov_16:
     mo "Morgan, nice meeting you too. Why were you out here alone anyway?"
     ky "Long story short, I'm a wildlife photographer! I'm on a solo expedition to capture the animals around here."
 
-    "He proudly raises the camera hanging around his neck."
+    "He proudly raises the camera hanging around his shoulder."
     show ky smile
     ky "So like 2 days ago, I was at the village up north. Met the locals, some farm kids, and then I also got bitten by a cow. Pictures turned out great though!"
     mo "A cow? Looks like you had an eventful day. The villagers were friendlier I hope?"
