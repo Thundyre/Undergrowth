@@ -148,7 +148,9 @@ screen nvl_phonetext(dialogue):
                     $ current_chibi([chibi_wilbur])
                 elif d.who == "Kyle":
                     $ current_chibi([chibi_kyle])
-
+                # elif d.who == None:
+                #     $ current_chibi([chibi_walkie])
+                
              
 
                 #add message_icon:

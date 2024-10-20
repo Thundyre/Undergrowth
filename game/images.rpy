@@ -30,7 +30,7 @@ image c_ky_worried = "chibi/kyle_worried.png"
 image c_mo_happy = "chibi/morgan_happy.png"
 image c_mo_neutral = "chibi/morgan_neutral.png"
 image c_mo_worried = "chibi/morgan_worried.png"
-#image c_walkie = "chibi/clearwalkie.png"
+# image c_walkie = "chibi/clearwalkie.png"
 
 
 ## Backgrounds

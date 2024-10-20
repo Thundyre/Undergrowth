@@ -842,23 +842,23 @@ label nov_13:
     "Oh, is he on the phone?"
 
     gr "We'll have to wait till the lake unfreezes."
-    hi "So nothing new to report? It's getting pretty boring Gregory."
+    who "So nothing new to report? It's getting pretty boring Gregory."
     show gr neutral with dissolve
     gr "I can't move mountains nor change the seasons."
-    hi "What about the boy? The coppers would've been onto it by now."
+    who "What about the boy? The coppers would've been onto it by now."
 
     "Hey, that's me."
     show gr confused with sdissolve
     gr "What boy? What d'ya mean?"
     gr "You told me to take care of 'em, but Isaak insisted on helping me out."
-    hi "And you never questioned him?"
+    who "And you never questioned him?"
     show gr angry with dissolve
     gr "Look, you hired the guy, not me. And you told me to work with him."
     show gr neutral with dissolve
     gr "I never had a choice."
-    hi "And you never will until you get this done. Remember what's at stake here Gregory. I am not repeating myself."
+    who "And you never will until you get this done. Remember what's at stake here Gregory. I am not repeating myself."
     gr "Okay, okay. If pressure is what you want, I'll do it."
-    hi "Find him. I don't want to be the one playing clean up every time."
+    who "Find him. I don't want to be the one playing clean up every time."
 
     "Whoever he's talking to sounds full of themselves."
     show gr angry

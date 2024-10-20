@@ -672,34 +672,34 @@ label dec_12:
     "Gregory sits on a rock some distance away from the main tent."
     show gr neutral
     "It's time for his weekly check in."
-    hi "You're a day late."
+    who "You're a day late."
     gr "I know, lots of stuff happening at camp at the moment."
-    hi "Right. First an avalanche, then what?"
+    who "Right. First an avalanche, then what?"
     show gr confused
     gr "Missing people. Lorenzo and one of the villagers."
-    hi "The financier? Do you need me to send a replacement?"
+    who "The financier? Do you need me to send a replacement?"
     show gr angry
     gr "What?"
     gr "Listen here lady, I don't care what you rich people think about us."
     gr "But Lorenzo isn't someone you can just replace like that."
-    hi "The 'rich people' like the one you're talking to right now can buy you a liver."
+    who "The 'rich people' like the one you're talking to right now can buy you a liver."
     show gr worried
     gr "..."
-    hi "Think about it Gregory, once your job here is done, you'll have all the time in the world to be with your little girl."
-    hi "Forfeit the rescue mission if it's too time consuming."
-    hi "I want results, not excuses or sob stories."
+    who "Think about it Gregory, once your job here is done, you'll have all the time in the world to be with your little girl."
+    who "Forfeit the rescue mission if it's too time consuming."
+    who "I want results, not excuses or sob stories."
     show gr neutral
     "Gregory takes a moment to readjust."
 
     gr "Is there something you told Isaak but you're not telling me?"
-    hi "No, I haven't spoken to him in weeks."
-    hi "That boy never picks up."
+    who "No, I haven't spoken to him in weeks."
+    who "That boy never picks up."
     show gr worried
     gr "I'm worried about the mold."
     gr "What happens if the whole camp falls ill?"
-    hi "Be a darling and make the right decisions then. You already know how to prevent it."
-    hi "If Isaak could do it, you can too."
-    hi "Good luck Gregory. You know what's best for your family."
+    who "Be a darling and make the right decisions then. You already know how to prevent it."
+    who "If Isaak could do it, you can too."
+    who "Good luck Gregory. You know what's best for your family."
 
     "She hangs up on him."
     show gr neutral

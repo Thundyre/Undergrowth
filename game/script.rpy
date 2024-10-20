@@ -22,6 +22,8 @@ define v1 = Character("Child 1")
 define v2 = Character("Child 2")
 define vs = Character("Susie")
 define ha = Character("Hallucinations")
+define be = Character("Bear")
+define who = Character("???")
 
 # characters walkie-talkie
 define wt_mo = Character("Morgan", kind=nvl, callback=Phone_SendSound)
