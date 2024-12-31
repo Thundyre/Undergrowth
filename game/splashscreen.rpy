@@ -1,6 +1,6 @@
 ##Splashscreen
-image spooklogo:
-    "images/spooktoberlogo.png"
+image logo:
+    "images/winterjamlogo.png"
     zoom 0.8
 
 label splashscreen:
@@ -17,7 +17,7 @@ label splashscreen:
         ypos 200
     with Pause(0.5)
     
-    show spooklogo with dissolve:
+    show logo with dissolve:
         xalign 0.5
         yalign 0.5
     with Pause(1.0)

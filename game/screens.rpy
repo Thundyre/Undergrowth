@@ -262,15 +262,42 @@ screen quick_menu():
             yalign 1.0
             yoffset -25
 
-            imagebutton auto "gui/quickmenu/back_%s.png" action Rollback()
-            imagebutton auto "gui/quickmenu/auto_%s.png" action Preference("auto-forward", "toggle")
-            imagebutton auto "gui/quickmenu/skip_%s.png" action Skip() alternate Skip(fast=True, confirm=True)
-            imagebutton auto "gui/quickmenu/save_%s.png" action ShowMenu('save') 
-            imagebutton auto "gui/quickmenu/hide_%s.png" action HideInterface()
+            imagebutton auto "gui/quickmenu/back_%s.png" at hover_anim2:
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action Rollback()
+                alt "rollback"
+            imagebutton auto "gui/quickmenu/auto_%s.png" at hover_anim2:
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action Preference("auto-forward", "toggle")
+            imagebutton auto "gui/quickmenu/skip_%s.png" at hover_anim2:
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action Skip() alternate Skip(fast=False, confirm=True)
+                alt "skip"
+            imagebutton auto "gui/quickmenu/save_%s.png" at hover_anim2:
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action ShowMenu('save')
+                alt "save"
+            imagebutton auto "gui/quickmenu/hide_%s.png"at hover_anim2:
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action HideInterface()
+                alt "hide ui"
             #textbutton _("Q.Save") action QuickSave()
             #textbutton _("Q.Load") action QuickLoad()
-            imagebutton auto "gui/quickmenu/settings_%s.png" action ShowMenu('settings')
-            imagebutton auto "gui/quickmenu/log_%s.png" action ShowMenu('history')
+            imagebutton auto "gui/quickmenu/settings_%s.png" at hover_anim2:
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action ShowMenu('settings')
+                alt "settings"
+            imagebutton auto "gui/quickmenu/log_%s.png" at hover_anim2:
+                hover_sound "audio/ui/ui_hover1.ogg"
+                activate_sound "audio/ui/ui_menu.ogg"
+                action ShowMenu('history')
+                alt "dialogue history"
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -313,28 +340,33 @@ screen navigation():
 # textbutton _("Start"):
 #     hover_sound "audio/sfx_bell.mp3"
 #     activate_sound "audio/sfx_bell.mp3"
-#     action Start() 
-            textbutton _("START"):
+#     action Start()
+            textbutton _("START") at hover_anim:
                 hover_sound "audio/ui/ui_hover1.ogg"
                 activate_sound "audio/ui/ui_menu.ogg"
                 action Start()
-            textbutton _("CONTINUE"):
+                alt "start game"
+            textbutton _("CONTINUE") at hover_anim:
                 hover_sound "audio/ui/ui_hover1.ogg"
                 activate_sound "audio/ui/ui_menu.ogg"
                 action ShowMenu("load")
-            textbutton _("SETTINGS"):
+                alt "load game"
+            textbutton _("SETTINGS")at hover_anim:
                 hover_sound "audio/ui/ui_hover1.ogg"
                 activate_sound "audio/ui/ui_menu.ogg"
                 action ShowMenu("settings")
-            textbutton _("EXTRAS"):
+                alt "game settings"
+            textbutton _("EXTRAS") at hover_anim:
                 hover_sound "audio/ui/ui_hover1.ogg"
                 activate_sound "audio/ui/ui_menu.ogg"
                 action ShowMenu("gallery")
-            textbutton _("QUIT"):
+                alt "extras"
+            textbutton _("QUIT") at hover_anim:
                 hover_sound "audio/ui/ui_hover1.ogg"
                 activate_sound "audio/ui/ui_menu.ogg"
                 action Quit(confirm=not main_menu)
-                
+                alt "quit to desktop"
+
     else:
         vbox:
             style_prefix "navigation"
@@ -357,16 +389,19 @@ screen navigation():
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
                     action ShowMenu("save")
+                    alt "save"
 
             textbutton _("Load"):
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
                     action ShowMenu("load")
+                    alt "load"
 
             textbutton _("Settings"):
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
                     action ShowMenu("settings")
+                    alt " game settings"
 
             if _in_replay:
 
@@ -378,6 +413,7 @@ screen navigation():
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
                     action MainMenu()
+                    alt "exit to title"
 
             if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -386,6 +422,7 @@ screen navigation():
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
                     action ShowMenu("controls")
+                    alt "controls"
 
             #textbutton _("About") action ShowMenu("about")
 
@@ -397,7 +434,7 @@ screen navigation():
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
                     action Quit(confirm=not main_menu)
-            
+
             textbutton _("Return"):
                     hover_sound "audio/ui/ui_hover1.ogg"
                     activate_sound "audio/ui/ui_menu.ogg"
@@ -443,9 +480,9 @@ screen main_menu():
     tag menu
 
     add gui.main_menu_background# at sepia
-    
+
     #add "snow"
-    
+
     add "gui/navigation/logo.png":
         xysize (1350,375)
         xalign 0.5
@@ -583,7 +620,7 @@ screen file_slots(title):
     use navigation
 
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
-    
+
     vbox:
         xpos 634
         ypos 193
@@ -597,7 +634,7 @@ screen file_slots(title):
 
             hbox:
                 spacing 50
-                yoffset 10                
+                yoffset 10
                 #textbutton _("<") action FilePagePrevious()
                 hbox:
                     if config.has_autosave:
@@ -651,14 +688,16 @@ screen file_slots(title):
 
                         has vbox
                         xalign 0.5
-                        spacing 12
+                        spacing 15
                         add FileScreenshot(slot)
 
-                        text FileSaveName(slot):
-                            style "slot_name_text"
+                        vbox:
+                            xalign 0.5
+                            text FileSaveName(slot):
+                                style "slot_name_text"
 
-                        text FileTime(slot, format=_("%d %B %Y, %H:%M"), empty=_("empty slot")):
-                            style "slot_time_text"
+                            text FileTime(slot, format=_("%d %B %Y, %H:%M"), empty=_("empty slot")):
+                                style "slot_time_text"
 
                         xoffset 1 yoffset 14
                         key "save_delete" action FileDelete(slot)
@@ -744,7 +783,7 @@ screen settings():
         ypos 183
         spacing 65
         style_prefix "submenu"
-        textbutton _("Gameplay") action SetVariable("set_submenu", "gameplay") 
+        textbutton _("Gameplay") action SetVariable("set_submenu", "gameplay")
         textbutton _("Visual") action SetVariable("set_submenu", "visual")
         textbutton _("Audio") action SetVariable("set_submenu", "audio")
 
@@ -771,8 +810,8 @@ screen settings_gameplay():
                 hbox:
                     spacing 20
                     xpos 150
-                    textbutton _("On") action SetField(persistent,"screenshake",True)
-                    textbutton _("Off") action SetField(persistent,"screenshake",False)
+                    textbutton _("On") action SetField(persistent,"screenshake",True) alt "turn on screenshake"
+                    textbutton _("Off") action SetField(persistent,"screenshake",False) alt "turn off screenshake"
 
             hbox:
                 #spacing 130
@@ -787,8 +826,8 @@ screen settings_gameplay():
         vbox:
             style_prefix "additional"
             spacing 20
-            textbutton _("Content Warnings") action ShowMenu("warning") xoffset -30
-            textbutton _("Advanced Accessibility Settings") action Show("_accessibility") xoffset -30
+            textbutton _("Content Warnings") action ShowMenu("warning") #xoffset -30
+            textbutton _("Advanced Accessibility Settings") action Show("_accessibility") #xoffset -30
 
 screen settings_visual():
     tag submenu
@@ -797,7 +836,6 @@ screen settings_visual():
         box_wrap True
 
         if renpy.variant("pc") or renpy.variant("web"):
-            
             hbox:
                 style_prefix "radio"
                 vbox:
@@ -811,7 +849,7 @@ screen settings_visual():
                     spacing 10
                     hbox:
                         spacing 20
-                        textbutton _("Window") action Preference("display", "window")
+                        textbutton _("Windowed") action Preference("display", "window") selected not preferences.fullscreen
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
                     hbox:
                         spacing 5
@@ -832,7 +870,7 @@ screen settings_visual():
                 hbox:
                     yoffset 7
                     spacing 10
-                    add "tortoise" 
+                    add "tortoise"
                     bar:
                         value Preference("text speed")
                         released Show("text_test")
@@ -841,7 +879,7 @@ screen settings_visual():
             frame:
                 style_prefix "preview"
                 if not renpy.get_screen("text_test"):
-                    text "This is a preview of Text Display Speed"        
+                    text "This is a preview of Text Display Speed"
 
             hbox:
                 spacing 48
@@ -849,7 +887,7 @@ screen settings_visual():
                 hbox:
                     yoffset 7
                     spacing 10
-                    add "tortoise"  
+                    add "tortoise"
                     bar value Preference("auto-forward time") at rotate_bar
                     add "rabbit"
 
@@ -868,7 +906,7 @@ screen settings_audio():
                 label _("Sounds FX")
 
                 label _("UI Sounds")
-                
+
                 label _("Voice")
 
             vbox:
@@ -879,17 +917,17 @@ screen settings_audio():
                     label _("Mute all")
                     imagebutton auto "gui/settings/check_%s.png" action Preference("all mute", "toggle")
 
-                # hbox:
-                #     spacing 27
-                #     label _("Radio Static")
-                #     imagebutton auto "gui/settings/check_%s.png" action ToggleVariable("radio_static", "static", "clean")
-                #     textbutton _("Test"):
-                #         if radio_static == "static":
-                #             action Play("radio_effect", renpy.random.choice(["audio/ui/radio static/uistatic1.ogg", "audio/ui/radio static/uistatic2.ogg", "audio/ui/radio static/uistatic3.ogg"]))
-                #         else:
-                #             action Play("radio_effect", renpy.random.choice(["audio/ui/radio static/uiclean1.ogg", "audio/ui/radio static/uiclean2.ogg", "audio/ui/radio static/uiclean3.ogg"]))
-                #         pos (20,-20)
-    
+                hbox:
+                    spacing 27
+                    label _("Radio Static")
+                    imagebutton auto "gui/settings/check_%s.png" action ToggleVariable("radio_static", true_value="_s", false_value="_c")
+                    textbutton _("Test"):
+                        if radio_static == "_s":
+                            action Play("radio_effect", renpy.random.choice(["audio/ui/radio static/uistatic1.ogg", "audio/ui/radio static/uistatic2.ogg", "audio/ui/radio static/uistatic3.ogg"]))
+                        else:
+                            action Play("radio_effect", renpy.random.choice(["audio/ui/radio static/uiclean1.ogg", "audio/ui/radio static/uiclean2.ogg", "audio/ui/radio static/uiclean3.ogg"]))
+                        pos (20,-20)
+
         vbox:
             xoffset -50
             yoffset -10
@@ -899,7 +937,7 @@ screen settings_audio():
                 bar value Preference("music volume")
                 add "volplus"
                 #textbutton _("Test") action Play("music", sample_music)
-                    
+
             hbox:
                 add "volminus"
                 bar value Preference("ambience volume")
@@ -927,12 +965,12 @@ screen settings_audio():
 screen text_test:
     frame:
         xpos 678
-        ypos 646
+        ypos 636
         style_prefix "preview"
-        
+
         text "This is a preview of Text Display Speed" slow_cps True
-        
-    timer 2.0 action Hide("text_test")
+
+    timer 1.5 action Hide("text_test")
 
 transform rotate_bar:
     xzoom -1
@@ -1170,7 +1208,7 @@ style history_text:
     xpos 270
     ypos 5
     line_spacing 5
-    
+
 
 style history_label:
     xfill True
@@ -1183,7 +1221,7 @@ style history_button:
     hover_background Frame("gui/button/choice_hover_background.png", 30, 10)
     ysize 60
     xsize 345
-    
+
 style history_button_text:
     size 30
     color "#FFF"
@@ -1348,7 +1386,7 @@ screen gamepad_help():
 
 style controls_vscrollbar:
     xsize 25
-    
+
 style controls_label_text:
     color "#cfcfcf"
     size 30

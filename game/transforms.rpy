@@ -31,3 +31,15 @@ define moveindissolve = ComposeTransition(pushleft, after =dissolve)
     #     xpos 1000
     #     yalign 1.0
     # show ast neutral at right
+
+transform hover_anim:
+    on hover:
+        linear 0.3 yoffset -5
+    on idle:
+        linear 0.3 yoffset 0
+
+transform hover_anim2: #smaller hover for quickmenu
+    on hover:
+        linear 0.3 yoffset -3
+    on idle:
+        linear 0.3 yoffset 0
