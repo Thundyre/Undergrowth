@@ -26,6 +26,7 @@ define audio.anxious = "audio/music/mus_anxious.ogg"
 define audio.sad = "audio/music/mus_sad.ogg"
 define audio.xmas = "audio/music/mus_krimus.ogg"
 define audio.oof = "audio/music/mus_oof.ogg"
+define audio.ad = "audio/music/mus_ad.ogg"
 
 ## Ambience
 define amb_bad1 = "audio/ambience/amb_bad1.ogg"

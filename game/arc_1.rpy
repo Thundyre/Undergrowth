@@ -9,7 +9,7 @@ label nov_1:
     #$ ruran_safe = True #(False = Ruran ded/going to die)
     #$ ru_branch_yoinked = True #(True = Ruran cause of death is by tree-branch yoinkage)
     #jump dec_31_2
-    #jump jan_27
+    #jump jan_19
     #jump [whatever label you want here]
     
 
@@ -20,7 +20,7 @@ label nov_1:
     show cg morganhome1
     $ persistent.gallery_morganhome = True
 
-    play music audio.ad fadein 3.0
+    play music audio.ad
     tv_hi "Glow glow glow with NuGLO, let us help you restore your skin's shiny supple glow!"
     play sound phonebuzz
     tv_hi "So what are you waiting for? Grab your very own NuGLO samples at your local stores today!"

@@ -2569,8 +2569,14 @@ label jan_21:
     "......"
     voice "j21_ToYour"
     ja "To your right, Morgan!"
+
+    show cg baddawgclose with hpunch:
+        zoom 2.8
+        blur 0
+        xalign 0.1
+        yalign 0.7
+
     voice "j21_Dawg3"
-    show cg baddawgclose
     do "Hrrghau...{w=1.6}huyhr-aaaaun!"
     "Ah, shit. It looks uglier up close."
     stop music fadeout 1.0
@@ -2578,7 +2584,7 @@ label jan_21:
     mo "Not today."
 
     if j21_rifle:
-        scene black with dissolve
+        scene black with Dissolve(0.35)
         voice "j21_DawgDownRifle"
         do "Hrrrn...{w=1.5} Aoou-raaaur!"
         "Oh, I'm so not used to this recoil, but the dog's down."
@@ -2587,7 +2593,7 @@ label jan_21:
         ja "You're not rusty at all!"
 
     if j21_pistol:
-        scene black with dissolve
+        scene black with Dissolve(0.35)
         voice "j21_DawgDownPistol"
         do "Hrrrn...{w=1.5} Aoou-raaaur!"
         "I expected no less of me. Bullseye."

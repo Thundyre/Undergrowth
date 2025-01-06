@@ -68,8 +68,8 @@ label tr_dec_6:
 
 label tr_jan_11:
     #INT: Duo vignette scenes
-    show cg coliniscool
-    $ persistent.gallery_coliniscool = True
+    #show cg coliniscool
+    #$ persistent.gallery_coliniscool = True
     voice "tr_j11_AnyUpdates"
     co "Any updates from your end today?"
     with Pause(1.0)
@@ -97,11 +97,11 @@ label tr_jan_11:
     co "You can't cover your tracks forever."
     scene black with longfade
     with Pause(1.0)
-    hide cg coliniscool
+    #hide cg coliniscool
 
     #HILDA
-    show cg hildasucks with dissolve
-    $ persistent.gallery_hildasucks = True
+    #show cg hildasucks with dissolve
+    #$ persistent.gallery_hildasucks = True
     voice "tr_j11_ReadyWhen"
     hi "Ready when you are!"
     "Hilda is on a film set, preparing herself for a commercial shoot."
@@ -147,6 +147,6 @@ label tr_jan_11:
     voice "tr_j11_FromThe"
     hi "From the top, yes?"
     scene black with longfade
-    hide cg hildasucks with dissolve
+    #hide cg hildasucks with dissolve
 
     jump jan_11

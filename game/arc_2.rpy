@@ -2159,6 +2159,7 @@ label dec_28:
     "The choice that he made now affects everyone around him."
     "But to Gregory, it's a necessary burden to bear."
     stop music fadeout 3.0
+    jump dec_29
 
 label dec_30:
     $ current_day = _("December 30th")
