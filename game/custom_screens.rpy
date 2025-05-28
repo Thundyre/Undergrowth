@@ -98,12 +98,12 @@ screen credits():
                         label _("Director, Writer")
                         label _("Narrative Consultant, Art Director")
                         label _("Lead Programmer")
-                        label _("UI Designer, Misc. art,\nAssistant Programmer ")
-                        label _("Sprite Artist")
+                        label _("Character Artist, UI Designer,\nAssistant Programmer ")
+                        label _("Character Artist")
 
                         #label _("Animator")
                         label _("Composer")
-                        label _("Voice Director")
+                        label _("Voice Director, Script Editor")
 
                         label "" text_size 10
                         label _("Cast") text_size 60
@@ -126,14 +126,15 @@ screen credits():
                         label _("Eva")
                         label _("Isaak")
                         label _("Elliot")
-                        label _("Villagers")
+                        label _("Ferdinand, Matt")
+                        label _("Ethan, Stephen")
 
                     vbox:
                         xalign 1.0
                         spacing 20
                         text "" size 90
 
-                        text "{a=https://twitter.com/_AzuFx_}Kylie Siaw{/a}"
+                        text "{a=https://azufx.bsky.social}Kylie Siaw{/a}"
                         text "{a=https://huurreprinssi.itch.io/}Elina Heino{/a}"
                         text "{a=https://f1reshark.itch.io/}Karolina \"F1reshark\" Mendel{/a}"
                         text "{a=https://ruminio.itch.io/}Ruminio{/a}"
@@ -142,29 +143,30 @@ screen credits():
 
                         #text "{a=https://candycornskull.itch.io/}Candycornskull{/a}"
 
-                        text "{a=https://twitter.com/henkkastorm}Henri Tikkala{/a}"
-                        text "{a=https://twitter.com/barkervoiceover}Jett Barker{/a}"
+                        text "{a=https://henkkastorm.bsky.social}Henri Tikkala{/a}"
+                        text "{a=https://jettbarker.bsky.social}Jett Barker{/a}"
 
                         text "" size 120
 
                         text "{a=https://twitter.com/XantheVyce}Xander M. Grant{/a}"
                         text "{a=https://twitter.com/MahoganyVoice}James Rudolph{/a}"
-                        text "{a=https://twitter.com/VanessaBenVO}Vanessa Benoit{/a}"
+                        text "{a=https://vanessabenvo.bsky.social}Vanessa Benoit{/a}"
                         text "{a=https://tpvoiceworks.com/}Tyler Pasquarella{/a}"
-                        text "{a=https://twitter.com/ZyraBisqueraVO}Zyra Bisquera{/a}"
-                        text "{a=https://twitter.com/jcuevasva}J Cuevas{/a}"
-                        text "{a=https://twitter.com/wiwyums}Lee Williams{/a}"
-                        text "{a=https://twitter.com/bpjenkin123088}Brandon P. Jenkins{/a}"
-                        text "{a=https://twitter.com/joshbeardvo}Josh Beard{/a}"
-                        text "{a=https://twitter.com/PATTERNSCREAMER}Kyle Randal{/a}"
+                        text "{a=https://zyrabisquera.bsky.social}Zyra Bisquera{/a}"
+                        text "{a=https://bsky.app/profile/j-cuevas.com}J Cuevas{/a}"
+                        text "{a=https://wiwyums.bsky.social}Lee Williams{/a}"
+                        text "{a=https://brandonpjenkinsvo.bsky.social}Brandon P. Jenkins{/a}"
+                        text "{a=https://joshbeardvo.bsky.social}Josh Beard{/a}"
+                        text "{a=https://patternscreamer.bsky.social}Kyle Randal{/a}"
                         text "{a=https://itsnotmika.carrd.co/}Mika Nerida{/a}"
-                        text "{a=https://twitter.com/BreeFrankelVO}Bree Frankel{/a}"
-                        text "{a=https://twitter.com/Rekhova1}Noah Belachew{/a}"
-                        text "{a=https://twitter.com/AmadaManaVA}Dante Amada{/a}"
-                        text "{a=https://twitter.com/StephSwanQuills}Stephanie Tobin{/a}"
-                        text "{a=https://twitter.com/barkervoiceover}Jett Barker{/a}"
+                        text "{a=https://breefrankelvo.bsky.social}Bree Frankel{/a}"
+                        text "{a=https://noahbelachew.bsky.social}Noah Belachew{/a}"
+                        text "{a=https://amadamana.bsky.social}Dante Amada{/a}"
+                        text "{a=https://stephswanquills.bsky.social}Stephanie Tobin{/a}"
+                        text "{a=https://jettbarker.bsky.social}Jett Barker{/a}"
                         text "{a=https://taylorfvoiceover.com/}Taylor Fernandez{/a}"
-                        text "{a=https://twitter.com/JJ11818}Jason Hall{/a}"
+                        text "{a=https://jj11818.bsky.social}Jason Hall{/a}"
+                        text "{a=https://myaturii.bsky.social}Nate Fernandez{/a}"
 
                 text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
         add "gui/settings/arrow_down.png" xalign 1.0 xoffset -2
@@ -366,7 +368,7 @@ style music_button_text is additional_button_text:
 
 #default radio_static = "static"
 
-default screenshake = True
+default persistent.screenshake = True
 
 screen add_options():
     add "bg forest1" at sepia
@@ -382,3 +384,27 @@ screen add_options():
 
                 #label _("Radio Static")
                 label _("Screenshake")
+
+## Save names for dates ############
+##
+
+init python:
+
+    def current_date(arc, day):
+        renpy.restart_interaction()
+        return arc+"\n"+day
+
+## Date label #################################
+##
+## label with current in-game day
+
+default current_day = None
+screen date_label():
+    frame :
+        xalign 1.0
+        xysize (400,100)
+        background Frame("gui/frame.png", 20, 20)
+        text current_day:
+            xalign 0.5
+            yalign 0.5
+    timer 2.5 action [Hide("date_label", transition=Dissolve(0.5))]

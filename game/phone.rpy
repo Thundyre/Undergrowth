@@ -125,11 +125,11 @@ screen nvl_phonetext(dialogue):
                     xoffset 15
                     box_reverse True
 
-                
+
                 $ chibi_clear()
                 #show an icon
-                #if d.who == MC_Name:
-                #    $ current_chibi(None)
+                if d.who == MC_Name:
+                    $ current_chibi([chibi_morgan])
                 if d.who == "Cassie":
                     $ current_chibi([chibi_cassie])
                 elif d.who == "Davos":
@@ -146,6 +146,12 @@ screen nvl_phonetext(dialogue):
                     $ current_chibi([chibi_ruran])
                 elif d.who == "Wilbur":
                     $ current_chibi([chibi_wilbur])
+                elif d.who == "Kyle":
+                    $ current_chibi([chibi_kyle])
+                # elif d.who == None:
+                #     $ current_chibi([chibi_walkie])
+                
+             
 
                 #add message_icon:
                 #    yalign 0.5
