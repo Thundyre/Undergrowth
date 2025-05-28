@@ -432,8 +432,8 @@ label dec_29:
     play music audio.light
     $ current_day = _("December 29th")
     $ save_name = current_date(_("Arc 2"), current_day)
-    show screen date_label with dissolve
     scene evalab with fade # Can be Eva's station or RC lobby?
+    show screen date_label with dissolve
 
     show ev happy at centerleft
     voice "d29_MindGetting"
@@ -460,37 +460,81 @@ label dec_29:
     "Koda cracks open the door to Isaak's lab, unintentionally walking in on a heated conversation through the phone."
     "They debated when to make their presence known to Isaak…but couldn't find a chance to."
     play music audio.sad
-    voice "d29_IsaakHave"
+    #voice "d29_IsaakHave"
+    if radio_static == "_s":
+        voice "d29_IsaakHave_s"
+    else:
+        voice "d29_IsaakHave_c"
     who "Isaak, have you no remorse?"
     voice "d29_HadHe"
     isa "Had he followed the instructions, I'm sure he would've come home safely."
-    voice "d29_YoureAwful"
+    #voice "d29_YoureAwful"
+    if radio_static == "_s":
+        voice "d29_YoureAwful_s"
+    else:
+        voice "d29_YoureAwful_c"
     who "You're awful."
-    voice "d29_HeWas"
+    #voice "d29_HeWas"
+    if radio_static == "_s":
+        voice "d29_HeWas_s"
+    else:
+        voice "d29_HeWas_c"
     who "He was supposed to come home for Christmas."
     voice "d29_IKnow"
     isa "{w=2.5}I know."
-    voice "d29_IsThis"
+    #voice "d29_IsThis"
+    if radio_static == "_s":
+        voice "d29_IsThis_s"
+    else:
+        voice "d29_IsThis_c"
     who "Is this what you call 'helping us?'"
-    voice "d29_WeBabysit"
+    #voice "d29_WeBabysit"
+    if radio_static == "_s":
+        voice "d29_WeBabysit_s"
+    else:
+        voice "d29_WeBabysit_c"
     who "We babysit, we do your bidding, and it's just 'all in the name of science?'"
-    voice "d29_YouMade"
+    #voice "d29_YouMade"
+    if radio_static == "_s":
+        voice "d29_YouMade_s"
+    else:
+        voice "d29_YouMade_c"
     who "You made it out, came back…and what did you bring? {w=0.7}Nothing."
-    voice "d29_YourFamily"
+    #voice "d29_YourFamily"
+    if radio_static == "_s":
+        voice "d29_YourFamily_s"
+    else:
+        voice "d29_YourFamily_c"
     who "Your family, your mother…"
     voice "d29_LeaveMy"
     isa "Leave my mother out of this."
-    voice "d29_YouYou"
+    #voice "d29_YouYou"
+    if radio_static == "_s":
+        voice "d29_YouYou_s"
+    else:
+        voice "d29_YouYou_c"
     who "You… You have blood on your hands, you-"
     play sound phonesnatch
     "Incoherent noises could be heard from the other side of the call."
     "Another person seems to have taken hold of the phone."
     stop music fadeout 15.0
-    voice "d29_IsaakIm"
+    #voice "d29_IsaakIm"
+    if radio_static == "_s":
+        voice "d29_IsaakIm_s"
+    else:
+        voice "d29_IsaakIm_c"
     who "Isaak, I'm... {w=1.7}Isaak, I'm sorry about that. I'll talk to her." 
-    voice "d29_LookWe"
+    #voice "d29_LookWe"
+    if radio_static == "_s":
+        voice "d29_LookWe_s"
+    else:
+        voice "d29_LookWe_c"
     who "Look, we may not know exactly what it is you're doing, but there are some people that are still very proud of you."
-    voice "d29_WereStill"
+    #voice "d29_WereStill"
+    if radio_static == "_s":
+        voice "d29_WereStill_s"
+    else:
+        voice "d29_WereStill_c"
     who "We're still family… Right?"
     voice "d29_ThatWould"
     isa "That would be ideal."
