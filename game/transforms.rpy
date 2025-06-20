@@ -9,6 +9,7 @@ transform centerright:
     yalign 1.0
 
 define sdissolve = Dissolve(0.3)
+define ldissolve = Dissolve(2.0)
 
 define longfade= Fade(0.5, 1.0, 0.5)
 

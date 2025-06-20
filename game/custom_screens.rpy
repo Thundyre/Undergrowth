@@ -139,7 +139,7 @@ screen credits():
                         text "{a=https://f1reshark.itch.io/}Karolina \"F1reshark\" Mendel{/a}"
                         text "{a=https://ruminio.itch.io/}Ruminio{/a}"
                         text "" size 15
-                        text "{a=https://twitter.com/MasterThoe}Thoe{/a}"
+                        text "{a=https://bsky.app/profile/iamthoe.bsky.social}Thoe{/a}"
 
                         #text "{a=https://candycornskull.itch.io/}Candycornskull{/a}"
 
@@ -148,7 +148,7 @@ screen credits():
 
                         text "" size 120
 
-                        text "{a=https://twitter.com/XantheVyce}Xander M. Grant{/a}"
+                        text "{a=https://xmgrantvo.carrd.co/}Xander M. Grant{/a}"
                         text "{a=https://twitter.com/MahoganyVoice}James Rudolph{/a}"
                         text "{a=https://vanessabenvo.bsky.social}Vanessa Benoit{/a}"
                         text "{a=https://tpvoiceworks.com/}Tyler Pasquarella{/a}"
@@ -278,6 +278,8 @@ screen gallery():
 define track1 = "audio/music/mus_light.ogg"
 define track2 = "audio/music/mus_neutral.ogg"
 define track3 = "audio/music/mus_anxious.ogg"
+define track4 = "audio/music/mus_sad.ogg"
+define track5 = "audio/music/mus_oof.ogg"
 
 init python:
 
@@ -288,6 +290,8 @@ init python:
     mr.add("audio/music/mus_neutral.ogg", action=SetScreenVariable("current_track", 1))
     mr.add("audio/music/mus_light.ogg", action=SetScreenVariable("current_track", 2))
     mr.add("audio/music/mus_anxious.ogg", action=SetScreenVariable("current_track", 3))
+    mr.add("audio/music/mus_sad.ogg", action=SetScreenVariable("current_track", 4))
+    mr.add("audio/music/mus_oof.ogg", action=SetScreenVariable("current_track", 5))
 
 default current_track = 1
 
@@ -313,6 +317,8 @@ screen music_room():
                     textbutton "Track 1" action mr.Play("audio/music/mus_neutral.ogg")
                     textbutton "Track 2" action mr.Play("audio/music/mus_light.ogg")
                     textbutton "Track 3" action mr.Play("audio/music/mus_anxious.ogg")
+                    textbutton "Track 4" action mr.Play("audio/music/mus_sad.ogg")
+                    textbutton "Track 5" action mr.Play("audio/music/mus_oof.ogg")
         vbox:
             spacing 40
             xsize 440

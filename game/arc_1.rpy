@@ -8,7 +8,7 @@ label nov_1:
     #$ days404testing = True #If enabled, will have noncontiguous 404'd Days skip forward so you can see all of 'em in sequence (not chronological)
     #$ ruran_safe = True #(False = Ruran ded/going to die)
     #$ ru_branch_yoinked = True #(True = Ruran cause of death is by tree-branch yoinkage)
-    #jump nov_30
+    #jump nov_17
     #jump dec_19
     #jump [whatever label you want here]
     
@@ -21,11 +21,14 @@ label nov_1:
     $ persistent.gallery_morganhome = True
 
     play music audio.ad
-    voice "tr_n1_GlowGlow" #always post-processed, no branching needed
-    tv_hi "Glow, glow, glow with NuGLO, let us help you restore your skin's shiny, supple glow!"
+    #voice "tr_n1_GlowGlow" #always post-processed, no branching needed
+    pause(12.1)
+    hi "Glow, glow, glow with NuGLO! Let us help you restore your skin's shiny, supple glow! {w=7.6}{nw}"
+    
     play sound phonebuzz
-    voice "tr_n1_SoWhat"
-    tv_hi "So what are you waiting for? Grab your very own NuGLO samples at your local stores today!"
+    #voice "tr_n1_SoWhat"
+    queue music audio.adwohilda
+    hi "So what are you waiting for? Grab your very own NuGLO samples at your local stores today!"
     stop music fadeout 5.0
 
     $ hidebubbles = True
@@ -820,7 +823,7 @@ label nov_7_11:
     gr "Isaak, samples are coming in about 30 minutes. Do you need anything else?"
     voice "n10_NoThatll"
     isa "No, that'll do. I'll have Koda retrieve it for me later."
-    voice "n10YoureReally"
+    voice "n10_YoureReally"
     gr "You're really working that kid to the bone, huh?"
     isa "They're helpful. I don't see why not?"
     show gr angry with sdissolve
@@ -1083,14 +1086,13 @@ label nov_7_11:
         #everyone has to be called once, if not the player shouldn't be able to leave the selection screen
 
         #Next line split/commented out for now because having to hit this button is inconsistent with future comparable menus (e.g. J13); can add back in if desired
-        #"That's everyone!" (was previously right before "if wt_intro_ca..." etc)
-    if wt_intro_ca and wt_intro_ev and wt_intro_isa >= 1 and wt_intro_ja and wt_intro_ru == 1 and wt_intro_wi:
-    #exit radio to end branch
-        nvl clear
-        jump wt_intro_end
-        #choice branch ends
-    # if not wt_intro_ca or not wt_intro_ev or wt_intro_isa < 1 or not wt_intro_ja or wt_intro_ru < 1 or not wt_intro_wi:
-    #     jump wt_intro
+        "That's everyone!" if wt_intro_ca and wt_intro_ev and wt_intro_isa >= 1 and wt_intro_ja and wt_intro_ru == 1 and wt_intro_wi:
+        #exit radio to end branch
+            nvl clear
+            jump wt_intro_end
+            #choice branch ends
+    if not wt_intro_ca or not wt_intro_ev or wt_intro_isa < 1 or not wt_intro_ja or wt_intro_ru < 1 or not wt_intro_wi:
+        jump wt_intro
 
     label wt_intro_end:
         "I think that's all of them."
@@ -2114,7 +2116,7 @@ label nov_17:
         voice "n17_WoahCassie_s"
     else:
         voice "n17_WoahCassie_c"
-    wt_ky "Woah, Cassie, does this mean he received it?"
+    wt_ky "Woah, Cassie, does this mean he \nreceived it?"
     voice "n17_LoudAnd"
     wt_mo "Loud and clear, Kyle."
     if radio_static == "_s":
@@ -2130,7 +2132,7 @@ label nov_17:
     wt_ca "And it looks like we have a different courier pigeon. I'll get Kyle to deliver your map tomorrow!"
     $ chibi_morgan = "images/chibi/morgan_happy.png"
     voice "n17_SweetThanks"
-    wt_mo "Sweet! Thanks again Cassie, hope the new pigeon doesn't cause you too much trouble."
+    wt_mo "Sweet! Thanks again, Cassie. Hope that new pigeon doesn't cause you too much trouble."
     if radio_static == "_s":
         voice "n17_OhIm_s"
     else:
@@ -2154,13 +2156,13 @@ label nov_17:
         voice "n17_YouTwo_c"
     wt_da "You two should get a room, it's blinding!"
     voice "n17_SpillThe"
-    wt_pe "Spill the tea Davos, what are we looking at?"
+    wt_pe "Spill the tea Davos, what are we \nlooking at?"
     $ chibi_davos = "images/chibi/davos_happy.png"
     if radio_static == "_s":
         voice "n17_YouShouldve_s"
     else:
         voice "n17_YouShouldve_c"
-    wt_da "You should've been here just now! H-H-Hi, my name is K-Kyle, I think you're c-cute."
+    wt_da "You should've been here just now! \"H-H-Hi, my name is K-Kyle, I think you're c-cute.\""
     $ chibi_kyle = "images/chibi/kyle_worried.png"
     if radio_static == "_s":
         voice "n17_ThatIs_s"
@@ -2172,7 +2174,7 @@ label nov_17:
         voice "n17_ItWas_s"
     else:
         voice "n17_ItWas_c"
-    wt_ja "It was definitely close enough...right, Cassie?"
+    wt_ja "It was definitely close enough...\nRight, Cassie?"
     $ chibi_cassie = "images/chibi/cassie_worried.png"
     if radio_static == "_s":
         voice "n17_DDontDrag_s"
@@ -2180,7 +2182,7 @@ label nov_17:
         voice "n17_DDontDrag_c"
     wt_ca "D-Don't drag me into this!"
     voice "n17_WellIt"
-    wt_mo "Well, it sounds like you guys are having fun without us, alright."
+    wt_mo "Well, it sounds like you guys are \nhaving fun without us, alright."
     voice "n17_RememberTo"
     wt_ast "Remember to grab food supplies too, Kyle."
     if radio_static == "_s":

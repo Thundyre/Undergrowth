@@ -2531,7 +2531,7 @@ label dec_26:
     play music audio.neutral
 
     "Ah yes, it's time for my favorite hobby."
-    "Tormenting my beloved 37 year old child."
+    "Tormenting my beloved 37-year-old child."
     "But first, I should send him some pictures."
     "And... Sent!"
     play sound ding
