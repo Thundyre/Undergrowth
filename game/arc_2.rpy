@@ -5,55 +5,72 @@ label dec_6_2:
     #Scene transition: Fade to black, then fade back in slowly
     scene bg maintent_night with longfade
     play ambience amb_intcampnight fadein 1.0
-    "I don't know how long it has been."
+    "I don't know how long it's been."
     "The pounding pain in the back of my head radiates as I try to take in my surroundings."
-    "This is... the main tent?"
-    "There was an avalanche and I... I was trying to hide from the snow and..."
+    "This is...{w=1.0}the main tent?"
+    "There was an avalanche and I... {w=0.8}I was trying to hide from the snow and..."
     show ast happy at centerleft
 
     show pearl smile at centerright
+    voice "d6_Morgan"
     ast "Morgan!"
+    voice "d6_HesAwake"
     pe "He's awake!"
 
-    "I'm relieved that Aston and Pearl are here... but where are the rest?"
+    "I'm relieved that Aston and Pearl are here...but where are the rest?"
 
     show ast neutral
+    voice "d6_YouAre"
     ast "You are okay, Morgan. We're in the main tent."
+    voice "d6_OrMain"
     pe "Or main tent 2.0."
+    voice "d6_YouHave"
     ast "You have a wound at the back of your head, perhaps caused by falling debris. You were an unlucky target."
     show ast inthought
+    voice "d6_AndYouve"
     ast "And you've been out for about 5 hours now."
-    mo "Where's Lorenzo... Kyle... and Gregory?"
+    voice "d6_WheresLorenzo"
+    mo "Where's Lorenzo... Kyle...{w=0.5}and Gregory?"
 
     show pearl sad
     show ast sad
 
-    "Pearl looks down... and Aston, he's looking up?"
+    "Pearl looks down...and Aston, he's looking up?"
     "That was not the reaction I'd hope to see."
     "I never thought I'd see him emotional, but it looks like Aston's on the verge of breaking down."
 
     show pearl neutral
+    voice "d6_GregoryHes"
     pe "Gregory... He's outside the tent. He's fine."
     show pearl sad
+    voice "d6_KyleIs"
     pe "Kyle is also fine. He's sorting through our supplies and setting up our sleeping space for tonight."
 
     show pearl depressed
+    voice "d6_LorenzoWe"
     pe "Lorenzo... We haven't found him."
+    voice "d6_WeveTried"
     pe "We've tried beeping his Walkie, but we haven't received anything."
     show pearl neutral
+    voice "d6_ThatsHow"
     pe "That's how we found you! Yours beeped under the snow and we heard it."
 
     hide ast with sdissolve
     "Aston turns away from us."
 
+    voice "d6_LetsGo"
     mo "Let's go find him."
-    ast "You should rest Morgan, and... it's too dark outside to see right now."
+    voice "d6_YouShould"
+    ast "You should rest Morgan, and...it's too dark outside to see right now."
+    voice "d6_WeveAlready"
     ast "We've already searched the area around us before sundown."
 
     show pearl sad
     "His voice is cracking. Pearl reaches out to hold his hand."
 
+    voice "d6_FirstThing"
     mo "First thing at dawn then, Aston."
+    voice "d6_LorenzoIs"
     mo "Lorenzo is strong, and I am positive that he'll be okay."
 
     show ast neutral at centerleft
@@ -85,34 +102,84 @@ label dec_7:
     "They're trying to cover the area around C2, south of the impact."
     "We doubt that Lorenzo would be around there, since he was with Aston right before the avalanche."
     "But we don't want to take any chances."
-
-
+    #(TOGGLE) ja da
+    
+    if radio_static == "_s":
+        voice "d7_HowsThe_s"
+    else:
+        voice "d7_HowsThe_c"
     wt_ja "How's the status of your camp? Heard you got knocked out, Morgan."
     $ chibi_morgan = "images/chibi/morgan_worried.png"
+    voice "d7_YepIt"
     wt_mo "Yep. It still hurts too."
+    voice "d7_PearlGregory"
     wt_mo "Pearl, Gregory and Kyle are at base, and Aston is here with us to find Lorenzo."
     $ chibi_davos = "images/chibi/davos_worried.png"
+    if radio_static == "_s":
+        voice "d7_IPromise_s"
+    else:
+        voice "d7_IPromise_c"
     wt_da "I promise we'll do our best, Aston. We'll find him."
     $ chibi_jax = "images/chibi/jax_neutral.png"
+
+    if radio_static == "_s":
+        voice "d7_OnC2s_s"
+    else:
+        voice "d7_OnC2s_c"
     wt_ja "On C2's side, Cassie sprained her ankle. Wilbur had a few scrapes."
     $ chibi_jax = "images/chibi/jax_worried.png"
+    
+    if radio_static == "_s":
+        voice "d7_RuranAnd_s"
+    else:
+        voice "d7_RuranAnd_c"
     wt_ja "Ruran and I got pushed out pretty far from the rest. Took a while for us to locate where we were."
+    
+    if radio_static == "_s":
+        voice "d7_IWas_s"
+    else:
+        voice "d7_IWas_c"
     wt_da "I was lucky enough to avoid most of the hits."
 
     "Aston has been trying to reach Lorenzo through his Walkie."
 
+    if radio_static == "_s":
+        voice "d7_EvaAnd_s"
+    else:
+        voice "d7_EvaAnd_c"
     wt_ja "Eva and Koda were pretty worried about us."
     $ chibi_jax = "images/chibi/jax_neutral.png"
+    
+    if radio_static == "_s":
+        voice "d7_EvenIsaak_s"
+    else:
+        voice "d7_EvenIsaak_c"
     wt_ja "Even Isaak called. That was pretty unlike him."
+    voice "d7_AnySign"
     ast "Any sign of him?"
+    
+    if radio_static == "_s":
+        voice "d7_WeHavent_s"
+    else:
+        voice "d7_WeHavent_c"
     wt_da "We haven't seen anything out of the ordinary, Aston."
     $ chibi_jax = "images/chibi/jax_worried.png"
+    
+    if radio_static == "_s":
+        voice "d7_LetsKeep_s"
+    else:
+        voice "d7_LetsKeep_c"
     wt_ja "Let's keep calling out."
+    voice "d7_Lorenzo"
     mo "Lorenzo!"
+    
+    
+    voice "d7_LorenzoWhere_s" # Davos isn't Walkie-fied but IS further away, hence always static'd
     da "Lorenzo! Where are you!"
 
     "We called his name. No response."
 
+    voice "d7_WhereAre"
     ast "Where are you, my love...?"
 
     show black with dissolve
@@ -125,6 +192,7 @@ label dec_7:
     scene bg camp2_day with fade
     show ky smile at centerright
     show ast neutral at centerleft
+    voice "d7_MorganAston"
     ky "Morgan, Aston! You're back!"
 
     show ast with move:
@@ -134,18 +202,24 @@ label dec_7:
     show ky sad
     "Kyle sees that Lorenzo still hasn't come home."
 
-    mo "It's not a 'you' problem Kyle. Don't worry."
-    ky "Yeah, I just wish there was something I could do for him right now."
+    voice "d7_ItsNot"
+    mo "It's not a \"you\" problem, Kyle. Don't worry."
+    voice "d7_YeahI"
+    ky "Yeah... I just wish there was something I could do for him right now."
+    voice "d7_YouHavent"
     mo "You haven't fully recovered from whatever you're dealing with, either. You need to rest."
     show ky confused
+    voice "d7_IKnow"
     ky "I know, which sucks. The best I can do is just hold the fort until everyone comes home."
     show ky smile
+    voice "d7_GregoryAnd"
     ky "Gregory and Pearl are gonna help out tomorrow, I think."
 
+    voice "d7_YepHopefully"
     mo "Yep. Hopefully it'll make the search much easier."
     stop music fadeout 3.0
     #INT: Main tent
-    scene bg maintent_night with dissolve
+    scene bg maintent_night with fade
     play ambience amb_campnight fadein 1.0
 
     "The sleeping bags have all been moved to the main tent for now."
@@ -155,34 +229,96 @@ label dec_7:
     "Once everyone's asleep, I'll step outside."
 
     #EXT: Camp 1A
-    show bg camp2_night
+    #(TOGGLE) co
+    show bg camp2_night with fade
     show satphone
+    voice "d7_HeyPancake"
     mo "Hey Pancake."
+    
+    if radio_static == "_s":
+        voice "d7_WoahYou_s"
+    else:
+        voice "d7_WoahYou_c"
     co "Woah, you sound horrible. So my birdie in Heralign HQ was right about the situation?"
-    mo "If they heard 'avalanche', then...yes they're right."
+    voice "d7_IfThey"
+    mo "If they heard \"avalanche,\" then...yes. They're right."
+    
+    if radio_static == "_s":
+        voice "d7_WasAnyone_s"
+    else:
+        voice "d7_WasAnyone_c"
     co "Was anyone hurt? Are you hurt, Morg?"
-    mo "I passed out for a few hours after getting hit by a rock or something."
+    voice "d7_PassedOut"
+    mo "Passed out for a few hours after getting hit by a rock or something."
+    voice "d7_MyHead"
     mo "My head still hurts, but otherwise I'm fine."
+    voice "d7_WeDo"
     mo "We do have someone that went missing, though. That's the worrying part."
 
+    if radio_static == "_s":
+        voice "d7_JudgingFrom_s"
+    else:
+        voice "d7_JudgingFrom_c"
     co "Judging from your tone, time's ticking and you still haven't found them?"
+    voice "d7_YepLorenzo"
     mo "Yeah. Lorenzo has been missing for a little over 24 hours at this point."
+    
+    if radio_static == "_s":
+        voice "d7_RoughSpot_s"
+    else:
+        voice "d7_RoughSpot_c"
     co "Rough spot there, bud. I hope he's okay."
-    co "But still, I'm glad you're in one piece Morg."
-    mo "The things I do for Elly... and you too!"
+    
+    if radio_static == "_s":
+        voice "d7_ButStill_s"
+    else:
+        voice "d7_ButStill_c"
+    co "But, still... I'm glad you're in one piece, Morg."
+    voice "d7_TheThings"
+    mo "The things I do for Elly...and you, too!"
+    
+    if radio_static == "_s":
+        voice "d7_WhatDo_s"
+    else:
+        voice "d7_WhatDo_c"
     co "What do you want from me this time? The snowmobile again?"
+    voice "d7_YoureThe"
     mo "You're the best, thank you."
+    
+    if radio_static == "_s":
+        voice "d7_HowAbout_s"
+    else:
+        voice "d7_HowAbout_c"
     co "How about the welcome home party that we talked about? I'll even cook for you."
+    voice "d7_OkayAlright"
     mo "Okay, alright. I'll take that, but you've gotta give papa a kiss."
+    
+    if radio_static == "_s":
+        voice "d7_No_s"
+    else:
+        voice "d7_No_c"
     co "No."
+    voice "d7_AwwAre"
     mo "Aww, are you shy?"
+    
+    if radio_static == "_s":
+        voice "d7_YouEnjoy_s"
+    else:
+        voice "d7_YouEnjoy_c"
     co "You enjoy terrorizing me, don't you, Morg?"
+    voice "d7_GoodnightPancake"
     mo "Goodnight, Pancake. Sweet dreams!"
+    
+    if radio_static == "_s":
+        voice "d7_DidYou_s"
+    else:
+        voice "d7_DidYou_c"
     co "Did you just kiss the damn ph-"
     hide satphone with sdissolve
     #phone end
 
     "I hung up on Colin."
+    scene black with dissolve
     "I do enjoy terrorizing him...keeps me sane from the mess I'm dealing with here."
     stop ambience fadeout 3.0
 
@@ -194,31 +330,38 @@ label dec_8:
     show screen date_label with dissolve
     play ambience amb_cabin fadein 1.0
     #Lorenzo's POV
-
+    
+    voice "d8_LetsSee"
     lo "Let's see here... I've got food that will last me for a week."
+    voice "d8_TwoTwo"
     lo "Two... Two weeks if I can handle eating just one meal per day."
 
     show black with dissolve
     "On the day of the avalanche, Lorenzo slipped and tumbled down the hill."
-    "He escaped death but sustained a few bruises here and there."
+    "He escaped death, but still sustained a few bruises here and there."
     "He ended up further away from the rest... Separated from Aston."
     "To make things worse, his Walkie's receiver snapped off during the fall."
     "With no map on hand, it would be difficult to navigate back to camp."
-    "When time is ticking and the sun threatens to set, you don't have a lot of options."
+    "When time is ticking and the sun threatens to set...you don't have a lot of options."
     "Shelter is the first prerequisite for survival in this situation."
-    "Fortunately, he found himself close to a tiny deserted cabin."
-    "It's not fancy by any means, but there's a roof over his head now."
+    "Fortunately, he found himself close to a tiny, deserted cabin."
+    "It's not fancy by any means, but at least there's a roof over his head now."
     hide black
 
+    voice "d8_TheFurniture"
     lo "The furniture in here reminds me a lot of the village up north... Maybe this is one of their hunting huts."
 
-    "Looking around, there's a shelf of perishables, a mini fireplace, lots of blankets and a sole rifle leaning against the wall."
+    "Looking around, there's a shelf of perishables, a mini fireplace, and lots of blankets and a sole rifle leaning against the wall."
     "Lorenzo made a makeshift bed with an armchair and its matching ottoman."
     "The silver lining is that it's much more comfortable than a sleeping bag."
 
+    voice "d8_INeed"
     lo "I need to start finding my bearings tomorrow. Cassie's map never had a cabin on it, so this must be an area that we haven't been to yet."
+    voice "d8_ImSure"
     lo "I'm sure he's worried sick about me."
+    voice "d8_HangTight"
     lo "Hang tight, amore. I'll find you."
+    voice "d8_OrYoull"
     lo "Or you'll find me first... I think that's more probable."
 
     #BG Window
@@ -237,14 +380,16 @@ label dec_8:
 
     #BG Window
     hide cg
+    voice "d8_WaitWhat"
     lo "Wait, what was that?"
     play music audio.anxious
     "Out of the corner of his eye, Lorenzo swears that he saw something huge."
-    "Something... unpleasantly familiar."
+    "Something... {w=1.0}Unpleasantly familiar."
     show cg bearwindow2
     "He pinches himself."
 
-    lo "I am still wide awake... so then why?"
+    voice "d8_ImStill"
+    lo "I'm still wide awake...so then why?"
 
     hide cg
     "He looks out the window again."
@@ -255,13 +400,14 @@ label dec_8:
     if persistent.screenshake:
         with hpunch
     $ persistent.gallery_bearwindow = True
+    voice "d8_LorenzoVNVR"
     lo "..."
 
     show black with pushupquick
     hide cg
     "He crouches under the window to catch his breath."
-
-    lo "The door! The door... Locked, yes. The window... that won't do. I need to cover it up."
+    voice "d8_TheDoor"
+    lo "The door! The door... Locked, yes. The window...that won't do. I need to cover it up."
 
     hide black
     show bg cottage2
@@ -304,9 +450,11 @@ label dec_9:
     play music audio.neutral
     menu:
         "Call him":
+            voice "d9_Aston"
             mo "Aston."
             show ast confused
             "I think I startled him."
+            voice "d9_GoBack"
             ast "Go back to sleep, Morgan."
             "Aston is doing exactly what I think he's doing."
             "He's going to go out at night, in the pitch dark silence, alone."
@@ -314,31 +462,42 @@ label dec_9:
 
             menu:
                 "Convince him not to go":
+                    voice "d9_IDont"
                     mo "I don't think it's a good idea."
                     show ast angry
+                    voice "d9_IfYoure"
                     ast "If you're not going to help me, please do not stop me."
 
                 "Join him":
+                    voice "d9_IKnow"
                     mo "I know what you're doing, but please let me come along. It's dangerous to go alone."
                     show ast sad
                     "Aston looks worriedly at me."
 
         #choice branch 2 ends
             show gr neutral at right
+            voice "d9_AreYou"
             gr "Are you guys heading out?"
             "Gregory sits up, tiredly."
             show gr angry
+            voice "d9_YoureNot"
             gr "You're not supposed to go out after night remember? I'm liable for your safety."
             show ast angry
+            voice "d9_LorenzoIs"
             ast "Lorenzo is out there, I can't possibly sleep it off like it's nothing."
             show gr neutral
+            voice "d9_LookYou"
             gr "Look, you can try if you want."
+            voice "d9_ButIt"
             gr "But it is cold as shit out there, and your flashlight is not gonna be helpful."
             "Aston doesn't say anything else."
             "Determined, he turns to leave."
             hide ast
+            voice "d9_HesUsually"
             mo "He's usually not that reckless. Let me go check on him."
+            voice "d9_MorganLet"
             gr "Morgan, let him be. He'll come back tomorrow."
+            voice "d9_But"
             mo "But-"
             show gr angry
             "Gregory shoots me a glare."
@@ -359,13 +518,17 @@ label dec_9:
             menu follow_aston:
                 "Convince him not to go":
                     "I called out to him."
+                    voice "d9_IDont"
                     mo "I don't think it's a good idea."
                     show ast angry
+                    voice "d9_IfYoure"
                     ast "If you're not going to help me, please do not stop me."
+                    voice "d9_DontEven"
                     ast "Don't even bother following me."
                     hide ast with sdissolve
                     "Aston took off from the camp."
                     "I can't gear up quick enough to catch up to him."
+                    voice "d9_WaitAston"
                     mo "Wait, Aston!"
                     "Damn it."
                     "I counted my losses and stayed in the tent all night. I didn't get any sleep."
@@ -373,9 +536,11 @@ label dec_9:
                 "Join him":
                     $ aston_safe = True
                     $ joined_aston = True
+                    voice "d9_IKnow"
                     mo "I know what you're doing, but please let me come along. It's dangerous to go alone."
                     show ast sad
                     "Aston looks worriedly at me."
+                    voice "d9_AlrightGear"
                     ast "Alright, gear up quickly. I'll wait for you."
                     "I gave Aston a quick nod and ran back in to gear up."
                     "The two of us set out on a little adventure to find Lorenzo."
@@ -392,8 +557,8 @@ label dec_9:
 
 
 label dec_10:
-    #To Sharkie, this sequence only happens if you fail to join Aston on his adventure, then it just continues downwards
-    #(STRIKE 1 added to Gregory sus meter, whenever you see this Sharkie lmk cause I have questions to ask)
+    #This sequence only happens if you fail to join Aston on his adventure, then it just continues downwards
+    #(STRIKE 1 added to Gregory sus meter)
     #EXT: Camp 1A
     scene bg camp2_day with longfade
     $ current_day = _("December 10th")
@@ -406,22 +571,30 @@ label dec_10:
         show ast neutral
         "The dark circles under his eyes and his expressions tell me that his search was unsuccessful."
 
+        voice "d10_AstonFromMorgan"
         mo "Aston?"
+        voice "d10_GoodMorning"
         ast "Good morning, Morgan."
         show ast sad
-        ast "I'd like to apologize for yesterday."
+        voice "d10_IdLikeToApologise"
+        ast "I'd like to apologise for yesterday."
+        voice "d10_NoPlease"
         mo "No please don't, you're good."
+        voice "d10_JustThat"
         mo "Just that, if you're planning on doing that again tonight, please let me know."
         show ast neutral
+        voice "d10_AlrightI"
         ast "Alright, I shall."
         show ast sad
-        ast "My search... was unsuccessful."
+        voice "d10_MySearch"
+        ast "My search...was unsuccessful."
+        voice "d10_ItsOkay"
         mo "It's okay, we'll keep trying. You have an ally here."
         show ast happy
         "Aston flashes me a weak smile, and nods."
         stop ambience fadeout 3.0
 
-    #To Sharkie, skip to this sequence if you successfully join Aston on his adventure
+    #Skip to this sequence if you successfully join Aston on his adventure
     label find_lorenzo:
         scene forest3 with fade
     #EXT: Forest
@@ -440,19 +613,23 @@ label dec_10:
         "Is that a window?"
 
         show ast neutral
+        voice "d10_AstonLook"
         mo "Aston, look."
 
         "We shined our flashlights towards the same spot."
-        "A cabin, it looks kinda small."
+        "A cabin...it looks kinda small."
         "A hunting cabin, maybe?"
         "We walked up to the door and inspected it up close."
 
+        voice "d10_ISuppose"
         mo "I suppose we should give a polite knock before entering?"
         stop ambience fadeout 5.0
         play sound knock
         "Aston knocks on the door."
         show ast sad
+        voice "d10_LorenzoAre"
         ast "Lorenzo, are you in here?"
+        voice "d10_AstonFromLorenzo"
         lo "Aston?"
 
         show cg findinglorenzo
@@ -463,8 +640,10 @@ label dec_10:
         play sound cabinopen
         "Aston barges into the cabin to see a petrified Lorenzo."
 
+        voice "d10_Lorenzo"
         ast "Lorenzo!"
-        lo "A-Amore... I thought I'd never see you again."
+        voice "d10_AAmoreI"
+        lo "A-Amore... {w=1.0}I thought I'd never see you again."
         play sound cabinclose
 
         "I closed the door behind Aston and let them have their moment."
@@ -475,59 +654,86 @@ label dec_10:
         show bg cottage2
         show ast happy at centerleft
         show lorenzo sad at centerright
+        voice "d10_ThankGoodness"
         ast "Thank goodness."
+        voice "d10_IKnew"
         lo "I knew you'd find me, amore."
+        voice "d10_ImSorry"
         lo "I'm sorry for worrying you, and everyone as well."
 
         "With tears forming in his eyes, Lorenzo beams at me as well."
         show lorenzo smile
+        voice "d10_ItsGood"
         lo "It's good to see you too, Morgan."
 
         "I gave him a gentle pat on his shoulder."
 
+        voice "d10_AndIm"
         mo "And I'm glad that you're okay."
         show ast sad
+        voice "d10_IDont"
         ast "I don't want you to stay here alone, love."
         show lorenzo sad
+        voice "d10_ButIm"
         ast "But I'm worried about bringing you back to camp."
+        voice "d10_WhatsThat"
         mo "What's that about?"
 
         "The two look at me, and then at each other."
         "Lorenzo breaks the silence first."
         show lorenzo neutral
         show ast neutral
-        lo "There was this person at camp before you, his name is Elliot."
+        voice "d10_ThereWas"
+        lo "There was this person at camp before you...his name is Elliot."
 
         "Elliot!"
         "I have never been this happy to hear a name spoken out loud."
 
-        lo "One day he just disappeared without a trace."
+        voice "d10_OneDay"
+        lo "One day, he just disappeared without a trace."
+        voice "d10_HisBelongings"
         lo "His belongings all have been rummaged through, as if he was rushing to somewhere."
         show ast inthought
+        voice "d10_AndThe"
         ast "And the reason why I don't want Lorenzo to go back to camp is because of Gregory."
+        voice "d10_ElliotHad"
         ast "Elliot had a descriptively similar rash forming on the back of his right shoulder."
-        ast "Ruran was treating him back then. I never had a peek at it so I can't be sure."
+        voice "d10_RuranWas"
+        ast "Ruran was treating him back then. I never had a peek at it, so I can't be sure."
         show ast neutral
+        voice "d10_OnThe"
         ast "On the night before he disappeared, I overheard Gregory on the phone."
-        ast "His very words were 'I'll take care of him, ma'am.' I didn't pay any mind to that at the time."
+        voice "d10_HisVery"
+        ast "His very words were 'I'll take care of him, ma'am.' I didn't pay any mind to that at the time..."
 
         show ast angry
-        ast "But ever since Elliot disappeared, I didn't like what I was realizing when I put two and two together."
+        voice "d10_ButEver"
+        ast "But ever since Elliot disappeared, I didn't like what I was realising when I put two and two together."
         show lorenzo pondering
+        voice "d10_WeDidnt"
         lo "We didn't have any evidence, but we have been really cautious about Gregory ever since."
         show lorenzo neutral
+        voice "d10_ButI"
         lo "But I still don't want to believe that he'd do something to Elliot."
+        voice "d10_ButGregory"
         mo "But Gregory doesn't seem suspicious of Kyle?"
         show lorenzo pondering
+        voice "d10_IdLikeToBelieve"
         lo "I'd like to believe that it's because Kyle was bitten by Susie."
         show lorenzo sad
+        voice "d10_WhereasElliot"
         lo "Whereas Elliot and I... I don't even know how I got it in the first place."
-        mo "Do you... think that it's the same infection, but from multiple sources?"
+        voice "d10_DoYouThinkThat"
+        mo "Do you...think that it's the same infection, but from multiple sources?"
         show ast inthought
+        voice "d10_ThatWould"
         ast "That would be probable, yes."
-        mo "Speaking of infections, how are you doing Lorenzo?"
-        lo "My arm is still red... but I think something worse has been happening to me."
+        voice "d10_SpeakingOf"
+        mo "Speaking of infections... How are you doing, Lorenzo?"
+        voice "d10_MyArm"
+        lo "My arm is still red...but I think something worse has been happening to me."
         show lorenzo sick
+        voice "d10_IIDont"
         lo "I-I don't know, I want to believe that I was just seeing things."
 
         show ast neutral with move:
@@ -535,36 +741,57 @@ label dec_10:
         show lorenzo neutral
         "Aston squeezes Lorenzo's hand to help ease his nerves. Lorenzo takes a deep breath before he continues."
 
-        lo "It's the bear but... But I was sure I saw it right outside the window."
+        voice "d10_ItsThe"
+        lo "It's the bear, but... But I was sure I saw it right outside the window."
+        voice "d10_IPinched"
         lo "I pinched myself while looking directly at it, and no, I wasn't dreaming."
         show lorenzo sad
+        voice "d10_AstonMorgan"
         lo "Aston, Morgan... I really don't enjoy the uneasiness I feel running down my spine every time I hear something outside these walls."
         show ast sad
+        voice "d10_DoYouWantMe"
         ast "Do you want me to stay the night, love?"
+        voice "d10_GregoryWould"
         lo "Gregory would be the problem. Both of you can't stay here."
         show ast neutral
-        mo "We'd need a plan then."
+        voice "d10_WedNeed"
+        mo "We'd need a plan, then."
+        voice "d10_TheGame"
         mo "The game ends if Gregory gets suspicious before Lorenzo's arm heals."
+        voice "d10_ThisWould"
         mo "This would mean that Aston and I can only visit you during the night."
+        voice "d10_AndThis"
         mo "And this would mean that you have to tank through the day without us here."
         show lorenzo neutral
+        voice "d10_IThink"
         lo "...I think I can do that."
         show ast sad
+        voice "d10_WillYou"
         ast "Will you be okay?"
         show lorenzo smile
-        lo "For you amore, I will be strong for you."
+        voice "d10_ForYou"
+        lo "For you, amore... I will be strong for you."
+        voice "d10_HaveI"
         mo "Have I ever told you guys that y'all are awfully cute?"
         hide ast
+        voice "d10_AstonVNVR"
         ast "..."
         show lorenzo happy
-        lo "Haha! Amore, why did you turn away?"
+        voice "d10_HahaAmore"
+        lo "Haha! {w=0.6}Amore, why did you turn away?"
         show ast neutral at centerleft
+        voice "d10_ItsNothing"
         ast "It's nothing."
-        mo "Alright, let me know when you're ready to go back Aston."
-        mo "We have about 5 hours till dawn, but ideally we should get some sleep in too."
+        voice "d10_AlrightLet"
+        mo "Alright. Let me know when you're ready to go back, Aston."
+        voice "d10_WeHave"
+        mo "We have about 5 hours till dawn, but ideally we should get some sleep in, too."
+        voice "d10_WouldntWant"
         mo "Wouldn't want to look suspiciously groggy the next day."
         show ast sad
+        voice "d10_ThatsVery"
         ast "That's very true."
+        voice "d10_WellThen"
         mo "Well then, wake me up when it's time."
         hide ast
         hide lorenzo
@@ -579,7 +806,7 @@ label dec_10:
             "We made it back before sunrise."
             "Aston fell asleep immediately upon getting back."
             "His face no longer scrunches up while he sleeps."
-            "No more tossing and turning in his sleep."
+            "No more tossing and turning, either."
             "All is well now."
     stop music fadeout 3.0
 
@@ -591,11 +818,15 @@ label dec_11:
     show screen date_label with dissolve
     play ambience amb_campday fadein 1.0
     show gr neutral at centerleft
+    voice "d11_GuysWeve"
     gr "Guys, we've received an extra mission."
     "Gregory interrupts breakfast with urgent news."
     show pearl smile at centerright
+    voice "d11_WhatIs"
     pe "What is it, what is it?"
+    voice "d11_SomeoneFrom"
     gr "Someone from the village is missing."
+    voice "d11_SoWhile"
     gr "So while we look for Lorenzo, we'll also have to keep our eyes peeled for another person."
 
     "Someone else is missing?"
@@ -604,17 +835,19 @@ label dec_11:
     "Lorenzo was lucky."
     "I hope they survive this as well."
     show pearl confused
+    voice "d11_DidSomeone"
     pe "Did someone report it?"
     show gr confused
+    voice "d11_YeahIsaak"
     gr "Yeah, Isaak is in contact with the village. There's a hotline for complaining if we ever get too rowdy here."
 
     "So someone told Isaak this information?"
-    "I mean, I already knew that the whole 'the village hates us' facade was probably a lie."
+    "I mean, I already knew that the whole 'the village hates us' facade was probably a lie..."
     "But why would they be anywhere near our camp when the avalanche happened?"
     "Just casually strolling to our camp?"
-    "We've been on the search for a few days now, there wasn't any sign of another survivor."
+    "We've been on the search for a few days now. There hasn't been any sign of another survivor."
     "It would seem that Aston also shares the same sentiment."
-    "He looked at me, reflecting the same expression that I have."
+    "He looks at me, reflecting the same expression that I have."
     "Doubt."
     "The search, now for two, commences."
     stop ambience fadeout 3.0
@@ -624,43 +857,45 @@ label dec_11:
     "Lorenzo is wide awake and feeling restless."
 
     "The bear's presence has been weighing heavily on his mind."
-    "Hearing growling right out the door every once in a while."
-    "The knocking on the window is starting to get annoying too."
-
+    "Hearing growling right out the door every once in a while..."
+    "The knocking on the window is starting to get annoying, too."
+    voice "d11_IdLike"
     lo "I'd like to sleep, if you would be so kind?"
-
     "No response."
-
+    voice "d11_Grazie"
     lo "Grazie."
-
     "He pulls the blanket higher up to cover his shoulders."
     play ambience amb_lobear fadein 1.0
-
-    ha "Lo-Lorenzo."
-
+    voice "d11_LoLorenzo"
+    who "Lo-Lorenzo."
     "The unexpected voice sends a shiver down his spine. That sounded like Aston."
     show lorenzo scared
     "Lorenzo jolts up from his bed."
 
+    voice "d11_AmoreIs"
     lo "Amore? Is that you?"
-    ha "L-Lenzo."
-
+    voice "d11_LLenzo"
+    who "L-Lenzo."
     show lorenzo pondering
     "Nevermind. The fear dissipates and it turns into confusion."
 
-    ha "Lorenzo."
+    voice "d11_Lorenzo"
+    who "Lorenzo."
     show lorenzo sad
     "Lorenzo's face scrunches up in disappointment."
-    "Aston doesn't say his name like that, this is just insulting."
+    "Aston doesn't say his name like that... {w=1.0}This is just insulting."
     "This realization sparked a defiant fire within him."
     show lorenzo neutral
-    lo "Lorenso- I'm hallucinating, aren't I?"
+    voice "d11_LorensoIm"
+    lo "Lorenso- {w=0.4}I'm hallucinating, aren't I?"
 
 
-    "For once instead of fear, Lorenzo is frankly, really sick of this."
+    "For once, instead of fear... Lorenzo is, frankly, really sick of this."
     "The torment needs to stop."
 
+    voice "d11_OkayIll"
     lo "Okay, I'll play your game."
+    voice "d11_IfYoure"
     lo "If you're not going to leave me alone, I might as well get to know you."
     "He grabs his journal and turns to a blank page and jots down some notes."
     play sound pen
@@ -669,19 +904,21 @@ label dec_11:
     "Green stuff looks like a fluid of some sort dripping from its mouth."
     "Doesn't act like a normal bear."
 
-
+    voice "d11_AndThis"
     lo "And, this... This is a new feature."
 
     "Mimics speech, but it's not very smart."
-
-    ha "*growl*"
+    voice "d11_BearGrowl"
+    be "*growl*"
     show lorenzo smile
+    voice "d11_SalveImitatore"
     lo "Salve, imitatore."
     stop ambience fadeout 1.0
 
 
 label dec_12:
     #EXT: Camp 1A
+    #(TOGGLE) hi
     scene bg camp2_night with longfade
     $ current_day = _("December 12th")
     $ save_name = current_date(_("Arc 2"), current_day)
@@ -691,45 +928,102 @@ label dec_12:
     "Gregory sits on a rock some distance away from the main tent."
     show gr neutral
     "It's time for his weekly check in."
+    if radio_static == "_s":
+        voice "d12_YoureA_s"
+    else:
+        voice "d12_YoureA_c"
     who "You're a day late."
-    gr "I know, lots of stuff happening at camp at the moment."
+    voice "d12_IKnow"
+    gr "I know. Lots of stuff happening at camp at the moment."
+    if radio_static == "_s":
+        voice "d12_RightFirst_s"
+    else:
+        voice "d12_RightFirst_c"
     who "Right. First an avalanche, then what?"
     show gr confused
+    voice "d12_MissingPeople"
     gr "Missing people. Lorenzo and one of the villagers."
+    if radio_static == "_s":
+        voice "d12_TheFinancier_s"
+    else:
+        voice "d12_TheFinancier_c"
     who "The financier? Do you need me to send a replacement?"
     show gr angry
+    voice "d12_What"
     gr "What?"
-    gr "Listen here lady, I don't care what you rich people think about us."
+    voice "d12_ListenHere"
+    gr "Listen here, lady. I don't care what you rich people think about us."
+    voice "d12_ButLorenzo"
     gr "But Lorenzo isn't someone you can just replace like that."
+    if radio_static == "_s":
+        voice "d12_TheRich_s"
+    else:
+        voice "d12_TheRich_c"
     who "The 'rich people' like the one you're talking to right now can buy you a liver."
     show gr worried
+    voice "d12_GregoryVNVR"
     gr "..."
+    if radio_static == "_s":
+        voice "d12_ThinkAbout_s"
+    else:
+        voice "d12_ThinkAbout_c"
     who "Think about it Gregory, once your job here is done, you'll have all the time in the world to be with your little girl."
+    if radio_static == "_s":
+        voice "d12_ForfeitThe_s"
+    else:
+        voice "d12_ForfeitThe_c"
     who "Forfeit the rescue mission if it's too time consuming."
+    if radio_static == "_s":
+        voice "d12_IWant_s"
+    else:
+        voice "d12_IWant_c"
     who "I want results, not excuses or sob stories."
     show gr neutral
     "Gregory takes a moment to readjust."
-
+    voice "d12_IsThere"
     gr "Is there something you told Isaak but you're not telling me?"
+    if radio_static == "_s":
+        voice "d12_NoI_s"
+    else:
+        voice "d12_NoI_c"
     who "No, I haven't spoken to him in weeks."
+    if radio_static == "_s":
+        voice "d12_ThatBoy_s"
+    else:
+        voice "d12_ThatBoy_c"
     who "That boy never picks up."
     show gr worried
+    voice "d12_ImWorried"
     gr "I'm worried about the mold."
+    voice "d12_WhatHappens"
     gr "What happens if the whole camp falls ill?"
+    if radio_static == "_s":
+        voice "d12_BeA_s"
+    else:
+        voice "d12_BeA_c"
     who "Be a darling and make the right decisions then. You already know how to prevent it."
+    if radio_static == "_s":
+        voice "d12_IfIsaak_s"
+    else:
+        voice "d12_IfIsaak_c"
     who "If Isaak could do it, you can too."
-    who "Good luck Gregory. You know what's best for your family."
+    if radio_static == "_s":
+        voice "d12_GoodLuck_s"
+    else:
+        voice "d12_GoodLuck_c"
+    who "Good luck, Gregory. You know what's best for your family."
 
     "She hangs up on him."
     show gr neutral
     "Gregory takes a look at the tent and sighs."
-    "They may not be family, they may not even be friends."
+    "They may not be family, they may not even be friends..."
     "But they are people Gregory spends the most time with."
-    "And that doesn't discredit the fact that deep down, he cares."
+    "And that doesn't discredit the fact that, deep down, he cares."
     stop ambience fadeout 3.0
 
 label dec_13:
     #EXT: Camp 1A
+    #(TOGGLE) co
     scene bg camp2_day with longfade
     $ current_day = _("December 13th")
     $ save_name = current_date(_("Arc 2"), current_day)
@@ -739,14 +1033,14 @@ label dec_13:
     "Even though Aston and I found Lorenzo."
     "This still leaves a bitter taste in our mouths."
     "Aston wears his usual nonchalant expression as Gregory pats him on the shoulder."
-    "Kyle and Pearl were obviously saddened by the news."
+    "Kyle and Pearl were obviously saddened by the news..."
     "They weren't in their cheery mood for the rest of the day."
-    "Later in the day, I overheard Gregory on the Walkie with Wilbur."
+    "Later on, I overheard Gregory on the Walkie with Wilbur."
     "It would seem that C2 isn't taking this decision lightly."
     "On one hand, I understand that there's a quota to meet."
     "On the other... Well, I hate it."
     "That would mean giving up on Lorenzo."
-    "With nothing much to do for the rest of the day, I think this would be a good day to drop updates."
+    "With nothing much to do for the rest of the day, I think this would be a good time to drop updates."
 
     #EXT: Camp 1A
     show bg camp2_night
@@ -755,24 +1049,55 @@ label dec_13:
     play ambience amb_campnight fadein 1.0
 
     show satphone
+    voice "d13_Pancake"
     mo "Pancake!"
+    if radio_static == "_s":
+        voice "d13_TheNumber_s"
+    else:
+        voice "d13_TheNumber_c"
     co "The number you have dialed is unavailable, please tr-"
-    mo "Okay pancake batter, I have something for you."
+    voice "d13_OkayPancake"
+    mo "Okay, pancake batter, I have something for you."
+    if radio_static == "_s":
+        voice "d13_ThatsEven_s"
+    else:
+        voice "d13_ThatsEven_c"
     co "That's even worse."
+    voice "d13_DoYou"
     mo "Do you want to be goopy or fluffy? Pick one."
+    if radio_static == "_s":
+        voice "d13_Fluffy_s"
+    else:
+        voice "d13_Fluffy_c"
     co "Fluffy..."
+    voice "d13_NiceAnyway"
     mo "Nice. Anyway, you need to hear this."
+    voice "d13_LorenzosIn"
     mo "Lorenzo's in a cabin in the forest, but his symptoms are getting worse."
+    voice "d13_ThenEllys"
     mo "Then Elly's name popped up in conversation."
+    voice "d13_GreggysInvolved"
     mo "Greggy's involved in some way, but we don't have evidence."
+    voice "d13_AstonOverheard"
     mo "Aston overheard him talking to someone the night before he disappeared."
+    voice "d13_AndNow"
     mo "And now Lorenzo is going to camp at the cabin because they don't want to take any chances."
-
+    voice "d13_EllysRash"
     mo "Elly's rash apparently looks exactly like the rashes we're dealing with, and it didn't come from a bite."
+    voice "d13_WhichIs"
     mo "Which is why Kyle is safe, he's an outlier."
-    co "Now you're talking Morg! That's a lot that you've gathered here."
+    if radio_static == "_s":
+        voice "d13_NowYoure_s"
+    else:
+        voice "d13_NowYoure_c"
+    co "Now you're talking, Morg! That's a lot that you've gathered here."
+    if radio_static == "_s":
+        voice "d13_EllyAnd_s"
+    else:
+        voice "d13_EllyAnd_c"
     co "Elly and Greggy, huh? I'll see if I can dig up more info about that mysterious caller that he reports to."
-    mo "Alright nice! Good talk Pan-"
+    voice "d13_AlrightNice"
+    mo "Alright, nice! Good talk Pan-"
     hide satphone
     #phone ends
 
@@ -796,10 +1121,12 @@ label dec_14:
     "When suddenly, the footsteps behind me stopped abruptly."
 
     show ast confused
+    voice "d14_MorganDid"
     ast "Morgan, did you hear that?"
 
     "I turn to face Aston."
 
+    voice "d14_WhatDid"
     mo "What did you hear?"
 
     show ast inthought
@@ -807,7 +1134,9 @@ label dec_14:
     "His gaze glued to a tree to our right."
 
     show ast sad
+    voice "d14_Lorenzo"
     ast "Lorenzo?"
+    voice "d14_IDont"
     mo "I don't hear him?"
 
     show ast confused
@@ -820,17 +1149,23 @@ label dec_14:
         "Investigate the sound.":
             $ aston_safe = True
             $ aston_follows = True
+            voice "d14_br1_AstonI"
             mo "Aston, I don't know what you're hearing."
+            voice "d14_ButDo"
             mo "But do you want to investigate the sound?"
             show ast sad
+            voice "d14_YesPlease"
             ast "Yes, please."
             "We inch closer to the tree, supposedly that's where the source is coming from."
             "There was no one there."
             show ast inthought
+            voice "d14_ISwore"
             ast "I swore I heard him."
+            voice "d14_ButYoure"
             ast "But you're right, let's head t-"
             show ast sad
             "Aston freezes up again."
+            voice "d14_WhatIs"
             mo "What is it? Talk to me."
             "As I try to get a hold of him, my flashlight dies."
             show black
@@ -839,19 +1174,26 @@ label dec_14:
             hide black
             show ast scared
             "When the lights turn back on, Aston stands there uneasily."
+            voice "d14_MorganCan"
             ast "...Morgan, can you take me to Lorenzo?"
+            voice "d14_SayNo"
             mo "Say no more."
 
         "Continue on without investigating.":
+            voice "d14_br2_AstonI"
             mo "Aston, I don't know what you're hearing."
+            voice "d14_ButWeve"
             mo "But we've got to get to Lorenzo."
             show ast sad
             "I had to practically drag him along."
             show ast inthought
+            voice "d14_ISwore"
             ast "I swore I heard him."
+            voice "d14_ButYoure"
             ast "But you're right, let's head t-"
             show ast sad
             "Aston freezes up again."
+            voice "d14_WhatIs"
             mo "What is it? Talk to me."
             "As I try to get a hold of him, my flashlight dies."
             show black
@@ -860,6 +1202,7 @@ label dec_14:
             "I swapped my batteries out as fast as I could."
             hide black
             "When the lights turn back on, Aston has gone missing."
+            voice "d14_Aston"
             mo "Aston?!"
             "Fuck."
             "He doesn't have a flashlight."
@@ -880,6 +1223,7 @@ label dec_14:
         show ast happy at left
         "Upon entering the cabin together, we see Lorenzo waiting patiently for us to arrive."
         "His face lights up at the sight of us."
+        voice "d14_br1_ImGlad"
         lo "I'm glad to see you both!"
         show ast with move:
             xpos 400
@@ -889,40 +1233,54 @@ label dec_14:
             xpos 300
         show lorenzo smile
         "Lorenzo then reaches out to grab his journal."
+        voice "d14_HaveA"
         lo "Have a seat, I have some info for you guys."
         play sound page
         "He flips to his recent notes in his journal."
         show ast neutral
+        voice "d14_HaveYou"
         mo "Have you been studying it?"
         show lorenzo neutral
+        voice "d14_YesThat"
         lo "Yes. That and all my symptoms."
+        voice "d14_YouveHad"
         mo "You've had hallucinations that called your name? In Aston's voice?"
         show lorenzo scared
+        voice "d14_IDid"
         lo "I did not enjoy that one bit. It was horrifying at first but now I am sick of its games."
 
 
         show lorenzo sad
+        voice "d14_br1_BecauseI"
         lo "Because I know for a fact that you don't sound like that, amore."
         show ast inthought
         "Aston looks like he's deep in thought."
+        voice "d14_AstonAre"
         mo "Aston... Are you alright?"
 
         show ast neutral
+        voice "d14_IWasnt"
         ast "I wasn't, but I am feeling a lot better now."
         show ast inthought
-        ast "If what you're saying is true, then what I heard outside was... not you."
+        voice "d14_IfWhat"
+        ast "If what you're saying is true, then what I heard outside was...not you."
+        voice "d14_br1_IfYou"
         ast "If you weren't there to accompany me Morgan, I think I would've been a goner."
 
         "I gave Aston a gentle pat."
         show ast sad
+        voice "d14_ButWill"
         ast "But will you be okay, love?"
+        voice "d14_WhatIf"
         ast "What if the hallucinations get worse?"
         show lorenzo smile
+        voice "d14_IllBe"
         lo "I'll be fine amore, no need to worry about me."
         "Lorenzo reaches out to cup Aston's face."
         show lorenzo with move:
             xpos 900
         show ast happy
+        voice "d14_AndYou"
         lo "And you... You are much stronger than you think."
         stop music fadeout 3.0
 
@@ -935,14 +1293,19 @@ label dec_14:
             "Upon entering the cabin, I see Lorenzo waiting patiently for us to arrive."
             show lorenzo sad
             "Seeing me close the door without Aston behind me, Lorenzo begins to worry."
+            voice "d14_br2_ImGlad"
             lo "I'm glad to see you Morgan but where's Aston?"
+            voice "d14_HeHe"
             mo "He... He ran off. I tried to stop him but he said he kept hearing things."
+            voice "d14_WhenI"
             mo "When I finally got my flashlight working again, Aston was gone."
             "Just then the door swings open again, Aston is standing there trying to catch his breath."
             play music audio.light
             show ast neutral at left
+            voice "d14_SorryIm"
             ast "Sorry I'm late."
             show lorenzo scared
+            voice "d14_AstonDont"
             lo "Aston! Don't scare me like that."
             show lorenzo sad
             show ast sad with move:
@@ -954,39 +1317,53 @@ label dec_14:
             show ast happy with dissolve
             show lorenzo smile
             "Lorenzo then reaches out to grab his journal."
+            voice "d14_HaveA"
             lo "Have a seat, I have some info for you guys."
             play sound page
             "He flips to his recent notes in his journal."
             show ast neutral
+            voice "d14_HaveYou"
             mo "Have you been studying it?"
             show lorenzo neutral
+            voice "d14_YesThat"
             lo "Yes. That and all my symptoms."
+            voice "d14_YouveHad"
             mo "You've had hallucinations that called your name? In Aston's voice?"
             show lorenzo scared
+            voice "d14_IDid"
             lo "I did not enjoy that one bit. It was horrifying at first but now I am sick of its games."
 
             show lorenzo sad
+            voice ""
             lo "Because I know for a fact that you don't sound like that, amore."
             show ast inthought
             "Aston looks like he's deep in thought."
+            voice "d14_AstonAre"
             mo "Aston... Are you alright?"
 
             show ast neutral
+            voice "d14_ImSorry"
             ast "I'm sorry I ran off, but I am feeling a lot better now."
             show ast inthought
-            ast "If what you're saying is true, then what I heard outside was... not you."
+            voice "d14_IfWhat"
+            ast "If what you're saying is true, then what I heard outside was...not you."
+            voice "d14_br2_IfYou"
             ast "If you hadn't reminded me that Lorenzo was safe Morgan, I think I would've been a goner."
 
             "I gave Aston a gentle pat."
             show ast sad
+            voice "d14_ButWill"
             ast "But will you be okay, love?"
+            voice "d14_WhatIf"
             ast "What if the hallucinations get worse?"
             show lorenzo smile
+            voice "d14_IllBe"
             lo "I'll be fine amore, no need to worry about me."
             "Lorenzo reaches out to cup Aston's face."
             show lorenzo with move:
                 xpos 900
             show ast happy
+            voice "d14_AndYou"
             lo "And you... You are much stronger than you think."
             stop music fadeout 3.0
 
@@ -999,32 +1376,44 @@ label dec_14:
             "Upon entering the cabin, I see Lorenzo waiting patiently for us to arrive."
             show lorenzo sad
             "Seeing me close the door without Aston behind me, Lorenzo begins to worry."
+            voice "d14_br2_ImGlad"
             lo "I'm glad to see you Morgan but where's Aston?"
+            voice "d14_HeHe"
             mo "He... He ran off. I tried to stop him but he said he kept hearing things."
+            voice "d14_WhenI"
             mo "When I finally got my flashlight working again, Aston was gone."
             show lorenzo sick
+            #voice "" missing VNVR
             lo "..."
             "Lorenzo then reaches out to grab his journal."
             show lorenzo sad
+            voice "d14_WellHave"
             lo "Well have a seat, I have some info for you Morgan."
             play sound page
             "He flips to his recent notes in his journal."
+            voice "d14_HaveYou"
             mo "Have you been studying it?"
             show lorenzo neutral
+            voice "d14_YesThat"
             lo "Yes. That and all my symptoms."
+            voice "d14_YouveHad"
             mo "You've had hallucinations that called your name? In Aston's voice?"
             show lorenzo scared
+            voice "d14_IDid"
             lo "I did not enjoy that one bit. It was horrifying at first but now I am sick of its games."
             show lorenzo sad
+            voice "d14_br2_BecauseI"
             lo "Because I know for a fact that he doesn't sound like that."
+            voice "d14_WhatAston"
             mo "What Aston heard outside was definitely not you then."
+            voice "d14_ItWould"
             lo "It would seem that way, yes."
+            voice "d14_MorganWill"
             lo "Morgan. Will you help me find him?"
+            voice "d14_IWill"
             mo "I will, Lorenzo."
             stop ambience fadeout 3.0
 
-
-    #@ Sharkie the way it works:
     #If on the 9th, you follow Aston, then it's +1
     #If on the 9th, Aston goes away himself it's +0
     #If on the 14th, you investigate it's +1
@@ -1041,36 +1430,44 @@ label dec_15:
     if aston_safe:
         "Today is my turn to accompany Kyle on his photography session."
         "I can't take my mind off what happened last night."
-        "Hallucinations and... all of Lorenzo's symptoms?"
+        "Hallucinations and...all of Lorenzo's symptoms?"
         show ky smile
+        voice "d15_OhDear"
         ky "Oh dear Morgan! There's lots of deer."
         "That horrible pun snapped me back into reality."
         show ky happy
         "Kyle seems amused with my reaction."
         show ky smile
+        voice "d15_WhatsWrong"
         ky "What's wrong, Morgan? Do you want to head back to camp?"
+        voice "d15_IllBe"
         mo "I'll be alright Kyle. I've just got lots of things on my mind."
 
     #If Aston is not safe
     else:
         "Today is my turn to accompany Kyle on his photography session."
         "I can't take my mind off what happened last night."
-        "Hallucinations and... all of Lorenzo's symptoms?"
+        "Hallucinations and...all of Lorenzo's symptoms?"
         "And Aston... I haven't seen him since last night."
         show ky smile
+        voice "d15_OhDear"
         ky "Oh dear Morgan! There's lots of deer."
         "That horrible pun snapped me back into reality."
         show ky happy
         "Kyle seems amused with my reaction."
         show ky sad
+        voice "d15_StillThinking"
         ky "Still thinking about Aston?"
-        mo "Yeah.. but I'll be alright Kyle."
+        voice "d15_YeahBut"
+        mo "Yeah...but I'll be alright Kyle."
 
     #continue script from here
     play sound camera2
     "Click click!"
+    voice "d15_DoYou"
     ky "Do you want to talk about it or...?"
     show ky confused
+    voice "d15_ActuallyHold"
     ky "Actually hold that thought Morgan, are you seeing what I'm seeing over there?"
     hide ky
     show bg forest3_animals
@@ -1079,13 +1476,16 @@ label dec_15:
 
     "It looks like a dead bird."
     show ky sad
+    voice "d15_NoooooWhat"
     ky "Nooooo what happened here?"
+    voice "d15_MightBe"
     mo "Might be worth taking pictures of that."
 
     "Although hesitant at first, Kyle begins snapping a few pictures."
     "Now that I'm actually taking in my surroundings, I realized that there were more of these piles."
     "I gave Kyle a nudge on his shoulder."
     show ky shaken
+    voice "d15_KyleVNVR"
     ky "..."
 
     "Yeah that's a valid reaction."
@@ -1096,9 +1496,12 @@ label dec_15:
     "Gotta respect the rules in \"The Camp Guide's Guide.\""
     "It'll definitely be worthwhile to pick some of them up."
 
+    voice "d15_LetsHead"
     mo "Let's head back to camp Kyle, I've got samples to grab."
     show ky shaken
+    voice "d15_AAreYou"
     ky "A-Are you gonna pick all of them up?"
+    voice "d15_OneShould"
     mo "One should suffice I hope?"
     stop music fadeout 3.0
 
@@ -1121,9 +1524,12 @@ label dec_16:
             yalign 1.0
             zoom 1.02
         "Today, Lorenzo greets us at the door as opposed to curling up in the chair."
+        voice "d16_InGood"
         mo "In good spirits today?"
         show lorenzo happy
+        voice "d16_GettingBetter"
         lo "Getting better day by day. How are you Aston?"
+        voice "d16_ItsBothering"
         ast "It's bothering me, but Morgan has been keeping me sane."
 
         "I kept an eye on him whilst doing our camp duties."
@@ -1133,23 +1539,32 @@ label dec_16:
         "This is a system that we've set up."
         show ast neutral
         show lorenzo pondering
+        voice "d16_IveStudied"
         lo "I've studied the thing a bit more."
         show lorenzo neutral
+        voice "d16_AnOdd"
         lo "An odd question but, have you seen any animals that look like this?"
 
         "He points at his journal, to sketches of animals covered with black viscous substance."
 
+        voice "d16_ItsFunny"
         mo "It's funny you say that, but yes I did. Birds, many dead birds."
         show lorenzo scared
+        voice "d16_YYouDidnt"
         lo "Y-You didn't use your bare hands right?"
+        voice "d16_TheCamp"
         mo "\"The Camp Guide's Guide\" said that I couldn't so I've got gear, don't worry."
         show lorenzo neutral
+        voice "d16_OkayGood"
         lo "Okay good for you, amico. I didn't have gear when I saw what was in the icebox in the RC."
+        voice "d16_WhatWas"
         ast "What was in it?"
         show lorenzo sick
+        voice "d16_UnidentifiableMass"
         lo "Unidentifiable mass, but it looks exactly like the drawing and the bear that I'm dealing with."
         show ast inthought
         show lorenzo sad
+        voice "d16_ThatWould"
         ast "That would mean you're patient 0, and that I most likely got it from you."
 
         show ast neutral:
@@ -1169,13 +1584,15 @@ label dec_16:
             zoom 1.0
 
         "The two of them stared at me, and took a few steps back."
-
+        voice "d16_JustFor"
         ast "Just for precaution, Morgan."
 
         "Aston and Lorenzo didn't have a bite. Kyle is an outlier."
 
+        voice "d16_DoYou"
         mo "Do you think... Elliot had also been exposed the same way?"
         show ast inthought
+        voice "d16_IWouldnt"
         ast "I wouldn't be surprised, he spent a lot of time at the RC. Eva and him were close."
 
         "Was Elliot trying to dig around at the RC?"
@@ -1216,6 +1633,7 @@ label dec_16:
         "And we still have not figured out how contagious it is."
         "With so many questions unanswered, the uncertainty kills me."
         show pearl sad
+        voice "d16_HeyCan"
         pe "Hey, can you hear me?"
         "Pearl's voice brings me back."
         show pearl smile
@@ -1223,10 +1641,14 @@ label dec_16:
         "I accepted the hug and she gave me a few pats on the back."
         play sound hug
         show pearl neutral
+        voice "d16_YouLooked"
         pe "You looked like you needed it Morgan."
+        voice "d16_AndYoure"
         pe "And you're not alone here, we're all here with you."
+        voice "d16_WeAre"
         pe "We are going to find them."
         show pearl smile
+        voice "d16_AndThen"
         pe "And then I'm going to force feed Aston some greens for running away from camp like that."
         "The image of Pearl running after him with a can of pea soup is hilarious."
         show pearl happy
@@ -1246,9 +1668,11 @@ label dec_17:
     "Kyle and Pearl paired up today to grab some pictures."
     play sound camera3
     "Click click click!"
-    pe "Let's see squirrels, squirrels, squirrels... and one napping wolf!"
+    voice "d17_LetsSee"
+    pe "Let's see squirrels, squirrels, squirrels...and one napping wolf!"
     show ky happy
     show pearl happy
+    voice "d17_GoodEye"
     ky "Good eye, Pearl!"
     show pearl smile
     play sound camera3
@@ -1257,16 +1681,19 @@ label dec_17:
     "He looks down at his camera, proud of his shots."
 
     show ky happy
+    voice "d17_LooksLike"
     ky "Looks like our harvest today is bountiful!"
     show pearl happy
+    voice "d17_AwwYeah"
     pe "Aww yeah!"
 
     "All of a sudden, something caught Kyle's attention."
     show ky confused
     "An animal moving in his peripheral vision?"
-
+    voice "d17_PearlIm"
     ky "Pearl, I'm gonna check out that tree."
     show pearl neutral
+    voice "d17_OkayIll"
     pe "Okay! I'll be here."
     hide pearl
 
@@ -1275,6 +1702,7 @@ label dec_17:
     "He approaches the animal with caution."
 
     show ky shaken
+    voice "d17_OhShit"
     ky "Oh shit that's a bear."
     stop ambience fadeout 1.0
     play music audio.anxious fadein 3.0
@@ -1288,42 +1716,54 @@ label dec_17:
     hide cg
 
     show ky neutral
+    voice "d17_LetMe"
     ky "Let me try that again."
     play sound camera1
     "Click!"
     "He checks his camera once again."
     "The bear isn't in the picture."
     show ky confused
+    voice "d17_What"
     ky "What."
 
     "Seems like the bear was moving about and now it's clawing a tree."
     show ky neutral
+    voice "d17_OkayThird"
     ky "Okay, third time's the charm!"
     play sound flash
     "Click!"
 
     show ky shaken
+    voice "d17_Shit"
     ky "Shit."
 
     "The flash turned on."
 
+    voice "d17_PleaseDont"
     ky "Please don't see me, please don't see me..."
 
     "Kyle breaks vision from the bear, hiding behind a large tree."
     play sound beargrowl
     "*growl*"
-
+    voice "d17_KyleVNVR"
     ky "..."
     show pearl smile at centerright
+    voice "d17_HeyaKyle"
     pe "Heya Kyle! How's the photo taking going?"
+    voice "d17_PearlKeep"
     ky "Pearl! Keep it down. There's a bear behind this tree."
+    voice "d17_ItWas"
     ky "It was growling."
     show pearl confused
+    voice "d17_GGrowlingDont"
     pe "G-Growling? Don't pull my leg Kyle, why would a bear be out and about this time of the year?"
+    voice "d17_ArentThey"
     pe "Aren't they hibernating?"
     show ky sad
+    voice "d17_IHave"
     ky "I have pictures. Let's go back to camp and I'll show you."
     show pearl neutral
+    voice "d17_IfYou"
     pe "If you saw a bear, I'll believe you! But you need to take a deep breath now, your breathing is ragged."
 
     "Pearl is right."
@@ -1335,23 +1775,29 @@ label dec_17:
     "Kyle flips through the camera's gallery once more."
     "There's a blurry shot."
     "One out of frame."
-    "And the last one... distorted."
+    "And the last one...distorted."
     show pearl smile
+    voice "d17_OohWhat"
     pe "Ooh! What's this glitchy effect on this blob?"
     play sound camera1
     "Kyle takes another picture on the spot."
     "There's no distortion."
     show pearl confused
+    voice "d17_IsIt"
     pe "Is it broken?"
+    voice "d17_MyCameras"
     ky "My camera's fine, but my pictures are not."
     show ky neutral
+    voice "d17_CouldYou"
     ky "Could you grab my laptop Pearl? I need backups of these before I lose 'em."
     show pearl smile
+    voice "d17_OnIt"
     pe "On it!"
     stop music fadeout 3.0
 
 label dec_18:
     #INT: Main tent
+    #(TOGGLE) isa ev ko
     scene bg maintent_day with longfade
     $ current_day = _("December 18th")
     $ save_name = current_date(_("Arc 2"), current_day)
@@ -1364,41 +1810,104 @@ label dec_18:
     "It's from Koda."
     #radio starts
     $ chibi_koda = "images/chibi/koda_happy.png"
+    if radio_static == "_s":
+        voice "d18_HiKyle_s"
+    else:
+        voice "d18_HiKyle_c"
     wt_ko "Hi Kyle! Is now a good time?"
     $ chibi_kyle = "images/chibi/kyle_happy.png"
+    voice "d18_ImAll"
     wt_ky "I'm all ears!"
     $ chibi_eva = "images/chibi/eva_neutral.png"
+    if radio_static == "_s":
+        voice "d18_ItWould_s"
+    else:
+        voice "d18_ItWould_c"
     wt_ev "It would seem that most of the animals are okay."
     $ chibi_eva = "images/chibi/eva_worried.png"
+    if radio_static == "_s":
+        voice "d18_ButThere_s"
+    else:
+        voice "d18_ButThere_c"
     wt_ev "But there were two strange things you've encountered?"
     $ chibi_kyle = "images/chibi/kyle_worried.png"
+    voice "d18_YeahThe"
     wt_ky "Yeah, the bird stuff and a bear."
     $ chibi_eva = "images/chibi/eva_neutral.png"
+    if radio_static == "_s":
+        voice "d18_YouSaw_s"
+    else:
+        voice "d18_YouSaw_c"
     wt_ev "You saw a bear? Sure it wasn't something else?"
     $ chibi_koda = "images/chibi/koda_worried.png"
+    if radio_static == "_s":
+        voice "d18_WouldntThey_s"
+    else:
+        voice "d18_WouldntThey_c"
     wt_ko "Wouldn't they be hibernating?"
-    wt_ky "That's what Pearl has been saying... but I am convinced that I saw one."
+    voice "d18_ThatsWhat"
+    wt_ky "That's what Pearl has been saying... But I am convinced that I saw one."
     $ chibi_kyle = "images/chibi/kyle_neutral.png"
+    voice "d18_IfThere"
     wt_ky "If there really was one, I'll try snagging pictures again."
-    wt_ko "Safety's first Kyle! Don't end up on the headlines."
+    if radio_static == "_s":
+        voice "d18_SafetysFirst_s"
+    else:
+        voice "d18_SafetysFirst_c"
+    wt_ko "Safety's first, Kyle! Don't end up on the headlines."
     $ chibi_kyle = "images/chibi/kyle_happy.png"
-    wt_ky "I am a professional, don't you worry Koda!"
+    voice "d18_IAm"
+    wt_ky "I am a professional, don't you worry, Koda!"
+    if radio_static == "_s":
+        voice "d18_AndThe_s"
+    else:
+        voice "d18_AndThe_c"
     wt_is "And the bird pictures... Those were the same ones like the one that Morgan picked up, yes?"
     $ chibi_kyle = "images/chibi/kyle_neutral.png"
-    wt_ky "Oh hey Isaak! And yes."
+    voice "d18_OhHey"
+    wt_ky "Oh hey, Isaak! And yes."
+    if radio_static == "_s":
+        voice "d18_HowMany_s"
+    else:
+        voice "d18_HowMany_c"
     wt_is "How many birds were there?"
     $ chibi_kyle = "images/chibi/kyle_worried.png"
+    voice "d18_About8"
     wt_ky "About 8 to 10? Have you guys found out why this is happening?"
+    if radio_static == "_s":
+        voice "d18_NoWe_s"
+    else:
+        voice "d18_NoWe_c"
     wt_is "No. We haven't got an inkling."
+    voice "d18_AndIts"
     wt_ky "And its appearance? The globby slimy icky stuff?"
+    if radio_static == "_s":
+        voice "d18_SameAnswer_s"
+    else:
+        voice "d18_SameAnswer_c"
     wt_is "Same answer."
+    voice "d18_DoYou"
     wt_ky "Do you think it has something to do with the water?"
+    if radio_static == "_s":
+        voice "d18_IsaakVNVR_s"
+    else:
+        voice "d18_IsaakVNVR_c"
     wt_is "..."
+    if radio_static == "_s":
+        voice "d18_UUhWe_s"
+    else:
+        voice "d18_UUhWe_c"
     wt_ko "U-Uh, we don't know just yet, but we'll let you know when we do!"
-    wt_ky "Sorry sorry. Just want to make sure that we're all safe while we're out there."
+    voice "d18_SorrySorry"
+    wt_ky "Sorry, sorry. Just want to make sure that we're all safe while we're out there."
     $ chibi_eva = "images/chibi/eva_happy.png"
+    if radio_static == "_s":
+        voice "d18_AnywayThanks_s"
+    else:
+        voice "d18_AnywayThanks_c"
     wt_ev "Anyway, thanks Kyle. Really great shots by the way, stunning photos."
     $ chibi_kyle = "images/chibi/kyle_happy.png"
+    voice "d18_ITake"
     wt_ky "I take pride in that! Thank you!"
     stop ambience fadeout 3.0
     stop music fadeout 3.0
@@ -1419,18 +1928,43 @@ label dec_20:
         "While enjoying a cup of cocoa by myself, I received a Walkie beep from Wilbur."
         play sound beep
         #radio start
-        wt_wi "Hello Morgan! Are you there?"
+        #(TOGGLE) wi ru
+
+        if radio_static == "_s":
+            voice "d20_br1_HelloMorgan_s"
+        else:
+            voice "d20_br1_HelloMorgan_c"
+        wt_wi "Hello, Morgan! Are you there?"
         $ chibi_morgan = "images/chibi/morgan_neutral.png"
+        voice "d20_WhatsUp"
         wt_mo "What's up?"
         $ chibi_ruran = "images/chibi/ruran_worried.png"
+        if radio_static == "_s":
+            voice "d20_HowIs_s"
+        else:
+            voice "d20_HowIs_c"
         wt_ru "How is Aston?"
         $ chibi_morgan = "images/chibi/morgan_worried.png"
-        wt_mo "He's hanging in there I think. I'm looking out for him, don't worry."
-        wt_ru "Aston is strong, perhaps too strong. He takes on everything and bottles up his own emotions."
+        voice "d20_HesHanging"
+        wt_mo "He's hanging in there, I think. I'm looking out for him, don't worry."
+        if radio_static == "_s":
+            voice "d20_AstonIs_s"
+        else:
+            voice "d20_AstonIs_c"
+        wt_ru "Aston is strong... Perhaps too strong. He takes on everything and bottles up his own emotions."
+        if radio_static == "_s":
+            voice "d20_LorenzoIs_s"
+        else:
+            voice "d20_LorenzoIs_c"
         wt_ru "Lorenzo is the only person who he confides with, and with him missing..."
         $ chibi_wilbur = "images/chibi/wilbur_worried.png"
+        if radio_static == "_s":
+            voice "d20_KeepAn_s"
+        else:
+            voice "d20_KeepAn_c"
         wt_wi "Keep an eye on him will you, son? He needs all the support he can get."
         $ chibi_morgan = "images/chibi/morgan_neutral.png"
+        voice "d20_OfCourse"
         wt_mo "Of course."
         #radio ends
         nvl clear
@@ -1444,17 +1978,36 @@ label dec_20:
         play sound beep
         #radio start
         $ chibi_wilbur = "images/chibi/wilbur_worried.png"
-        wt_wi "Hello Morgan! Are you there?"
+        if radio_static == "_s":
+            voice "d20_br2_HelloMorgan_s"
+        else:
+            voice "d20_br2_HelloMorgan_c"
+        wt_wi "Hello, Morgan! Are you there?"
         $ chibi_morgan = "images/chibi/morgan_neutral.png"
+        voice "d20_WhatsUp"
         wt_mo "What's up?"
         $ chibi_ruran = "images/chibi/ruran_worried.png"
+        if radio_static == "_s":
+            voice "d20_AnyUpdates_s"
+        else:
+            voice "d20_AnyUpdates_c"
         wt_ru "Any updates on Aston?"
         $ chibi_morgan = "images/chibi/morgan_worried.png"
-        wt_mo "Aston... hasn't come back."
+        voice "d20_AstonHasnt"
+        wt_mo "Aston... Hasn't come back."
+        if radio_static == "_s":
+            voice "d20_SoTheres_s"
+        else:
+            voice "d20_SoTheres_c"
         wt_ru "So there's no sign of both of them yet..."
         $ chibi_wilbur = "images/chibi/wilbur_worried.png"
+        if radio_static == "_s":
+            voice "d20_KeepUs_s"
+        else:
+            voice "d20_KeepUs_c"
         wt_wi "Keep us updated will you, son? Let us know if you've seen them."
         $ chibi_morgan = "images/chibi/morgan_neutral.png"
+        voice "d20_OfCourse"
         wt_mo "Of course."
         #radio ends
         nvl clear
@@ -1470,29 +2023,38 @@ label dec_21:
     show ky confused
     "Kyle is looking through his camera gallery."
     show ky smile
+    voice "d21_HmmmOh"
     ky "Hmmm... Oh, Morgan! Hello!"
     "He notices me walking into the tent."
+    voice "d21_CanI"
     ky "Can I get your opinion on something?"
     "He tilts the camera towards me."
     show cg glitchedphoto
 
-    "I don't... like what I am seeing here."
+    "I don't...like what I am seeing here."
+    voice "d21_WeirdHuh"
     ky "Weird, huh? My camera glitched out on this photo."
+    voice "d21_ThatLooks"
     mo "That looks like a bear, no?"
+    voice "d21_IMean"
     ky "I mean, yeah, I saw it with my eyeballs."
     show ky sad
+    voice "d21_ButIt"
     ky "But it looked nothing like the picture here."
     hide cg
     "I touched Kyle's forehead to feel his temperature."
     show ky happy
+    voice "d21_NoFever"
     ky "No fever!"
     "I'm not sure if Kyle is infected."
     show ky neutral
     "But I can't cross out the chance that he might be hallucinating as well."
     "Another bear of all things."
     "Hibernation doesn't seem like a popular activity here."
+    voice "d21_CouldI"
     mo "Could I get a copy of that?"
     show ky smile
+    voice "d21_AbsolutelyGive"
     ky "Absolutely, give me just a moment!"
     "Great, another delivery for Colin."
 
@@ -1506,8 +2068,10 @@ label dec_22:
     "Pearl seems frantic today."
     "Searching high and low for something... Her compass, maybe?"
 
+    voice "d22_SearchingFor"
     mo "Searching for your compass again, Pearl?"
     show pearl sad
+    voice "d22_Yep"
     pe "Yep."
 
     "I'll help her look around then."
@@ -1522,27 +2086,41 @@ label dec_22:
     "What?"
     "Did she actually put her compass in here?"
     show pearl neutral
-    mo "Pearl? I found it, but... why was it in the crock pot?"
+    voice "d22_PearlI"
+    mo "Pearl? I found it, but...why was it in the crock pot?"
     show pearl confused
+    voice "d22_WhatReally"
     pe "What, really? That's pretty odd, but thanks Morgan!"
     hide pearl
     "She took her compass from my hands and ran off into the main tent."
     "Is it just me, or does Pearl seem off today?"
 
 label dec_23:
+    #(TOGGLE) ko da
     scene bg maintent_day with longfade
     $ current_day = _("December 23rd")
     $ save_name = current_date(_("Arc 2"), current_day)
     show screen date_label with dissolve
     #INT: Main tent
     show pearl smile
+    voice "d23_PearlAre"
     da "Pearl? Are you okay?"
     show pearl neutral
+    voice "d23_ImGood"
     pe "I'm good! Think I've been feeling a lot more tired these days."
-    da "Don't make me hike 2 hours to get to you, you know that I will."
-    ko "Don't make me hike 4 hours to get to you, you know I'm not fit to do that."
+    if radio_static == "_s":
+        voice "d23_DavosHike2Hours_s"
+    else:
+        voice "d23_DavosHike2Hours_c"
+    da "Don't make me hike 2 hours to get to you. You know that I will!"
+    if radio_static == "_s":
+        voice "d23_KodaHike4Hours_s"
+    else:
+        voice "d23_KodaHike4Hours_c"
+    ko "Don't make me hike 4 hours to get to you... You know I'm not fit to do that."
     show pearl smile
-    pe "I swear that I'm fine guys!"
+    voice "d23_ISwear"
+    pe "I swear that I'm fine, guys!"
 
     "I walked into a conversation that the trio were having."
     "She says that she's fine. I genuinely hope so."
@@ -1565,7 +2143,9 @@ label dec_24:
         "It just barely fits the two of them."
         "As the clock struck midnight, it was finally time."
 
+        voice "d24_HappyChristmas"
         ast "Happy Christmas, love."
+        voice "d24_br1_BuonNatale"
         lo "Buon Natale, amore."
 
         "If one goes down, the other shall follow. This has always been the case for them."
@@ -1587,8 +2167,9 @@ label dec_24:
             zoom 2.0
             xalign 0.5
         "Eyes closed, Aston's face flashes by."
-
+        voice "d24_br2_BuonNatale"
         lo "Buon Natale, amore."
+        voice "d24_IMiss"
         lo "I miss you."
 
         hide black
@@ -1620,18 +2201,28 @@ label dec_25:
     "If only this dumbass would show up soon."
     "Oh well, I shall try to make the most of it right now."
     "I should beep everyone today."
-
+    #(TOGGLE) yes
     menu christmas:
         "Beep Wilbur":
             if not christmas_wi:
                 $ christmas_wi = True
                 $ chibi_morgan = "images/chibi/morgan_happy.png"
+                voice "d25_MerryChristmasWilbur"
                 wt_mo "Merry Christmas, Wilbur!"
                 $ chibi_wilbur = "images/chibi/wilbur_happy.png"
+                if radio_static == "_s":
+                    voice "d25_MorganThank_s"
+                else:
+                    voice "d25_MorganThank_c"
                 wt_wi "Morgan! Thank you and Merry Christmas to you too!"
                 $ chibi_wilbur = "images/chibi/wilbur_neutral.png"
+                if radio_static == "_s":
+                    voice "d25_MakeSure_s"
+                else:
+                    voice "d25_MakeSure_c"
                 wt_wi "Make sure to have a great feast today and call your family, yes?"
                 $ chibi_morgan = "images/chibi/morgan_neutral.png"
+                voice "d25_YouBet"
                 wt_mo "You bet I will."
                 nvl clear
             else:
@@ -1641,12 +2232,22 @@ label dec_25:
             if not christmas_ru:
                 $ christmas_ru = True
                 $ chibi_morgan = "images/chibi/morgan_happy.png"
+                voice "d25_MerryChristmasRuran"
                 wt_mo "Merry Christmas, Ruran!"
                 $ chibi_ruran = "images/chibi/ruran_happy.png"
-                wt_ru "Merry Christmas to you too Morgan!"
+                if radio_static == "_s":
+                    voice "d25_MerryChristmasFromRuran_s"
+                else:
+                    voice "d25_MerryChristmasFromRuran_c"
+                wt_ru "Merry Christmas to you too, Morgan!"
+                if radio_static == "_s":
+                    voice "d25_IHopeThatYour_s"
+                else:
+                    voice "d25_IHopeThatYour_c"
                 wt_ru "I hope that your wishes come true."
                 $ chibi_morgan = "images/chibi/morgan_neutral.png"
-                wt_mo "Likewise to you Ruran."
+                voice "d25_LikewiseTo"
+                wt_mo "Likewise to you, Ruran."
                 nvl clear
             else:
                 "I've already talked to her."
@@ -1655,12 +2256,22 @@ label dec_25:
             if not christmas_da:
                 $ christmas_da = True
                 $ chibi_morgan = "images/chibi/morgan_happy.png"
+                voice "d25_DavosMerry"
                 wt_mo "Davos! Merry Christmas!"
                 $ chibi_davos = "images/chibi/davos_neutral.png"
+                if radio_static == "_s":
+                    voice "d25_MerryChristmasFromDavos_s"
+                else:
+                    voice "d25_MerryChristmasFromDavos_c"
                 wt_da "Merry Christmas Morgan! I heard the moon's going to be bright tonight!"
                 $ chibi_davos = "images/chibi/davos_happy.png"
+                if radio_static == "_s":
+                    voice "d25_YouWouldnt_s"
+                else:
+                    voice "d25_YouWouldnt_c"
                 wt_da "You wouldn't want to miss out on that!"
                 $ chibi_morgan = "images/chibi/morgan_neutral.png"
+                voice "d25_ThatSounds"
                 wt_mo "That sounds lovely, I'll be sure to look up tonight."
                 nvl clear
             else:
@@ -1670,16 +2281,31 @@ label dec_25:
             if not christmas_ca:
                 $ christmas_ca = True
                 $ chibi_morgan = "images/chibi/morgan_happy.png"
+                voice "d25_MerryChristmasCassie"
                 wt_mo "Merry Christmas, Cassie!"
                 $ chibi_cassie = "images/chibi/cassie_happy.png"
-                wt_ca "Aww thank you Morgan! Merry Christmas to you too!"
+                if radio_static == "_s":
+                    voice "d25_AwwThank_s"
+                else:
+                    voice "d25_AwwThank_c"
+                wt_ca "Aww, thank you, Morgan! Merry Christmas to you too!"
                 $ chibi_morgan = "images/chibi/morgan_neutral.png"
-                wt_mo "Hope your ankle has been healing well."
+                voice "d25_IHopeYourAnkle"
+                wt_mo "I hope your ankle has been healing well."
                 $ chibi_cassie = "images/chibi/cassie_neutral.png"
-                wt_ca "Thankfully it has! Give it another week or two and I'll be up and running!"
+                if radio_static == "_s":
+                    voice "d25_ThankfullyIt_s"
+                else:
+                    voice "d25_ThankfullyIt_c"
+                wt_ca "Thankfully it has! Give it another week or two, and I'll be up and running!"
                 $ chibi_morgan = "images/chibi/morgan_happy.png"
+                voice "d25_ItsA"
                 wt_mo "It's a Christmas miracle!"
                 $ chibi_cassie = "images/chibi/cassie_happy.png"
+                if radio_static == "_s":
+                    voice "d25_YoureSo_s"
+                else:
+                    voice "d25_YoureSo_c"
                 wt_ca "You're so right."
                 nvl clear
             else:
@@ -1689,14 +2315,25 @@ label dec_25:
             if not christmas_ja:
                 $ christmas_ja = True
                 $ chibi_morgan = "images/chibi/morgan_happy.png"
+                voice "d25_MerryChristmas"
                 wt_mo "Merry Christmas!"
                 $ chibi_jax = "images/chibi/jax_neutral.png"
+                if radio_static == "_s":
+                    voice "d25_AndMerry_s"
+                else:
+                    voice "d25_AndMerry_c"
                 wt_ja "And Merry Christmas to you!"
                 $ chibi_morgan = "images/chibi/morgan_neutral.png"
+                voice "d25_HowsChristmas"
                 wt_mo "How's Christmas for you so far?"
                 $ chibi_jax = "images/chibi/jax_happy.png"
+                if radio_static == "_s":
+                    voice "d25_ISlept_s"
+                else:
+                    voice "d25_ISlept_c"
                 wt_ja "I slept in today, so now I'm all refreshed."
                 $ chibi_morgan = "images/chibi/morgan_happy.png"
+                voice "d25_NothingBeats"
                 wt_mo "Nothing beats those extra hours of sleep."
                 "Nice, Jax and I are like-minded in that regard."
                 nvl clear
@@ -1707,14 +2344,28 @@ label dec_25:
             if not christmas_ko:
                 $ christmas_ko = True
                 $ chibi_morgan = "images/chibi/morgan_happy.png"
+                voice "d25_HeyKoda"
                 wt_mo "Hey Koda! Merry Christmas!"
                 $ chibi_koda = "images/chibi/koda_happy.png"
+                if radio_static == "_s":
+                    voice "d25_MorganMerry_s"
+                else:
+                    voice "d25_MorganMerry_c"
                 wt_ko "Morgan! Merry Christmas! I hope your day has been great!"
                 $ chibi_morgan = "images/chibi/morgan_neutral.png"
+                voice "d25_ItHas"
                 wt_mo "It has been, yes. Hope you're taking time off to actually relax!"
                 $ chibi_koda = "images/chibi/koda_neutral.png"
+                if radio_static == "_s":
+                    voice "d25_EvaKicked_s"
+                else:
+                    voice "d25_EvaKicked_c"
                 wt_ko "Eva kicked me out of the lab today just for that reason!"
                 $ chibi_koda = "images/chibi/koda_happy.png"
+                if radio_static == "_s":
+                    voice "d25_TimeFor_s"
+                else:
+                    voice "d25_TimeFor_c"
                 wt_ko "Time for some well earned rest!"
                 nvl clear
             else:
@@ -1724,16 +2375,31 @@ label dec_25:
             if not christmas_ev:
                 $ christmas_ev = True
                 $ chibi_morgan = "images/chibi/morgan_happy.png"
+                voice "d25_MerryChristmasEva"
                 wt_mo "Merry Christmas, Eva!"
                 $ chibi_eva = "images/chibi/eva_happy.png"
+                if radio_static == "_s":
+                    voice "d25_ThanksMerry_s"
+                else:
+                    voice "d25_ThanksMerry_c"
                 wt_ev "Thanks! Merry Christmas to you too, Morgan."
                 $ chibi_eva = "images/chibi/eva_neutral.png"
+                if radio_static == "_s":
+                    voice "d25_IHopeYouPrepared_s"
+                else:
+                    voice "d25_IHopeYouPrepared_c"
                 wt_ev "I hope you prepared presents."
                 $ chibi_morgan = "images/chibi/morgan_worried.png"
+                voice "d25_OhI"
                 wt_mo "Oh, I didn't."
                 $ chibi_eva = "images/chibi/eva_happy.png"
+                if radio_static == "_s":
+                    voice "d25_ReallyThats_s"
+                else:
+                    voice "d25_ReallyThats_c"
                 wt_ev "Really? That's a shame."
-                wt_mo "Where's mine then?"
+                voice "d25_WellWheres"
+                wt_mo "Well where's mine, then?"
                 "Eva just doesn't respond after that."
                 "No presents then, I guess."
                 nvl clear
@@ -1743,10 +2409,23 @@ label dec_25:
         "Beep Isaak":
             if not christmas_is:
                 $ christmas_is = True
+                if radio_static == "_s":
+                    voice "d25_Hello_s"
+                else:
+                    voice "d25_Hello_c"
                 wt_is "Hello?!"
                 $ chibi_morgan = "images/chibi/morgan_worried.png"
+                voice "d25_MerryChristmasIsaak"
                 wt_mo "Merry Christmas... Isaak?"
+                if radio_static == "_s":
+                    voice "d25_OhIts_s"
+                else:
+                    voice "d25_OhIts_c"
                 wt_is "Oh, it's you."
+                if radio_static == "_s":
+                    voice "d25_MerryChristmasFromIsaak_s"
+                else:
+                    voice "d25_MerryChristmasFromIsaak_c"
                 wt_is "Merry Christmas to you too, Morgan."
                 "I think he might've been expecting someone else."
                 nvl clear
@@ -1758,10 +2437,12 @@ label dec_25:
                 $ christmas_lo = True
                 if aston_safe:
                     $ chibi_morgan = "images/chibi/morgan_neutral.png"
+                    voice "d25_MerryChristmasLorenzo"
                     wt_mo "Merry Christmas, Lorenzo."
                     "He won't respond because it's daytime, but I know that he can hear me, and that's all that matters."
                 else:
                     $ chibi_morgan = "images/chibi/morgan_worried.png"
+                    voice "d25_MerryChristmasLorenzo"
                     wt_mo "Merry Christmas, Lorenzo."
                     "I'll bring Aston back to you."
                 nvl clear
@@ -1777,11 +2458,26 @@ label dec_25:
     #radio ends
     #TODO phone starts
     show satphone
+    voice "d25_MerryChristmasToMy"
     mo "Merry Christmas to my lovely Pancake!"
+    if radio_static == "_s":
+        voice "d25_MerryChristmasMorg_s"
+    else:
+        voice "d25_MerryChristmasMorg_c"
     co "Merry Christmas Morg!"
+    voice "d25_SoAbout"
     mo "So about the snowmobi-"
+    if radio_static == "_s":
+        voice "d25_No_s"
+    else:
+        voice "d25_No_c"
     co "No."
+    if radio_static == "_s":
+        voice "d25_IllGet_s"
+    else:
+        voice "d25_IllGet_c"
     co "I'll get you something else when you're back."
+    voice "d25_OohA"
     mo "Ooh, a surprise gift from Pancake? I'll take that."
     hide satphone
     #phone ends
@@ -1790,15 +2486,19 @@ label dec_25:
 
     #INT: Main tent
     scene bg maintent_day with dissolve
+    voice "d25_MerryChristmasEveryone"
     mo "Merry Christmas everyone!"
     show gr neutral at left
+    voice "d25_MerryChristmasYoureDone"
     gr "Merry Christmas. You're done with the calls?"
 
     "I gave a light nod to Gregory."
 
     show ky happy at right
     show pearl happy at centerright
+    voice "d25_MerryChristmasFromKyle"
     ky "Merry Christmas Morgan!"
+    voice "d25_MerryChristmasFromPearl"
     pe "Merry Christmas Morgan!"
 
     "These two, I swear. They really do share the same brain cells."
@@ -1806,6 +2506,7 @@ label dec_25:
     #IF Aston not safe skip the lines below
     if aston_safe:
         show ast happy at centerleft
+        voice "d25_HappyChristmas"
         ast "Happy Christmas Morgan."
         "And Aston here balances out the energies."
 
@@ -1818,7 +2519,7 @@ label dec_25:
     "Heh... Like a Christmas tree, red and green."
     "Alright, now there's just one final person."
     "I take a deep breath."
-
+    voice "d25_MerryChristmasElly"
     mo "Merry Christmas, Elly."
     stop music fadeout 3.0
 
@@ -1830,38 +2531,94 @@ label dec_26:
     play music audio.neutral
 
     "Ah yes, it's time for my favorite hobby."
-    "Tormenting my beloved 37 year old child."
+    "Tormenting my beloved 37-year-old child."
     "But first, I should send him some pictures."
     "And... Sent!"
     play sound ding
     #TODO phone start
+    #(TOGGLE) co
     show satphone
+    if radio_static == "_s":
+        voice "d26_HeyaMorg_s"
+    else:
+        voice "d26_HeyaMorg_c"
     co "Heya Morg, calling again so soon?"
+    voice "d26_PancakeIve"
     mo "Pancake! I've missed you, and I feel like I haven't gotten you up to speed yet."
-    co "Wow that's sweet. So what's good, Morg?"
+    if radio_static == "_s":
+        voice "d26_WowThats_s"
+    else:
+        voice "d26_WowThats_c"
+    co "Wow, that's sweet. So what's good, Morg?"
+    voice "d26_BigThings"
     mo "Big things happened, lots of new discoveries over the past week. Did you see the goods?"
+    if radio_static == "_s":
+        voice "d26_ImLooking_s"
+    else:
+        voice "d26_ImLooking_c"
     co "I'm looking at a handwritten list and a glitched out picture, what's the deal with 'em?"
+    voice "d26_ListContains"
     mo "List contains Lorenzo's observations. The bear he's hallucinating about."
+    voice "d26_WereDealing"
     mo "We're dealing with more than just physical symptoms now."
+    if radio_static == "_s":
+        voice "d26_YoureSaying_s"
+    else:
+        voice "d26_YoureSaying_c"
     co "You're saying that it's both visual and auditory shit?"
+    voice "d26_YeahAnd"
     mo "Yeah, and I have a feeling that Kyle almost caught it on camera."
+    voice "d26_IDoubt"
     mo "I doubt he'd lie about seeing a bear, but it is weird that that's the only thing that's distorted in the photo."
+    if radio_static == "_s":
+        voice "d26_HmmmThink_s"
+    else:
+        voice "d26_HmmmThink_c"
     co "Hmmm... Think I'll have to consult my doctors to see if there's a possibility."
+    voice "d26_IDo"
     mo "I do have some bad news though. Aston is also infected."
+    voice "d26_AndIm"
     mo "And I'm pretty sure that he hears things that I don't."
 
     if not aston_safe:
+        voice "d26_HeWent"
         mo "He went missing a day after our last update and hasn't come back since..."
+        voice "d26_IIWas"
         mo "I... I was there and I should've stopped him from running off, but my flashlight died and-"
+        if radio_static == "_s":
+            voice "d26_Morgan_s"
+        else:
+            voice "d26_Morgan_c"
         co "Morgan."
+        #TODO voice "" missing VNVR
         mo "..."
+        if radio_static == "_s":
+            voice "d26_ChinUp_s"
+        else:
+            voice "d26_ChinUp_c"
         co "Chin up, Morg. If he's missing, you do whatever you can to find them."
+        voice "d26_Mmhmm"
         mo "Mmhmm."
-    co "Okay and what about Elly? Do you think it's also related?"
+    if radio_static == "_s":
+        voice "d26_OkayAnd_s"
+    else:
+        voice "d26_OkayAnd_c"
+    co "Okay, and what about Elly? Do you think it's also related?"
+    voice "d26_ItMay"
     mo "It may very well be the same thing, yes."
+    if radio_static == "_s":
+        voice "d26_SorryMorg_s"
+    else:
+        voice "d26_SorryMorg_c"
     co "Sorry Morg, you're cutting off."
-    mo "Hello? Can you hear me?"
+    voice "d26_HelloCan"
+    mo "Hello? Can you- Can you hear me?"
+    if radio_static == "_s":
+        voice "d26_TheresSomething_s"
+    else:
+        voice "d26_TheresSomething_c"
     co "There's something wrong with your line."
+    voice "d26_Pancake"
     mo "Pancake?"
     hide satphone
     #phone ends
@@ -1885,19 +2642,23 @@ label dec_27:
 
     show pearl neutral
     "I sat up to see Pearl frantically packing her gear."
-
+    voice "d27_PearlWhat"
     mo "Pearl, what are you doing?"
     show pearl smile
+    voice "d27_MorganI"
     pe "Morgan! I, uh...couldn't sleep at all."
-
+    voice "d27_AndThe"
     mo "...and the gear?"
     show pearl sad
-    pe "...Fine, you caught me... but don't tell the others."
+    voice "d27_FineYou"
+    pe "...Fine, you caught me...but don't tell the others."
     show pearl neutral
 
     if aston_safe:
+        voice "d27_ImGoingToFindLorenzo"
         pe "I'm going to find Lorenzo."
     else:
+        voice "d27_ImGoingToFindThem"
         pe "I'm going to find them."
 
     #choice branch
@@ -1906,21 +2667,27 @@ label dec_27:
             "Let's think about it for a second":
                 $ pearl_safe = True
                 #aka the treat her like a sensible adult route, tell her that's not possible
+                voice "d27_PearlNoThinkAbout"
                 mo "Pearl, no. Think about it for a second."
                 show pearl sad
+                voice "d27_ItsCold"
                 mo "It's cold, dark and you could get mauled by an animal. I can't let that happen to you."
 
             "It's dangerous, you won't survive the cold":
                 $ pearl_safe = True
                 #aka the treat her like a child route, tell her that it won't work and that you don't want her walking out by herself
+                voice "d27_PearlNoYouWont"
                 mo "Pearl, no. You won't survive out there."
                 show pearl sad
+                voice "d27_br1_HowAre"
                 mo "How are you going to find Lorenzo if you don't even know where to begin searching? It's reckless."
         #choice branch ends
-
+        voice "d27_br1_ImNotGonnaJust"
         pe "I'm not gonna just stay here, I need to do something."
+        voice "d27_br1_OneDay"
         pe "One day the search for Lorenzo happens, then it ends abruptly."
         show pearl depressed
+        voice "d27_br1_ImNotGoingTo"
         pe "I'm not going to wait till more of us go missing. I can't take it."
 
         show ast neutral at right
@@ -1928,13 +2695,18 @@ label dec_27:
         "He gives her a quick pat on the head."
         show ast sad
         show pearl sad
+        voice "d27_PearlIts"
         ast "Pearl, it's gonna be okay. You just have to trust us."
+        voice "d27_br1_PearlYou"
         mo "Pearl, you are brave and kind, and I know you want to help."
         show pearl depressed
+        #voice "" missing VNVR
         pe "..."
         "Tears welled up in her eyes."
+        voice "d27_IWish"
         pe "I wish I could do more."
         show ast neutral
+        voice "d27_br1_YoureDoing"
         ast "You're doing enough Pearl. Let's go back to sleep okay?"
         stop ambience fadeout 1.0
 
@@ -1943,37 +2715,45 @@ label dec_27:
         menu:
             "Let's think about it for a second":
                 $ pearl_safe = True
+                voice "d27_PearlNoThinkAbout"
                 mo "Pearl, no. Think about it for a second."
                 show pearl sad
+                voice "d27_ItsCold"
                 mo "It's cold, dark and you could get mauled by an animal. I can't let that happen to you."
+                voice "d27_br2_ImNotGonnaJust"
                 pe "I'm not gonna just stay here, I need to do something."
                 show pearl depressed
+                voice "d27_br2_OneDay"
                 pe "One day the search for Lorenzo happens, then it ends abruptly."
+                voice "d27_AndNow"
                 pe "And now it's happening to Aston."
+                voice "d27_br2_ImNotGoingTo"
                 pe "I'm not going to wait till more of us go missing. I can't take it."
 
             "It's dangerous, you won't survive the cold":
             #aka the treat her like a child route, tell her that it won't work and that you don't want her walking out by herself
+                voice "d27_PearlNoYouWont"
                 mo "Pearl, no. You won't survive out there."
                 show pearl sad
+                voice "d27_br2_HowAre"
                 mo "How are you going to find them if you don't even know where to begin searching? It's reckless."
-                # pe "I'm not gonna just stay here, I need to do something."
-                # show pearl depressed
-                # pe "One day the search for Lorenzo happens, then it ends abruptly."
-                # pe "And now it's happening to Aston."
-                # pe "I'm not going to wait till more of us go missing. I can't take it."
+                
                 #straight to pearldeath
         #choice branch ends
 
-    #Pearl survives
+    #Pearl survives (BRANCH FLAGGED) is this pearl safe aston safe chunk redundant or am I crazy?
         if pearl_safe:
             #If Aston is safe
             if aston_safe:
+                voice "d27_br1_PearlYou"
                 mo "Pearl, you are brave and kind, and I know you want to help."
                 show pearl sad
+                #voice "" missing VNVR
                 pe "..."
                 "Tears welled up in her eyes."
+                voice "d27_IWish"
                 pe "I wish I could do more."
+                voice "d27_br1_YoureDoing"
                 ast "You're doing enough Pearl. Let's go back to sleep okay?"
                 stop ambience fadeout 1.0
 
@@ -1981,11 +2761,15 @@ label dec_27:
         #If Aston is not safe
             else:
                 show pearl sad
-                mo "Pearl, you're brave and kind, and I know you want to help."
+                voice "d27_br2_PearlYou"
+                mo "Pearl, you are brave and kind, and I know you want to help."
                 show pearl depressed
+                #voice "" missing VNVR
                 pe "..."
                 "Tears welled up in her eyes."
+                voice "d27_IWish"
                 pe "I wish I could do more."
+                voice "d27_br2_YoureDoing"
                 mo "You're doing enough, but right now you need to get some sleep."
                 stop ambience fadeout 1.0
 
@@ -1993,13 +2777,18 @@ label dec_27:
         #Pearl's dead end
         else:
             show pearl confused
+            voice "d27_BeingCalculative"
             pe "Being calculative hasn't brought anywhere has it now, Morgan?"
             show pearl depressed
+            voice "d27_EveryoneThinks"
             pe "Everyone thinks I'm reckless when I'm just trying to help..."
+            voice "d27_ThatsNot"
             mo "That's not what I me-"
             show gr confused at right
+            voice "d27_WheresThis"
             gr "Where's this attitude coming from?"
             show ky confused at left
+            voice "d27_PearlWhats"
             ky "Pearl? What's happening?"
 
             "Gregory and Kyle have been awoken by the sound."
@@ -2009,6 +2798,7 @@ label dec_27:
                 zoom 0.99
                 parallel:
                     xpos 900
+            voice "d27_NoYou"
             pe "No you stay away. I'll prove you wrong."
 
             "Shit, not again."
@@ -2022,6 +2812,7 @@ label dec_27:
 
             show gr angry with move:
                 linear 0.3 xpos 1700
+            voice "d27_PearlGet"
             gr "Pearl! Get back here this instant!"
 
             "Crap, she forgot her compass."
@@ -2032,8 +2823,10 @@ label dec_27:
             scene bg camp2_night with dissolve
             play ambience amb_campnight fadein 1.0
             show ky shaken at centerleft
+            voice "d27_PearlWhere"
             ky "Pearl! Where are you?"
             show gr angry at centerright
+            voice "d27_ThisIs"
             gr "This is not a fucking game Pearl, come back now!"
             "This is all my fault."
             "If anything happens to her, I-"
@@ -2049,13 +2842,18 @@ label dec_27:
             "The wind picks up tremendously as Pearl trudges through the snow."
 
             show pearl sad
+            voice "d27_UghI"
             pe "Ugh... I knew I should've checked my pockets. Now I'm out here lost and without my compass."
+            voice "d27_AndHere"
             pe "And here I thought circling the base of the mountain was a great idea."
             #I can ANIMATE THIS (RUMI)
+            voice "d27_ILook"
             pe "I look left? Trees and snow. Look right? Trees and snow. Look straight ahead and oh wow! Trees and snow."
             show pearl depressed
-            pe "The snow is... unrelenting too. It's cold."
+            voice "d27_TheSnow"
+            pe "The snow is...unrelenting too. It's cold."
             show pearl neutral
+            voice "d27_ComeOn"
             pe "Come on Pearl! Focus focus!"
             stop ambience fadeout 1.0
             play ambience amb_icebody fadein 5.0
@@ -2065,28 +2863,33 @@ label dec_27:
             "Pearl finds herself in front of a large forest clearing. Oddly shaped stones stick out from the ground in a disorderly manner."
             "She walks up to one and inspects it up close."
 
+            voice "d27_OhYeah"
             pe "Oh yeah that's stone alrig-"
+            voice "d27_PearlVNVR2"
             pe "..."
 
             "It was in fact not stone."
             "Or at least to Pearl."
-            "Disfigured and grotesque looking... humans."
+            "Disfigured and grotesque looking...humans."
             "Frozen in time, freezing the frame of their unfortunate fate."
             play sound snowground
             "Pearl collapses onto the ground, unable to make sense of what she just saw."
 
+            voice "d27_NopeNope"
             pe "Nope! Nope nope nope-"
 
             "After successfully scrambling to her feet, she takes off in another direction."
             "The snow fall gets heavier by the second, and snow blindness makes it worse to navigate the path."
             "But fortunately she was lucky. She squints her eyes to see a large rock wall ahead."
 
+            voice "d27_TheMountain"
             pe "The mountain! Now I just have to make it back."
             play sound snowrun
 
             "Pearl starts sprinting towards it, but unbeknownst to her, the terrain ahead was a rather dangerous one."
             play sound slip
 
+            voice "d27_Shi"
             pe "Shi-"
             show black with pushupquick
             hide cg
@@ -2095,7 +2898,6 @@ label dec_27:
             "Pearl loses her footing and slips down a ravine."
             stop ambience fadeout 1.0
 
-        #@ Sharkie the way it works:
         #If is Aston is present and safe, then Pearl will be safe
         #If Aston is not safe, choosing Let's think about it, Pearl will be safe
         #If Aston is not safe, choosing You won't survive the cold, Pearl skips to death scene
@@ -2114,7 +2916,8 @@ label dec_28:
 
     show gr angry
     play sound dial
-    gr "Pick up damn it."
+    voice "d28_ComeOn"
+    gr "Come on... Pick up damn it."
 
     "Gregory tries reaching HQ on his phone but the calls keep disconnecting."
     "It is frustrating."
@@ -2131,26 +2934,78 @@ label dec_28:
         "But the quota unfortunately doesn't stop for anyone."
 
     show gr neutral
+    voice "d28_PlanB"
     gr "Plan B it is."
-
+    #(TOGGLE) ma
     "Gregory gives up and decides to call the supply crew."
     "They're more likely to pick up."
-
-    ex2 "Now that's a name I haven't seen in months. What do you need?"
+    if radio_static == "_s":
+        voice "d28_NowThats_s"
+    else:
+        voice "d28_NowThats_c"
+    ma "Now that's a name I haven't seen in months. What do you need?"
+    voice "d28_INeed"
     gr "I need you to get our CEO lady on the phone."
-    ex2 "Hey if you forgot, I'm just the supply guy."
-    ex2 "If you're not here to get stuff like Lorenzo usually does, then I'm gonna hang up."
-    show gr angry
-    gr "Did she not tell you about Lorenzo?"
-    ex2 "Is there something I should know?"
+    if radio_static == "_s":
+        voice "d28_HeyIf_s"
+    else:
+        voice "d28_HeyIf_c"
+    ma "Hey if you forgot, I'm just the supply guy."
+    if radio_static == "_s":
+        voice "d28_IfYoure_s"
+    else:
+        voice "d28_IfYoure_c"
+    ma "If you're not here to get stuff like Lorenzo usually does, then I'm gonna hang up."
+    #(BRANCH FLAGGED) was not branched before, need test
+    if pearl_safe: 
+        show gr angry
+        voice "d28_br1_DidShe"
+        gr "Did she not tell you anything?"
+
+    else:
+        show gr angry
+        voice "d28_br2_DidShe"
+        gr "Did she not tell you about Lorenzo?"
+
+    if radio_static == "_s":
+        voice "d28_IsThere_s"
+    else:
+        voice "d28_IsThere_c"
+    ma "Is there something I should know?"
+    voice "d28_ThatDamn"
     gr "That damn b-"
-    gr "And you've never realized that he's missing?"
-    ex2 "Woah there. I'm just doing my job. Lorenzo ain't the only person I deal with."
+    #(BRANCH FLAGGED) was not branched before, need test
+    if pearl_safe:
+        voice "d28_br1_AndYouve"
+        gr "And you've never realized that Lorenzo's missing?"
+
+    else:
+        voice "d28_br2_AndYouve"
+        gr "And you've never realized that he's missing?"
+
+    if radio_static == "_s":
+        voice "d28_WoahThere_s"
+    else:
+        voice "d28_WoahThere_c"
+    ma "Woah there. I'm just doing my job. Lorenzo ain't the only person I deal with."
     show gr neutral
-    ex2 "If there's an order, I will complete it. Simple as that."
-    ex2 "But no, she never mentioned anything about Lorenzo or whatever."
+    if radio_static == "_s":
+        voice "d28_IfTheres_s"
+    else:
+        voice "d28_IfTheres_c"
+    ma "If there's an order, I will complete it. Simple as that."
+    if radio_static == "_s":
+        voice "d28_ButNo_s"
+    else:
+        voice "d28_ButNo_c"
+    ma "But no, she never mentioned anything about Lorenzo or whatever."
+    voice "d28_WellLet"
     gr "Well, let her know that Gregory's calling."
-    ex2 "I'll do my best, but no promises."
+    if radio_static == "_s":
+        voice "d28_IllDo_s"
+    else:
+        voice "d28_IllDo_c"
+    ma "I'll do my best, but no promises."
 
     show gr worried
     "Gregory exhales deeply."
@@ -2173,6 +3028,7 @@ label dec_30:
     "What the hell was that?"
 
     #show ky confused with sdissolve
+    voice "d30_WuhHuh"
     ky "Wuh huh?"
 
     "Seems like Kyle was also abruptly pulled out of dream land."
@@ -2189,35 +3045,58 @@ label dec_30:
     play ambience amb_campnight fadein 1.0
     play sound radio
     "Gregory's Walkie starts beeping the moment I step foot outside."
-
+    #(TOGGLE) ca
     show gr neutral at centerleft
+    if radio_static == "_s":
+        voice "d30_HeyaGregory_s"
+    else:
+        voice "d30_HeyaGregory_c"
     ca "Heya Gregory, I was gonna say that we got the new maps but it seems like we have a new problem."
+    if radio_static == "_s":
+        voice "d30_AnyIdea_s"
+    else:
+        voice "d30_AnyIdea_c"
     ca "Any idea where that was coming from?"
     show gr worried
+    voice "d30_MyGuess"
     gr "My guess is that the radio tower's down."
-    ca "Oh that's bad news alright. I'll relay the message to Wilbur and the rest."
+    if radio_static == "_s":
+        voice "d30_OhThats_s"
+    else:
+        voice "d30_OhThats_c"
+    ca "Oh, that's bad news alright. I'll relay the message to Wilbur and the rest."
     show gr neutral
+    voice "d30_YeahThanks"
     gr "Yeah. Thanks."
 
     "Is that why the signal has been trash lately?"
     "Gregory turns to see the confusion on my face."
-
+    voice "d30_SoWhat"
     mo "So what I'm getting is that the radio tower crashed?"
+    voice "d30_WedNeed"
     gr "We'd need to check it out tomorrow. Best case scenario is that we can fix it ourselves."
     show gr confused
+    voice "d30_WorstCase"
     gr "Worst case scenario is that we have to wait for backup."
+    voice "d30_HowLong"
     mo "How long does that usually take?"
+    voice "d30_TwoWeeks"
     gr "Two weeks."
+    voice "d30_AreWe"
     mo "Are we basically stranded here?"
     show gr neutral
+    voice "d30_YeahWeve"
     gr "Yeah. We've lost contact with HQ."
     show ky sad at centerright
+    voice "d30_WhatIf"
     ky "What if HQ forgets about us?"
 
     #If Pearl is safe
     if pearl_safe:
+        voice "d30_WeCould"
         show pearl sad at right
         pe "We could leave camp by ourselves if they don't reach us, right?"
+    voice "d30_WellThink"
     gr "We'll think about it when it happens."
 
     scene bg maintent_night with sdissolve
@@ -2225,7 +3104,7 @@ label dec_30:
     play ambience amb_intcampnight fadein 1.0
     "I ran back into the main tent to grab my satellite phone."
     "Yep. Signal's completely dead."
-    "The gravity of the situation finally sinks in. Which means Colin... he can't reach me."
+    "The gravity of the situation finally sinks in. Which means Colin...he can't reach me."
     "But I'm not too worried, since Colin does have my location."
     "It's just that, well... It'll probably jeopardize the mission."
     "Whoever Gregory is calling at HQ... Guess he won't be able to reach them anytime soon."
@@ -2234,6 +3113,7 @@ label dec_30:
     #If Aston is safe
     if aston_safe:
         show ast neutral
+        voice "d30_WellHave"
         ast "We'll have to check on Lorenzo tonight."
         "Aston, who's also now awake, checks his phone."
         "I should also go to the cabin tonight."
@@ -2245,24 +3125,34 @@ label dec_30:
         play music audio.light
         "We're paying Lorenzo a visit."
         show ast neutral at centerleft
-        lo "So the loud crash I heard was real then?"
+        voice "d30_br1_SoThe"
+        lo "So the loud crash I heard was real, then?"
+        voice "d30_YesWe"
         ast "Yes, we took a look at the radio tower on our way here. There's a piece missing from it."
         show ast inthought
+        voice "d30_MightveBeen"
         ast "Might've been the receiver."
+        voice "d30_HasThis"
         mo "Has this ever happened before?"
         show lorenzo pondering
+        voice "d30_br1_IDont"
         lo "I don't think so, amico. The maintenance crew usually comes in every three months."
         show ast neutral
+        voice "d30_WeveNever"
         ast "We've never had issues prior, so I'm hoping it'll be resolved quickly."
         show ast sad
+        voice "d30_HowHave"
         ast "How have you been feeling?"
         show lorenzo smile
+        voice "d30_TheBear"
         lo "The bear is still around, but that's about it. Hasn't been speaking to me anymore."
         "Lorenzo's state seems to be improving."
         "Aston touches his forehead."
         show ast inthought
+        voice "d30_IThinkYourTemperature"
         ast "I think your temperature seems fine now too."
         show ast happy
+        voice "d30_WereGoing"
         ast "We're going back to camp together, Lorenzo."
         show lorenzo happy
         "He tousles Lorenzo's hair gently."
@@ -2278,17 +3168,24 @@ label dec_30:
 
         show lorenzo scared
         "I'm paying Lorenzo a visit."
-        lo "So the loud crash I heard was real then?"
+        voice "d30_br2_SoThe"
+        lo "So the loud crash I heard was real, then?"
         show lorenzo neutral
+        voice "d30_TheRadio"
         mo "The radio tower is broken, yeah."
+        voice "d30_HasThis"
         mo "Has this ever happened before?"
         show lorenzo sad
+        voice "d30_br2_IDont"
         lo "I don't think so, amico. The maintenance crew usually comes in every three months."
+        voice "d30_HowAre"
         mo "How are you feeling Lorenzo?"
         show lorenzo sick
-        lo "I... think it's getting worse."
+        voice "d30_IThinkItsGetting"
+        lo "I... I think it's getting worse."
         hide lorenzo
         "Lorenzo's state is becoming significantly unstable."
+        voice "d30_LLaren"
         ha "L-Laren... Lorezo... "
         "He seems like he's shaking under the covers."
         "I wish I could do something for him, maybe get Ruran here to check on him while I'm away."
@@ -2337,34 +3234,67 @@ label dec_31:
     if aston_safe or pearl_safe:
         "I wonder how they feel about the news, knowing that your friend is still missing."
     show gr confused
+    voice "d31_MorganIm"
     gr "Morgan, I'm going to take a look at the fuse. Mind bringing Davos and Jax over here when they're up?"
     hide gr
+    voice "d31_ToThe"
     mo "To the midpoint then. I'll meet them there."
     "I beep Jax on the Walkie."
 
     #If everyone safe
     if aston_safe and pearl_safe:
         #TODO radio start
+        #(TOGGLE) ja da
+        
+        if radio_static == "_s":
+            voice "d31_br1_GoodMorning_s"
+        else:
+            voice "d31_br1_GoodMorning_c"
         $ chibi_jax = "images/chibi/jax_neutral.png"
         wt_ja "Good morning. We're on our way."
+        if radio_static == "_s":
+            voice "d31_br1_Just5_s"
+        else:
+            voice "d31_br1_Just5_c"
         $ chibi_davos = "images/chibi/davos_happy.png"
         wt_da "Just 5 minutes or so left! We'll be there soon."
+        voice "d31_br1_TheViews"
         $ chibi_morgan = "images/chibi/morgan_happy.png"
-        wt_mo "The view's great up here guys."
+        wt_mo "The view's great up here, guys."
         $ chibi_jax = "images/chibi/jax_happy.png"
-        wt_ja "Hell yeah, nice to finally watch you in action, Mr. Rusty with rifles."
+        if radio_static == "_s":
+            voice "d31_br1_HellYeah_s"
+        else:
+            voice "d31_br1_HellYeah_c"
+        wt_ja "Hell yeah. Nice to finally watch you in action, Mr. Rusty with rifles."
+        voice "d31_br1_IsThat"
         $ chibi_morgan = "images/chibi/morgan_neutral.png"
         wt_mo "Is that going to be my new nickname?"
         $ chibi_jax = "images/chibi/jax_happy.png"
+        if radio_static == "_s":
+            voice "d31_br1_Yeah_s"
+        else:
+            voice "d31_br1_Yeah_c"
         wt_ja "Yeah."
         $ chibi_morgan = "images/chibi/morgan_happy.png"
+        voice "d31_br1_ImReady"
         wt_mo "I'm ready to be humbled then, Mr. Great with guns."
         $ chibi_davos = "images/chibi/davos_neutral.png"
+        if radio_static == "_s":
+            voice "d31_br1_WhatsWith_s"
+        else:
+            voice "d31_br1_WhatsWith_c"
         wt_da "What's with the rifle thing? Are you getting private lessons from Jax?"
+        voice "d31_br1_IWish"
         wt_mo "I wish."
         $ chibi_davos = "images/chibi/davos_happy.png"
-        wt_da "Oh Morgan! I think I see you up there!"
+        if radio_static == "_s":
+            voice "d31_br1_OhMorgan_c"
+        else:
+            voice "d31_br1_OhMorgan_c"
+        wt_da "Oh, Morgan! I think I see you up there!"
         $ chibi_morgan = "images/chibi/morgan_neutral.png"
+        voice "d31_br1_NiceLets"
         wt_mo "Nice! Let's meet up at the midpoint in 5."
         #radio ends
         "I look away from my Walkie to see someone waving."
@@ -2375,21 +3305,30 @@ label dec_31:
     #If Pearl is missing
     else:
     #radio start
+        voice "d31_br2_GoodMorning_c"
         $ chibi_jax = "images/chibi/jax_neutral.png"
         wt_ja "Good morning. We're on our way."
+        voice "d31_br2_Just5_c"
         $ chibi_davos = "images/chibi/davos_neutral.png"
         wt_da "Just 5 minutes left. We'll be there soon."
+        voice "d31_br2_TheViews"
         $ chibi_morgan = "images/chibi/morgan_neutral.png"
         wt_mo "The view's great up here guys."
+        voice "d31_br2_HellYeah_c"
         $ chibi_jax = "images/chibi/jax_neutral.png"
         wt_ja "Hell yeah, nice to finally watch you in action, Mr. Rusty with rifles."
+        voice "d31_br2_IsThat"
         wt_mo "Is that going to be my new nickname?"
         $ chibi_jax = "images/chibi/jax_happy.png"
+        voice "d31_br2_Yeah_c"
         wt_ja "Yeah."
+        voice "d31_br2_ImReady"
         $ chibi_morgan = "images/chibi/morgan_happy.png"
         wt_mo "I'm ready to be humbled then, Mr. Great with guns."
+        voice "d31_br2_IThink_c"
         $ chibi_davos = "images/chibi/davos_happy.png"
         wt_da "I think I see you Morgan!"
+        voice "d31_br2_NiceLets"
         $ chibi_morgan = "images/chibi/morgan_neutral.png"
         wt_mo "Nice! Let's meet up at the midpoint in 5."
         nvl clear
@@ -2412,10 +3351,11 @@ label dec_31:
     play music audio.anxious
     "I kicked something."
     "Something under the snow, maybe?"
-
+    voice "d31_MorganWere"
     da "Morgan, we're here!"
     "I heard Davos calling out from behind me."
     "But I'm far too concerned about what I see on the ground in front of me to respond."
+    voice "d31_HeyMorg"
     ja "Hey Morg- Oh what the fuck."
     show cg frozenbody:
         zoom 2.0
@@ -2440,20 +3380,30 @@ label dec_31:
     #If Pearl and Aston is safe
     if aston_safe and pearl_safe:
         "Davos turns away from the sight."
+        voice "d31_TheDay"
         ja "The day always turns into an eventful one when I least expect it."
-        da "This... looks like a horrible way to die."
+        voice "d31_br1_ThisLooks"
+        da "This...looks like a horrible way to die."
+        voice "d31_br1_IImGonna"
         da "I-I'm gonna go call my pops."
-        mo "Well then... we're stranded and now there's a dead body."
+        voice "d31_WellThen"
+        mo "Well then... We're stranded and now there's a dead body."
+        voice "d31_WhatElse"
         mo "What else could possibly go wrong?"
 
     #If either Pearl or Aston is missing
     else:
         "I'm not ready to identify who it is."
         "Davos turns away from the sight."
+        voice "d31_TheDay"
         ja "The day always turns into an eventful one when I least expect it."
-        da "This... looks like a horrible way to die."
+        voice "d31_br2_ThisLooks"
+        da "This...looks like a horrible way to die."
+        voice "d31_br2_IImGonna"
         da "I-I'm gonna go call my pops."
-        mo "Well then... we're stranded and now there's a dead body."
+        voice "d31_WellThen"
+        mo "Well then... We're stranded and now there's a dead body."
+        voice "d31_WhatElse"
         mo "What else could possibly go wrong?"
 
     scene black with longfade
@@ -2465,10 +3415,10 @@ label dec_31_2:
     stop music fadeout 12.0
     "What a turn of events."
     "Upon closer inspection, there seems to be some leftover fabric of what they were wearing."
-    "Linen texture… It's not a material that any of us wear out here."
+    "Linen texture... It's not a material that any of us wear out here."
 
     if not aston_safe: # Will be true if Pearl's dead
-        "I'm…glad it's not someone we know."
+        "I'm...glad it's not someone we know."
 
     "Davos went away to get Wilbur, and Jax is crouching down with me."
     "He doesn't seem all that phased by the corpse."
@@ -2482,18 +3432,18 @@ label dec_31_2:
     voice "d31_NotThe"
     ja "Not the first time I've seen one, but it still gets me every time."
     voice "d31_YouMe"
-    mo "You, me…the same, then."
+    mo "You, me...the same, then."
     "Body structure-wise, or at least what we could gather from what's left of them, suggests that they were an adult male."
     "Several gaping wounds left all over by bites from a large animal."
     "His torso has practically been ripped wide open, the same spot where the disc-like mushrooms have been growing."
-    "The smell… I can't even begin to describe it."
+    "The smell... I can't even begin to describe it."
     "This has to be some sort of sick joke."
 
     voice "d31_SoMr"
-    mo "So… Mr. Great with Guns… Sample collection time?"
+    mo "So... Mr. Great with Guns... Sample collection time?"
     show ja neutral
     voice "d31_HahaI"
-    ja "Haha… I guess we'd better be the ones to do it. I'm not traumatizing the poor boy."
+    ja "Haha... I guess we'd better be the ones to do it. I'm not traumatizing the poor boy."
     voice "d31_YouThink"
     mo "You think he's the villager we're looking for?"
     voice "d31_ItsA"
@@ -2506,12 +3456,12 @@ label dec_31_2:
     show ja neutral
     "Gregory calls us from somewhere to our left."
     voice "d31_DavosHe"
-    gr "Davos, he… He filled me in. Stay put. I'm going to get extra help."
+    gr "Davos, he... He filled me in. Stay put. I'm going to get extra help."
     voice "d31_GotIt"
     mo "Got it!"
     "Focusing back on the task at hand, Jax and I geared up for sample collection."
     scene black with dissolve
-    "This time…on something that was once human and alive."
+    "This time...on something that was once human and alive."
     "I'm sorry."
     play sound scoop2
     "I'll be taking your harvest."
@@ -2541,8 +3491,8 @@ label dec_31_2:
     "Dynamite. For what purpose?"
     "Was this the real cause of the avalanche?"
     "Who is this person?"
-    "If they're a villager… How did they even get dynamite?"
-    "…"
+    "If they're a villager... How did they even get dynamite?"
+    "..."
     "Was there another party involved?"
 
     show ja inthought
@@ -2554,15 +3504,15 @@ label dec_31_2:
     if not aston_safe:
         if not pearl_safe:
             voice "d31_AndBoth"
-            ja "And… Both Aston and Pearl, too."
+            ja "And... Both Aston and Pearl, too."
         else:
             voice "d31_AndAston"
-            ja "And… Aston, too."
+            ja "And... Aston, too."
 
     "Right. He doesn't know that Lorenzo's still alive."
-    "But, for the body and traces of dynamite… There's no clear motive."
-    "We should tell the rest…but what are the chances of the culprit hiding in plain sight?"
-    "Nah… I think it's worth a try if it could scare them out of hiding."
+    "But, for the body and traces of dynamite... There's no clear motive."
+    "We should tell the rest...but what are the chances of the culprit hiding in plain sight?"
+    "Nah... I think it's worth a try if it could scare them out of hiding."
 
     voice "d31_WeShould"
     mo "We should let the others know that we may have found the cause for our failed camp merge."
@@ -2576,9 +3526,9 @@ label dec_31_2:
     "Later that afternoon, we contacted the village."
     "They recognized him."
     "It was him. The missing villager."
-    "And…he was my ride up into the mountains. I couldn't even recognize him in the state he was in."
+    "And...he was my ride up into the mountains. I couldn't even recognize him in the state he was in."
     "And to think, he was up there all alone under a pile of snow."
-    "For 3 weeks…at least."
+    "For 3 weeks...at least."
     "We still haven't got the exact cause of death."
     "The only thing we could rule out is that he threw the explosives far enough away from him."
     "There were only minimal signs of blast injuries, but a whole lot of other wounds that I no longer want to think about."
@@ -2605,14 +3555,14 @@ label jan_1:
     "A large crowd gathered around the deceased's grave."
     show ky sad
     voice "j1_HeWas"
-    ky "He was such a great guy… He was the one that introed me to the farm animals…{w=0.5}to Susie."
+    ky "He was such a great guy... He was the one that introed me to the farm animals...{w=0.5}to Susie."
     show ky shaken
     voice "j1_IllMiss"
     ky "I'll miss you."
     voice "j1_ImSure"
     wi "I'm sure he'd be happy to know that, Kyle."
     show ky sad
-    "There was a lady dressed differently from the rest, standing to the side with two children…presumably his family."
+    "There was a lady dressed differently from the rest, standing to the side with two children...presumably his family."
     "The younger child sobs uncontrollably."
     "He does not understand why their father will be laid in the deep, freezing soil for eternity."
     "An older man takes the center. The crowd starts to quiet down upon his arrival."
@@ -2638,7 +3588,7 @@ label jan_1:
     "He checked in on me, made sure I drank enough water, made sure I had food in my system."
     "It's still funny to me how he thought he could masterchef his way into my kitchen." 
     stop music fadeout 1.5
-    "For the record, I never forget to season my food…so clearly, I'm the better cook."
+    "For the record, I never forget to season my food...so clearly, I'm the better cook."
     
     
     scene village2 # same bg as earlier; no Susie, Kyle, kids
@@ -2652,7 +3602,7 @@ label jan_1:
     play music audio.neutral
     "The village elder takes out a flask filled with a clear liquid from his belt."
     "He uncorks it, and out comes a pungent stench."
-    "It smells like… Vinegar?"
+    "It smells like... Vinegar?"
     voice "j1_WhatAre"
     mo "What are they doing with that?"
     "My question was immediately answered as the elder dumps all of its contents into the grave."
@@ -2661,9 +3611,9 @@ label jan_1:
     "I glance at my friends, who look just as perplexed as I do."
     show ky confused
     voice "j1_DidDid"
-    ky "Did… Did they just pour it onto the body?"
+    ky "Did... Did they just pour it onto the body?"
     voice "j1_IveNever"
-    ky "I've never been to a funeral, so, like…is this normal?"
+    ky "I've never been to a funeral, so, like...is this normal?"
     voice "j1_IDont"
     mo "I don't think so?"
     voice "j1_VinegarTo"
@@ -2694,7 +3644,7 @@ label jan_2:
         "I am on stay-at-camp duty today while the others are out collecting samples."
         "The camp's a lot quieter and there wasn't much to do, other than a little housekeeping in the main tent."
         "We still have about a month's worth of food left in the stash."
-        "I don't think we need to worry for now…unless the radio tower isn't gonna be fixed within the next two weeks."
+        "I don't think we need to worry for now...unless the radio tower isn't gonna be fixed within the next two weeks."
         "Radio tower is still down, comms are still off."
         "Well, organizing my notes wouldn't be a bad use of time."
         "Yeah. I think I'll do just that."
@@ -2704,18 +3654,18 @@ label jan_2:
         scene morganstent with longfade
         play music audio.neutral
         "Alrighty, writing time."
-        "A body found in a…strange state, with large, gaping wounds."
+        "A body found in a...strange state, with large, gaping wounds."
         "A type of fungus growing in winter, on said body."
         "An avalanche that was most likely set off by explosives."
         "And why were there even explosives in the first place?"
         "My campmates are getting sick, and hallucinating things that aren't there."
-        "My campmates… That's right. I never had the chance to find those documents that Gregory had on hand."
+        "My campmates... That's right. I never had the chance to find those documents that Gregory had on hand."
 
         #If Pearl okay
         if pearl_safe:
-            "Gregory is away with Pearl and Kyle…they won't be back for another hour or so."
+            "Gregory is away with Pearl and Kyle...they won't be back for another hour or so."
         else:
-            "Gregory is away with Kyle…they won't be back for another hour or so."
+            "Gregory is away with Kyle...they won't be back for another hour or so."
 
         "Do I want to push my luck?"
         "I can't call myself an investigator if I don't."
@@ -2730,26 +3680,26 @@ label jan_2:
         mo "Alright, here goes nothing." 
         
         scene gregtent with longfade
-        "Gregory's tent doesn't have much in it…"
+        "Gregory's tent doesn't have much in it..."
         "He doesn't sleep in here, but his belongings are all in here."
         "But there is one picture frame atop his storage box that stands out."
         "It's younger Gregory with a child. It must be her."
-        "I've…never seen him smile like that."
+        "I've...never seen him smile like that."
         "I go to take a look at his backpack."
         "It's not the usual ones we use when we're out in the field - it's a smaller one. For personal use, I'm guessing."
         play sound zipopen
         scene black with fade
-        "Annnnnd nothing… Just information I already knew about Heralign."
+        "Annnnnd nothing... Just information I already knew about Heralign."
         "We've got a permit letter here, listing Gregory's qualifications and such."
         "Oh, he's been working at Heralign for about 4 years."
         "Okay, enough about him. I think I'll try the storage boxes next."
         scene gregtent with dissolve
         with Pause(1.0)
-        "And…sure enough, I did indeed find a folder containing the papers with the special status labels."
+        "And...sure enough, I did indeed find a folder containing the papers with the special status labels."
         "Good job, Morgan."
         "There were the same profiles, some now with multiple '???' markings in their status."
         "The redacted profiles were also in the same folder."
-        "And, lo and behold… It looks like Kyle and I have our very own, too."
+        "And, lo and behold... It looks like Kyle and I have our very own, too."
         "These are definitely new."
         "I flipped through them some more."
         "There's Pearl's, Aston's, and Lorenzo's."
@@ -2765,7 +3715,7 @@ label jan_2:
         stop music fadeout 2.0
         stop ambience fadeout 0.5
         "I reverted the tent back to its original, untouched state."
-        "…or as close as I could manage."
+        "...or as close as I could manage."
         "I do need to tell the others at some point."
         "They all deserve to know."
 
@@ -2773,7 +3723,7 @@ label jan_2:
         "Aston and I are on stay-at-camp duty today, while the rest are out sample collecting."
         "The camp's a lot quieter and there wasn't much to do, other than a little housekeeping in the main tent."
         "We still have about a month's worth of food left in the stash."
-        "I don't think we need to worry for now…unless the radio tower isn't gonna be fixed within the next two weeks."
+        "I don't think we need to worry for now...unless the radio tower isn't gonna be fixed within the next two weeks."
         "Radio tower is still down, comms are still off."
         "Well, organizing my notes wouldn't be a bad use of time."
         "Yeah. I think I'll do just that."
@@ -2787,14 +3737,14 @@ label jan_2:
         play music audio.neutral
         #INT: Morgan's tent
         "Alrighty, writing time."
-        "A body found in a…strange state, with large, gaping wounds."
+        "A body found in a...strange state, with large, gaping wounds."
         "A type of fungus growing in winter, on said body."
         "An avalanche that was most likely set off by explosives."
         "And why were there even explosives in the first place?"
         "My campmates are getting sick, and hallucinating things that aren't there."
-        "My campmates… That's right. I never had the chance to find those documents that Gregory had on hand."
+        "My campmates... That's right. I never had the chance to find those documents that Gregory had on hand."
         "Aston's probably still in the main tent."
-        "Gregory is away with Pearl and Kyle…they won't be back for another hour or so."
+        "Gregory is away with Pearl and Kyle...they won't be back for another hour or so."
         "Do I want to push my luck?"
         "I can't call myself an investigator if I don't."
         "I won't feel worthy to own a snowmobile either."
@@ -2808,7 +3758,7 @@ label jan_2:
         show ast neutral with sdissolve
         voice "j2_Morgan"
         ast "Morgan?"
-        "I jump in surprise…again."
+        "I jump in surprise...again."
         "It's getting kind of embarrassing."
         voice "j2_DoYouEverGet"
         mo "Do you ever get that feeling of déjà vu? 'Cause I'm pretty sure we've had this conversation."
@@ -2821,9 +3771,9 @@ label jan_2:
         ast "I know when to be a little humorous."
         show ast inthought
         voice "j2_ThoughSkulking"
-        ast "Though…skulking about in his tent seems like a bad idea. Are you sure you want to do this?"
+        ast "Though...skulking about in his tent seems like a bad idea. Are you sure you want to do this?"
         voice "j2_INeed"
-        mo "I need to satisfy my curiosity…and I need some answers."
+        mo "I need to satisfy my curiosity...and I need some answers."
         show ast neutral
         voice "j2_DoYouWantAny"
         ast "Do you want any help?"
@@ -2835,21 +3785,21 @@ label jan_2:
                 mo "It's about the papers, if you remember the morning of our first storm together."
                 show ast inthought
                 voice "j2_INever"
-                ast "I never wanted to pry, but I'm assuming that…if you're willing to take this kind of risk, they must be important."
+                ast "I never wanted to pry, but I'm assuming that...if you're willing to take this kind of risk, they must be important."
                 voice "j2_ImHoping"
                 mo "I'm hoping I'd find them here."
 
                 scene gregtent with longfade
-                "Gregory's tent doesn't have much in it…"
+                "Gregory's tent doesn't have much in it..."
                 "He doesn't sleep in here, but his belongings are all in here."
                 "But there is one picture frame atop his storage box that stands out."
                 "It's younger Gregory with a child. It must be her."
-                "I've…never seen him smile like that."
+                "I've...never seen him smile like that."
                 "Aston carefully sorts through Gregory's storage while I take a look at his backpack."
                 "It's not the usual ones we use when we're out in the field - it's a smaller one. For personal use, I'm guessing."
                 play sound zipopen
                 scene black with fade
-                "Annnnnd nothing… Just information I already knew about Heralign." 
+                "Annnnnd nothing... Just information I already knew about Heralign." 
                 "We've got a permit letter here, listing Gregory's qualifications and such."
                 "Oh, he's been working at Heralign for about 4 years."
                 voice "j2_MorganAre"
@@ -2862,11 +3812,11 @@ label jan_2:
                 "I turn to see Aston holding a large folder, an alarmed look on his face."
                 "Sure enough, he did indeed find the papers with the special status labels."
                 voice "j2_YeahThose"
-                mo "Yeah, those are the ones… May I?"
+                mo "Yeah, those are the ones... May I?"
                 "He handed over the folder and I quickly grabbed a few packets from within." 
                 "There were the same profiles, some now with multiple '???' markings in their status." 
                 "The redacted profiles were also in the same folder."
-                "And, lo and behold… It looks like Kyle and I have our very own, too."
+                "And, lo and behold... It looks like Kyle and I have our very own, too."
                 show ast confused
                 voice "j2_AreThese"
                 ast "Are these new?"
@@ -2874,7 +3824,7 @@ label jan_2:
                 mo "Looks like it. I never noticed I had one that day." 
                 "I flipped through them some more."
                 "There's Pearl's, Aston's and Lorenzo's."
-                "Lorenzo's status now has 'Missing' written there…"
+                "Lorenzo's status now has 'Missing' written there..."
                 "And both Pearl and Aston's have a '???' penned down."
                 "Looks like Gregory isn't sure how they're doing."
                 voice "j2_YoureConfusing"
@@ -2891,25 +3841,25 @@ label jan_2:
                 voice "j2_LorenzoIs"
                 ast "Lorenzo is fine, and so am I. There would be no reason for him to scream."
                 voice "j2_YouSay"
-                mo "You say the latter half with such…calm."
+                mo "You say the latter half with such...calm."
                 show ast happy
                 voice "j2_ICant"
                 ast "I can't just run off in panic every time now, can I?"
                 voice "j2_MmhmmI"
-                mo "Mmhmm… I think we've got what we came for. Let's get outta here."
+                mo "Mmhmm... I think we've got what we came for. Let's get outta here."
 
                 scene black with longfade
                 stop music fadeout 2.0
                 stop ambience fadeout 0.5
                 "We reverted the tent back to its original, untouched state."
-                "…or as close as we could manage."
+                "...or as close as we could manage."
                 "Aston and I agreed to keep it between us for now. We plan to discuss it while Lorenzo is present."
            
             "Leave Aston out of this":
                 voice "j2_YeahWould"
                 mo "Yeah. Would you be kind enough to alert me if he's back early?"
                 voice "j2_AndWell"
-                mo "And, well… Don't tell him I'm snooping."
+                mo "And, well... Don't tell him I'm snooping."
                 show ast happy
                 voice "j2_ConsiderIt"
                 ast "Consider it done."
@@ -2920,30 +3870,30 @@ label jan_2:
                 mo "Alright, here goes nothing."
                 
                 scene gregtent with longfade
-                "Gregory's tent doesn't have much in it…"
+                "Gregory's tent doesn't have much in it..."
                 "He doesn't sleep in here, but his belongings are all in here."
                 "But there is one picture frame atop his storage box that stands out."
                 "It's younger Gregory with a child. It must be her."
-                "I've…never seen him smile like that."
+                "I've...never seen him smile like that."
                 "I go to take a look at his backpack."
                 "It's not the usual ones we use when we're out in the field - it's a smaller one. For personal use, I'm guessing."
                 play sound zipopen
                 scene black with fade
-                "Annnnnd nothing… Just information I already knew about Heralign."
+                "Annnnnd nothing... Just information I already knew about Heralign."
                 "We've got a permit letter here, listing Gregory's qualifications and such."
                 "Oh, he's been working at Heralign for about 4 years."
                 "Okay, enough about him. I think I'll try the storage boxes next."
                 scene gregtent with dissolve
                 with Pause(1.0)
-                "And…sure enough, I did indeed find a folder containing the papers with the special status labels."
+                "And...sure enough, I did indeed find a folder containing the papers with the special status labels."
                 "Good job, Morgan."
                 "There were the same profiles, some now with multiple '???' markings in their status." 
                 "The redacted profiles were also in the same folder."
-                "And, lo and behold… It looks like Kyle and I have our very own, too."
+                "And, lo and behold... It looks like Kyle and I have our very own, too."
                 "These are definitely new."
                 "I flipped through them some more."
                 "There's Pearl's, Aston's, and Lorenzo's."
-                "Lorenzo's status now has 'Missing' written there…"
+                "Lorenzo's status now has 'Missing' written there..."
                 "And both Pearl and Aston's have a '???' penned down."
                 "Looks like Gregory isn't sure how they're doing."
 
@@ -2951,7 +3901,7 @@ label jan_2:
                 stop music fadeout 2.0
                 stop ambience fadeout 0.5
                 "I reverted the tent back to its original, untouched state."
-                "…or as close as I could manage."
+                "...or as close as I could manage."
                 "I left his tent to find Aston still looking in the direction the others went."
                 "I do need to tell him and the others at some point."
                 "They all deserve to know."
@@ -2969,40 +3919,40 @@ label jan_3:
             "I'm making my way toward Lorenzo's cabin."
             "I haven't seen him in a few days." 
             "Kyle's arm has been healing up well."
-            "I learned a bit of first aid from Ruran over the Walkie to treat his rashes…"
+            "I learned a bit of first aid from Ruran over the Walkie to treat his rashes..."
             "So I'm betting that Lorenzo's arm will heal up just as well, eventually."
 
             scene cottage2 with longfade
             play music audio.sad fadein 3.0
             show lo scared at centerright
             voice "j3_br1_AndYou"
-            lo "And you said…what was growing out of him?"
+            lo "And you said...what was growing out of him?"
             voice "j3_br2_MushroomsTons"
             mo "Mushrooms. Tons of them, stacked atop one another."
             voice "j3_br2_TheBody"
             mo "The body also looks like it had been brutally attacked."
             voice "j3_br2_WeStill"
-            mo "We still don't know what kind of animal or…thing…did that."
+            mo "We still don't know what kind of animal or...thing...did that."
             voice "j3_br1_AndWhere"
             lo "And where did the dynamite come from?"
             voice "j3_br1_CantSay"
             mo "Can't say. We've only found fragments so far."
             voice "j3_br1_IfThere"
-            mo "If there really was dynamite involved…that sound we heard right before the avalanche could very well have been the same explosion."
+            mo "If there really was dynamite involved...that sound we heard right before the avalanche could very well have been the same explosion."
             "I fill him in on the situation that happened over the past few days."
 
             show lo sick
             voice "j3_br2_WowThis"
-            lo "Wow, this is a lot to take in…"
+            lo "Wow, this is a lot to take in..."
             voice "j3_br2_LorenzoVNVR"
             lo "..."
             show lo sad
             voice "j3_br2_IIm"
-            lo "I…I'm just glad that it wasn't…Aston."
+            lo "I...I'm just glad that it wasn't...Aston."
             voice "j3_br2_HeStill"
             mo "He still hasn't come by?"
             voice "j3_br2_NoAnd"
-            lo "No… And if he's not with you, then I assume he hasn't come back to camp either."
+            lo "No... And if he's not with you, then I assume he hasn't come back to camp either."
             stop music fadeout 1.0
 
             with Pause(0.7)
@@ -3014,7 +3964,7 @@ label jan_3:
             wi "Hello? Anyone in here?"
             show lo scared
             voice "j3_br2_IsIs"
-            lo "Is… Is that Wilbur?"
+            lo "Is... Is that Wilbur?"
             voice "j3_Wilbur"
             mo "Wilbur!"
             play music audio.light
@@ -3034,16 +3984,16 @@ label jan_3:
             voice "j3_br2_ItsLovely"
             lo "It's lovely seeing you all."
             voice "j3_br2_ISee"
-            wi "I see that you have a setup here… How long have you been camping out?"
+            wi "I see that you have a setup here... How long have you been camping out?"
             show lo neutral
             voice "j3_br2_TheAvalanche"
-            lo "The avalanche was…surprisingly kind to me."
+            lo "The avalanche was...surprisingly kind to me."
             voice "j3_br2_ISuffered"
-            lo "I suffered a few bruises here and there, but I was otherwise okay. This cabin wasn't too far from where I ended up…"
+            lo "I suffered a few bruises here and there, but I was otherwise okay. This cabin wasn't too far from where I ended up..."
             voice "j3_br2_AndIve"
             lo "And I've been here ever since."
             voice "j3_br2_ThenMorgan"
-            lo "Then…Aston and Morgan found me a few days later, cowering under a blanket."
+            lo "Then...Aston and Morgan found me a few days later, cowering under a blanket."
             show ja inthought
             voice "j3_br3_C2Never"
             ja "C2 never gave up the search, Lorenzo."
@@ -3057,22 +4007,22 @@ label jan_3:
             with dissolve
             voice "j3_br3_WWhatDo"
             lo "W-What do you mean by 'find Aston and Pearl?' What happened to Pearl?"
-            "Right… I never told him."
+            "Right... I never told him."
             voice "j3_br3_PearlShe"
-            mo "Pearl, she… She also ran away from camp."
+            mo "Pearl, she... She also ran away from camp."
             voice "j3_br3_SheWasnt"
-            lo "She wasn't looking for us…right?"
+            lo "She wasn't looking for us...right?"
             "I avoided his gaze."
             "That night still haunts me."
             show lo sick
             voice "j3_br3_AndYou"
-            lo "And you… Didn't tell me…{w=1.0}"
+            lo "And you... Didn't tell me...{w=1.0}"
 
             voice "j3_br3_ButWhy"
-            ja "But…why not go back to camp when they first found you?"
+            ja "But...why not go back to camp when they first found you?"
             "Jax attempts to change the subject for a while."
             voice "j3_br2_ItsA"
-            mo "It's…a long story."
+            mo "It's...a long story."
             voice "j3_br2_IDont"
             mo "I don't think we can finish it in one sitting."
             voice "j3_br2_WellI"
@@ -3084,12 +4034,12 @@ label jan_3:
             voice "j3_br3_ActuallyI"
             lo "Actually, I think I'd much rather stay here."
             voice "j3_br3_IfAston"
-            lo "If Aston shows up, or Pearl… I want to be here."
+            lo "If Aston shows up, or Pearl... I want to be here."
             voice "j3_br3_WeCould"
             ja "We could always leave a spare Walkie for them to use. You should head back to camp."
             show lo sad
             voice "j3_br3_IJust"
-            lo "I just… I can't leave. I'm sorry."
+            lo "I just... I can't leave. I'm sorry."
             "I can see that Lorenzo is also worried about his symptoms."
             "And I don't think he wants to bring those up now, either."
             voice "j3_br2_WellIf"
@@ -3109,37 +4059,37 @@ label jan_3:
             "I'm making my way toward Lorenzo's cabin."
             "I haven't seen him in a few days." 
             "Kyle's arm has been healing up well."
-            "I learned a bit of first aid from Ruran over the Walkie to treat his rashes…"
+            "I learned a bit of first aid from Ruran over the Walkie to treat his rashes..."
             "So I'm betting that Lorenzo's arm will heal up just as well, eventually."
 
             scene cottage2 with longfade
             play music audio.sad fadein 3.0
             show lo scared at centerright
             voice "j3_br1_AndYou"
-            lo "And you said…what was growing out of him?"
+            lo "And you said...what was growing out of him?"
             voice "j3_br2_MushroomsTons"
             mo "Mushrooms. Tons of them, stacked atop one another."
             voice "j3_br2_TheBody"
             mo "The body also looks like it had been brutally attacked."
             voice "j3_br2_WeStill"
-            mo "We still don't know what kind of animal or…thing…did that."
+            mo "We still don't know what kind of animal or...thing...did that."
             voice "j3_br1_AndWhere"
             lo "And where did the dynamite come from?"
             voice "j3_br1_CantSay"
             mo "Can't say. We've only found fragments so far."
             voice "j3_br1_IfThere"
-            mo "If there really was dynamite involved…that sound we heard right before the avalanche could very well have been the same explosion."
+            mo "If there really was dynamite involved...that sound we heard right before the avalanche could very well have been the same explosion."
             "I fill him in on the situation that happened over the past few days."
             voice "j3_br2_WowThis"
-            lo "Wow, this is a lot to take in…"
+            lo "Wow, this is a lot to take in..."
             voice "j3_br2_LorenzoVNVR"
             lo "..."
             voice "j3_br2_IIm"
-            lo "I…I'm just glad that it wasn't…Aston."
+            lo "I...I'm just glad that it wasn't...Aston."
             voice "j3_br2_HeStill"
             mo "He still hasn't come by?"
             voice "j3_br2_NoAnd"
-            lo "No… And if he's not with you, then I assume he hasn't come back to camp either."
+            lo "No... And if he's not with you, then I assume he hasn't come back to camp either."
             stop music fadeout 1.0
 
             with Pause(0.7)
@@ -3151,7 +4101,7 @@ label jan_3:
             wi "Hello? Anyone in here?"
             show lo scared
             voice "j3_br2_IsIs"
-            lo "Is… Is that Wilbur?"
+            lo "Is... Is that Wilbur?"
             voice "j3_Wilbur"
             mo "Wilbur!"
             play music audio.light
@@ -3169,7 +4119,7 @@ label jan_3:
                 xpos 1288
                 yalign 1.0
             "A wave of relief washes over us as three familiar faces greet us."
-            "Wilbur, Jax and…Pearl?"
+            "Wilbur, Jax and...Pearl?"
             show pe happy
             voice "j3_LorenzoOh" # Can remove branch tag if duped
             pe "Lorenzo! Oh boy, I've missed you so much!"
@@ -3194,31 +4144,31 @@ label jan_3:
             voice "j3_br2_ItsLovely"
             lo "It's lovely seeing you all."
             voice "j3_br2_ISee"
-            wi "I see that you have a setup here… How long have you been camping out?"
+            wi "I see that you have a setup here... How long have you been camping out?"
             show lo neutral
             voice "j3_br2_TheAvalanche"
-            lo "The avalanche was…surprisingly kind to me."
+            lo "The avalanche was...surprisingly kind to me."
             voice "j3_br2_ISuffered"
-            lo "I suffered a few bruises here and there, but I was otherwise okay. This cabin wasn't too far from where I ended up…"
+            lo "I suffered a few bruises here and there, but I was otherwise okay. This cabin wasn't too far from where I ended up..."
             voice "j3_br2_AndIve"
             lo "And I've been here ever since."
             show lo sad
             voice "j3_br2_ThenMorgan"
-            lo "Then…Aston and Morgan found me a few days later, cowering under a blanket."
+            lo "Then...Aston and Morgan found me a few days later, cowering under a blanket."
             show ja inthought
             voice "j3_br2_C2Never"
             ja "C2 never gave up the search, Lorenzo."
             voice "j3_br2_WeTook"
             ja "We took turns every night, slowly expanding our search radius into the northern forest."
             voice "j3_br2_AndWere"
-            ja "And…we're hoping to find Aston this way, too."
+            ja "And...we're hoping to find Aston this way, too."
             show lo sad
             voice "j3_br2_ThankYouJaxIt"
             lo "Thank you, Jax. It means a lot to me."
             voice "j3_br2_OfCourse"
-            ja "Of course. But…why hide from everyone? Why not go back to camp when they first found you?"
+            ja "Of course. But...why hide from everyone? Why not go back to camp when they first found you?"
             voice "j3_br2_ItsA"
-            mo "It's…a long story."
+            mo "It's...a long story."
             voice "j3_br2_IDont"
             mo "I don't think we can finish it in one sitting."
             voice "j3_br2_WellI"
@@ -3232,16 +4182,16 @@ label jan_3:
             voice "j3_br2_ActuallyI"
             lo "Actually, I think I'd much rather stay here."
             voice "j3_br2_IfAston"
-            lo "If Aston shows up… I want to be here when he does."
+            lo "If Aston shows up... I want to be here when he does."
             show pe sad
             voice "j3_br2_LorenzoWe"
-            pe "Lorenzo… We can't leave you out here all alone."
+            pe "Lorenzo... We can't leave you out here all alone."
             show ja neutral
             voice "j3_br2_PearlsRight"
             ja "Pearl's right, Lorenzo. And if you're worried, we could always leave a spare Walkie for him to use here."
             show lo sad
             voice "j3_br2_IJust"
-            lo "I just… I can't leave. I'm sorry."
+            lo "I just... I can't leave. I'm sorry."
             "I can see that Lorenzo is also worried about his symptoms."
             "And I don't think he wants to bring those up now, either."
             voice "j3_br2_WellIf"
@@ -3277,11 +4227,11 @@ label jan_3:
         show ast neutral at right
         show lo scared at centerright
         voice "j3_br1_AndYou"
-        lo "And you said…what was growing out of him?"
+        lo "And you said...what was growing out of him?"
         voice "j3_br1_MushroomsTons"
         mo "Mushrooms. Tons of them, stacked atop one another."
         voice "j3_br1_TheBody"
-        ast "The body had also sustained several attacks on the torso region…"
+        ast "The body had also sustained several attacks on the torso region..."
         show ast inthought
         voice "j3_br1_WeStill"
         ast "We still aren't sure what kind of animal would leave it in such a state."
@@ -3291,14 +4241,14 @@ label jan_3:
         mo "Can't say. We've only found fragments so far."
         show ast neutral
         voice "j3_br1_IfThere"
-        mo "If there really was dynamite involved…that sound we heard right before the avalanche could very well have been the same explosion."
+        mo "If there really was dynamite involved...that sound we heard right before the avalanche could very well have been the same explosion."
         "We fill him in on the situation that happened over the past few days."
         show lo sad
         voice "j3_br1_WowThis"
-        lo "Wow, this is a lot to take in…"
+        lo "Wow, this is a lot to take in..."
         show ast happy
         voice "j3_br1_ButFor"
-        ast "But, for a bit of good news… I think you're all set to come back to camp with us."
+        ast "But, for a bit of good news... I think you're all set to come back to camp with us."
         show lo happy
         voice "j3_br1_YouThink"
         lo "You think so? Is it finally time, amore?"
@@ -3316,7 +4266,7 @@ label jan_3:
         wi "Hello? Anyone in here?"
         show lo scared
         voice "j3_br1_IsIs"
-        lo "Is… Is that Wilbur?"
+        lo "Is... Is that Wilbur?"
         voice "j3_Wilbur"
         mo "Wilbur!"
         play music audio.light
@@ -3337,7 +4287,7 @@ label jan_3:
             xpos 1300
             yalign 1.0
         "A wave of relief washes over us as three familiar faces greet us."
-        "Wilbur, Jax and…Pearl?"
+        "Wilbur, Jax and...Pearl?"
         show pe happy
         voice "j3_LorenzoOh" # Can remove branch tag if duped
         pe "Lorenzo! Oh boy, I've missed you so much!"
@@ -3367,25 +4317,25 @@ label jan_3:
         voice "j3_br1_WeNeed"
         ja "We need to have a reunion party at some point."
         voice "j3_br1_ImJust"
-        pe "I'm just…so happy to see both of you here together. You know…in the same room, side by side?"
+        pe "I'm just...so happy to see both of you here together. You know...in the same room, side by side?"
         show pe happy
         voice "j3_br1_IHavent"
         pe "I haven't seen Aston smile this much in, like, forever."
         "Aston's face flushes a little."
         voice "j3_br1_ISee"
-        wi "I see that you have a setup here… How long have you been camping out?"
+        wi "I see that you have a setup here... How long have you been camping out?"
         show lo pondering
         show pe smile
         with dissolve
         voice "j3_br1_TheAvalanche"
-        lo "The avalanche was…surprisingly kind to me."
+        lo "The avalanche was...surprisingly kind to me."
         voice "j3_br1_ISuffered"
-        lo "I suffered a few bruises here and there, but I was otherwise okay. This cabin wasn't too far from where I ended up…"
+        lo "I suffered a few bruises here and there, but I was otherwise okay. This cabin wasn't too far from where I ended up..."
         voice "j3_br1_AndIve"
         lo "And I've been here ever since."
         show lo smile
         voice "j3_br1_ThenMorgan"
-        lo "Then…Aston and Morgan found me a few days later, cowering under a blanket."
+        lo "Then...Aston and Morgan found me a few days later, cowering under a blanket."
         show ja inthought
         voice "j3_br1_C2Never"
         ja "C2 never gave up the search, Lorenzo."
@@ -3398,10 +4348,10 @@ label jan_3:
         voice "j3_br1_ImTruly"
         ast "I'm truly sorry, Jax. We didn't mean to mislead you, let alone keep you up at night."
         voice "j3_br1_NahIm"
-        ja "Nah, I'm just glad you're alright! But…why hide from everyone? Why not go back to camp when they first found you?"
+        ja "Nah, I'm just glad you're alright! But...why hide from everyone? Why not go back to camp when they first found you?"
         show ast neutral
         voice "j3_br1_ItsA"
-        mo "It's…a long story."
+        mo "It's...a long story."
         voice "j3_br1_IDont"
         mo "I don't think we can finish it in one sitting."
         show wi neutral
@@ -3417,7 +4367,7 @@ label jan_3:
 
         scene forest2night with dissolve
         "The walk back to camp felt a lot lighter than usual."
-        "Not only did we get the perfect conclusion to our search and rescue mission…"
+        "Not only did we get the perfect conclusion to our search and rescue mission..."
         "We officially reunited the lovebirds."
         play music audio.light
         show pe confused at left
@@ -3463,7 +4413,7 @@ label jan_3:
         voice "j3_br1_TakingOne"
         mo "Taking one for the team, Jax? I'd let you carry me back to camp."
         voice "j3_br1_IdMuch"
-        ja "I'd much rather carry Pearl…she's lighter."
+        ja "I'd much rather carry Pearl...she's lighter."
         # Some kind of zoom?
 
         show cg lorenzobackpack with Dissolve(1.6):
@@ -3494,7 +4444,7 @@ label jan_4:
         if not pearl_safe:
             "I reached C1 at the crack of dawn."
             "I wasn't looking at the time. I hope I'm not too late to sneak back into camp."
-            "I spent the last few hours trying to convince Lorenzo, but he never budged…"
+            "I spent the last few hours trying to convince Lorenzo, but he never budged..."
             "Determined as ever to stay in the cabin."
             "I don't think he wants to talk to me anymore, after learning that Pearl's also missing."
             scene maintentday with fade
@@ -3511,7 +4461,7 @@ label jan_4:
                 "Lie":
                     $ greg_sus += 1
                     voice "j4_br2_IUh"
-                    mo "I, uh… I was out for a little walk."
+                    mo "I, uh... I was out for a little walk."
                     voice "j4_br3_WilburWalkied"
                     gr "Wilbur Walkie-d me this morning. You can stop with the bullshit."
                 "Tell the truth":
@@ -3532,7 +4482,7 @@ label jan_4:
             mo "I tried, all night, to convince him to come back to us."
             show ky sad
             voice "j4_br3_PoorLorenzo"
-            ky "Poor Lorenzo… I don't think he's taking it well."
+            ky "Poor Lorenzo... I don't think he's taking it well."
             show gr neutral
             voice "j4_br3_WellWere"
             gr "Well, we're gonna have to bring him back today no matter what. How he feels about it is irrelevant."
@@ -3541,7 +4491,7 @@ label jan_4:
             scene forest2 with longfade 
 
             "Well, here goes another round of walking back to the cabin."
-            "This time, with the rest of C1…or, at least, what's left of them."
+            "This time, with the rest of C1...or, at least, what's left of them."
 
 
             play sound kick # Some kind of snow walk cronch 
@@ -3559,7 +4509,7 @@ label jan_4:
         else: # Pearl OK, Aston gone
             "I reached C1 at the crack of dawn."
             "I wasn't looking at the time. I hope I'm not too late to sneak back into camp."
-            "I spent the last few hours trying to convince Lorenzo, but he never budged…"
+            "I spent the last few hours trying to convince Lorenzo, but he never budged..."
             "Determined as ever to stay in the cabin."
             scene maintentday with fade
             play music audio.sad
@@ -3578,7 +4528,7 @@ label jan_4:
                 "Lie":
                     $ greg_sus += 1
                     voice "j4_br2_IUh"
-                    mo "I, uh… I was out for a little walk."
+                    mo "I, uh... I was out for a little walk."
                     "Pearl shifts around nervously."
                     show ky sad
                     voice "j4_br2_GregoryKnows"
@@ -3599,7 +4549,7 @@ label jan_4:
             mo "I tried, all night, to convince him to come back to us."
             show pe depressed
             voice "j4_br2_HeStill"
-            pe "He still wants to wait for Aston…"
+            pe "He still wants to wait for Aston..."
             show gr neutral
             voice "j4_br2_WellWere"
             gr "Well, we're gonna have to bring him back today no matter what. How he feels about it is irrelevant."
@@ -3645,7 +4595,7 @@ label jan_4:
         "He looks up from his Walkie to see all of us walking back to the main tent."
         show ky neutral
         voice "j4_br1_LorenzoIs"
-        ky "Lorenzo…? Is that you?"
+        ky "Lorenzo...? Is that you?"
         show lo smile at centerright
         voice "j4_br1_BuongiornoKyle"
         lo "Buongiorno, Kyle."
@@ -3657,7 +4607,7 @@ label jan_4:
         "Gregory looks tired, surprised and relieved as he walks out of the tent towards us."
         show lo sad
         voice "j4_br1_Gregory"
-        lo "Gregory…"
+        lo "Gregory..."
         "Gregory reaches out to pat Lorenzo on the shoulder."
         show gr happy
         voice "j4_br1_GladTo"
@@ -3685,7 +4635,7 @@ label jan_4:
         gr "...imagine waking up to only see one other person when there should be three others."
         voice "j4_br1_SoWhat"
         gr "So, what is this? Aston, Morgan, Pearl - I think y'all have some explaining to do."
-        "There it is. Okay…think, Morgan, think."
+        "There it is. Okay...think, Morgan, think."
         hide wi
         hide ja
         hide ky
@@ -3703,14 +4653,14 @@ label jan_4:
         voice "j4_br1_WithNo"
         ast "With no map on hand and a broken Walkie, there's no way he could've made it back safely."
         voice "j4_br1_AndHow"
-        gr "And…how did you last as long as you did without any food?"
+        gr "And...how did you last as long as you did without any food?"
         show lo pondering
         voice "j4_br1_TheCabin"
         lo "The cabin had enough supplies to last me for a month if I was frugal with it, so I was really fortunate."
         "Gregory eyes us suspiciously. I don't think he buys our story."
         show pe depressed at center behind gr 
         voice "j4_br1_TheRest"
-        pe "The rest didn't know I tagged along… I'm sorry for wandering off without telling you."
+        pe "The rest didn't know I tagged along... I'm sorry for wandering off without telling you."
         voice "j4_br1_IHeard"
         pe "I heard people gearing up, and I was so caught up in the moment that I didn't think."
         hide ast
@@ -3747,7 +4697,7 @@ label jan_4:
         with dissolve
         show ast happy at right behind lo
         voice "j4_br1_AnywaySeeing"
-        ast "Anyway, seeing as everyone's already up…shall we make breakfast?"
+        ast "Anyway, seeing as everyone's already up...shall we make breakfast?"
         show pe smile behind lo
         voice "j4_br1_IThought"
         pe "I thought you'd never ask! I'm starving."
@@ -3793,7 +4743,7 @@ label jan_4:
         ast "Are you alright?"
         show lo smile
         voice "j4_br1_ItsJust"
-        lo "It's just… It's great to be back."
+        lo "It's just... It's great to be back."
         show ast happy
 
     stop music fadeout 3.0
@@ -3819,10 +4769,10 @@ label jan_5:
     isa "Can't say I have."
     show isa serious
     voice "j5_ThoughI"
-    isa "Though I knew it could technically happen… Mold and fungi can grow almost anywhere."
+    isa "Though I knew it could technically happen... Mold and fungi can grow almost anywhere."
     show ev worried
     voice "j5_StillThe"
-    ev "Still, they way they described it…"
+    ev "Still, they way they described it..."
     voice "j5_ItsHard"
     ev "It's hard to imagine that all this would be growing out of a barely-decomposed body."
     show isa inthought
@@ -3839,7 +4789,7 @@ label jan_5:
     ev "I'm sure it'll get better over time. I have full trust in them."
     show ev inthought
     voice "j5_AndIm"
-    ev "And…{w=0.4}I'm pretty sure this is an uncommon situation that we're dealing with."
+    ev "And...{w=0.4}I'm pretty sure this is an uncommon situation that we're dealing with."
     show isa inthought
     "Isaak pauses for a moment and thinks."
     voice "j5_ComeTo"
@@ -3867,7 +4817,7 @@ label jan_5:
     ev "Perhaps it's time to change?"
     show isa neutral
     voice "j5_IDontGetPaid"
-    isa "I don't get paid to make friends…and, frankly, I don't have that kind of leisure time."
+    isa "I don't get paid to make friends...and, frankly, I don't have that kind of leisure time."
     voice "j5_WeHave"
     isa "We have limited mold samples to care for right now. Let's focus on the task at hand."
     show ev inthought
@@ -3900,7 +4850,7 @@ label jan_6:
         "They're having a great time, from what I can tell. I don't think I've ever seen Aston laugh like this before."
         "I'm sure they feel a huge weight lifted off their shoulders keeping that secret."
         "And for my part, I don't have to do night shifts with Aston anymore."
-        "Goodbye to my irregular sleeping schedule…"
+        "Goodbye to my irregular sleeping schedule..."
         scene black with fade
         "And welcome back to my decent amount of sleep."
         stop ambience fadeout 1.0
@@ -3920,23 +4870,23 @@ label jan_6:
             voice "j6_HowAre"
             mo "How are you doing?"
             voice "j6_IFeel"
-            lo "I feel safer here with everyone but… I don't feel great."
+            lo "I feel safer here with everyone but... I don't feel great."
             voice "j6_ICan"
-            mo "I can imagine… I'm sorry, Lorenzo."
+            mo "I can imagine... I'm sorry, Lorenzo."
             voice "j6_ButHey"
             mo "But, hey - Wilbur's overruled Gregory's no-search-mission orders."
             voice "j6_AndYoure"
             mo "And you're not going to be alone in this anymore."
 
         else: # No Pearl, no Aston
-            "I should check up on him…and also try to make up for not telling him sooner."
+            "I should check up on him...and also try to make up for not telling him sooner."
             show lo sad at centerright
             voice "j6_LorenzoId"
             mo "Lorenzo... I'd like to apologize."
             voice "j6_YouDont"
             lo "You don't have to, Morgan."
             voice "j6_IWish"
-            lo "I wish you'd told me earlier…about Pearl."
+            lo "I wish you'd told me earlier...about Pearl."
             voice "j6_ButI"
             lo "But I know you were just looking out for me."
             voice "j6_IDidnt"
@@ -3955,7 +4905,7 @@ label jan_6:
         voice "j6_BearStill"
         lo "Bear. Still stalking, still talking."
         voice "j6_StillHim"
-        lo "Still…{w=1.25}him."
+        lo "Still...{w=1.25}him."
 
         # Unsprite the Lorenzo
         hide lo
@@ -3989,8 +4939,8 @@ label jan_7:
     else: #Pearl nuh uh
         show ky confused at centerleft
         voice "j7_OkayI"
-        ky "Okay… I think it's working now, Koda!"
-        "A 3-way Walkie… I've seen this before."
+        ky "Okay... I think it's working now, Koda!"
+        "A 3-way Walkie... I've seen this before."
         "Kyle notices me approaching."
         show ky smile
         voice "j7_HeyMorgan"
@@ -4036,7 +4986,7 @@ label jan_7:
         wt_da "I'm waiting for what's called audience participation. Quick, ask me questions!"
         
         voice "j7_OkaySoWhatsHaunting"
-        wt_pe "Okay… So what's haunting the river? The same woman?"
+        wt_pe "Okay... So what's haunting the river? The same woman?"
     
     else: # Pearl nuh uh
         if radio_static == "_s":
@@ -4057,7 +5007,7 @@ label jan_7:
     wt_ky "So there's still a human body in the body of water?"
     $ chibi_morgan = "images/chibi/morgan_neutral.png"
     voice "j7_AndBy"
-    wt_mo "And by spirit…you mean the villagers spotted a floating entity?"
+    wt_mo "And by spirit...you mean the villagers spotted a floating entity?"
 
     if radio_static == "_s":
         voice "j7_YeahAnd_s"
@@ -4078,7 +5028,7 @@ label jan_7:
     else:
         voice "j7_IveNever_c"
     $ chibi_davos = "images/chibi/davos_worried.png"
-    wt_da "I've never actually asked the details… It's just not there, I suppose?"
+    wt_da "I've never actually asked the details... It's just not there, I suppose?"
     
     voice "j7_SureWilburs"
     wt_mo "Sure Wilbur's not messing with you, Davos?"
@@ -4162,7 +5112,7 @@ label jan_7:
     else:
         voice "j7_IsaakFor_c"
     $ chibi_koda = "images/chibi/koda_neutral.png"
-    wt_ko "Isaak. For sure. Just, uh…don't tell him I said that, please..."
+    wt_ko "Isaak. For sure. Just, uh...don't tell him I said that, please..."
 
     scene black with fade
     nvl clear
@@ -4180,10 +5130,10 @@ label jan_8:
     "As mundane as it is, the predictability is honestly relaxing. "
     "Every day, you see dirt and snow, and you dig 'em up."
     "Every day, you see some nasty lake water, and you take some."
-    "And every day, you…take a look at the trees…"
+    "And every day, you...take a look at the trees..."
 
     voice "j8_WaitWhat" 
-    mo "Wait…what is this?"
+    mo "Wait...what is this?"
 
     scene forest2 with dissolve
     play music audio.anxious fadein 3.0
@@ -4191,13 +5141,13 @@ label jan_8:
     "I remember seeing claw marks on trees and assumed that it was a natural scratching post for the wildlife."
     "This is very different."
     "I move closer to it to examine the size of the markings."
-    "Whatever left these here…had claws half the width of my forearm."
+    "Whatever left these here...had claws half the width of my forearm."
     "And that's to say nothing of the greenish substance left in a thin film over the bark."
     "I'm glad this tree is still standing, but I feel like if I gave it a kick with enough force, it'd snap and fall over."
-    "But I'm not about to coat my boots in this green goo, so…"
+    "But I'm not about to coat my boots in this green goo, so..."
     scene black with dissolve
     "Oh, well."
-    "So much for predictability…"
+    "So much for predictability..."
     stop music fadeout 5.0
     "I'd be a talented psychic if I could predict discovering shit like this."
 
@@ -4234,11 +5184,11 @@ label jan_9:
         else:
             voice "j9_br2_AwesomeAnd_c"
         $ chibi_cassie = "images/chibi/cassie_happy.png"
-        wt_ca "Awesome…and welcome back, Lorenzo! How does the sleeping bag feel?"
+        wt_ca "Awesome...and welcome back, Lorenzo! How does the sleeping bag feel?"
 
         voice "j9_br2_IKind"
         # $ chibi_lorenzo = "images/chibi/lorenzo_worried.png"
-        wt_lo "I…kind of miss the armchair I had in the cabin. The sleeping bag's a little less comfortable, but it's good to be closer to everyone."
+        wt_lo "I...kind of miss the armchair I had in the cabin. The sleeping bag's a little less comfortable, but it's good to be closer to everyone."
         
         if radio_static == "_s":
             voice "j9_ThatsSweet_s"
@@ -4275,7 +5225,7 @@ label jan_9:
         else:
             voice "j9_br2_SoFar_c"
         $ chibi_ruran = "images/chibi/ruran_worried.png"
-        wt_ru "So far we've had Kyle's rashes, Cassie and her insomnia, and now cold symptoms…"
+        wt_ru "So far we've had Kyle's rashes, Cassie and her insomnia, and now cold symptoms..."
 
         if radio_static == "_s":
             voice "j9_br2_WilburAnd_s"
@@ -4305,7 +5255,7 @@ label jan_9:
         else:
             voice "j9_br1_AwesomeAnd_c"
         $ chibi_cassie = "images/chibi/cassie_happy.png"
-        wt_ca "Awesome…and, hi, Lorenzo! How does the sleeping bag feel?"
+        wt_ca "Awesome...and, hi, Lorenzo! How does the sleeping bag feel?"
         
         voice "j9_br1_IDidnt"
         # $ chibi_lorenzo = "images/chibi/lorenzo_happy.png"
@@ -4343,7 +5293,7 @@ label jan_9:
 
         voice "j9_br1_SoFar"
         # $ chibi_aston = "images/chibi/aston_worried.png"
-        wt_ast "So far we've had rashes, unexplainable insomnia and now cold symptoms…"
+        wt_ast "So far we've had rashes, unexplainable insomnia and now cold symptoms..."
         voice "j9_br1_ItllBe"
         # $ chibi_aston = "images/chibi/aston_neutral.png"
         wt_ast "It'll be much easier for us to keep an eye on symptoms and control the spread of illness with everyone together."
@@ -4400,7 +5350,7 @@ label jan_10:
     else:
         voice "j10_WeveWell_c"
     $ chibi_eva = "images/chibi/eva_neutral.png"
-    wt_ev "We've…well, for better or for worse, found that there's a correlation between the bird carcasses and the new fungus samples that we've found."
+    wt_ev "We've...well, for better or for worse, found that there's a correlation between the bird carcasses and the new fungus samples that we've found."
     
     $ chibi_morgan = "images/chibi/morgan_neutral.png"
     voice "j10_DidntYou"
@@ -4432,7 +5382,7 @@ label jan_10:
         voice "j10_TheUsual_c"
     wt_is "The usual, yes. Until I have enough."
     voice "j10_ThatDoesnt"
-    wt_gr "That doesn't help gauge how much we actually need to grab, but…sure."
+    wt_gr "That doesn't help gauge how much we actually need to grab, but...sure."
 
     voice "j10_WhereDo"
     wt_gr  "Where do you even plan on storing these samples, anyway? It's like you never run out of space."
@@ -4455,24 +5405,24 @@ label jan_10:
     else:
         voice "j10_IsaakVNVR_c"
     wt_is "..."
-    "Sheesh, Eva… But, good of her to stand up for Koda."
+    "Sheesh, Eva... But, good of her to stand up for Koda."
     
     $ chibi_kyle = "images/chibi/kyle_neutral.png"
     voice "j10_SoWhatYoureSaying"
-    wt_ky "So… What you're saying is you want animals, you want shrooms, and you want shrooms from animals?"
+    wt_ky "So... What you're saying is you want animals, you want shrooms, and you want shrooms from animals?"
 
     if radio_static == "_s":
         voice "j10_IfThat_s"
     else:
         voice "j10_IfThat_c"
-    wt_is "If that helps with your understanding, Kyle… Yes."
+    wt_is "If that helps with your understanding, Kyle... Yes."
     
     voice "j10_OkayGot"
     wt_ky "Okay, got it!"
 
     $ chibi_kyle = "images/chibi/kyle_worried.png"
     voice "j10_ThoughI"
-    wt_ky "Though I really hope we find more animals alive than dead…"
+    wt_ky "Though I really hope we find more animals alive than dead..."
     
     if radio_static == "_s":
         voice "j10_IfTheyre_s"
@@ -4486,7 +5436,7 @@ label jan_10:
     voice "j10_YouveJust"
     wt_mo "You've just got to stop reaching your hand out to every fluffy creature you see, Kyle."
     voice "j10_ButTheyre"
-    wt_ky "But they're so friend-shaped…"
+    wt_ky "But they're so friend-shaped..."
     nvl clear
 
     hide ky

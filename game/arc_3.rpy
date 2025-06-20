@@ -1375,7 +1375,7 @@ label jan_17:
     gr "Hold tight, Morg. The wind's starting to pick up."
     "On the snowmobile, Gregory and I are on the way back to camp from the RC."
     voice "j17_WeStill"
-    mo "We still have snow storms at this time of year? Thought that was a November thing."
+    mo "We still have snowstorms at this time of year? Thought that was a November thing."
     voice "j17_IDont"
     gr "I don't think it's a storm we're having, just strong winds."
     voice "j17_ThenAgain"
@@ -2836,22 +2836,42 @@ label jan_22:
 
     voice "j22_Pancake"
     mo "Pancake!"
-    voice "j22_Morgan"
+    #voice "j22_Morgan"
+    if radio_static == "_s":
+        voice "j22_Morgan_s"
+    else:
+        voice "j22_Morgan_c"
     co "Morgan!"
     voice "j22_ItsMe"
     mo "It's me!"
-    voice "j22_ItsYou"
+    #voice "j22_ItsYou"
+    if radio_static == "_s":
+        voice "j22_ItsYou_s"
+    else:
+        voice "j22_ItsYou_c"
     co "It's you!"
     voice "j22_ThatsRight"
     mo "That's right! Your one and only, the best of the best, charming and-"
-    voice "j22_OkayThats"
+    #voice "j22_OkayThats"
+    if radio_static == "_s":
+        voice "j22_OkayThats_s"
+    else:
+        voice "j22_OkayThats_c"
     co "Okay, that's enough."
     voice "j22_IveJust"
     mo "I've just… I've missed you so much, Pancake."
-    voice "j22_AwwI"
+    #voice "j22_AwwI"
+    if radio_static == "_s":
+        voice "j22_AwwI_s"
+    else:
+        voice "j22_AwwI_c"
     co "Aww. I could shed a tear, Morg."
     "Colin sounds very happy to hear me."
-    voice "j22_IdLove"
+    #voice "j22_IdLove"
+    if radio_static == "_s":
+        voice "j22_IdLove_s"
+    else:
+        voice "j22_IdLove_c"
     co "I'd love to hear updates on the camp, but first… How are you, Morg?"
     voice "j22_OohHoo"
     el "Ooh-hoo-hoo. You wanna tell Pancake that you found me?" 
@@ -2863,7 +2883,11 @@ label jan_22:
     voice "j22_GimmeA"
     mo "Gimme a moment."
     stop music fadeout 3.0
-    voice "j22_YouDont"
+    #voice "j22_YouDont"
+    if radio_static == "_s":
+        voice "j22_YouDont_s"
+    else:
+        voice "j22_YouDont_c"
     co "You don't sound good. What's wrong?"
     voice "j22_ComeOn"
     el "Come on, he's waiting."
@@ -2898,13 +2922,25 @@ label jan_22:
         play music audio.neutral
         voice "j22_IThink"
         mo "I think… I've been hearing Elly in my head. It hasn't been fun."
-        voice "j22_HasIt"
+        #voice "j22_HasIt"
+        if radio_static == "_s":
+            voice "j22_HasIt_s"
+        else:
+            voice "j22_HasIt_c"
         co "Has it gotten to you?"
         voice "j22_YeahSorry"
         mo "Yeah… {w=0.4}Sorry."
-        voice "j22_WeDont"
+        #voice "j22_WeDont"
+        if radio_static == "_s":
+            voice "j22_WeDont_s"
+        else:
+            voice "j22_WeDont_c"
         co "We don't have to do this today, Morg. I'm just glad to know that you're safe and alive."
-        voice "j22_UpdatesFor"
+        #voice "j22_UpdatesFor"
+        if radio_static == "_s":
+            voice "j22_UpdatesFor_s"
+        else:
+            voice "j22_UpdatesFor_c"
         co "Updates for another time."
         stop music fadeout 8.0
         # call end SFX? 
@@ -2925,11 +2961,19 @@ label jan_23:
     # play sound whatever normal for Colin
     show satphone
     "*beep*"
-    voice "j23_ColinVNVR"
+    #voice "j23_ColinVNVR"
+    if radio_static == "_s":
+        voice "j23_ColinVNVR_s"
+    else:
+        voice "j23_ColinVNVR_c"
     co "..."
     voice "j23_PancakeHow"
     mo "Pancake! How are you?"
-    voice "j23_YeahThere"
+    #voice "j23_YeahThere"
+    if radio_static == "_s":
+        voice "j23_YeahThere_s"
+    else:
+        voice "j23_YeahThere_c"
     co "Yeah, there it is. I'm alright, Morg. Is today going well for you?"
     voice "j23_NotReally"
     mo "Not really… Greggy's having a fun time calling for emergency services. They haven't been picking up."
@@ -2937,50 +2981,94 @@ label jan_23:
     if not ruran_safe:
         voice "j23_BuryingA"
         mo "Burying a body with no assistance or extra supplies is…not something I'm looking forward to."
-        voice "j23_MyCondolences"
+        #voice "j23_MyCondolences"
+        if radio_static == "_s":
+            voice "j23_MyCondolences_s"
+        else:
+            voice "j23_MyCondolences_c"
         co "My condolences, Morg…but I'm sure Ruran wouldn't blame y'all for this."
         voice "j23_YeahI"
         mo "Yeah. I know I can handle it. But, my campmates…"
         "An image of January 19th flashes through my mind…"
     
-    voice "j23_IHear"
+    #voice "j23_IHear"
+    if radio_static == "_s":
+        voice "j23_IHear_s"
+    else:
+        voice "j23_IHear_c"
     co "I hear you. But, if emergency services can't be reached…is there still an issue with the tower?"
     voice "j23_SeeingAs"
     mo "Seeing as we're talking right now, I doubt it. Lorenzo was able to contact the supply crew, and Gregory…absolutely blew up on Hilda yesterday."
-    voice "j23_ThatsAn"
+    #voice "j23_ThatsAn"
+    if radio_static == "_s":
+        voice "j23_ThatsAn_s"
+    else:
+        voice "j23_ThatsAn_c"
     co "That's an interesting turn of events…but not an unexpected one."
-    voice "j23_ButThe"
+    #voice "j23_ButThe"
+    if radio_static == "_s":
+        voice "j23_ButThe_s"
+    else:
+        voice "j23_ButThe_c"
     co "But the biggest surprise…are those wolves. In your notes, you called them 'photographable, goopy, and shroom-y?'"
     voice "j23_YupThey"
     mo "Yup. They can talk, too, but seem relatively easy to kill."
     voice "j23_WishYou"
     mo "Wish you saw me in action. I was pretty cool."
-    voice "j23_IveAlready"
+    #voice "j23_IveAlready"
+    if radio_static == "_s":
+        voice "j23_IveAlready_s"
+    else:
+        voice "j23_IveAlready_c"
     co "I've already seen you in action, Morg. Brag all you like."
     "A thought suddenly crossed my mind."
     voice "j23_RandomQuestion"
     mo "Random question, Pancake. Has… Elly ever told you he had a sister?"
-    voice "j23_YeahWhat"
+    #voice "j23_YeahWhat"
+    if radio_static == "_s":
+        voice "j23_YeahWhat_s"
+    else:
+        voice "j23_YeahWhat_c"
     co "Yeah. What about her?"
     voice "j23_DoYou"
     mo "Do you know…if her name is Eva?"
-    voice "j23_EvaElly"
+    #voice "j23_EvaElly"
+    if radio_static == "_s":
+        voice "j23_EvaElly_s"
+    else:
+        voice "j23_EvaElly_c"
     co "Eva? Elly didn't really… {w=0.8}Wait, Morg, do you mean Eva from the RC team?"
     voice "j23_SheLooks"
     mo "She looks like a copy of Elly, but…we haven't spoken about him. At least, not yet."
-    voice "j23_AreYou"
+    #voice "j23_AreYou"
+    if radio_static == "_s":
+        voice "j23_AreYou_s"
+    else:
+        voice "j23_AreYou_c"
     co "Are you worried that your cover's been compromised?"
     voice "j23_IFeel"
     mo "I feel like if that were the case, I would've been offed already."
-    voice "j23_StaySafe"
+    #voice "j23_StaySafe"
+    if radio_static == "_s":
+        voice "j23_StaySafe_s"
+    else:
+        voice "j23_StaySafe_c"
     co "Stay safe, please. Doing reckless shit this far into the op won't help anyone."
     voice "j23_IKnow"
     mo "I know, and I'll be careful…but I'm also not backing out after getting so close to real answers. Your papa ain't a quitter."
-    voice "j23_MyPapa"
+    #voice "j23_MyPapa"
+    if radio_static == "_s":
+        voice "j23_MyPapa_s"
+    else:
+        voice "j23_MyPapa_c"
     co "My papa? What do you me- {w=0.3}Oh. I forgot about being your pseudo-5-year-old."
     voice "j23_NoYoure"
     mo "No, you're 4 years old, sweetie."
-    voice "j23_DoesIt"
+    #voice "j23_DoesIt"
+    if radio_static == "_s":
+        voice "j23_DoesIt_s"
+    else:
+        voice "j23_DoesIt_c"
     co "Does…it make any difference?"
 
     if aston_safe and ruran_safe and pearl_safe:
@@ -2990,11 +3078,19 @@ label jan_23:
         voice "j23_YeahBut"
         mo "Yeah. But…thanks for this, Pancake. You really do keep me sane."
     
-    voice "j23_FeelingsMutual"
+    #voice "j23_FeelingsMutual"
+    if radio_static == "_s":
+        voice "j23_FeelingsMutual_s"
+    else:
+        voice "j23_FeelingsMutual_c"
     co "Feeling's mutual, Morg. Now, go do your thing. You have a case to solve."
     voice "j23_AlrightBye"
     mo "Alright. Bye-bye, Pancake!"
-    voice "j23_YeahOkay"
+    #voice "j23_YeahOkay"
+    if radio_static == "_s":
+        voice "j23_YeahOkay_s"
+    else:
+        voice "j23_YeahOkay_c"
     co "Yeah, okay - bye."
     stop music fadeout 3.0
     stop ambience fadeout 3.0
@@ -3733,38 +3829,74 @@ label jan_30:
         show satphone
         voice "j30_br1_PancakeI"
         mo "Pancake, I have some good news!"
-        voice "j30_br1_OhWhats"
+        #voice "j30_br1_OhWhats"
+        if radio_static == "_s":
+            voice "j30_br1_OhWhats_s"
+        else:
+            voice "j30_br1_OhWhats_c"
         co "Oh, what's up?"
         voice "j30_br1_DavosWoke"
         mo "Davos woke up this morning…and it would seem that he's fully recovered."
-        voice "j30_br1_WilbursKid"
+        #voice "j30_br1_WilbursKid"
+        if radio_static == "_s":
+            voice "j30_br1_WilbursKid_s"
+        else:
+            voice "j30_br1_WilbursKid_c"
         co "Wilbur's kid? The one that was in deep sleep for weeks? That's amazing!"
         voice "j30_br1_HeReally"
         mo "He really had me worried there."
         voice "j30_br1_IKnew"
         mo "I knew he and Jax got it at about the same time I did. But neither Jax or I had such severe symptoms…"
-        voice "j30_br1_SoYoure"
+        #voice "j30_br1_SoYoure"
+        if radio_static == "_s":
+            voice "j30_br1_SoYoure_s"
+        else:
+            voice "j30_br1_SoYoure_c"
         co "So you're saying that y'all potentially got it from the same source?"
-        voice "j30_br1_IfI"
+        #voice "j30_br1_IfI"
+        if radio_static == "_s":
+            voice "j30_br1_IfI_s"
+        else:
+            voice "j30_br1_IfI_c"
         co "If I were to take a guess, I'd pin the body on the 31st as the source. All three of you were there."
         voice "j30_br1_ItStill"
         mo "It still doesn't explain why the symptoms were different…unless that's a key characteristic of said sickness."
-        voice "j30_br1_WhatAboutEllyThe"
+        #voice "j30_br1_WhatAboutEllyThe"
+        if radio_static == "_s":
+            voice "j30_br1_WhatAboutEllyThe_s"
+        else:
+            voice "j30_br1_WhatAboutEllyThe_c"
         co "What about Elly? The fake one, I mean."
         voice "j30_br1_HesBeen"
         mo "He's been rattling around in my head for over two weeks… Feels worse than a migraine."
-        voice "j30_br1_IHear"
+        #voice "j30_br1_IHear"
+        if radio_static == "_s":
+            voice "j30_br1_IHear_s"
+        else:
+            voice "j30_br1_IHear_c"
         co "I hear you, Morg. What about the others? How have they dealt with their symptoms?"
         "I think for a moment about Lorenzo and the bear with Aston's voice."
         voice "j30_br1_TheyveJust"
         mo "They've...just learned to deal with them. I think I've just...not acclimated, still."
-        voice "j30_br1_ALots"
+        #voice "j30_br1_ALots"
+        if radio_static == "_s":
+            voice "j30_br1_ALots_s"
+        else:
+            voice "j30_br1_ALots_c"
         co "A lot's happened recently. Don't beat yourself up, soldier."
-        voice "j30_br1_AndI"
+        #voice "j30_br1_AndI"
+        if radio_static == "_s":
+            voice "j30_br1_AndI_s"
+        else:
+            voice "j30_br1_AndI_c"
         co "And I know this goes without saying, but you don't need to be a hero. If it's too much, we have options."
         voice "j30_br1_IGet"
         mo "I get that. Thanks, Pancake."
-        voice "j30_br1_YoureWelcome"
+        #voice "j30_br1_YoureWelcome"
+        if radio_static == "_s":
+            voice "j30_br1_YoureWelcome_s"
+        else:
+            voice "j30_br1_YoureWelcome_c"
         co "You're welcome, Morg."
         stop music fadeout 3.0
         stop ambience fadeout 2.0
@@ -3855,34 +3987,62 @@ label jan_30:
         show satphone
         voice "j30_br2_DoYou"
         mo "Do you have a sec, Pancake?"
-        voice "j30_br2_AreYou"
+        #voice "j30_br2_AreYou"
+        if radio_static == "_s":
+            voice "j30_br2_AreYou_s"
+        else:
+            voice "j30_br2_AreYou_c"
         co "Are you alright, Morg? What happened?"
         voice "j30_br2_HeDavos"
         mo "He… Davos didn't make it. And it's not just him that we've lost."
         voice "j30_br2_IKnowImSupposed"
         mo "I know I'm supposed to be stronger than this, but... With the way people are dying, I don't know how long I can keep this up."
-        voice "j30_br2_WhatAboutEllyThe"
+        #voice "j30_br2_WhatAboutEllyThe"
+        if radio_static == "_s":
+            voice "j30_br2_WhatAboutEllyThe_s"
+        else:
+            voice "j30_br2_WhatAboutEllyThe_c"
         co "What about Elly? The fake one, I mean."
         voice "j30_br2_WhatAbout"
         mo "What about him? He's been rattling around in my head for over two weeks. I'm tired of it."
         voice "j30_br2_IKnowItsNot"
         mo "I know it's not him...not really...but it's not making this any easier."
-        voice "j30_br2_IHear"
+        #voice "j30_br2_IHear"
+        if radio_static == "_s":
+            voice "j30_br2_IHear_s"
+        else:
+            voice "j30_br2_IHear_c"
         co "I hear you, Morg. What about the others? How have they dealt with their symptoms?"
         "I think for a moment about Lorenzo, still being tormented by the bear with Aston's voice."
         voice "j30_br2_TheyveJust"
         mo "They've...just learned to deal with them, even as they worsen. I think I've just...not acclimated, still."
-        voice "j30_br2_ALots"
+        #voice "j30_br2_ALots"
+        if radio_static == "_s":
+            voice "j30_br2_ALots_s"
+        else:
+            voice "j30_br2_ALots_c"
         co "A lot's happened recently. Don't beat yourself up, soldier."
-        voice "j30_br2_SoHowre"
+        #voice "j30_br2_SoHowre"
+        if radio_static == "_s":
+            voice "j30_br2_SoHowre_s"
+        else:
+            voice "j30_br2_SoHowre_c"
         co "So... How're you feeling in terms of mission status? Do you need us to prep an extraction?"
         voice "j30_br2_NoNot"
         mo "No. {w=0.4}Not yet. {w=0.6}If nothing else, I need to get a better read on Hilda's status. If we can get to her through Gregory..."
-        voice "j30_br2_AndI"
+        #voice "j30_br2_AndI"
+        if radio_static == "_s":
+            voice "j30_br2_AndI_s"
+        else:
+            voice "j30_br2_AndI_c"
         co "And I know this goes without saying, but you don't need to be a hero. If it's too much, we have options."
         voice "j30_br2_IGet"
         mo "I get that. Thanks, Col- Pancake."
-        voice "j30_br2_YoureWelcome"
+        #voice "j30_br2_YoureWelcome"
+        if radio_static == "_s":
+            voice "j30_br2_YoureWelcome_s"
+        else:
+            voice "j30_br2_YoureWelcome_c"
         co "You're welcome, Morg."
         stop music fadeout 3.0
         stop ambience fadeout 2.0
