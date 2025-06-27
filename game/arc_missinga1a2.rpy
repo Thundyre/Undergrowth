@@ -3,6 +3,7 @@ label nov_28:
     $ save_name = current_date(_("Arc 1"), current_day)
     scene isaaklab2 with dissolve
     play ambience amb_rc fadein 3.0
+    show screen date_label with dissolve
     show isa inthought at centerright with dissolve
     "In the RC, Isaak is seen handling samples."
     "The same ones Gregory had delivered a while ago."
@@ -10,10 +11,10 @@ label nov_28:
     play music audio.sad
     voice "n28_HasIt"
     isa "... Has it begun already? At this time of year?"
-    "He mutters to himself as he annotates each bag."
+    "He continues muttering to himself as he annotates each bag."
     "Relabelling each one as 'wet dirt.'"
     show isa neutral with move:
-        xpos 400
+        xpos 650
     voice "n28_TheyMust"
     isa "They must already know."
     "He pauses for a moment, staring at the wall…before resuming his tasks."
@@ -26,7 +27,7 @@ label nov_28:
     isa "What?"
     "Isaak follows Eva's gaze to the dirt samples on the table."
     voice "n28_WellIf"
-    isa "Well… {w=2.5}If you want one, take one. The rest will be kept at the usual shelf…should you need more."
+    isa "Well… {w=2.5}If you want one, take one. The rest will be kept at the usual shelf, should you need more."
     voice "n28_GreatThank"
     ev "Great. Thank you, Isaak…"
     voice "n28_I"
@@ -34,7 +35,7 @@ label nov_28:
     hide isa
     "Isaak turns away, not realizing Eva is calling out to him."
 
-    "She decides to save the question for another time and leaves the room."
+    "She decides to save the question for another time and leaves \nthe room."
     scene black with fade
     stop music fadeout 4.0
     voice "n28_GuessI"
@@ -58,7 +59,7 @@ label nov_28:
     ko "That was relatively easy. Easier than if I attempted what you did."
     voice "n28_CarefulNow"
     ev "Careful now, Koda. The door's still open."
-    show ko scared
+    show ko scared with sdissolve
     voice "n28_OOhYeah"
     ko "O-Oh yeah."
     hide ko
@@ -110,6 +111,7 @@ label nov_29:
     play ambience amb_campday fadein 0.5
     $ current_day = _("November 29th")
     $ save_name = current_date(_("Arc 1"), current_day)
+    show screen date_label with dissolve
     voice "n29_Ughhh"
     ca "Ughhh…"
     voice "n29_GeezIts"
@@ -126,7 +128,7 @@ label nov_29:
     "With groggy footsteps, she makes it to the main tent."
     "She scans the food shelf, but is indecisive on what to eat."
     voice "n29_ICould"
-    ca "I could just wait around for them while I… {w=2.5}What was it that I wanted to do today…?"
+    ca "I could just wait around for them while I… {w=3.8}What was it that I wanted to do today…?"
     "Unable to remember what her tasks were for the day, she reaches for her notepad and flips through it." 
     "However, there wasn't anything specific penned in for the day."
     "Cassie rubs her temples and tries her best to recall."
@@ -144,7 +146,9 @@ label nov_29:
     voice "n29_IsSomething"
     ru "Is something wrong, dear?"
     voice "n29_II"
-    ca "I… I can't sleep? I shut my eyelids and it doesn't do the whole 'sleep thing.'"
+    ca "I… I can't sleep? I shut my eyelids and it doesn't do the whole \n'sleep thing.'"
+    show ru with MoveTransition(0.8):
+        xpos 300
     "Ruran rushes to her side to feel her forehead."
     show ru neutral
     voice "n29_TemperatureSeems"
@@ -224,6 +228,7 @@ label dec_1:
     $ current_day = _("December 1st")
     $ save_name = current_date(_("Arc 1"), current_day)
     play ambience amb_village fadein 1.4
+    show screen date_label with dissolve
     "Back at the farm, two villagers look towards their cattle with worried expressions."
     voice "d1_TheyveBeen"
     so "They've been starting to act up, dear."
@@ -261,11 +266,11 @@ label dec_1:
     voice "d1_HappyDecember"
     fe "'Happy December. The time has come.'"
     voice "d1_HereAre"
-    fe "'Here are your Christmas fireworks, have fun with them.'"
+    fe "'Here are your Christmas fireworks.' {w=1.6}...{w=1.6} 'Have fun with them.'"
     voice "d1_LightIt"
-    fe "'Light it up when you're at the highest point so that everyone can enjoy them together.'"
+    fe "'Light it up when you're at the highest point so that everyone can...enjoy them together.'"
     voice "d1_BlindThe"
-    fe "{w=0.4}'Blind the metal bird.' {w=2.0}…blind the metal bird?"
+    fe "{w=0.4}'Blind the metal bird.' {w=2.6}…blind the metal bird?"
     voice "d1_AgainWith"
     fe "Again with these damn riddles…"
     voice "d1_WoahFather"
@@ -284,7 +289,8 @@ label dec_1:
     fe "This better be worth it."
     stop music fadeout 3.0
     stop ambience fadeout 3.0
-    scene black with longfade
+    scene black with dissolve
+    pause(0.6)
     if days404testing:
         $ aston_safe = False
         jump dec_19
@@ -337,10 +343,10 @@ label dec_19:
         voice "d19_br2_WilburI"
         ru "Wilbur, I-"
         show wi neutral with move:
-            xpos 1700
+            xpos 1750
         "He places his hands on her shoulders."
         voice "d19_br2_WeAre"
-        wi "We are not going to stand idly by."
+        wi "We're not going to stand idly by."
         hide wi neutral
         show wi serious at right
         show ru worried
@@ -366,10 +372,11 @@ label dec_19:
         da "What…"
         voice "d19_br1_IsHe"
         ja "Is he serious?"
-        show da sad with dissolve
         voice "d19_br1_AndWhat"
         ja "And what about Heralign, huh? Is she just gonna sit in her dainty little office?"
         show ja pissed at left
+        show da sad
+        with dissolve
         voice "d19_br1_ThisIs"
         ja "This is a life or death situation we're talking about."
         voice "d19_br1_IKnow"
@@ -398,10 +405,10 @@ label dec_19:
         voice "d19_br1_WilburI"
         ru "Wilbur, I-"
         show wi neutral with move:
-            xpos 1700
+            xpos 1750
         "He places his hands on her shoulders."
         voice "d19_br1_WeAre"
-        wi "We are not going to stand idly by."
+        wi "We're not going to stand idly by."
         hide wi neutral
         show wi serious at right
         show ru worried
@@ -422,7 +429,7 @@ label dec_19:
         voice "d19_br1_ThankYou"
         ru "Thank you, Wilbur." 
     stop music fadeout 1.0
-    scene black with longfade
+    scene black with dissolve
     if days404testing:
         jump dec_29
     else:

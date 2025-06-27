@@ -694,6 +694,7 @@ screen file_slots(title):
                         vbox:
                             xalign 0.5
                             text FileSaveName(slot):
+                                xalign 0.5
                                 style "slot_name_text"
 
                             text FileTime(slot, format=_("%d %B %Y, %H:%M"), empty=_("empty slot")):
@@ -727,7 +728,7 @@ style page_label:
     ypadding 5
 
 style page_label_text:
-    textalign 0.5
+    #xalign 0.5
     layout "subtitle"
     hover_color gui.hover_color
 
@@ -749,9 +750,9 @@ style slot_button:
     properties gui.button_properties("slot_button")
 
 style slot_button_text:
-    color "#FFF"
-    size 20
     xalign 0.5
+    color "#FFF"
+    size 21
 
 style sync_button:
     padding (30,10)

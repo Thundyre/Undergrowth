@@ -398,7 +398,7 @@ init python:
 
     def current_date(arc, day):
         renpy.restart_interaction()
-        return arc+"\n"+day
+        return arc+": "+day
 
 ## Date label #################################
 ##

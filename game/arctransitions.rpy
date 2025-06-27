@@ -24,7 +24,7 @@
 
 label tr_dec_6:
     #INT: Locker Room
-    show cg memory
+    show cg memory with ldissolve
     $ persistent.gallery_memory = True
     #Morgan enters the locker room and sees Elliot there packing up his belongings. 
     voice "tr_d6_WoahElly"
@@ -84,7 +84,7 @@ label tr_dec_6:
     el "Well, I think I'm gonna head out now! See you in a few months!"
     voice "tr_d6_ByeBiscuit"
     mo "Bye, biscuit. Safe travels!"
-
+    scene black with ldissolve
     #Elliot leaves the room, leaving Morgan alone in the scene.
 
     jump dec_6_2
