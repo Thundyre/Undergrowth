@@ -2827,7 +2827,7 @@ label dec_27:
                 show pearl sad
                 voice "d27_br2_HowAre"
                 mo "How are you going to find them if you don't even know where to begin searching? It's reckless."
-                
+                jump pearlbad
                 #straight to pearldeath
         #choice branch ends
 
@@ -2847,26 +2847,11 @@ label dec_27:
                 ast "You're doing enough, Pearl. Let's go back to sleep, okay?"
                 stop ambience fadeout 1.0
 
-
-        #If Aston is not safe
-            else:
-                show pearl sad
-                voice "d27_br2_PearlYou"
-                mo "Pearl, you are brave and kind, and I know you want to help."
-                show pearl depressed with sdissolve
-                #voice "" missing VNVR
-                pe "..."
-                "Tears welled up in her eyes."
-                voice "d27_IWish"
-                pe "I wish I could do more."
-                voice "d27_br2_YoureDoing"
-                mo "You're doing enough, but right now you need to get some sleep."
-                stop ambience fadeout 1.0
-
-
         #Pearl's dead end
         else:
-            show pearl confused with sdissolve
+            #show pearl confused with sdissolve
+            label pearlbad:
+                show pearl confused with sdissolve
             voice "d27_BeingCalculative"
             pe "Being calculative hasn't gotten us anywhere, has it now, Morgan?"
             show pearl depressed

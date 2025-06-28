@@ -485,7 +485,7 @@ label nov_5:
     gr "And because it's your first day here, we gotta make sure you understand the rules."
 
     "He hands me a booklet."
-    "'{i}The Camp Guide's Guide{/i}'"
+    "\"{i}The Camp Guide's Guide{/i}\""
     "That's not a very creative name."
 
     show pearl confused at centerleft
@@ -3814,7 +3814,7 @@ label dec_3:
     play ambience amb_intcampday fadein 1.0
     show ast neutral at centerleft with dissolve
     "Today I was tasked with lunch duties, helping Aston out in the main tent."
-    "A certain someone really wanted tomato soup, so I'm on 'can opening' duty."
+    "A certain someone really wanted tomato soup, so I'm on \"can opening\" duty."
     play sound radio
     "Suddenly, Aston's Walkie goes off on the table."
     voice "d3_MorganCould"
