@@ -22,14 +22,14 @@ label nov_1:
 
     play music audio.ad
     #voice "tr_n1_GlowGlow" #always post-processed, no branching needed
-    pause(12.1)
+    pause(6.1)
     hi "Glow, glow, glow with NuGLO! Let us help you restore your skin's shiny, supple glow! {w=7.6}{nw}"
     
     play sound phonebuzz
     #voice "tr_n1_SoWhat"
     queue music audio.adwohilda
     hi "So what are you waiting for? Grab your very own NuGLO samples at your local stores today!"
-    stop music fadeout 5.0
+    stop music fadeout 35.0
 
     $ hidebubbles = True
     play sound ding
